@@ -1,25 +1,22 @@
-from parsers.pprint_parser import parse_pprint
+from src.postOOP.classes.ncl_file_operator import NclFileOperator
+from src.postOOP.classes.parsers.pprint_parser import PprintParser
+from src.postOOP.classes.ust_creator import UstanovFileCreator
+from src.postOOP.classes.program_creator import ProgramFileCreator
+from src.postOOP.classes.ncl_filler import NclFiller
+from src.postOOP.classes.file_operator import FileOperator
 
-# from constants import
-from file_operations import (read_ncl_file_format_and_create_temp_file,
-                             create_files_for_ustanov,
-                             create_files_for_operations_in_ustanov,
-                             loop_through_all_subprograms_parsing_range_cl_lines,
-                             remove_temp_file,
-                             get_all_ncl_files_in_dir,
-                             )
 
 
 def main():
-    filenames = get_all_ncl_files_in_dir()
+    filenames = NclFileOperator().get_all_ncl_files_in_dir()
     for filename in filenames:
         try:
-            cl_lines = read_ncl_file_format_and_create_temp_file(filepath=filename)
-            pprint_vars = parse_pprint(lines=cl_lines)
-            create_files_for_ustanov(pprint_vars=pprint_vars)
-            create_files_for_operations_in_ustanov(pprint_vars=pprint_vars)
-            loop_through_all_subprograms_parsing_range_cl_lines(cl_lines=cl_lines, pprint_vars=pprint_vars)
-            remove_temp_file()
+            cl_lines = NclFileOperator().read_ncl_file_format_and_create_temp_file(filepath=filename)
+            pprint_vars = PprintParser().parse_pprint(lines=cl_lines)
+            UstanovFileCreator().create_files_for_ustanov(pprint_vars=pprint_vars)
+            ProgramFileCreator().create_files_for_operations_in_ustanov(pprint_vars=pprint_vars)
+            NclFiller().loop_through_all_subprograms_parsing_range_cl_lines(cl_lines=cl_lines, pprint_vars=pprint_vars)
+            FileOperator().remove_temp_file()
         except FileNotFoundError:
             print(f"FileNotFoundError {filename}")
 

@@ -4,28 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/py post v2 OOP.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/gcode_file.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/ncl_file.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/file_operations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/parsers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/parsers/ncl_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/parsers/pprint_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/__init__.py" afterDir="false" />
+    <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="test commit3">
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/ncl_filler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/program_creator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/py post v2 OOP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/py post v2 OOP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/gcode_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/ust_creator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/ncl_file.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/file_operations.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/file_operator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/parsers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/ncl_file_operator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/parsers/ncl_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/parsers/pprint_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/pprint_parser.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,30 +31,36 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2lp2UZr8Wojmr1JIXgBqWcKpdgy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/WORK_DIRECTORY/10 Programming/Projects/py post v2 OOP/src/postOOP/parsers"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;recreating-functionality&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/WORK_DIRECTORY/10 Programming/Projects/py post v2 OOP/src/postOOP/parsers&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP\src\postOOP\parsers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP\src\postOOP\classes" />
       <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP" />
       <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP\src\postOOP" />
       <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP\src" />
@@ -109,18 +106,86 @@
       <option name="presentableId" value="Default" />
       <updated>1725862713799</updated>
     </task>
+    <task id="LOCAL-00001" summary="1st commit&#10;basic structure created">
+      <option name="closed" value="true" />
+      <created>1725866519407</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725866519407</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1725883919308</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1725883919308</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test commit2">
+      <option name="closed" value="true" />
+      <created>1725883955765</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725883955765</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test commit3">
+      <option name="closed" value="true" />
+      <created>1725883987664</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1725883987664</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
+    <option name="RECENT_FILTERS">
       <map>
-        <entry key="MAIN">
+        <entry key="Branch">
           <value>
-            <State />
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
     </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="BEK_SORT_TYPE" value="1" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="recreating-functionality" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1st commit&#10;basic structure created" />
+    <MESSAGE value="test commit" />
+    <MESSAGE value="test commit2" />
+    <MESSAGE value="test commit3" />
+    <option name="LAST_COMMIT_MESSAGE" value="test commit3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
