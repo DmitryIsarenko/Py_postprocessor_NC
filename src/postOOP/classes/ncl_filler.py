@@ -8,5 +8,5 @@ class NclFiller():
             result_list = NclParser().parse_range_cl_records(cl_lines=cl_lines,
                                                              pprint_vars=pprint_vars,
                                                              program_num_iter=sub_prog_dict["program_num_iter"])
-            FileOperator().append_parsed_lines_to_file(file_to_open=sub_prog_dict["program_O_name_with_extension"],
-                                        list_with_lines=result_list)
+            FileOperator().append_parsed_lines_to_file(filepath=sub_prog_dict["program_O_name_with_extension"],
+                                                       list_with_lines=result_list)

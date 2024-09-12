@@ -1,4 +1,4 @@
-from src.postOOP.constants import POST_NAME, PROGRAMMER_NAME, SAFETY_LINE_DEFAULT
+from src.postOOP.config import POST_NAME, PROGRAMMER_NAME, SAFETY_LINE_DEFAULT
 
 class ProgramFileCreator():
     def create_files_for_operations_in_ustanov(self, pprint_vars: dict) -> None:

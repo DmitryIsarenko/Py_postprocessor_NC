@@ -1,17 +1,13 @@
 from pprint import pprint
 
-from src.postOOP.constants import (PROGRAM_PREFIX,
-                                   PROGRAM_MAIN_DIGIT,
-                                   G_CODE_FILE_EXTENSION,
-                       # G_CODE_PARAMS_ENABLED,
-                                   G_CODE_FEED_PARAMS_ENABLED,
-                                   G_CODE_SPINDLE_PARAMS_ENABLED,
-                                   G_CODE_TOOL_POT_PARAMS_ENABLED,
-                                   G_CODE_TOOL_FEED_PARAMETER,
-                                   G_CODE_TOOL_RPM_PARAMETER,
-                                   G_CODE_TOOL_POT_PARAMETER,
-                                   G41_G42_SIDE_IS_REVERSED_SWITCH,
-                                   dict_of_axial_operations_G_codes, )
+from src.postOOP.config import (G_CODE_FEED_PARAMS_ENABLED,
+                                G_CODE_SPINDLE_PARAMS_ENABLED,
+                                G_CODE_TOOL_POT_PARAMS_ENABLED,
+                                G_CODE_TOOL_FEED_PARAMETER,
+                                G_CODE_TOOL_RPM_PARAMETER,
+                                G_CODE_TOOL_POT_PARAMETER,
+                                G41_G42_SIDE_IS_REVERSED_SWITCH,
+                                dict_of_axial_operations_G_codes, )
 
 class NclParser():
 
@@ -49,9 +45,6 @@ class NclParser():
             elif "LOADTL /" in cl_lines[line_index]:
                 result_list.append(f"(TOOL NAME: {pprint_vars["operations"][program_num_iter]["tool_name"]});\n", )
 
-
-
-
                 if G_CODE_TOOL_POT_PARAMS_ENABLED == 0:
                     result_list.append(f"T{pprint_vars["operations"][program_num_iter]["tool_pot_num_str"]} M6;\n", )
                     pass
@@ -76,38 +69,6 @@ class NclParser():
                     result_list.append(
                         f"{G_CODE_TOOL_FEED_PARAMETER}={pprint_vars["operations"][program_num_iter]["cut_feed"]}"
                         f"(PODACHA);\n")
-                    # result_list.append(f";\n", )
-                    # result_list.append(f"T{G_CODE_TOOL_POT_PARAMETER} M6;\n", )
-
-
-
-
-
-
-                # if G_CODE_PARAMS_ENABLED == 0 or (G_CODE_PARAMS_ENABLED == 1 and G_CODE_TOOL_POT_PARAMS_ENABLED == 0):
-                #     result_list.append(f"T{pprint_vars["operations"][program_num_iter]["tool_pot_num_str"]} M6;\n", )
-                # elif G_CODE_PARAMS_ENABLED == 1:
-                #     if G_CODE_TOOL_POT_PARAMS_ENABLED == 1:
-                #         result_list.append(
-                #             f"{G_CODE_TOOL_POT_PARAMETER}={pprint_vars["operations"][program_num_iter]["tool_pot_num_str"]}"
-                #             f"(NOMER T INSTRUMENTA);\n", )
-                # if G_CODE_SPINDLE_PARAMS_ENABLED == 1:
-                #     result_list.append(f"{G_CODE_TOOL_RPM_PARAMETER}="
-                #                        f"{pprint_vars["operations"][program_num_iter]["spindle_speed"]}"
-                #                        f"(OBOROTI);\n")
-                # if G_CODE_FEED_PARAMS_ENABLED == 1 and pprint_vars["operations"][program_num_iter][
-                #     "cut_feed"] != "null":
-                #     result_list.append(
-                #         f"{G_CODE_TOOL_FEED_PARAMETER}={pprint_vars["operations"][program_num_iter]["cut_feed"]}"
-                #         f"(PODACHA);\n")
-                #     result_list.append(f";\n", )
-                #     result_list.append(f"T{G_CODE_TOOL_POT_PARAMETER} M6;\n", )
-
-
-
-
-
-
 
             elif "SPINDL /" in cl_lines[line_index]:
                 right_part = cl_lines[line_index].split(sep=" / ")[1].strip()
@@ -129,19 +90,7 @@ class NclParser():
                                 result_list.append(f"S{item} ")
                             elif G_CODE_SPINDLE_PARAMS_ENABLED == 1:
                                 result_list.append(f"S{G_CODE_TOOL_RPM_PARAMETER} ")
-                            # if G_CODE_PARAMS_ENABLED == 0 or (G_CODE_PARAMS_ENABLED == 1 and G_CODE_SPINDLE_PARAMS_ENABLED == 0):
-                            #     item = round(float(item))
-                            #     result_list.append(f"S{item} ")
-                            # elif G_CODE_PARAMS_ENABLED == 1 and G_CODE_SPINDLE_PARAMS_ENABLED == 1:
-                            #     result_list.append(f"S{G_CODE_TOOL_RPM_PARAMETER} ")
                     result_list.append(";\n")
-
-
-
-
-
-
-
 
             elif "COOLNT /" in cl_lines[line_index]:
                 right_part = cl_lines[line_index].split(sep=" / ")[1]
@@ -158,9 +107,6 @@ class NclParser():
                     result_list.append(f"G01 F{feedrate} ")
                 elif G_CODE_FEED_PARAMS_ENABLED == 1:
                     result_list.append(f"G01 F{G_CODE_TOOL_FEED_PARAMETER} ")
-                # elif G_CODE_PARAMS_ENABLED == 1 and G_CODE_FEED_PARAMS_ENABLED == 1:
-                #     result_list.append(f"G01 F{G_CODE_TOOL_FEED_PARAMETER} ")
-
 
             elif "CUTCOM / " in cl_lines[line_index]:
                 cutcom_str = cl_lines[line_index].split(sep=" / ")[1].strip()
@@ -171,31 +117,10 @@ class NclParser():
                     left_compensation = "G42"
                     right_compensation = "G41"
 
-
-
-
-
-
-
-
-
-
                 if G_CODE_TOOL_POT_PARAMS_ENABLED == 0:
                     D_corrector_addition = f"D{pprint_vars["operations"][program_num_iter]["tool_pot_num_str"]}"
                 elif G_CODE_TOOL_POT_PARAMS_ENABLED == 1:
                     D_corrector_addition = f"D{G_CODE_TOOL_POT_PARAMETER}"
-                # if G_CODE_PARAMS_ENABLED == 0 or (G_CODE_PARAMS_ENABLED == 1 and G_CODE_TOOL_POT_PARAMS_ENABLED == 0):
-                #     D_corrector_addition = f"D{pprint_vars["operations"][program_num_iter]["tool_pot_num_str"]}"
-                # elif G_CODE_PARAMS_ENABLED == 1 and G_CODE_TOOL_POT_PARAMS_ENABLED == 1:
-                #     D_corrector_addition = f"D{G_CODE_TOOL_POT_PARAMETER}"
-
-
-
-
-
-
-
-
 
                 if cutcom_str == "OFF":
                     result_list.append(f"G40 ")
@@ -203,23 +128,6 @@ class NclParser():
                     result_list.append(f"{left_compensation} {D_corrector_addition} ")
                 elif cutcom_str == "RIGHT":
                     result_list.append(f"{right_compensation} {D_corrector_addition} ")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             elif "GOTO / " in cl_lines[line_index]:
                 if not ("CIRCLE" in cl_lines[line_index - 1] and "CIRCLE" in cl_lines[line_index + 1]):
@@ -296,15 +204,6 @@ class NclParser():
                     result_list.append(f"G98 ")
                     result_list.append(dict_of_axial_operations_G_codes[right_part_list[0]] + " ")
 
-
-
-
-
-
-
-
-
-
                     if "MMPM" in right_part_list:
                         operation_data["FEED_TYPE"] = "G94"
                         feed_type_index = right_part_list.index("MMPM")
@@ -313,20 +212,6 @@ class NclParser():
                             result_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
                         elif G_CODE_FEED_PARAMS_ENABLED == 1:
                             result_list.append(f"{operation_data["FEED_TYPE"]} F{G_CODE_TOOL_FEED_PARAMETER} ")
-                        # if (G_CODE_PARAMS_ENABLED == 0 or
-                        #     pprint_vars["operations"][program_num_iter]["cut_feed"] == "null") or (
-                        #         G_CODE_PARAMS_ENABLED == 1 and G_CODE_FEED_PARAMS_ENABLED == 0):
-                        #     result_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
-                        # elif G_CODE_FEED_PARAMS_ENABLED == 1 and G_CODE_PARAMS_ENABLED == 1:
-                        #     result_list.append(f"{operation_data["FEED_TYPE"]} F{G_CODE_TOOL_FEED_PARAMETER} ")
-
-
-
-
-
-
-
-
 
                     elif "MMPR" in right_part_list:
                         operation_data["FEED_TYPE"] = "G95"
@@ -336,19 +221,6 @@ class NclParser():
                             result_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
                         elif G_CODE_FEED_PARAMS_ENABLED == 1:
                             result_list.append(f"{operation_data["FEED_TYPE"]} F{G_CODE_TOOL_FEED_PARAMETER} ")
-                        # if G_CODE_FEED_PARAMS_ENABLED == 0 or pprint_vars["operations"][program_num_iter]["cut_feed"] == "null":
-                        #     result_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
-                        # elif G_CODE_FEED_PARAMS_ENABLED == 1:
-                        #     result_list.append(f"{operation_data["FEED_TYPE"]} F{G_CODE_TOOL_FEED_PARAMETER} ")
-
-
-
-
-
-
-
-
-
                     if "DEPTH" in right_part_list:
                         depth_index = right_part_list.index("DEPTH")
                         operation_data["DEPTH"] = round(float(right_part_list[depth_index + 1]), ndigits=5)
@@ -380,12 +252,6 @@ class NclParser():
                 pass
             else:
                 print(f"HAVENT PARSED cl record: {cl_lines[line_index]}")
-
-
-
-
-
-
 
         # adding G43 compensation to the 1st GOTO
         counter_lines_with_z = 0
