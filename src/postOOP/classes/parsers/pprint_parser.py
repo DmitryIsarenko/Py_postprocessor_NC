@@ -1,6 +1,6 @@
 from pprint import pprint
 
-from src.postOOP.config import (PROGRAM_PREFIX,
+from src.postOOP.config import (PROGRAM_MAIN_LETTER,
                                 PROGRAM_MAIN_DIGIT,
                                 G_CODE_FILE_EXTENSION,
                                 ust_template_dict,
@@ -10,9 +10,11 @@ from src.postOOP.config import (PROGRAM_PREFIX,
 class PprintParser():
     program_counter = 0
     @staticmethod
-    def get_cl_file_lines_amount(lines):
-        return lines.__len__()
-
+    def get_cl_file_lines_amount(lines) -> int:
+        try:
+            return lines.__len__()
+        except AttributeError:
+            return 0
     @staticmethod
     def sum_machining_time(*, pprint_vars):
         sum_machining_time = 0
@@ -42,28 +44,29 @@ class PprintParser():
             if char.isdigit():
                 ust_num_str += str(char)
         pprint_vars["ust_num_str"] = ust_num_str
-        ust_O_name = PROGRAM_PREFIX + PROGRAM_MAIN_DIGIT + ust_num_str + "00"
+        ust_O_name = PROGRAM_MAIN_LETTER + PROGRAM_MAIN_DIGIT + ust_num_str + "00"
         pprint_vars["ust_O_name"] = ust_O_name
         pprint_vars["ust_O_name_with_extension"] = ust_O_name + G_CODE_FILE_EXTENSION
         return pprint_vars
 
-    def parse_pprint(self, lines) -> dict:
+    @classmethod
+    def parse_pprint(cls, lines) -> dict:
         print("Parsing PPRINTs")
 
         program_counter = 0
 
         pprint_vars = ust_template_dict.copy()
-        pprint_vars["cl_file_lines"] = self.get_cl_file_lines_amount(lines=lines)
+        pprint_vars["cl_file_lines"] = cls.get_cl_file_lines_amount(lines=lines)
 
         for line_index in range(lines.__len__()):
             cl_line = lines[line_index]
             if "PPRINT" in cl_line:
                 if "PART NAME" in cl_line:
-                    pprint_vars["part_name"] = self.get_cl_part_after_colon(cl_line=cl_line)
+                    pprint_vars["part_name"] = cls.get_cl_part_after_colon(cl_line=cl_line)
                 elif "DATE TIME" in cl_line:
-                    pprint_vars["date_and_time"] = self.get_cl_part_after_colon(cl_line=cl_line)
+                    pprint_vars["date_and_time"] = cls.get_cl_part_after_colon(cl_line=cl_line)
                 elif "OPERATION NAME" in cl_line:
-                    pprint_vars = self.write_ust_name_and_sub_data(pprint_vars=pprint_vars, cl_line=cl_line)
+                    pprint_vars = cls.write_ust_name_and_sub_data(pprint_vars=pprint_vars, cl_line=cl_line)
 
                 elif "NC SEQUENCE NAME" in cl_line:
                     program_counter += 1
@@ -75,13 +78,20 @@ class PprintParser():
                         pprint_counter += 1
 
                     cl_in_prog_counter = 1
+                    # print(len(lines))
+                    # print(line_index)
+                    # print(cl_in_prog_counter)
+
                     while "$$-> END /" not in lines[line_index + cl_in_prog_counter]:
                         cl_in_prog_counter += 1
+                        if (line_index + cl_in_prog_counter) == len(lines):
+                            break
+                        # print(cl_in_prog_counter, lines[line_index+cl_in_prog_counter])
 
                     operation_dict["pprints_index_start"] = line_index
                     operation_dict["pprints_index_end"] = line_index + pprint_counter
                     operation_dict["cl_line_index_start"] = line_index
-                    operation_dict["cl_line_index_end"] = line_index + cl_in_prog_counter + 1
+                    operation_dict["cl_line_index_end"] = line_index + cl_in_prog_counter
 
                     operation_dict["program_num"] = program_counter
                     operation_dict["program_num_iter"] = program_counter - 1
@@ -114,7 +124,7 @@ class PprintParser():
                         elif 10 <= program_counter < 100:
                             operation_dict["program_num_str"] = str(program_counter)
 
-                        ust_sub_prog_name = PROGRAM_PREFIX + PROGRAM_MAIN_DIGIT + pprint_vars["ust_num_str"] + \
+                        ust_sub_prog_name = PROGRAM_MAIN_LETTER + PROGRAM_MAIN_DIGIT + pprint_vars["ust_num_str"] + \
                                             operation_dict["program_num_str"]
 
                         operation_dict["program_O_name"] = ust_sub_prog_name
@@ -128,7 +138,7 @@ class PprintParser():
             else:
                 continue
 
-        pprint_vars["sum_machining_time"] = self.sum_machining_time(pprint_vars=pprint_vars)
+        pprint_vars["sum_machining_time"] = cls.sum_machining_time(pprint_vars=pprint_vars)
 
         pprint(pprint_vars)
         return pprint_vars

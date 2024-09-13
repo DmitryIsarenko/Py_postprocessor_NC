@@ -2,17 +2,19 @@
 PROGRAMMER_NAME = "DEFAULT PROGRAMMER"
 
 POST_NAME = "PY POST V1.01"
-PROGRAM_PREFIX = "O"
+PROGRAM_MAIN_LETTER = "O"
 PROGRAM_MAIN_DIGIT = "5"
 
 
-key_filename_part_1 = "ust"  # will be searched for matches in dir
-key_filename_part_2 = "ncl"  # will be searched for matches in dir
+# key_filename_part_1 = "ust"  # will be searched for matches in dir
+cl_data_file_extension = ".ncl"  # will be searched for matches in dir
 
 
 G_CODE_FILE_EXTENSION = ""
-TEMP_FILE_NAME = "temp.txt"
+TEMP_FILE_NAME_PREFIX = "temporary_file_"
 
+NC_START_KEYWORD = "PPRINT / NC SEQUENCE NAME :"
+NC_END_KEYWORD = "$$-> END /"
 
 # options
 SAFETY_LINE_DEFAULT = "G17 G40 G49 G90 G94"
@@ -41,9 +43,9 @@ C_MIN = 0
 C_MAX = 0
 
 # g-code params for editing:
-G_CODE_TOOL_POT_PARAMS_ENABLED = 1
-G_CODE_SPINDLE_PARAMS_ENABLED = 1
-G_CODE_FEED_PARAMS_ENABLED = 1
+G_CODE_TOOL_POT_PARAMS_ENABLED = 0
+G_CODE_SPINDLE_PARAMS_ENABLED = 0
+G_CODE_FEED_PARAMS_ENABLED = 0
 
 G_CODE_TOOL_POT_PARAMETER = "#101"
 G_CODE_TOOL_FEED_PARAMETER = "#102"

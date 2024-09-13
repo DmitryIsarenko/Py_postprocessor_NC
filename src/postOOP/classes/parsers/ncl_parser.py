@@ -15,7 +15,8 @@ class NclParser():
         result_list = []
         start_cl_line = pprint_vars["operations"][program_num_iter]["cl_line_index_start"]
         end_cl_line = pprint_vars["operations"][program_num_iter]["cl_line_index_end"]
-
+        # print(start_cl_line)
+        # print(end_cl_line)
         for line_index in range(start_cl_line, end_cl_line):
 
             if "PPRINT /" in cl_lines[line_index]:
