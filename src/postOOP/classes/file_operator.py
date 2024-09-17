@@ -1,6 +1,6 @@
 import os
 from src.postOOP.config import TEMP_FILE_NAME_PREFIX, cl_data_file_extension
-from src.postOOP.classes.lists_and_strings_operator import ListsAndStringsOperator
+from src.postOOP.classes.formatter import Formatter
 
 
 class FileOperator:
@@ -9,11 +9,8 @@ class FileOperator:
     def get_all_ncl_files_in_dir() -> list[str] | None:
 
         os.chdir("../../")
-        print(os.getcwd())
-        print("after")
-        print(os.getcwd())
         lst = os.listdir()
-        print(lst)
+        print(f"Files found in cwd: {lst}")
 
         unic_files = set(file for file in lst if cl_data_file_extension in file)
         if unic_files:
@@ -26,7 +23,7 @@ class FileOperator:
                     else:
                         continue
                 final_filenames.add(max(temp_list))
-            print(f"Found files to postprocess: {sorted(final_filenames)}")
+            # print(f"Found files to postprocess: {sorted(final_filenames)}")
             return sorted(final_filenames)
         else:
             print(f"No files with '{cl_data_file_extension}' extension were found")
@@ -55,24 +52,34 @@ class FileOperator:
         if "temp" in filepath:
             return None
         else:
-            lines = cls.get_cl_lines_in_range(filepath=filepath)
-            lines = ListsAndStringsOperator.trim_line_connectors_in_cl_list(cl_list=lines)
+            FileOperator.remove_file(filepath=temp_filepath)
+            lines = cls.get_all_cl_lines(filepath=filepath)
+            lines = Formatter.trim_line_connectors_in_cl_list(cl_list=lines)
             print(f'.ncl file "{filepath}" has been read')
             cls.append_parsed_lines_to_file(filepath=temp_filepath, list_with_lines=lines)
             return temp_filepath
 
     @staticmethod
     def check_if_file_is_present(*, filepath: str) -> bool:
-        if os.path.exists(filepath):
+        if filepath and os.path.exists(filepath):
             return True
         else:
             return False
 
     @classmethod
-    def get_cl_lines_in_range(cls, *, filepath: str, start_index: int = 0, end_index: int = -1) -> list[str] | None:
+    def get_cl_lines_in_range(cls, *, filepath: str, start_index: int = 0, end_index: int) -> list[str] | None:
         if cls.check_if_file_is_present(filepath=filepath):
             with open(file=filepath, mode="r") as file:
                 list_of_cl_lines = file.readlines()[start_index:end_index:1]
+            return list_of_cl_lines
+        else:
+            return None
+
+    @classmethod
+    def get_all_cl_lines(cls, *, filepath: str) -> list[str] | None:
+        if cls.check_if_file_is_present(filepath=filepath):
+            with open(file=filepath, mode="r") as file:
+                list_of_cl_lines = file.readlines()[0::1]
             return list_of_cl_lines
         else:
             return None

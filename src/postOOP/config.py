@@ -5,6 +5,9 @@ POST_NAME = "PY POST V1.01"
 PROGRAM_MAIN_LETTER = "O"
 PROGRAM_MAIN_DIGIT = "5"
 
+# debug
+DELETE_TEMP_FILE = 0
+
 
 # key_filename_part_1 = "ust"  # will be searched for matches in dir
 cl_data_file_extension = ".ncl"  # will be searched for matches in dir
@@ -17,7 +20,9 @@ NC_START_KEYWORD = "PPRINT / NC SEQUENCE NAME :"
 NC_END_KEYWORD = "$$-> END /"
 
 # options
+LINE_ENDING = ";"
 SAFETY_LINE_DEFAULT = "G17 G40 G49 G90 G94"
+NC_SEQUENCE_TAIL_LINES = ["M01", "M99"]
 G41_G42_SIDE_IS_REVERSED_SWITCH = 1
 
 

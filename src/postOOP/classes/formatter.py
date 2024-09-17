@@ -1,7 +1,14 @@
-class ListsAndStringsOperator:
+from src.postOOP.config import LINE_ENDING
+
+
+class Formatter:
     @staticmethod
     def get_cl_line_part_after_colon(*, cl_line: str) -> str:
         return cl_line.split(sep=" : ")[1][:-1:]
+
+    @staticmethod
+    def get_cl_line_part_after_comma(*, cl_line: str) -> str:
+        return cl_line.split(sep=", ")[1][:-1:]
 
     @staticmethod
     def get_cl_part_after_slash(*, cl_line: str) -> str:
@@ -24,7 +31,6 @@ class ListsAndStringsOperator:
             if cl_list[line_index][-2] == "$":
                 cl_list[line_index] = cl_list[line_index].replace("$\n", "").strip()
         return cl_list
-
 
     @staticmethod
     def convert_cl_list_members_to_int_or_float(*, cl_list_or_str: list[str] | str, ndigits: int = 0):
@@ -51,6 +57,7 @@ class ListsAndStringsOperator:
             if ndigits == 0:
                 try:
                     cl_list_or_str = int(round(float(cl_list_or_str), ndigits=0))
+                    return cl_list_or_str
                 except TypeError:
                     print("Type Error")
             elif ndigits >= 1:
@@ -67,22 +74,37 @@ class ListsAndStringsOperator:
 
     @staticmethod
     def trim_line_wraps_in_cl_list_or_str(*, cl_list_or_str: list[str] | str) -> list[str] | str:
+        result = list()
         if type(cl_list_or_str) is list:
             for cl_line in cl_list_or_str:
                 if "\n" in cl_line:
-                    cl_line.replace("\n", "")
+                    result.append(cl_line.replace("\n", ""))
+
         elif type(cl_list_or_str) is str:
-            cl_list_or_str.replace("\n", "")
-        return cl_list_or_str
+            result = cl_list_or_str.replace("\n", "")
+        return result
 
     @staticmethod
     def append_line_wraps_in_cl_list_or_str(*, cl_list_or_str: list[str] | str) -> list[str] | str:
+        result = list()
         if type(cl_list_or_str) is list:
             for cl_line in cl_list_or_str:
-                cl_line += "\n"
+                cl_line = cl_line + "\n"
+                result.append(cl_line)
         elif type(cl_list_or_str) is str:
-            cl_list_or_str += "\n"
-        return cl_list_or_str
+            result = cl_list_or_str + "\n"
+        return result
+
+    @staticmethod
+    def append_line_endings_in_cl_list_or_str(*, cl_list_or_str: list[str] | str) -> list[str] | str:
+        result = list()
+        if type(cl_list_or_str) is list:
+            for cl_line in cl_list_or_str:
+                cl_line = cl_line + LINE_ENDING
+                result.append(cl_line)
+        elif type(cl_list_or_str) is str:
+            result = cl_list_or_str + LINE_ENDING
+        return result
 
     @classmethod
     def format_cl_line(cls, *, cl_line: str, sep: str = ":", ndigits: int = 4) -> list[str, int, float]:
