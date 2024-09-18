@@ -4,37 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="OOP refactoring 2nd part&#10;fully rewritten&#10;restoring workability">
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/ncl_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/pprint_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_09_2024_15_18_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_09_2024_15_18__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_09_2024_15_19_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_09_2024_15_19_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_09_2024_15_19_[Changes]2/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_09_2024_15_19__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_09_2024_15_19__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_09_2024_15_19__Changes_2.xml" beforeDir="false" />
+    <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="OOP refactoring 3nd part&#10;creates instances, collecting data from cl&#10;but still not creating NC">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/O5100" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/O5101" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/O5102" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kontur_1.ncl.1" beforeDir="false" afterPath="$PROJECT_DIR$/kontur_1.ncl.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.spec" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/file_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/file_operator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/lists_and_strings_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/formatter.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_program.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_program.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/ncl_file_analyzer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/ncl_filler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/old_ncl_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/pprint_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/old_pprint_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/program_creator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/ust_creator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/ncl_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/ncl_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/main_oop.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temporary_file_kontur_1.ncl.1" beforeDir="false" afterPath="$PROJECT_DIR$/temporary_file_kontur_1.ncl.1" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,16 +40,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.file_analyzer.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main_oop.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;refactoring&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/WORK_DIRECTORY/10 Programming/Projects/py post v2 OOP/src/postOOP/parsers&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.file_analyzer.executor": "Run",
+    "Python.main (1).executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.main_oop.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "refactoring",
+    "last_opened_file_path": "C:/WORK_DIRECTORY/10 Programming/Projects/py post v2 OOP/src/postOOP/parsers",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP\src\postOOP\parsers" />
@@ -86,7 +63,29 @@
       <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main_oop">
+  <component name="RunManager" selected="Python.main (1)">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="py post v2 OOP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/postOOP" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/postOOP/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="py post v2 OOP" />
       <option name="ENV_FILES" value="" />
@@ -133,6 +132,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main_oop" />
       </list>
     </recent_temporary>
@@ -201,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726231140982</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="OOP refactoring 3nd part&#10;creates instances, collecting data from cl&#10;but still not creating NC">
+      <option name="closed" value="true" />
+      <created>1726573156747</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1726573156747</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,17 +234,6 @@
           <value>
             <State>
               <option name="BEK_SORT_TYPE" value="1" />
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="recreating-functionality" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
             </State>
           </value>
         </entry>
@@ -250,7 +247,8 @@
     <MESSAGE value="test commit3" />
     <MESSAGE value="OOP refactoring 1st part" />
     <MESSAGE value="OOP refactoring 2nd part&#10;fully rewritten&#10;restoring workability" />
-    <option name="LAST_COMMIT_MESSAGE" value="OOP refactoring 2nd part&#10;fully rewritten&#10;restoring workability" />
+    <MESSAGE value="OOP refactoring 3nd part&#10;creates instances, collecting data from cl&#10;but still not creating NC" />
+    <option name="LAST_COMMIT_MESSAGE" value="OOP refactoring 3nd part&#10;creates instances, collecting data from cl&#10;but still not creating NC" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

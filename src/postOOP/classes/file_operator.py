@@ -30,8 +30,8 @@ class FileOperator:
             return None
 
     @staticmethod
-    def append_parsed_lines_to_file(filepath: str, list_with_lines: list[str]):
-        with open(file=filepath, mode="a") as file:
+    def append_lines_to_file(filepath: str, list_with_lines: list[str]):
+        with open(file=filepath, mode="w") as file:
             for line in list_with_lines:
                 file.write(line)
 
@@ -56,7 +56,7 @@ class FileOperator:
             lines = cls.get_all_cl_lines(filepath=filepath)
             lines = Formatter.trim_line_connectors_in_cl_list(cl_list=lines)
             print(f'.ncl file "{filepath}" has been read')
-            cls.append_parsed_lines_to_file(filepath=temp_filepath, list_with_lines=lines)
+            cls.append_lines_to_file(filepath=temp_filepath, list_with_lines=lines)
             return temp_filepath
 
     @staticmethod
@@ -89,4 +89,4 @@ class FileOperator:
         if cls.check_if_file_is_present(filepath=filepath):
             cls.remove_file(filepath=filepath)
         with open(file=filepath, mode="w"):
-            pass
+            print(f"created file '{filepath}'")

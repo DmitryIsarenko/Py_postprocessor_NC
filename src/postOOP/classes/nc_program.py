@@ -23,7 +23,7 @@ class NcProgram:
     main_letter = PROGRAM_MAIN_LETTER
     file_extension = G_CODE_FILE_EXTENSION
     postprocessor_name = POST_NAME
-    line_with_programmer_name = PROGRAMMER_NAME
+    programmer_name = PROGRAMMER_NAME
 
     cl_list: list[str] = []
     nc_list: list[str] = []
@@ -54,7 +54,12 @@ class NcOperation(NcProgram):
             self.set_nc_sequences_objects_in_list()
             self.set_sum_machining_time()
 
-            self.show()
+            # self.show()
+            self.nc_list = self.generate_nc_list()
+            print(self.nc_list)
+            FileOperator.create_file(filepath=self.nc_filename_with_extension)
+            FileOperator.append_lines_to_file(filepath=self.nc_filename_with_extension, list_with_lines=self.nc_list)
+
         else:
             print(f"Empty self.cl_list for {filepath}")
 
@@ -85,7 +90,7 @@ class NcOperation(NcProgram):
         sum_time = 0
         for nc_obj in self.list_of_nc_sequences_objects:
             sum_time += nc_obj.machining_time
-        self.sum_machining_time = sum_time
+        self.sum_machining_time = round(sum_time, ndigits=2)
 
     def set_cl_lines_count(self):
         self.cl_lines_count = PprintParser.count_cl_lines_in_cl_list(cl_list=self.cl_list)
@@ -112,7 +117,52 @@ class NcOperation(NcProgram):
         else:
             print(f"Too many nc operations")
             raise ValueError
-        self.nc_filename = self.main_letter + self.main_digit + num_in_str + self.file_extension
+
+        self.nc_filename = self.main_letter + self.main_digit + num_in_str
+        self.nc_filename_with_extension = self.nc_filename + self.file_extension
+
+    def generate_nc_list(self) -> list:
+        nc_lines = list()
+        nc_lines.extend(self.generate_nc_head_lines())
+        nc_lines.extend(self.generate_nc_body_lines())
+        nc_lines.extend(self.generate_nc_tail_lines())
+        nc_lines = Formatter.append_line_endings_in_cl_list_or_str(cl_list_or_str=nc_lines)
+        nc_lines = Formatter.append_line_wraps_in_cl_list_or_str(cl_list_or_str=nc_lines)
+        # pprint(nc_lines)
+        return nc_lines
+
+    def generate_nc_head_lines(self) -> list:
+        nc_lines = [
+            f"(PART: {self.detail_name})",
+            f"(PROGRAMMER: {self.programmer_name})",
+            f"(DATE: {self.date_of_creation})",
+            f"(UST:  {self.operation_name})",
+            f"(PROG NUMS: {self.nc_sequences_count})",
+            f"",
+        ]
+        return nc_lines
+
+    def generate_nc_body_lines(self) -> list:
+        nc_lines = []
+        for obj in self.list_of_nc_sequences_objects:
+            nc_lines.extend([
+                f"M98P{obj.nc_file_number}"
+                f"(OPER {obj.nc_sequence_number}/{obj.nc_sequences_count}: {obj.nc_sequence_name})",
+                f"(POT: {obj.tool_pot}, TOOL: {obj.tool_name})",
+                f"",
+
+            ])
+        return nc_lines
+
+    def generate_nc_tail_lines(self) -> list:
+        nc_lines = [
+            "G53",
+            "G00 Z0.0",
+            "G00 X0.0 Y0.0",
+            f"(MACHINING TIME: {self.sum_machining_time})",
+            "M30",
+        ]
+        return nc_lines
 
 
 class NcSequence(NcProgram):
@@ -140,10 +190,11 @@ class NcSequence(NcProgram):
         self.set_cut_feed_master()
         self.set_machining_time()
 
-        self.show()
-        self.generate_nc_lines()
-        FileOperator.create_file(filepath=self.nc_filename)
-
+        # self.show()
+        self.nc_list = self.generate_nc_list()
+        # print(self.nc_list)
+        FileOperator.create_file(filepath=self.nc_filename_with_extension)
+        FileOperator.append_lines_to_file(filepath=self.nc_filename_with_extension, list_with_lines=self.nc_list)
 
     def set_cl_start_index(self):
         self.cl_start_index = PprintParser.get_index_of_occurence_in_cl_list_in_range(cl_list=self.cl_list,
@@ -196,20 +247,20 @@ class NcSequence(NcProgram):
         else:
             print(f"Too many nc sequences")
             raise ValueError
-        self.nc_filename = (self.main_letter +
-                            self.main_digit +
-                            str(self.nc_operation_number) +
-                            num_in_str +
-                            self.file_extension)
+        self.nc_file_number = (self.main_digit +
+                               str(self.nc_operation_number) +
+                               num_in_str)
+        self.nc_filename = self.main_letter + self.nc_file_number
+        self.nc_filename_with_extension = self.nc_filename + self.file_extension
 
-    def generate_nc_lines(self) -> list:
+    def generate_nc_list(self) -> list:
         nc_lines = list()
         nc_lines.extend(self.generate_nc_head_lines())
         nc_lines.extend(self.generate_nc_body_lines())
         nc_lines.extend(self.generate_nc_tail_lines())
         nc_lines = Formatter.append_line_endings_in_cl_list_or_str(cl_list_or_str=nc_lines)
         nc_lines = Formatter.append_line_wraps_in_cl_list_or_str(cl_list_or_str=nc_lines)
-        pprint(nc_lines)
+        # pprint(nc_lines)
         return nc_lines
 
     def generate_nc_head_lines(self) -> list:
