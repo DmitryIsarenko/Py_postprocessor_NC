@@ -108,3 +108,12 @@ class PprintParser:
                 right_part = Formatter.get_cl_line_part_after_colon(cl_line=line)
                 right_part = Formatter.convert_cl_list_members_to_int_or_float(cl_list_or_str=right_part)
                 return right_part
+
+    @staticmethod
+    def get_tool_type(cl_list: list[str], start_index: int, end_index: int) -> str:
+        for line in cl_list[start_index:end_index:1]:
+            if "PPRINT / TOOL_TYPE :" in line:
+                right_part = Formatter.get_cl_line_part_after_colon(cl_line=line)
+                # right_part = Formatter.convert_cl_list_members_to_int_or_float(cl_list_or_str=right_part)
+                return right_part
+

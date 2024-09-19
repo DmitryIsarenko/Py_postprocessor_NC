@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="OOP refactoring 3nd part&#10;creates instances, collecting data from cl&#10;but still not creating NC">
+    <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="OOP refactoring 4th part&#10;ncl parser refactored">
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/file_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/file_operator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/O7100" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kontur_1.ncl.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/o7101" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_program.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_program.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/ncl_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/ncl_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/pprint_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/pprint_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temporary_file_kontur_1.ncl.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temporary_file_vse ust__1_.ncl.1" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +54,7 @@
     "Python.main.executor": "Run",
     "Python.main_oop.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ShowUsagesActions.previewPropertyKey": "true",
     "git-widget-placeholder": "refactoring",
     "last_opened_file_path": "C:/WORK_DIRECTORY/10 Programming/Projects/py post v2 OOP/src/postOOP/parsers",
     "settings.editor.selected.configurable": "preferences.keymap"
@@ -209,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726573156747</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="OOP refactoring 4th part&#10;ncl parser refactored">
+      <option name="closed" value="true" />
+      <created>1726666711943</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1726666711943</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,7 +264,8 @@
     <MESSAGE value="OOP refactoring 1st part" />
     <MESSAGE value="OOP refactoring 2nd part&#10;fully rewritten&#10;restoring workability" />
     <MESSAGE value="OOP refactoring 3nd part&#10;creates instances, collecting data from cl&#10;but still not creating NC" />
-    <option name="LAST_COMMIT_MESSAGE" value="OOP refactoring 3nd part&#10;creates instances, collecting data from cl&#10;but still not creating NC" />
+    <MESSAGE value="OOP refactoring 4th part&#10;ncl parser refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="OOP refactoring 4th part&#10;ncl parser refactored" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

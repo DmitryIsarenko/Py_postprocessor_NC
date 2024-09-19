@@ -15,13 +15,38 @@ from src.postOOP.config import (G_CODE_FEED_PARAMS_ENABLED,
 
 
 class NclParser:
+    current_FEED = 0
+    current_SPINDLE = 0
+    current_X = 0
+    current_Y = 0
+    current_Z = 0
+    current_A = 0
+    current_B = 0
+    current_C = 0
+
+    is_G43_needed = False
+    is_G41_cutcom_2D_needed = False
+    is_G42_cutcom_2D_needed = False
+
+    is_G43_ON = False
+    is_G41_cutcom_2D_ON = False
+    is_G42_cutcom_2D_ON = False
+
+    is_G00_needed = False
+    is_G01_needed = False
+    is_G02_needed = False
+    is_G03_needed = False
+
+    is_G00_ON = False
+    is_G01_ON = False
+    is_G02_ON = False
+    is_G03_ON = False
+
     @classmethod
     def parse_cl_list(cls, nc_seq_obj) -> list[str]:
-
         cl_list = nc_seq_obj.cl_list[nc_seq_obj.cl_start_index: nc_seq_obj.cl_end_index]
         result_list = []
         for line_index in range(len(cl_list)):
-
             if "PPRINT /" in cl_list[line_index]:
                 result = cls.parse_PPRINT(cl_list=cl_list, line_index=line_index)
                 result_list.extend(result)
@@ -44,22 +69,30 @@ class NclParser:
                 result = cls.parse_COOLNT(cl_list=cl_list, line_index=line_index)
                 result_list.extend(result)
             elif "FEDRAT / " in cl_list[line_index]:
-                result = cls.parse_FEDRAT(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
+                cls.set_feedrate(cl_line=cl_list[line_index])
             elif "CUTCOM / " in cl_list[line_index]:
-                result = cls.parse_CUTCOM(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
+                cls.set_cutcom(cl_line=cl_list[line_index])
+            #     result = cls.parse_CUTCOM(cl_list=cl_list, line_index=line_index, nc_seq_obj=nc_seq_obj)
+            #     result_list.extend(result)
             elif "GOTO / " in cl_list[line_index]:
-                result = cls.parse_GOTO(cl_list=cl_list, line_index=line_index)
+                result = cls.parse_GOTO(cl_list=cl_list, line_index=line_index, nc_seq_obj=nc_seq_obj)
                 result_list.extend(result)
             elif "RAPID" in cl_list[line_index]:
-                result = cls.parse_RAPID(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
+                cls.set_rapid()
             elif "CIRCLE / " in cl_list[line_index]:
                 result = cls.parse_CIRCLE(cl_list=cl_list, line_index=line_index)
                 result_list.extend(result)
             elif "CYCLE /" in cl_list[line_index]:
-                result = cls.parse_CYCLE(cl_list=cl_list, line_index=line_index)
+                result = cls.parse_CYCLE(cl_list=cl_list, line_index=line_index, nc_seq_obj=nc_seq_obj)
+                result_list.extend(result)
+            elif "OPSTOP" in cl_list[line_index][0:6]:
+                result = cls.parse_OPSTOP(cl_list=cl_list, line_index=line_index)
+                result_list.extend(result)
+            elif "STOP" in cl_list[line_index][0:4]:
+                result = cls.parse_STOP(cl_list=cl_list, line_index=line_index)
+                result_list.extend(result)
+            elif "GOHOME" in cl_list[line_index][0:6]:
+                result = cls.parse_GOHOME(cl_list=cl_list, line_index=line_index)
                 result_list.extend(result)
             elif "END /" in cl_list[line_index]:
                 result = cls.parse_END(cl_list=cl_list, line_index=line_index)
@@ -73,13 +106,13 @@ class NclParser:
             else:
                 cls.parse_UNPARSED(cl_list=cl_list, line_index=line_index)
 
-        cls.insert_G43H_on_first_Z_move(cl_list=cl_list, nc_seq_obj=nc_seq_obj)
+        # cls.insert_G43H_on_first_Z_move(cl_list=cl_list, nc_seq_obj=nc_seq_obj)
 
         return result_list
 
     @classmethod
     def parse_PPRINT(cls, cl_list: list[str], line_index: int) -> list[str]:
-        pass
+        return list()
 
     @classmethod
     def parse_PARTNO(cls, cl_list: list[str], line_index: int) -> list[str]:
@@ -123,6 +156,8 @@ class NclParser:
             result_list.append(
                 f"{G_CODE_TOOL_FEED_PARAMETER}={nc_seq_obj.cut_feed_master}"
                 f"(PODACHA)")
+        cls.is_G43_needed = True
+        cls.is_G43_ON = False
         return result_list
 
     @classmethod
@@ -130,7 +165,7 @@ class NclParser:
         result_list = list()
         right_part = cl_list[line_index].split(sep=", ")[1].strip()
         if "OFF" in right_part:
-            result_list.append("G28 Z0 G49")
+            result_list.append("G00 G28 Z0.0 G49")
         elif int(float(right_part)).is_integer():
             result_list.append(f"G{right_part}")
         return result_list
@@ -150,6 +185,7 @@ class NclParser:
         right_part = cl_list[line_index].split(sep=" / ")[1].strip()
         if "OFF" in right_part:
             result_list.append("M05")
+            cls.current_SPINDLE = 0
         elif "RPM, " in right_part:
             right_part_list = right_part.split(sep=",")
             right_part_list = [item.strip() for item in right_part_list]
@@ -163,6 +199,7 @@ class NclParser:
                 else:
                     if G_CODE_SPINDLE_PARAMS_ENABLED == 0:
                         item = round(float(item))
+                        cls.current_SPINDLE = item
                         res_line.append(f"S{item} ")
                     elif G_CODE_SPINDLE_PARAMS_ENABLED == 1:
                         res_line.append(f"S{G_CODE_TOOL_RPM_PARAMETER} ")
@@ -170,18 +207,54 @@ class NclParser:
         return result_list
 
     @classmethod
-    def parse_RAPID(cls, cl_list: list[str], line_index: int) -> list[str]:
+    def parse_RAPID(cls) -> list[str]:
         result_list = list()
         result_list.append(f"G00 ")
         return result_list
 
     @classmethod
-    def parse_GOTO(cls, cl_list: list[str], line_index: int) -> list[str]:
+    def create_G43_addition(cls, nc_seq_obj) -> str:
+        res_line = str()
+        res_line += f"G43 "
+        if G_CODE_TOOL_POT_PARAMS_ENABLED == 0:
+            res_line += f"H{nc_seq_obj.tool_pot} "
+        if G_CODE_TOOL_POT_PARAMS_ENABLED == 1:
+            res_line += f"H{G_CODE_TOOL_POT_PARAMETER} "
+        return res_line
+
+    @classmethod
+    def parse_GOTO(cls, cl_list: list[str], line_index: int, nc_seq_obj) -> list[str]:
         result_list = list()
         res_list = list()
-        if not ("CIRCLE" in cl_list[line_index - 1] and "CIRCLE" in cl_list[line_index + 1]):
-            if "CIRCLE" in cl_list[line_index - 1]:
+
+        if "RAPID" in cl_list[line_index - 1] and cls.is_G00_needed:
+            res_list.extend(cls.parse_RAPID())
+            cls.is_G00_ON = True
+            cls.is_G01_ON = False
+            cls.is_G02_ON = False
+            cls.is_G03_ON = False
+        elif "FEDRAT" in cl_list[line_index - 1] and cls.is_G01_needed:
+            cls.is_G00_ON = False
+            cls.is_G01_ON = True
+            cls.is_G02_ON = False
+            cls.is_G03_ON = False
+            res_list.extend(cls.parse_FEDRAT(cl_list=cl_list, line_index=line_index - 1))
+
+        if "CUTCOM / LEFT" in cl_list[line_index - 1] \
+                or "CUTCOM / RIGHT" in cl_list[line_index - 1]:
+            res_list.extend(cls.parse_CUTCOM(cl_list=cl_list, line_index=line_index - 1, nc_seq_obj=nc_seq_obj))
+
+        if cls.is_G43_ON is False and cls.is_G43_needed is True:
+            res_list.append(cls.create_G43_addition(nc_seq_obj=nc_seq_obj))
+            cls.is_G43_ON = True
+
+        if ("CIRCLE" not in cl_list[line_index - 1] and "CIRCLE" in cl_list[line_index + 1]) \
+                or ("CIRCLE" in cl_list[line_index - 1] and "CIRCLE" not in cl_list[line_index + 1]) \
+                or ("CIRCLE" not in cl_list[line_index - 1] and "CIRCLE" not in cl_list[line_index + 1]):
+            if cls.is_G01_needed is True and cls.is_G01_ON is False:
                 res_list.append(f"G01 ")
+            elif cls.is_G00_needed is True and cls.is_G00_ON is False:
+                res_list.append(f"G00 ")
 
             right_part_list = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=",")
             right_part_list = [round(float(item), ndigits=5) for item in right_part_list]
@@ -194,8 +267,23 @@ class NclParser:
                 pass
             else:
                 print("error with num of scalars")
-        result_list.append("".join(res_list))
+        if res_list:
+            result_list.append("".join(res_list))
+        # result_list.append("".join(res_list))
         return result_list
+
+    @classmethod
+    def set_feedrate(cls, cl_line: str):
+        cls.is_G00_needed = False
+        cls.is_G01_needed = True
+        right_part_list = cl_line.split(sep=" / ")[1].strip().split(sep=",")
+        feedrate = round(float(right_part_list[0]), ndigits=2)
+        cls.current_FEED = feedrate
+
+    @classmethod
+    def set_rapid(cls):
+        cls.is_G00_needed = True
+        cls.is_G01_needed = False
 
     @classmethod
     def parse_FEDRAT(cls, cl_list: list[str], line_index: int) -> list[str]:
@@ -210,8 +298,21 @@ class NclParser:
         result_list = res_list
         return result_list
 
+
     @classmethod
-    def parse_CUTCOM(cls, cl_list: list[str], line_index: int) -> list[str]:
+    def set_cutcom(cls, cl_line: str):
+        cutcom_str = cl_line.split(sep=" / ")[1].strip()
+        if cutcom_str == "OFF":
+            cls.is_G41_cutcom_2D_needed = False
+            cls.is_G42_cutcom_2D_needed = False
+        elif cutcom_str == "LEFT":
+            cls.is_G41_cutcom_2D_needed = True
+        elif cutcom_str == "RIGHT":
+            cls.is_G42_cutcom_2D_needed = True
+
+
+    @classmethod
+    def parse_CUTCOM(cls, cl_list: list[str], line_index: int, nc_seq_obj) -> list[str]:
         result_list = list()
         cutcom_str = cl_list[line_index].split(sep=" / ")[1].strip()
         if G41_G42_SIDE_IS_REVERSED_SWITCH == 0:
@@ -223,19 +324,30 @@ class NclParser:
 
         if G_CODE_TOOL_POT_PARAMS_ENABLED == 0:
             D_corrector_addition = f"D{nc_seq_obj.tool_pot}"
-        elif G_CODE_TOOL_POT_PARAMS_ENABLED == 1:
+        if G_CODE_TOOL_POT_PARAMS_ENABLED == 1:
             D_corrector_addition = f"D{G_CODE_TOOL_POT_PARAMETER}"
 
         if cutcom_str == "OFF":
             result_list.append(f"G40 ")
+            cls.is_G41_cutcom_2D_needed = False
+            cls.is_G41_cutcom_2D_ON = False
+            cls.is_G42_cutcom_2D_needed = False
+            cls.is_G42_cutcom_2D_ON = False
+
         elif cutcom_str == "LEFT":
+            cls.is_G41_cutcom_2D_needed = True
             result_list.append(f"{left_compensation} {D_corrector_addition} ")
+            cls.is_G41_cutcom_2D_ON = True
         elif cutcom_str == "RIGHT":
+            cls.is_G42_cutcom_2D_needed = True
             result_list.append(f"{right_compensation} {D_corrector_addition} ")
+            cls.is_G42_cutcom_2D_ON = True
         return result_list
 
     @classmethod
     def parse_CIRCLE(cls, cl_list: list[str], line_index: int) -> list[str]:
+        cls.is_G00_ON = False
+        cls.is_G01_ON = False
         result_list = list()
         res_list = list()
         prev_coords_list_str = cl_list[line_index - 1].split(sep=" / ")[1].strip().split(sep=",")
@@ -282,7 +394,7 @@ class NclParser:
         return result_list
 
     @classmethod
-    def parse_CYCLE(cls, cl_list: list[str], line_index: int) -> list[str]:
+    def parse_CYCLE(cls, cl_list: list[str], line_index: int, nc_seq_obj) -> list[str]:
         result_list = list()
         right_part_list = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=", ")
 
@@ -341,11 +453,34 @@ class NclParser:
         return result_list
 
     @classmethod
+    def parse_GOHOME(cls, cl_list: list[str], line_index: int) -> list[str]:
+        result_list = list()
+        result_list.append("G00 G28 Z0.0")
+        result_list.append("G00 G28 X0.0")
+        result_list.append("G00 G28 Y0.0")
+        return result_list
+
+    @classmethod
+    def parse_OPSTOP(cls, cl_list: list[str], line_index: int) -> list[str]:
+        result_list = list()
+        result_list.append("M01")
+        return result_list
+
+    @classmethod
+    def parse_STOP(cls, cl_list: list[str], line_index: int) -> list[str]:
+        result_list = list()
+        result_list.append("M00")
+        return result_list
+
+
+    @classmethod
     def parse_END(cls, cl_list: list[str], line_index: int) -> list[str]:
         result_list = list()
         result_list.append("M01")
         result_list.append("M99")
         result_list.append(f"")
+        cls.is_G43_ON = False
+        cls.is_G43_needed = False
         return result_list
 
     @classmethod
@@ -391,3 +526,9 @@ class NclParser:
             else:
                 continue
         return result_list
+
+    # @classmethod
+    # def join_G43_lines_with_coords(cls, cl_list: list[str]):
+    #     result_list = list()
+    #     for i in range(len(cl_list)):
+    #         if
