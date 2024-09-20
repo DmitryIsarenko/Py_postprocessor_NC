@@ -43,6 +43,9 @@ class FileOperator:
         except FileNotFoundError:
             print("no temp file was found")
             return False
+        except TypeError:
+            return False
+
 
     @classmethod
     def create_temp_formatted_ncl_file(cls, *, filepath: str, temp_filepath: str = None) -> str | None:
