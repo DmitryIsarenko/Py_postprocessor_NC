@@ -6,11 +6,15 @@ from src.postOOP.classes.nc_operation_classes.nc_operation_mill_3axis import (Nc
 
 def main():
     filepaths = FileOperator.get_all_ncl_files_in_dir()
+    operations = list()
     if filepaths:
         for filepath in filepaths:
-            # NcOperation(filepath=filepath)
-            # NcOperationMill3Axis(filepath=filepath)
-            NcOperationMill3AxisTF(filepath=filepath)
+            # operations.append(NcOperation(filepath=filepath))
+            # operations.append(NcOperationMill3Axis(filepath=filepath))
+            operations.append(NcOperationMill3AxisTF(filepath=filepath))
+
+    for operation in operations:
+        operation.start_postprocessing()
 
 
 if __name__ == "__main__":

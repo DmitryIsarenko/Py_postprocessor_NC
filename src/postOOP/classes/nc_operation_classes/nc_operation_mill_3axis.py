@@ -5,7 +5,6 @@ from src.postOOP.classes.nc_sequence_classes.nc_sequence_mill_3axis import NcSeq
 class NcOperationMill3Axis(NcOperation):
     def __init__(self, filepath: str):
         super().__init__(filepath=filepath)
-        self.set_nc_sequences_objects_in_list()
 
     def set_nc_sequences_objects_in_list(self):
         lst_of_objects = []
@@ -29,7 +28,7 @@ class NcOperationMill3Axis(NcOperation):
 class NcOperationMill3AxisTF(NcOperation):
     def __init__(self, filepath: str):
         super().__init__(filepath=filepath)
-        self.set_nc_sequences_objects_in_list()
+        # self.set_nc_sequences_objects_in_list()
 
     def set_nc_sequences_objects_in_list(self):
         lst_of_objects = []
@@ -48,5 +47,3 @@ class NcOperationMill3AxisTF(NcOperation):
                 )
             )
         self.list_of_nc_sequences_objects: list[NcSequenceMill3Axis] = lst_of_objects
-
-

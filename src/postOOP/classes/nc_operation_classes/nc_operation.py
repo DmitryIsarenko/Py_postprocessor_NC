@@ -28,7 +28,11 @@ class NcOperation(NcProgram):
     sum_machining_time = None
 
     def __init__(self, filepath: str):
-        temp_filepath = FileOperator.create_temp_formatted_ncl_file(filepath=filepath)
+        self.filepath = filepath
+        pass
+
+    def start_postprocessing(self):
+        temp_filepath = FileOperator.create_temp_formatted_ncl_file(filepath=self.filepath)
         self.cl_list = FileOperator.get_all_cl_lines(filepath=temp_filepath)
 
         if self.cl_list:
@@ -49,17 +53,13 @@ class NcOperation(NcProgram):
             # print(self.nc_list)
             FileOperator.create_file(filepath=self.nc_filename_with_extension)
             FileOperator.append_lines_to_file(filepath=self.nc_filename_with_extension, list_with_lines=self.nc_list)
-
         else:
-            print(f"Empty self.cl_list for {filepath}")
+            print(f"Empty self.cl_list for {self.filepath}")
 
         if DELETE_TEMP_FILE == 1:
             FileOperator.remove_file(filepath=temp_filepath)
         else:
             pass
-
-    # def start_postprocessing(self):
-
 
     def set_nc_sequences_count(self):
         self.nc_sequences_count: int = PprintParser.count_nc_sequences_in_cl_list(cl_list=self.cl_list)

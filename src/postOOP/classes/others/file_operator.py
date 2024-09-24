@@ -47,7 +47,6 @@ class FileOperator:
         except TypeError:
             return False
 
-
     @classmethod
     def create_temp_formatted_ncl_file(cls, *, filepath: str, temp_filepath: str = None) -> str | None:
         if temp_filepath is None:
