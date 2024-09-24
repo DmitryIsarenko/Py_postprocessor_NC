@@ -1,6 +1,6 @@
 import os
 from src.postOOP.config import TEMP_FILE_NAME_PREFIX, cl_data_file_extension
-from src.postOOP.classes.formatter import Formatter
+from src.postOOP.classes.others.formatter import Formatter
 
 
 class FileOperator:
@@ -8,7 +8,7 @@ class FileOperator:
     @staticmethod
     def get_all_ncl_files_in_dir() -> list[str] | None:
 
-        os.chdir("../../")
+        os.chdir("../../../")
         lst = os.listdir()
         print(f"Files found in cwd: {lst}")
 

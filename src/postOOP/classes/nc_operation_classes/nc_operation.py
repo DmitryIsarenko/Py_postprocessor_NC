@@ -1,20 +1,33 @@
-from pprint import pprint
 from src.postOOP.config import (
     DELETE_TEMP_FILE,
 )
 
+from src.postOOP.classes.parsers.pprint_parser import PprintParser
+from src.postOOP.classes.nc_sequence_classes.nc_program import NcProgram
+from src.postOOP.classes.nc_sequence_classes.nc_sequence import NcSequence
+from src.postOOP.classes.others.file_operator import FileOperator
+from src.postOOP.classes.others.formatter import Formatter
 
-from src.postOOP.classes.pprint_parser import PprintParser
-from src.postOOP.classes.nc_program import NcProgram
-from src.postOOP.classes.nc_sequence import NcSequence
-from src.postOOP.classes.file_operator import FileOperator
-from src.postOOP.classes.formatter import Formatter
+
 # from src.postOOP.classes.ncl_parser import NclParser
 
 
 class NcOperation(NcProgram):
-    def __init__(self, filepath: str):
+    detail_name = None
+    date_of_creation = None
 
+    operation_name = None
+    operation_number = None
+    nc_filename = None
+    nc_filename_with_extension = None
+
+    cl_lines_count = None
+    nc_sequences_count = None
+    list_of_nc_sequences_names = None
+    list_of_nc_sequences_objects = None
+    sum_machining_time = None
+
+    def __init__(self, filepath: str):
         temp_filepath = FileOperator.create_temp_formatted_ncl_file(filepath=filepath)
         self.cl_list = FileOperator.get_all_cl_lines(filepath=temp_filepath)
 
@@ -45,8 +58,7 @@ class NcOperation(NcProgram):
         else:
             pass
 
-
-
+    def start_postprocessing(self):
 
 
     def set_nc_sequences_count(self):

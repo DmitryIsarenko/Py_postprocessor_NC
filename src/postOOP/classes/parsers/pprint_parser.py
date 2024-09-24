@@ -1,4 +1,4 @@
-from src.postOOP.classes.formatter import Formatter
+from src.postOOP.classes.others.formatter import Formatter
 
 
 class PprintParser:

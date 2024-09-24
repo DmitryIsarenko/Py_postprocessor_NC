@@ -4,10 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="OOP refactoring 5th part&#10;works in basic version">
+    <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="OOP work version">
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/others/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/file_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/file_operator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/file_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/file_operator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/formatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/formatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_program.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_program.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/ncl_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/old_ncl_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/old_pprint_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/pprint_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/pprint_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,28 +52,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.file_analyzer.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main_oop.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;refactoring&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/WORK_DIRECTORY/10 Programming/Projects/py post v2 OOP/src/postOOP/parsers&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.file_analyzer.executor": "Run",
+    "Python.main (1).executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.main_oop.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ShowUsagesActions.previewPropertyKey": "true",
+    "full.screen.before.presentation.mode": "false",
+    "git-widget-placeholder": "refactoring",
+    "last_opened_file_path": "W:/Техбюро/Исаренко/Projects/py post v2 OOP",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP\src\postOOP\parsers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="W:\Техбюро\Исаренко\Projects\py post v2 OOP\src\postOOP\classes\others\" />
+      <recent name="W:\Техбюро\Исаренко\Projects\py post v2 OOP\src\postOOP\classes\parsers\" />
+      <recent name="W:\Техбюро\Исаренко\Projects\py post v2 OOP\src\postOOP\classes\nc_sequence_classes\" />
+      <recent name="W:\Техбюро\Исаренко\Projects\py post v2 OOP\src\postOOP\classes\nc_operation_classes\" />
       <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP\src\postOOP\classes" />
-      <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP" />
-      <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP\src\postOOP" />
-      <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP\src" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main (1)">
@@ -223,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726750183203</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="OOP work version">
+      <option name="closed" value="true" />
+      <created>1726836251911</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1726836251911</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,14 +288,15 @@
     <MESSAGE value="OOP refactoring 3nd part&#10;creates instances, collecting data from cl&#10;but still not creating NC" />
     <MESSAGE value="OOP refactoring 4th part&#10;ncl parser refactored" />
     <MESSAGE value="OOP refactoring 5th part&#10;works in basic version" />
-    <option name="LAST_COMMIT_MESSAGE" value="OOP refactoring 5th part&#10;works in basic version" />
+    <MESSAGE value="OOP work version" />
+    <option name="LAST_COMMIT_MESSAGE" value="OOP work version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="NONE" type="python-line">
           <url>file://$PROJECT_DIR$/src/postOOP/config.py</url>
-          <line>1</line>
+          <line>3</line>
           <log-expression expression="G_CODE_FILE_EXTENSION = &quot;&quot;&#10;TEMP_FILE_NAME = &quot;temp.txt&quot;" language="Python" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>

@@ -1,5 +1,4 @@
-from src.postOOP.classes.nc_program import NcProgram
-from pprint import pprint
+from src.postOOP.classes.nc_sequence_classes.nc_program import NcProgram
 from src.postOOP.config import (
     NC_START_KEYWORD,
     NC_END_KEYWORD,
@@ -7,10 +6,10 @@ from src.postOOP.config import (
     NC_SEQUENCE_TAIL_LINES,
 )
 
-from src.postOOP.classes.pprint_parser import PprintParser
-from src.postOOP.classes.ncl_parser import NclParser
-from src.postOOP.classes.file_operator import FileOperator
-from src.postOOP.classes.formatter import Formatter
+from src.postOOP.classes.parsers.pprint_parser import PprintParser
+from src.postOOP.classes.parsers.ncl_parser import NclParser
+from src.postOOP.classes.others.file_operator import FileOperator
+from src.postOOP.classes.others.formatter import Formatter
 
 
 class NcSequence(NcProgram):
@@ -23,6 +22,8 @@ class NcSequence(NcProgram):
     ]
 
     nc_filename = None
+    nc_file_number = None
+    nc_filename_with_extension = None
 
     cl_start_index = None
     cl_end_index = None
@@ -32,6 +33,9 @@ class NcSequence(NcProgram):
     tool_pot = None
     tool_type = None
     spindle_master_data = None
+    spindle_speed_master = None
+    spindle_units_master = None
+    spindle_direction_master = None
     cut_feed_master = None
     machining_time = None
 
@@ -40,8 +44,16 @@ class NcSequence(NcProgram):
     is_m01_needed = False
     is_gohome_needed = False
 
-    def __init__(self, detail_name: str, nc_sequence_name: str, cl_list: list, nc_operation_number: int,
-                 nc_sequence_number: int, nc_sequences_count: int, date_of_creation: str):
+    def __init__(
+            self,
+            detail_name: str,
+            nc_sequence_name: str,
+            cl_list: list,
+            nc_operation_number: int,
+            nc_sequence_number: int,
+            nc_sequences_count: int,
+            date_of_creation: str
+    ):
 
         self.detail_name = detail_name
         self.nc_sequence_name = nc_sequence_name
@@ -63,7 +75,6 @@ class NcSequence(NcProgram):
         self.set_cut_feed_master()
         self.set_machining_time()
 
-        self.set_is_m00_before_needed()
 
         # self.show()
         self.nc_list = self.generate_nc_list()
@@ -136,7 +147,6 @@ class NcSequence(NcProgram):
         nc_lines.extend(self.generate_nc_tail_lines())
         nc_lines = Formatter.append_line_endings_in_cl_list_or_str(cl_list_or_str=nc_lines)
         nc_lines = Formatter.append_line_wraps_in_cl_list_or_str(cl_list_or_str=nc_lines)
-        # pprint(nc_lines)
         return nc_lines
 
     def generate_nc_head_lines(self) -> list:
@@ -157,29 +167,21 @@ class NcSequence(NcProgram):
         nc_lines = NclParser.parse_cl_list(nc_seq_obj=self)
         return nc_lines
 
-    def generate_nc_tail_lines(self) -> list:
+    @staticmethod
+    def generate_nc_tail_lines() -> list:
         nc_lines = list()
         nc_lines.extend(NC_SEQUENCE_TAIL_LINES)
         return nc_lines
 
     def add_nc_lines_to_object_nc_list(self, nc_lines_or_str: list[str] | str):
-        if type(nc_lines_or_str) == list:
+        if type(nc_lines_or_str) is list:
             self.nc_list.extend(nc_lines_or_str)
-        elif type(nc_lines_or_str) == str:
+        elif type(nc_lines_or_str) is str:
             self.nc_list.append(nc_lines_or_str)
         else:
             raise TypeError
-
-    def set_is_m00_before_needed(self):
-        self.set_m00_before_if_tool_type_is_boring_bar()
 
     def set_tool_type(self):
         self.tool_type = PprintParser.get_tool_type(cl_list=self.cl_list,
                                                     start_index=self.cl_start_index,
                                                     end_index=self.cl_end_index)
-
-    def set_m00_before_if_tool_type_is_boring_bar(self):
-        if self.tool_type == "BORING BAR":
-            self.is_m00_before_needed = True
-        else:
-            self.is_m00_before_needed = False
