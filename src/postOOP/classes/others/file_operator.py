@@ -9,6 +9,7 @@ class FileOperator:
     def get_all_ncl_files_in_dir() -> list[str] | None:
 
         os.chdir("../../../")
+        # os.chdir("../../")
         lst = os.listdir()
         print(f"Files found in cwd: {lst}")
 

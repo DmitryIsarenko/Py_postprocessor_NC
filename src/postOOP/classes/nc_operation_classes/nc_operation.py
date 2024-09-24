@@ -58,7 +58,7 @@ class NcOperation(NcProgram):
         else:
             pass
 
-    def start_postprocessing(self):
+    # def start_postprocessing(self):
 
 
     def set_nc_sequences_count(self):
