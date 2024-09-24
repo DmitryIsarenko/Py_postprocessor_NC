@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="OOP work version">
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/others/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/file_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/file_operator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/formatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/formatter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_program.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_program.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/ncl_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/old_ncl_parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/old_pprint_parser.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/pprint_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/pprint_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +46,8 @@
     "ShowUsagesActions.previewPropertyKey": "true",
     "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "refactoring",
-    "last_opened_file_path": "W:/Техбюро/Исаренко/Projects/py post v2 OOP",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "last_opened_file_path": "C:/WORK_DIRECTORY/10 Programming/Projects/py post/py post v2 OOP",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -147,6 +131,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main (1)" />
       </list>
     </recent_temporary>
