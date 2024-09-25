@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="OOP work version">
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/gui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/main_gui.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/qt_design.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/tab_options.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/tab_output.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/tab_settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/others/file_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/file_operator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/gui/gui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +33,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -48,11 +50,12 @@
     "Python.gui.executor": "Run",
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
+    "Python.main_gui.executor": "Run",
     "Python.main_oop.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "refactoring",
+    "git-widget-placeholder": "gui",
     "last_opened_file_path": "C:/WORK_DIRECTORY/10 Programming/Projects/py post/py post v2 OOP",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
@@ -69,7 +72,7 @@
       <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP\src\postOOP\classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.gui">
+  <component name="RunManager" selected="Python.main_gui">
     <configuration name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py post v2 OOP" />
       <option name="ENV_FILES" value="" />
@@ -136,8 +139,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main_gui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="py post v2 OOP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/postOOP/classes/gui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/postOOP/classes/gui/main_gui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main_gui" />
         <item itemvalue="Python.gui" />
         <item itemvalue="Python.main (1)" />
       </list>
