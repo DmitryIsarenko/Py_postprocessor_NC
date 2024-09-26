@@ -1,3 +1,5 @@
+# from src.postOOP.classes.nc_operation_classes.nc_operation import NcOperation
+# from src.postOOP.classes.nc_operation_classes.nc_operation_mill_3axis import NcOperationMill3Axis
 
 PROGRAMMER_NAME = "DEFAULT PROGRAMMER"
 
@@ -5,13 +7,17 @@ POST_NAME = "PY POST V1.01"
 PROGRAM_MAIN_LETTER = "O"
 PROGRAM_MAIN_DIGIT = "5"
 
+# machine_list = {
+#     "Default": NcOperation,
+#     "Mill 3 Axis": NcOperationMill3Axis,
+#     # "Mill 3 Axis Tauras Fenix": NcSequenceMill3AxisTF,
+# }
+
 # debug
 DELETE_TEMP_FILE = 1
 
-
 # key_filename_part_1 = "ust"  # will be searched for matches in dir
 cl_data_file_extension = ".ncl"  # will be searched for matches in dir
-
 
 G_CODE_FILE_EXTENSION = ""
 TEMP_FILE_NAME_PREFIX = "temporary_file_"
@@ -24,7 +30,6 @@ LINE_ENDING = ";"
 SAFETY_LINE_DEFAULT = "G17 G40 G49 G90 G94"
 NC_SEQUENCE_TAIL_LINES = ["M01", "M99"]
 G41_G42_SIDE_IS_REVERSED_SWITCH = 1
-
 
 # machine configuration
 IS_3AXIS = 1
@@ -52,10 +57,9 @@ G_CODE_TOOL_POT_PARAMS_ENABLED = 1
 G_CODE_SPINDLE_PARAMS_ENABLED = 1
 G_CODE_FEED_PARAMS_ENABLED = 1
 
-G_CODE_TOOL_POT_PARAMETER = "#101"
+G_CODE_TOOL_RPM_PARAMETER = "#101"
 G_CODE_TOOL_FEED_PARAMETER = "#102"
-G_CODE_TOOL_RPM_PARAMETER = "#103"
-
+G_CODE_TOOL_POT_PARAMETER = "#103"
 
 dict_of_axial_operations_G_codes: dict = {
     "DRILL": "G81",
@@ -78,7 +82,6 @@ ust_template_dict = {
     "cl_file_lines": 0,
     "sum_machining_time": 0,
 }
-
 
 operation_template_dict = {
     "cl_line_index_start": "null",
