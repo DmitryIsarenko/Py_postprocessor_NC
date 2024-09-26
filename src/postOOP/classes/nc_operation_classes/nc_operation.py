@@ -13,6 +13,7 @@ from src.postOOP.classes.others.formatter import Formatter
 
 
 class NcOperation(NcProgram):
+    postprocessor_name = "basic post class"
     detail_name = None
     date_of_creation = None
 

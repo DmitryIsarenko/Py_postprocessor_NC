@@ -6,10 +6,12 @@ from src.postOOP.classes.others.formatter import Formatter
 class FileOperator:
 
     @staticmethod
-    def get_all_ncl_files_in_dir() -> list[str] | None:
+    def get_all_ncl_files_in_dir(path: str) -> list[str] | None:
 
-        os.chdir("../../../")
+        # os.chdir("../../../../../")
+        # os.chdir("../../../")
         # os.chdir("../../")
+        os.chdir(path=path)
         lst = os.listdir()
         print(f"Files found in cwd: {lst}")
 
