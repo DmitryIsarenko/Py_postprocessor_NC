@@ -17,8 +17,6 @@ def main(post_obj, work_dir_path: str):
     operations = list()
     if filepaths:
         for filepath in filepaths:
-            # operations.append(NcOperation(filepath=filepath))
-            # operations.append(NcOperationMill3Axis(filepath=filepath))
             operations.append(post_obj(filepath=filepath))
 
     for operation in operations:

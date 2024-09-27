@@ -1,5 +1,5 @@
 import os
-from src.postOOP.config import TEMP_FILE_NAME_PREFIX, cl_data_file_extension
+from src.postOOP.config import TEMP_FILE_NAME_PREFIX, CL_DATA_FILE_EXTENSION
 from src.postOOP.classes.others.formatter import Formatter
 
 
@@ -15,7 +15,7 @@ class FileOperator:
         lst = os.listdir()
         print(f"Files found in cwd: {lst}")
 
-        unic_files = set(file for file in lst if cl_data_file_extension in file)
+        unic_files = set(file for file in lst if CL_DATA_FILE_EXTENSION in file)
         if unic_files:
             final_filenames = set()
             for basic_filename in unic_files:
@@ -29,7 +29,7 @@ class FileOperator:
             # print(f"Found files to postprocess: {sorted(final_filenames)}")
             return sorted(final_filenames)
         else:
-            print(f"No files with '{cl_data_file_extension}' extension were found")
+            print(f"No files with '{CL_DATA_FILE_EXTENSION}' extension were found")
             return None
 
     @staticmethod
