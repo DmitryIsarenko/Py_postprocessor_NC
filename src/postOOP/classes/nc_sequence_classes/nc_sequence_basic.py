@@ -1,11 +1,5 @@
-from src.postOOP.classes.nc_sequence_classes.nc_program import NcProgram
-from src.postOOP.config import (
-    NC_START_KEYWORD,
-    NC_END_KEYWORD,
-    SAFETY_LINE_DEFAULT,
-    NC_SEQUENCE_TAIL_LINES,
-)
-
+from src.postOOP.classes.nc_sequence_classes.nc_program_basic import NcProgram
+from src.postOOP import config
 from src.postOOP.classes.parsers.pprint_parser import PprintParser
 from src.postOOP.classes.parsers.ncl_parser import NclParser
 from src.postOOP.classes.others.file_operator import FileOperator
@@ -13,8 +7,8 @@ from src.postOOP.classes.others.formatter import Formatter
 
 
 class NcSequence(NcProgram):
-    nc_start_keyword = NC_START_KEYWORD
-    nc_end_keyword = NC_END_KEYWORD
+    nc_start_keyword = config.NC_START_KEYWORD
+    nc_end_keyword = config.NC_END_KEYWORD
     GOHOME_LINES = [
         f"G00 G28 Z0.0.",
         f"G00 G28 X0.0.",
@@ -75,7 +69,6 @@ class NcSequence(NcProgram):
         self.set_cut_feed_master()
         self.set_machining_time()
 
-
         # self.show()
         self.nc_list = self.generate_nc_list()
         # print(self.nc_list)
@@ -91,7 +84,7 @@ class NcSequence(NcProgram):
 
     def set_cl_end_index(self):
         self.cl_end_index = PprintParser.get_index_of_occurence_in_cl_list_in_range(cl_list=self.cl_list,
-                                                                                    search_for=self.nc_end_keyword,
+                                                                                    search_for=config.NC_END_KEYWORD,
                                                                                     start_index=self.cl_start_index,
                                                                                     end_index=len(self.cl_list))
 
@@ -134,11 +127,11 @@ class NcSequence(NcProgram):
         else:
             print(f"Too many nc sequences")
             raise ValueError
-        self.nc_file_number = (self.main_digit +
+        self.nc_file_number = (config.PROGRAM_MAIN_DIGIT +
                                str(self.nc_operation_number) +
                                num_in_str)
-        self.nc_filename = self.main_letter + self.nc_file_number
-        self.nc_filename_with_extension = self.nc_filename + self.file_extension
+        self.nc_filename = config.PROGRAM_MAIN_LETTER + self.nc_file_number
+        self.nc_filename_with_extension = self.nc_filename + config.G_CODE_FILE_EXTENSION
 
     def generate_nc_list(self) -> list:
         nc_lines = list()
@@ -159,7 +152,7 @@ class NcSequence(NcProgram):
             f"(POT:  {self.tool_pot})",
             f"",
             f"G{self.work_offset}",
-            f"{SAFETY_LINE_DEFAULT}"
+            f"{config.SAFETY_LINE_DEFAULT}"
         ]
         return nc_lines
 
@@ -170,7 +163,7 @@ class NcSequence(NcProgram):
     @staticmethod
     def generate_nc_tail_lines() -> list:
         nc_lines = list()
-        nc_lines.extend(NC_SEQUENCE_TAIL_LINES)
+        nc_lines.extend(config.NC_SEQUENCE_TAIL_LINES)
         return nc_lines
 
     def add_nc_lines_to_object_nc_list(self, nc_lines_or_str: list[str] | str):

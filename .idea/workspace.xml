@@ -5,12 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="OOP work version">
-      <change afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logs/rotating_log.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_basic_mill_syntec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_program_basic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_basic_mill_syntec.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/gui/desktop_window_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/desktop_window_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/main_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/main_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis_syntec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis_tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis_tf_syntec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_program.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_syntec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_tf_syntec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/others/file_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/file_operator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/others/postprocess_executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/postprocess_executor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/post_lister.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/post_lister.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +69,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "Merging development",
+    "git-widget-placeholder": "gui-tabs",
     "last_opened_file_path": "C:/WORK_DIRECTORY/10 Programming/Projects/py post/py post v2 OOP/src/postOOP/config.py",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }

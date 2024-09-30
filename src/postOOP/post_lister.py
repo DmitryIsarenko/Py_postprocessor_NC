@@ -1,6 +1,6 @@
-from src.postOOP.classes.nc_operation_classes.nc_operation import NcOperation
-from src.postOOP.classes.nc_operation_classes.nc_operation_mill_3axis import NcOperationMill3Axis
-from src.postOOP.classes.nc_operation_classes.nc_operation_mill_3axis_tf import NcOperationMill3AxisTF
+from src.postOOP.classes.nc_operation_classes.nc_operation_basic import NcOperation
+from src.postOOP.classes.nc_operation_classes.nc_operation_mill_3axis_syntec import NcOperationMill3Axis
+from src.postOOP.classes.nc_operation_classes.nc_operation_mill_3axis_tf_syntec import NcOperationMill3AxisTF
 
 
 class PostLister:

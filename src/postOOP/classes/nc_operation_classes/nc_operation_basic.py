@@ -1,19 +1,19 @@
-from src.postOOP.config import (
-    DELETE_TEMP_FILE,
-)
+import logging
+
+from src.postOOP import config
 
 from src.postOOP.classes.parsers.pprint_parser import PprintParser
-from src.postOOP.classes.nc_sequence_classes.nc_program import NcProgram
-from src.postOOP.classes.nc_sequence_classes.nc_sequence import NcSequence
+from src.postOOP.classes.nc_sequence_classes.nc_program_basic import NcProgram
+from src.postOOP.classes.nc_sequence_classes.nc_sequence_basic import NcSequence
 from src.postOOP.classes.others.file_operator import FileOperator
 from src.postOOP.classes.others.formatter import Formatter
 
 
 # from src.postOOP.classes.ncl_parser import NclParser
-
+logger = logging.getLogger(__name__)
 
 class NcOperation(NcProgram):
-    postprocessor_name = "basic post class"
+    postprocessor_name = "BASIC POST CLASS"
     detail_name = None
     date_of_creation = None
 
@@ -30,7 +30,8 @@ class NcOperation(NcProgram):
 
     def __init__(self, filepath: str):
         self.filepath = filepath
-        pass
+        config.POST_NAME = self.postprocessor_name
+        logger.info(f"Post name from config: <<<{config.POST_NAME}>>>")
 
     def start_postprocessing(self):
         temp_filepath = FileOperator.create_temp_formatted_ncl_file(filepath=self.filepath)
@@ -57,7 +58,7 @@ class NcOperation(NcProgram):
         else:
             print(f"Empty self.cl_list for {self.filepath}")
 
-        if DELETE_TEMP_FILE == 1:
+        if config.DELETE_TEMP_FILE:
             FileOperator.remove_file(filepath=temp_filepath)
         else:
             pass
@@ -112,8 +113,8 @@ class NcOperation(NcProgram):
             print(f"Too many nc operations")
             raise ValueError
 
-        self.nc_filename = self.main_letter + self.main_digit + num_in_str
-        self.nc_filename_with_extension = self.nc_filename + self.file_extension
+        self.nc_filename = config.PROGRAM_MAIN_LETTER + config.PROGRAM_MAIN_DIGIT + num_in_str
+        self.nc_filename_with_extension = self.nc_filename + config.G_CODE_FILE_EXTENSION
 
     def generate_nc_list(self) -> list:
         nc_lines = list()
@@ -127,8 +128,9 @@ class NcOperation(NcProgram):
 
     def generate_nc_head_lines(self) -> list:
         nc_lines = [
+            f"(POST: {config.POST_NAME})",
             f"(PART: {self.detail_name})",
-            f"(PROGRAMMER: {self.programmer_name})",
+            f"(PROGRAMMER: {config.PROGRAMMER_NAME})",
             f"(DATE: {self.date_of_creation})",
             f"(UST:  {self.operation_name})",
             f"(PROG NUMS: {self.nc_sequences_count})",

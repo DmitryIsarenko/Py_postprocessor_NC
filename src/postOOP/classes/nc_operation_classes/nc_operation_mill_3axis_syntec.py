@@ -1,14 +1,12 @@
-from src.postOOP.classes.nc_operation_classes.nc_operation import NcOperation
-from src.postOOP.classes.nc_sequence_classes.nc_sequence_mill_3axis import NcSequenceMill3Axis
-from src.postOOP.classes.nc_sequence_classes.nc_sequence_mill_3axis_tf import NcSequenceMill3AxisTF
+from src.postOOP.classes.nc_operation_classes.nc_operation_basic_mill_syntec import NcOperationBasicMill
+from src.postOOP.classes.nc_sequence_classes.nc_sequence_basic_mill_syntec import NcSequenceMillBasicSyntec
 
 
-class NcOperationMill3AxisTF(NcOperation):
-    postprocessor_name = "TF Basic 3 axis mill post Syntec"
+class NcOperationMill3Axis(NcOperationBasicMill):
+    postprocessor_name = "SYNTEC 3AXIS MILL DEFAULT POST"
 
     def __init__(self, filepath: str):
         super().__init__(filepath=filepath)
-        # self.set_nc_sequences_objects_in_list()
 
     def set_nc_sequences_objects_in_list(self):
         lst_of_objects = []
@@ -16,7 +14,7 @@ class NcOperationMill3AxisTF(NcOperation):
         for nc_sequence_name in self.list_of_nc_sequences_names:
             nc_counter += 1
             lst_of_objects.append(
-                NcSequenceMill3AxisTF(
+                NcSequenceMillBasicSyntec(
                     detail_name=self.detail_name,
                     nc_sequence_name=nc_sequence_name,
                     cl_list=self.cl_list,
@@ -26,4 +24,4 @@ class NcOperationMill3AxisTF(NcOperation):
                     date_of_creation=self.date_of_creation
                 )
             )
-        self.list_of_nc_sequences_objects: list[NcSequenceMill3Axis] = lst_of_objects
+        self.list_of_nc_sequences_objects: list[NcSequenceMillBasicSyntec] = lst_of_objects

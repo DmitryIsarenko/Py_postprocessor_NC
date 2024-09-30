@@ -1,7 +1,7 @@
-from src.postOOP.classes.nc_sequence_classes.nc_sequence import NcSequence
+from src.postOOP.classes.nc_sequence_classes.nc_sequence_basic_mill_syntec import NcSequenceMillBasicSyntec
 
 
-class NcSequenceMill3Axis(NcSequence):
+class NcSequenceMill3AxisSyntecTF(NcSequenceMillBasicSyntec):
     def __init__(
             self,
             detail_name: str,
@@ -22,4 +22,13 @@ class NcSequenceMill3Axis(NcSequence):
             date_of_creation=date_of_creation,
         )
 
+        self.set_is_m00_before_needed()
 
+    def set_m00_before_if_tool_type_is_boring_bar(self):
+        if self.tool_type == "BORING BAR":
+            self.is_m00_before_needed = True
+        else:
+            self.is_m00_before_needed = False
+
+    def set_is_m00_before_needed(self):
+        self.set_m00_before_if_tool_type_is_boring_bar()

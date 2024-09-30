@@ -4,12 +4,13 @@ import logging
 from pprint import pprint
 from src.postOOP.classes.gui.qt_design import Ui_MainWindow
 from PyQt6 import QtWidgets
-from src.postOOP.classes.others.postprocess_executor import main
+from src.postOOP.classes.others.postprocess_executor import execute_postprocess
 from src.postOOP.post_lister import PostLister
 
 from src.postOOP import config
 
 logger = logging.getLogger(__name__)
+
 
 class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
     config.POST_NAME = PostLister.default_post_name
@@ -30,9 +31,9 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.setup_1st_tab()
         self.setup_2nd_tab()
         self.setup_3rd_tab()
-        print(config.CWD)
-        print(config.POST_NAME)
-        print(config.POST_OBJ)
+        # print(config.CWD)
+        # print(config.POST_NAME)
+        # print(config.POST_OBJ)
 
     def push_config_to_ui_boxes(self):
         self.push_values_from_config_1_tab()
@@ -40,30 +41,29 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.push_values_from_config_3_tab()
 
     def push_ui_boxes_to_config(self):
-        self.write_values_from_1_tab()
-        self.write_values_from_2_tab()
-        self.write_values_from_3_tab()
+        self.write_values_from_1_tab_to_config()
+        self.write_values_from_2_tab_to_config()
+        self.write_values_from_3_tab_to_config()
 
     def setup_1st_tab(self):
-        self.push_values_from_config_1_tab()
         self.connect_buttons_1_tab()
 
     def setup_2nd_tab(self):
-        self.push_values_from_config_2_tab()
         self.connect_buttons_2_tab()
 
     def setup_3rd_tab(self):
-        self.push_values_from_config_3_tab()
         self.connect_buttons_3_tab()
 
     # VALUES FROM CONFIG
     def push_values_from_config_1_tab(self):
+        logger.info("pushing values from config to 1 tab")
         self.comboBox_tab1_post_select.clear()
         self.comboBox_tab1_post_select.addItems(PostLister.post_dict.keys())
         self.comboBox_tab1_post_select.setCurrentText(config.POST_NAME)
         self.lineEdit_tab1_path_to_cwd.setText(config.CWD)
 
     def push_values_from_config_2_tab(self):
+        logger.info("pushing values from config to 2 tab")
         self.checkBox_tab2_spindle_param_enabled.setChecked(config.G_CODE_SPINDLE_PARAMS_ENABLED)
         self.checkBox_tab2_feed_param_enabled.setChecked(config.G_CODE_FEED_PARAMS_ENABLED)
         self.checkBox_tab2_tool_param_enabled.setChecked(config.G_CODE_TOOL_POT_PARAMS_ENABLED)
@@ -82,6 +82,7 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.spinBox_tab2_main_digit_text.setValue(int(config.PROGRAM_MAIN_DIGIT))
 
     def push_values_from_config_3_tab(self):
+        logger.info("pushing values from config to 3 tab")
         self.checkBox_tab3_delete_temp_file.setChecked(config.DELETE_TEMP_FILE)
 
         self.lineEdit_tab3_temp_file_prefix.setText(config.TEMP_FILE_NAME_PREFIX)
@@ -90,7 +91,8 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.lineEdit_tab3_programmer_name.setText(config.PROGRAMMER_NAME)
 
     # VALUES TO CONFIG
-    def write_values_from_1_tab(self):
+    def write_values_from_1_tab_to_config(self):
+        logger.info("writing values from boxes 1 tab to config")
         config.POST_NAME = self.comboBox_tab1_post_select.currentText()
         config.POST_OBJ = PostLister.post_dict[config.POST_NAME]
         config.CWD = self.lineEdit_tab1_path_to_cwd.text()
@@ -100,7 +102,8 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         # self.textEdit_tab1_log_output.append(f"Rewritten value: POST NAME to {config.POST_NAME}")
         # self.textEdit_tab1_log_output.append(f"Rewritten value: CWD to {config.CWD}")
 
-    def write_values_from_2_tab(self):
+    def write_values_from_2_tab_to_config(self):
+        logger.info("writing values from boxes 2 tab to config")
         config.G_CODE_SPINDLE_PARAMS_ENABLED = self.checkBox_tab2_spindle_param_enabled.isChecked()
         config.G_CODE_FEED_PARAMS_ENABLED = self.checkBox_tab2_feed_param_enabled.isChecked()
         config.G_CODE_TOOL_POT_PARAMS_ENABLED = self.checkBox_tab2_tool_param_enabled.isChecked()
@@ -119,7 +122,8 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
         self.textEdit_tab1_log_output.append(f"Changes accepted for 2nd tab")
 
-    def write_values_from_3_tab(self):
+    def write_values_from_3_tab_to_config(self):
+        logger.info("writing values from boxes 3 tab to config")
         config.DELETE_TEMP_FILE = self.checkBox_tab3_delete_temp_file.isChecked()
         config.TEMP_FILE_NAME_PREFIX = self.lineEdit_tab3_temp_file_prefix.text()
         config.CL_DATA_FILE_EXTENSION = self.lineEdit_tab3_cl_file_extension.text()
@@ -132,15 +136,15 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
     def connect_buttons_1_tab(self):
         self.pushButton_tab1_postprocess_start.clicked.connect(self.btn_clicked_start_postprocess)
         self.pushButton_tab1_open_explorer.clicked.connect(self.open_file_explorer)
-        self.pushButton_tab1_confirm_changed_options.clicked.connect(self.write_values_from_1_tab)
+        self.pushButton_tab1_confirm_changed_options.clicked.connect(self.write_values_from_1_tab_to_config)
         self.pushButton_tab1_discard_changed_options.clicked.connect(self.discard_changed_options_tab1)
 
     def connect_buttons_2_tab(self):
-        self.pushButton_tab2_confirm_changed_options.clicked.connect(self.write_values_from_2_tab)
+        self.pushButton_tab2_confirm_changed_options.clicked.connect(self.write_values_from_2_tab_to_config)
         self.pushButton_tab2_discard_changed_options.clicked.connect(self.discard_changed_options_tab2)
 
     def connect_buttons_3_tab(self):
-        self.pushButton_tab3_confirm_changed_settings.clicked.connect(self.write_values_from_3_tab)
+        self.pushButton_tab3_confirm_changed_settings.clicked.connect(self.write_values_from_3_tab_to_config)
         self.pushButton_tab3_discard_changed_settings.clicked.connect(self.discard_changed_options_tab3)
 
     def discard_changed_options_tab1(self):
@@ -148,7 +152,7 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.textEdit_tab1_log_output.append(f"Changes declined for 1st tab")
 
     def discard_changed_options_tab2(self):
-        self.push_values_from_config_3_tab()
+        self.push_values_from_config_2_tab()
         self.textEdit_tab1_log_output.append(f"Changes declined for 2nd tab")
 
     def discard_changed_options_tab3(self):
@@ -172,7 +176,7 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def btn_clicked_start_postprocess(self):
         self.textEdit_tab1_log_output.append(f"postprocessing started")
-        main(post_obj=config.POST_OBJ, work_dir_path=config.CWD)
+        execute_postprocess(post_obj=config.POST_OBJ, work_dir_path=config.CWD)
         self.textEdit_tab1_log_output.append(f"postprocessing finished")
 
 
