@@ -5,20 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="OOP work version">
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/desktop_window_app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis_tf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_tf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/others/postprocess_executor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/main_app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/post_lister.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_basic_mill_syntec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_program_basic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_basic_mill_syntec.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/gui/main_gui.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/gui/qt_design.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/qt_design.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/gui/desktop_window_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/desktop_window_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis_syntec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis_tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis_tf_syntec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_program.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_syntec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_tf_syntec.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/others/file_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/file_operator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/others/postprocess_executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/postprocess_executor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/post_lister.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/post_lister.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="development" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,6 +56,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.dasfasd.executor": "Run",
+    "Python.desktop_window_app.executor": "Run",
     "Python.file_analyzer.executor": "Run",
     "Python.gui.executor": "Run",
     "Python.main (1).executor": "Run",
@@ -63,9 +69,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "gui",
-    "last_opened_file_path": "C:/WORK_DIRECTORY/10 Programming/Projects/py post/py post v2 OOP/src/postOOP/classes/others",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "git-widget-placeholder": "gui-tabs",
+    "last_opened_file_path": "C:/WORK_DIRECTORY/10 Programming/Projects/py post/py post v2 OOP/src/postOOP/config.py",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -81,6 +87,28 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.main_app">
+    <configuration name="dasfasd" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="py post v2 OOP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/postOOP/classes/gui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/postOOP/classes/gui/dasfasd.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="desktop_window_app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py post v2 OOP" />
       <option name="ENV_FILES" value="" />
@@ -94,29 +122,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\WORK_DIRECTORY\10 Programming\Projects\py post\py post v2 OOP\src\postOOP\classes\gui\desktop_window_app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="py post v2 OOP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/postOOP/classes/gui" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/postOOP/classes/gui/gui.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/postOOP/classes/gui/desktop_window_app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -195,8 +201,9 @@
       <list>
         <item itemvalue="Python.main_app" />
         <item itemvalue="Python.desktop_window_app" />
-        <item itemvalue="Python.gui" />
+        <item itemvalue="Python.dasfasd" />
         <item itemvalue="Python.postprocess_executor" />
+        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -338,6 +345,8 @@
     <MESSAGE value="OOP refactoring 4th part&#10;ncl parser refactored" />
     <MESSAGE value="OOP refactoring 5th part&#10;works in basic version" />
     <MESSAGE value="OOP work version" />
-    <option name="LAST_COMMIT_MESSAGE" value="OOP work version" />
+    <MESSAGE value="v1.0 with GUI. 1 tab works" />
+    <MESSAGE value="v1.0 with GUI. 1 tab works" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.0 with GUI. 1 tab works" />
   </component>
 </project>

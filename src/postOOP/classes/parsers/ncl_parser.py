@@ -1,14 +1,16 @@
 from pprint import pprint
+from src.postOOP import config
 
-from src.postOOP.config import (G_CODE_FEED_PARAMS_ENABLED,
-                                G_CODE_SPINDLE_PARAMS_ENABLED,
-                                G_CODE_TOOL_POT_PARAMS_ENABLED,
-                                G_CODE_TOOL_FEED_PARAMETER,
-                                G_CODE_TOOL_RPM_PARAMETER,
-                                G_CODE_TOOL_POT_PARAMETER,
-                                G41_G42_SIDE_IS_REVERSED_SWITCH,
-                                dict_of_axial_operations_G_codes,
-                                )
+
+# from src.postOOP.config import (config.G_CODE_FEED_PARAMS_ENABLED,
+#                                 config.G_CODE_SPINDLE_PARAMS_ENABLED,
+#                                 config.G_CODE_TOOL_POT_PARAMS_ENABLED,
+#                                 config.G_CODE_TOOL_FEED_PARAMETER,
+#                                 config.G_CODE_TOOL_RPM_PARAMETER,
+#                                 config.G_CODE_TOOL_POT_PARAMETER,
+#                                 config.G41_G42_SIDE_IS_REVERSED_SWITCH,
+#                                 config.dict_of_axial_operations_G_codes,
+#                                 )
 
 
 # from src.postOOP.classes.nc_program import NcSequence
@@ -133,28 +135,28 @@ class NclParser:
     @classmethod
     def parse_LOADTL(cls, cl_list: list[str], line_index: int, nc_seq_obj) -> list[str]:
         result_list = list()
-        if G_CODE_TOOL_POT_PARAMS_ENABLED == 0:
+        if config.G_CODE_TOOL_POT_PARAMS_ENABLED is False:
             result_list.append(
                 f"T{nc_seq_obj.tool_pot} M6", )
             pass
-        elif G_CODE_TOOL_POT_PARAMS_ENABLED == 1:
+        elif config.G_CODE_TOOL_POT_PARAMS_ENABLED is True:
             result_list.append(
-                f"{G_CODE_TOOL_POT_PARAMETER}={nc_seq_obj.tool_pot}(NOMER T INSTRUMENTA)", )
+                f"{config.G_CODE_TOOL_POT_PARAMETER}={nc_seq_obj.tool_pot}(NOMER T INSTRUMENTA)", )
             pass
 
-        if G_CODE_SPINDLE_PARAMS_ENABLED == 0:
+        if config.G_CODE_SPINDLE_PARAMS_ENABLED is False:
             pass
-        elif G_CODE_SPINDLE_PARAMS_ENABLED == 1:
-            result_list.append(f"{G_CODE_TOOL_RPM_PARAMETER}="
+        elif config.G_CODE_SPINDLE_PARAMS_ENABLED is True:
+            result_list.append(f"{config.G_CODE_TOOL_RPM_PARAMETER}="
                                f"{nc_seq_obj.spindle_speed_master}"
                                f"(OBOROTI)")
             pass
 
-        if G_CODE_FEED_PARAMS_ENABLED == 0:
+        if config.G_CODE_FEED_PARAMS_ENABLED is False:
             pass
-        elif G_CODE_FEED_PARAMS_ENABLED == 1 and nc_seq_obj.cut_feed_master:
+        elif config.G_CODE_FEED_PARAMS_ENABLED is True and nc_seq_obj.cut_feed_master:
             result_list.append(
-                f"{G_CODE_TOOL_FEED_PARAMETER}={nc_seq_obj.cut_feed_master}"
+                f"{config.G_CODE_TOOL_FEED_PARAMETER}={nc_seq_obj.cut_feed_master}"
                 f"(PODACHA)")
         cls.is_G43_needed = True
         cls.is_G43_ON = False
@@ -197,12 +199,12 @@ class NclParser:
                 elif item == "CCLW":
                     res_line.append("M04")
                 else:
-                    if G_CODE_SPINDLE_PARAMS_ENABLED == 0:
+                    if config.G_CODE_SPINDLE_PARAMS_ENABLED is False:
                         item = round(float(item))
                         cls.current_SPINDLE = item
                         res_line.append(f"S{item} ")
-                    elif G_CODE_SPINDLE_PARAMS_ENABLED == 1:
-                        res_line.append(f"S{G_CODE_TOOL_RPM_PARAMETER} ")
+                    elif config.G_CODE_SPINDLE_PARAMS_ENABLED is True:
+                        res_line.append(f"S{config.G_CODE_TOOL_RPM_PARAMETER} ")
             result_list.append("".join(res_line))
         return result_list
 
@@ -216,10 +218,10 @@ class NclParser:
     def create_G43_addition(cls, nc_seq_obj) -> str:
         res_line = str()
         res_line += f"G43 "
-        if G_CODE_TOOL_POT_PARAMS_ENABLED == 0:
+        if config.G_CODE_TOOL_POT_PARAMS_ENABLED is False:
             res_line += f"H{nc_seq_obj.tool_pot} "
-        if G_CODE_TOOL_POT_PARAMS_ENABLED == 1:
-            res_line += f"H{G_CODE_TOOL_POT_PARAMETER} "
+        if config.G_CODE_TOOL_POT_PARAMS_ENABLED is True:
+            res_line += f"H{config.G_CODE_TOOL_POT_PARAMETER} "
         return res_line
 
     @classmethod
@@ -241,7 +243,8 @@ class NclParser:
             res_list.extend(cls.parse_FEDRAT(cl_list=cl_list, line_index=line_index - 1))
 
         if "CUTCOM / LEFT" in cl_list[line_index - 1] \
-                or "CUTCOM / RIGHT" in cl_list[line_index - 1]:
+                or "CUTCOM / RIGHT" in cl_list[line_index - 1] \
+                or "CUTCOM / OFF" in cl_list[line_index - 1]:
             res_list.extend(cls.parse_CUTCOM(cl_list=cl_list, line_index=line_index - 1, nc_seq_obj=nc_seq_obj))
 
         if cls.is_G43_ON is False and cls.is_G43_needed is True:
@@ -289,15 +292,14 @@ class NclParser:
     def parse_FEDRAT(cls, cl_list: list[str], line_index: int) -> list[str]:
         result_list = list()
         res_list = list()
-        if G_CODE_FEED_PARAMS_ENABLED == 0:
+        if config.G_CODE_FEED_PARAMS_ENABLED is False:
             right_part_list = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=",")
             feedrate = round(float(right_part_list[0]), ndigits=2)
             res_list.append(f"G01 F{feedrate} ")
-        elif G_CODE_FEED_PARAMS_ENABLED == 1:
-            res_list.append(f"G01 F{G_CODE_TOOL_FEED_PARAMETER} ")
+        elif config.G_CODE_FEED_PARAMS_ENABLED is True:
+            res_list.append(f"G01 F{config.G_CODE_TOOL_FEED_PARAMETER} ")
         result_list = res_list
         return result_list
-
 
     @classmethod
     def set_cutcom(cls, cl_line: str):
@@ -310,22 +312,21 @@ class NclParser:
         elif cutcom_str == "RIGHT":
             cls.is_G42_cutcom_2D_needed = True
 
-
     @classmethod
     def parse_CUTCOM(cls, cl_list: list[str], line_index: int, nc_seq_obj) -> list[str]:
         result_list = list()
         cutcom_str = cl_list[line_index].split(sep=" / ")[1].strip()
-        if G41_G42_SIDE_IS_REVERSED_SWITCH == 0:
+        if config.G41_G42_SIDE_IS_REVERSED_SWITCH is False:
             left_compensation = "G41"
             right_compensation = "G42"
-        else:  # G41_G42_SIDE_IS_REVERSED_SWITCH == 1
+        else:  # config.G41_G42_SIDE_IS_REVERSED_SWITCH is True
             left_compensation = "G42"
             right_compensation = "G41"
 
-        if G_CODE_TOOL_POT_PARAMS_ENABLED == 0:
+        if config.G_CODE_TOOL_POT_PARAMS_ENABLED is False:
             D_corrector_addition = f"D{nc_seq_obj.tool_pot}"
-        if G_CODE_TOOL_POT_PARAMS_ENABLED == 1:
-            D_corrector_addition = f"D{G_CODE_TOOL_POT_PARAMETER}"
+        if config.G_CODE_TOOL_POT_PARAMS_ENABLED is True:
+            D_corrector_addition = f"D{config.G_CODE_TOOL_POT_PARAMETER}"
 
         if cutcom_str == "OFF":
             result_list.append(f"G40 ")
@@ -412,28 +413,28 @@ class NclParser:
         if "OFF" in right_part_list:
             result_list.append("G80", )
         elif right_part_list[  # если имя операции из перечня ключей словаря с типами операций
-            0] in dict_of_axial_operations_G_codes.keys():
+            0] in config.dict_of_axial_operations_G_codes.keys():
             res_list = list()
             res_list.append(f"G98 ")
-            res_list.append(dict_of_axial_operations_G_codes[right_part_list[0]] + " ")
+            res_list.append(config.dict_of_axial_operations_G_codes[right_part_list[0]] + " ")
 
             if "MMPM" in right_part_list:
                 operation_data["FEED_TYPE"] = "G94"
                 feed_type_index = right_part_list.index("MMPM")
                 operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]), ndigits=4)
-                if G_CODE_FEED_PARAMS_ENABLED == 0 or nc_seq_obj.cut_feed_master is None:
+                if config.G_CODE_FEED_PARAMS_ENABLED is False or nc_seq_obj.cut_feed_master is None:
                     res_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
-                elif G_CODE_FEED_PARAMS_ENABLED == 1:
-                    res_list.append(f"{operation_data["FEED_TYPE"]} F{G_CODE_TOOL_FEED_PARAMETER} ")
+                elif config.G_CODE_FEED_PARAMS_ENABLED is True:
+                    res_list.append(f"{operation_data["FEED_TYPE"]} F{config.G_CODE_TOOL_FEED_PARAMETER} ")
 
             elif "MMPR" in right_part_list:
                 operation_data["FEED_TYPE"] = "G95"
                 feed_type_index = right_part_list.index("MMPR")
                 operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]), ndigits=4)
-                if G_CODE_FEED_PARAMS_ENABLED == 0 or nc_seq_obj.cut_feed_master is None:
+                if config.G_CODE_FEED_PARAMS_ENABLED is False or nc_seq_obj.cut_feed_master is None:
                     res_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
-                elif G_CODE_FEED_PARAMS_ENABLED == 1:
-                    res_list.append(f"{operation_data["FEED_TYPE"]} F{G_CODE_TOOL_FEED_PARAMETER} ")
+                elif config.G_CODE_FEED_PARAMS_ENABLED is True:
+                    res_list.append(f"{operation_data["FEED_TYPE"]} F{config.G_CODE_TOOL_FEED_PARAMETER} ")
             if "DEPTH" in right_part_list:
                 depth_index = right_part_list.index("DEPTH")
                 operation_data["DEPTH"] = round(float(right_part_list[depth_index + 1]), ndigits=5)
@@ -471,7 +472,6 @@ class NclParser:
         result_list = list()
         result_list.append("M00")
         return result_list
-
 
     @classmethod
     def parse_END(cls, cl_list: list[str], line_index: int) -> list[str]:
@@ -515,10 +515,10 @@ class NclParser:
             if "G00" in line or "G01" in line:
                 counter_lines_with_z += 1
                 if counter_lines_with_z > 0:
-                    if G_CODE_TOOL_POT_PARAMS_ENABLED == 0:
+                    if config.G_CODE_TOOL_POT_PARAMS_ENABLED is False:
                         insertion = f"G43 H{nc_seq_obj.tool_pot} "
-                    elif G_CODE_TOOL_POT_PARAMS_ENABLED == 1:  # G_CODE_PARAMS_ENABLED == 1:
-                        insertion = f"G43 H{G_CODE_TOOL_POT_PARAMETER} "
+                    elif config.G_CODE_TOOL_POT_PARAMS_ENABLED is True:  # G_CODE_PARAMS_ENABLED == 1:
+                        insertion = f"G43 H{config.G_CODE_TOOL_POT_PARAMETER} "
                     result_list[line_index] = insertion + result_list[line_index]
                     break
                 else:

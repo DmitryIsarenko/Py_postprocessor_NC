@@ -1,0 +1,8 @@
+2024-09-30 13:47:38 INFO     --- Logger src started. --- src:33 
+2024-09-30 13:47:38 INFO     --- Started execution from __main__ --- src:25 
+2024-09-30 13:47:38 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:20 
+2024-09-30 13:47:38 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:59 
+2024-09-30 13:47:38 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:66 
+2024-09-30 13:47:38 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:85 
+2024-09-30 13:47:45 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:95 
+2024-09-30 13:47:46 INFO     --- Post name from config: <<<SYNTEC 3AXIS MILL TF POST>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:34 
