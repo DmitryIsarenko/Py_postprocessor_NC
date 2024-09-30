@@ -1,5 +1,5 @@
 from src.postOOP.classes.nc_sequence_classes.nc_sequence_basic_mill_syntec import NcSequenceMillBasicSyntec
-
+from src.postOOP.classes.parsers.ncl_parser_mill_3axis_tf_syntec import NclParserMill3axisSyntecTF
 
 class NcSequenceMill3AxisSyntecTF(NcSequenceMillBasicSyntec):
     def __init__(
@@ -32,3 +32,7 @@ class NcSequenceMill3AxisSyntecTF(NcSequenceMillBasicSyntec):
 
     def set_is_m00_before_needed(self):
         self.set_m00_before_if_tool_type_is_boring_bar()
+
+    def generate_nc_body_lines(self) -> list:
+        nc_lines = NclParserMill3axisSyntecTF.parse_cl_list(nc_seq_obj=self)
+        return nc_lines

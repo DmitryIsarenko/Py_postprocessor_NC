@@ -1,7 +1,8 @@
 from src.postOOP.classes.nc_sequence_classes.nc_program_basic import NcProgram
 from src.postOOP import config
 from src.postOOP.classes.parsers.pprint_parser import PprintParser
-from src.postOOP.classes.parsers.ncl_parser import NclParser
+# from src.postOOP.classes.parsers.ncl_parser_mill_tf import NclParserMill3axisSyntecTF
+from src.postOOP.classes.parsers.ncl_parser_basic import NclParserBasic
 from src.postOOP.classes.others.file_operator import FileOperator
 from src.postOOP.classes.others.formatter import Formatter
 
@@ -157,7 +158,7 @@ class NcSequence(NcProgram):
         return nc_lines
 
     def generate_nc_body_lines(self) -> list:
-        nc_lines = NclParser.parse_cl_list(nc_seq_obj=self)
+        nc_lines = NclParserBasic.parse_cl_list(nc_seq_obj=self)
         return nc_lines
 
     @staticmethod
