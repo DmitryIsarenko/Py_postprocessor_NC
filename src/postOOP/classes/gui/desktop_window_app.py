@@ -1,5 +1,6 @@
 import sys
 import os
+import logging
 from pprint import pprint
 from src.postOOP.classes.gui.qt_design import Ui_MainWindow
 from PyQt6 import QtWidgets
@@ -8,12 +9,14 @@ from src.postOOP.post_lister import PostLister
 
 from src.postOOP import config
 
+logger = logging.getLogger(__name__)
 
 class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
     config.POST_NAME = PostLister.default_post_name
     config.POST_OBJ = PostLister.default_post_obj
 
     def __init__(self):
+        logger.info("Started init of window.")
         super().__init__()
         self.setupUi(self)
 

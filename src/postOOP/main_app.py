@@ -2,6 +2,9 @@ import sys
 from PyQt6 import QtWidgets
 from src.postOOP.classes.gui.desktop_window_app import DesktopWindowApp
 
+import logging
+logger = logging.getLogger("src")
+
 #
 # если запускаем в режиме из проекта, то в
 # 58 линии
@@ -19,4 +22,6 @@ def main_ui():
 
 
 if __name__ == "__main__":
+    logger.info(f"Started execution from {__name__}")
+    print(__name__)
     main_ui()
