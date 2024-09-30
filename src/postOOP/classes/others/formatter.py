@@ -1,4 +1,5 @@
-from src.postOOP.config import LINE_ENDING_EOB
+# from src.postOOP.config import config.LINE_ENDING_EOB
+from src.postOOP import config
 
 
 class Formatter:
@@ -100,10 +101,10 @@ class Formatter:
         result = list()
         if type(cl_list_or_str) is list:
             for cl_line in cl_list_or_str:
-                cl_line = cl_line + LINE_ENDING_EOB
+                cl_line = cl_line + config.LINE_ENDING_EOB
                 result.append(cl_line)
         elif type(cl_list_or_str) is str:
-            result = cl_list_or_str + LINE_ENDING_EOB
+            result = cl_list_or_str + config.LINE_ENDING_EOB
         return result
 
     @classmethod

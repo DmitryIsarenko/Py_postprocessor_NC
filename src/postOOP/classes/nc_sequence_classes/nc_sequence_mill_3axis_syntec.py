@@ -1,5 +1,5 @@
 from src.postOOP.classes.nc_sequence_classes.nc_sequence_basic_mill_syntec import NcSequenceMillBasicSyntec
-
+from src.postOOP.classes.parsers.ncl_parser_mill_3axis_syntec import NclParserMill3axisSyntec
 
 class NcSequenceMill3AxisSyntec(NcSequenceMillBasicSyntec):
     def __init__(
@@ -21,3 +21,6 @@ class NcSequenceMill3AxisSyntec(NcSequenceMillBasicSyntec):
             nc_sequences_count=nc_sequences_count,
             date_of_creation=date_of_creation,
         )
+    def generate_nc_body_lines(self) -> list:
+        nc_lines = NclParserMill3axisSyntec.parse_cl_list(nc_seq_obj=self)
+        return nc_lines
