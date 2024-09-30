@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="OOP work version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/gui/desktop_window_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/desktop_window_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/gui/qt_design.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/qt_design.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/others/file_operator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/file_operator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/others/formatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/formatter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/others/postprocess_executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/postprocess_executor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/main_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/main_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "gui",
+    "git-widget-placeholder": "logging",
     "last_opened_file_path": "C:/WORK_DIRECTORY/10 Programming/Projects/py post/py post v2 OOP/src/postOOP/config.py",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
