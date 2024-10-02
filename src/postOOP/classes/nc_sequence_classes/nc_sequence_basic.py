@@ -1,8 +1,8 @@
 from src.postOOP.classes.nc_sequence_classes.nc_program_basic import NcProgram
 from src.postOOP import config
-from src.postOOP.classes.parsers.pprint_parser import PprintParser
+from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_basic import PprintParser
 # from src.postOOP.classes.parsers.ncl_parser_mill_tf import NclParserMill3axisSyntecTF
-from src.postOOP.classes.parsers.ncl_parser_basic import NclParserBasic
+from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic import NclParserBasic
 from src.postOOP.classes.others.file_operator import FileOperator
 from src.postOOP.classes.others.formatter import Formatter
 

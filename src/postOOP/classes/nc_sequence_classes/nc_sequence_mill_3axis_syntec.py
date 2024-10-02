@@ -1,5 +1,5 @@
 from src.postOOP.classes.nc_sequence_classes.nc_sequence_basic_mill_syntec import NcSequenceMillBasicSyntec
-from src.postOOP.classes.parsers.ncl_parser_mill_3axis_syntec import NclParserMill3axisSyntec
+from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec import NclParserMill3axisSyntec
 
 class NcSequenceMill3AxisSyntec(NcSequenceMillBasicSyntec):
     def __init__(

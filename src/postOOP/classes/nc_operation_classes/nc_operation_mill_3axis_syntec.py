@@ -1,9 +1,9 @@
-from src.postOOP.classes.nc_operation_classes.nc_operation_basic_mill_syntec import NcOperationBasicMill
+from src.postOOP.classes.nc_operation_classes.nc_operation_basic_mill_syntec import NcOperationBasicMillSyntec
 from src.postOOP.classes.nc_sequence_classes.nc_sequence_basic_mill_syntec import NcSequenceMillBasicSyntec
 
 
-class NcOperationMill3Axis(NcOperationBasicMill):
-    postprocessor_name = "SYNTEC 3AXIS MILL DEFAULT POST"
+class NcOperationMill3AxisSyntec(NcOperationBasicMillSyntec):
+    postprocessor_name = "MILL 3AXIS SYNTEC POST"
 
     def __init__(self, filepath: str):
         super().__init__(filepath=filepath)

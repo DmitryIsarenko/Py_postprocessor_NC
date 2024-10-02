@@ -1,5 +1,5 @@
 from src.postOOP.classes.nc_sequence_classes.nc_sequence_basic import NcSequence
-from src.postOOP.classes.parsers.ncl_parser_basic_mill_syntec import NclParserBasicMillSyntec
+from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic_mill_syntec import NclParserBasicMillSyntec
 
 class NcSequenceMillBasicSyntec(NcSequence):
     cur_X = 0

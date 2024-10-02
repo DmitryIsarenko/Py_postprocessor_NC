@@ -2,7 +2,7 @@ import logging
 
 from src.postOOP import config
 
-from src.postOOP.classes.parsers.pprint_parser import PprintParser
+from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_basic import PprintParser
 from src.postOOP.classes.nc_sequence_classes.nc_program_basic import NcProgram
 from src.postOOP.classes.nc_sequence_classes.nc_sequence_basic import NcSequence
 from src.postOOP.classes.others.file_operator import FileOperator

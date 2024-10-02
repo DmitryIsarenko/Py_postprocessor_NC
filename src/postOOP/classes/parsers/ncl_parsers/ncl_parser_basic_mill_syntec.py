@@ -1,4 +1,4 @@
-from src.postOOP.classes.parsers.ncl_parser_basic import NclParserBasic
+from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic import NclParserBasic
 from src.postOOP import config
 import logging
 

@@ -1,7 +1,7 @@
 import sys
 
 from src.postOOP.classes.others.file_operator import FileOperator
-from src.postOOP.classes.nc_operation_classes.nc_operation_mill_3axis_tf_syntec import NcOperationMill3AxisTF
+from src.postOOP.classes.nc_operation_classes.nc_operation_mill_3axis_syntec_TF import NcOperationMill3AxisSyntecTF
 
 
 def execute_postprocess(post_obj, work_dir_path: str):
@@ -16,5 +16,5 @@ def execute_postprocess(post_obj, work_dir_path: str):
 
 
 if __name__ == "__main__":
-    post_obj = NcOperationMill3AxisTF
+    post_obj = NcOperationMill3AxisSyntecTF
     execute_postprocess(post_obj=post_obj, work_dir_path=sys.path[1])
