@@ -4,7 +4,7 @@ from src.postOOP.classes.others.formatter import Formatter
 
 from src.postOOP import config
 
-class FileOperator:
+class FileOperatorBasic:
 
     @staticmethod
     def get_all_ncl_files_in_dir(path: str) -> list[str] | None:
@@ -58,7 +58,7 @@ class FileOperator:
         if "temp" in filepath:
             return None
         else:
-            FileOperator.remove_file(filepath=temp_filepath)
+            FileOperatorBasic.remove_file(filepath=temp_filepath)
             lines = cls.get_all_cl_lines(filepath=filepath)
             lines = Formatter.trim_line_connectors_in_cl_list(cl_list=lines)
             print(f'.ncl file "{filepath}" has been read')

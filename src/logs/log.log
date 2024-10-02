@@ -1,13 +1,29 @@
-2024-09-30 16:01:07 INFO     --- Logger src started. --- src:33 
-2024-09-30 16:01:07 DEBUG    --- NCL parser set to: NclParserBasic --- src.postOOP.classes.parsers.ncl_parser_basic:9 
-2024-09-30 16:01:07 DEBUG    --- NCL parser set to: NclParserBasicMillSyntec --- src.postOOP.classes.parsers.ncl_parser_basic_mill_syntec:10 
-2024-09-30 16:01:07 DEBUG    --- NCL parser set to: NclParserBasicMill3axis --- src.postOOP.classes.parsers.ncl_parser_mill_3axis_syntec:10 
-2024-09-30 16:01:07 DEBUG    --- NCL parser set to: NclParserMill3axisSyntecTF --- src.postOOP.classes.parsers.ncl_parser_mill_3axis_tf_syntec:10 
-2024-09-30 16:01:07 INFO     --- Started execution from __main__ --- src:25 
-2024-09-30 16:01:07 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:20 
-2024-09-30 16:01:07 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:59 
-2024-09-30 16:01:07 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:66 
-2024-09-30 16:01:07 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:85 
-2024-09-30 16:01:12 INFO     --- writing values from boxes 2 tab to config --- src.postOOP.classes.gui.desktop_window_app:106 
-2024-09-30 16:01:16 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:95 
-2024-09-30 16:01:17 INFO     --- Post name from config: <<<SYNTEC 3AXIS MILL TF POST>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:34 
+2024-10-02 11:48:03 INFO     --- Logger src started. --- src:33 
+2024-10-02 11:48:03 DEBUG    --- NCL parser set to: NclParserBasic --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:9 
+2024-10-02 11:48:03 DEBUG    --- NCL parser set to: NclParserBasicMillSyntec --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic_mill_syntec:10 
+2024-10-02 11:48:03 DEBUG    --- NCL parser set to: NclParserMill3axisSyntec --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec:10 
+2024-10-02 11:48:03 DEBUG    --- NCL parser set to: NclParserMill3axisSyntecTF --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec_TF:10 
+2024-10-02 11:48:03 DEBUG    --- NCL parser set to: NclParserMill4axisASyntec --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:10 
+2024-10-02 11:48:03 INFO     --- Started execution from __main__ --- src:25 
+2024-10-02 11:48:03 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:20 
+2024-10-02 11:48:03 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:59 
+2024-10-02 11:48:03 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:66 
+2024-10-02 11:48:03 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:85 
+2024-10-02 12:32:33 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:95 
+2024-10-02 12:32:35 INFO     --- Post name from config: <<<MILL 3AXIS SYNTEC POST>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:40 
+2024-10-02 12:32:35 DEBUG    --- nc_operation class name : <<<NcOperationMill3AxisSyntec>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:41 
+2024-10-02 12:32:35 DEBUG    --- nc_sequence class name : <<<NcSequenceMill3AxisSyntec>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:42 
+2024-10-02 12:32:35 DEBUG    --- Pprint_parser class name: <<<PprintParserMill3Axis>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:43 
+2024-10-02 12:32:35 DEBUG    --- Ncl_parser class name : <<<NclParserMill3axisSyntec>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:44 
+2024-10-02 12:33:09 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:95 
+2024-10-02 12:33:10 INFO     --- Post name from config: <<<MILL 3AXIS SYNTEC TF POST>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:40 
+2024-10-02 12:33:10 DEBUG    --- nc_operation class name : <<<NcOperationMill3AxisSyntecTF>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:41 
+2024-10-02 12:33:10 DEBUG    --- nc_sequence class name : <<<NcSequenceMill3AxisSyntecTF>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:42 
+2024-10-02 12:33:10 DEBUG    --- Pprint_parser class name: <<<PprintParserMill3Axis>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:43 
+2024-10-02 12:33:10 DEBUG    --- Ncl_parser class name : <<<NclParserMill3axisSyntecTF>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:44 
+2024-10-02 12:33:26 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:95 
+2024-10-02 12:33:29 INFO     --- Post name from config: <<<MILL 4AXIS A SYNTEC POST>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:40 
+2024-10-02 12:33:29 DEBUG    --- nc_operation class name : <<<NcOperationMill4AxisASyntec>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:41 
+2024-10-02 12:33:29 DEBUG    --- nc_sequence class name : <<<NcSequenceMill4AxisASyntec>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:42 
+2024-10-02 12:33:29 DEBUG    --- Pprint_parser class name: <<<PprintParserMill4AxisA>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:43 
+2024-10-02 12:33:29 DEBUG    --- Ncl_parser class name : <<<NclParserMill4axisASyntec>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:44 

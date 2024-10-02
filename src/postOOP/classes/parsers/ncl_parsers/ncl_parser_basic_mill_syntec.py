@@ -6,8 +6,8 @@ logger = logging.getLogger(__name__)
 
 
 class NclParserBasicMillSyntec(NclParserBasic):
-    ncl_parser_name = "NclParserBasicMillSyntec"
-    logger.debug(f"NCL parser set to: {ncl_parser_name}")
+    ncl_parser_class_name = "NclParserBasicMillSyntec"
+    logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
 
     is_G43_needed = False
 

@@ -1,11 +1,11 @@
 import sys
 
-from src.postOOP.classes.others.file_operator import FileOperator
+from src.postOOP.classes.others.file_operator_basic import FileOperatorBasic
 from src.postOOP.classes.nc_operation_classes.nc_operation_mill_3axis_syntec_TF import NcOperationMill3AxisSyntecTF
 
 
 def execute_postprocess(post_obj, work_dir_path: str):
-    filepaths = FileOperator.get_all_ncl_files_in_dir(path=work_dir_path)
+    filepaths = FileOperatorBasic.get_all_ncl_files_in_dir(path=work_dir_path)
     operations = list()
     if filepaths:
         for filepath in filepaths:

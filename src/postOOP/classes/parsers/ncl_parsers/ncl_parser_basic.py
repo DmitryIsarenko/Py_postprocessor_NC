@@ -5,8 +5,8 @@ logger = logging.getLogger(__name__)
 
 
 class NclParserBasic:
-    ncl_parser_name = "NclParserBasic"
-    logger.debug(f"NCL parser set to: {ncl_parser_name}")
+    ncl_parser_class_name = "NclParserBasic"
+    logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
 
     current_FEED = 0
     current_SPINDLE = 0

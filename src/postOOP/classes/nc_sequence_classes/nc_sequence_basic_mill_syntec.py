@@ -1,7 +1,9 @@
-from src.postOOP.classes.nc_sequence_classes.nc_sequence_basic import NcSequence
+from src.postOOP.classes.nc_sequence_classes.nc_sequence_basic import NcSequenceBasic
 from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic_mill_syntec import NclParserBasicMillSyntec
 
-class NcSequenceMillBasicSyntec(NcSequence):
+class NcSequenceMillBasicSyntec(NcSequenceBasic):
+    nc_sequence_class_name = "NcSequenceMillBasicSyntec"
+
     cur_X = 0
     cur_Y = 0
     cur_Z = 0
@@ -11,6 +13,9 @@ class NcSequenceMillBasicSyntec(NcSequence):
 
     def __init__(
             self,
+            ncl_parser_class,
+            pprint_parser_class,
+            file_operator_class,
             detail_name: str,
             nc_sequence_name: str,
             cl_list: list,
@@ -20,6 +25,9 @@ class NcSequenceMillBasicSyntec(NcSequence):
             date_of_creation: str
     ):
         super().__init__(
+            ncl_parser_class=ncl_parser_class,
+            pprint_parser_class=pprint_parser_class,
+            file_operator_class=file_operator_class,
             detail_name=detail_name,
             nc_sequence_name=nc_sequence_name,
             cl_list=cl_list,
@@ -29,6 +37,6 @@ class NcSequenceMillBasicSyntec(NcSequence):
             date_of_creation=date_of_creation,
         )
 
-    def generate_nc_body_lines(self) -> list:
-        nc_lines = NclParserBasicMillSyntec.parse_cl_list(nc_seq_obj=self)
-        return nc_lines
+    # def generate_nc_body_lines(self) -> list:
+    #     nc_lines = NclParserBasicMillSyntec.parse_cl_list(nc_seq_obj=self)
+    #     return nc_lines

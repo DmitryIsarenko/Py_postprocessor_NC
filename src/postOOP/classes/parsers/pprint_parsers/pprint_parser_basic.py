@@ -1,7 +1,12 @@
 from src.postOOP.classes.others.formatter import Formatter
 
 
-class PprintParser:
+class PprintParserBasic:
+    pprint_parser_class_name = "PprintParserBasic"
+
+    def __init__(self):
+        pass
+
     @staticmethod
     def count_cl_lines_in_cl_list(*, cl_list: list[str]) -> int:
         return len(cl_list)
