@@ -79,6 +79,7 @@ class NcOperationBasic(NcProgramBasic):
     def set_nc_sequences_names_in_list(self):
         self.list_of_nc_sequences_names: list[str] = self.pprint_parser_class.get_list_of_nc_sequence_names(
             cl_list=self.cl_list)
+        logger.debug(f"list_of_nc_sequences_names {self.list_of_nc_sequences_names}")
 
     def set_nc_sequences_objects_in_list(self):
         lst_of_objects = []
@@ -97,6 +98,7 @@ class NcOperationBasic(NcProgramBasic):
                                        nc_operation_number=self.operation_number,
                                        date_of_creation=self.date_of_creation))
         self.list_of_nc_sequences_objects: list = lst_of_objects
+        logger.debug(f"self.list_of_nc_sequences_objects {[item.nc_sequence_number for item in self.list_of_nc_sequences_objects]}")
 
     def set_sum_machining_time(self):
         sum_time = 0

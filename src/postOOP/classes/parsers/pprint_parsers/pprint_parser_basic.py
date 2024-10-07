@@ -1,5 +1,8 @@
 from src.postOOP.classes.others.formatter import Formatter
 
+import logging
+
+logger = logging.getLogger(__name__)
 
 class PprintParserBasic:
     pprint_parser_class_name = "PprintParserBasic"
@@ -31,6 +34,7 @@ class PprintParserBasic:
     @staticmethod
     def get_list_of_nc_sequence_names(*, cl_list: list[str]) -> list[str]:
         lst_of_names = []
+
         for line in cl_list:
             if "PPRINT / NC SEQUENCE NAME :" in line:
                 lst_of_names.append(Formatter.get_cl_line_part_after_colon(cl_line=line))

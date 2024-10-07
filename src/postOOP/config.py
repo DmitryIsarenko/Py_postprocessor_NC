@@ -4,9 +4,13 @@ POST_NAME = "PY POST V1.01"
 PROGRAM_MAIN_LETTER = "O"
 PROGRAM_MAIN_DIGIT = "5"
 
+
 # debug
+DEBUG = True
+# DEBUG = False
+DEBUG_CWD = r"c:\WORK_DIRECTORY\10 Programming\Projects\py post"
 DELETE_TEMP_FILE = True
-STARTS_FROM_EXE = 0
+STARTS_FROM_EXE = False
 # misc
 POST_OBJ = None
 CWD = None
@@ -103,3 +107,13 @@ operation_template_dict = {
     "cut_feed": "null",
     "spindle_speed": "null",
 }
+
+sequence_massive_names = [
+    "TRAJECTORY MILLING",
+    "HOLEMAKING",
+    "THREAD MILLING",
+    # "",
+    # "",
+    # "",
+    # "",
+]

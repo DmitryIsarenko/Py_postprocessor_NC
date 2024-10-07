@@ -1,5 +1,7 @@
 from src.postOOP import config
 from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec import NclParserMill3axisSyntec
+from src.postOOP.classes.parsers.coords_parser import CoordsParser
+
 import logging
 
 logger = logging.getLogger(__name__)
@@ -12,15 +14,28 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
     current_X = 0
     current_Y = 0
     current_Z = 0
+    current_A = 0
 
     is_G43_needed = False
-
     is_G43_ON = False
+
+    is_A_clamped = True
+    is_A_clamp_needed = True
+
+    is_all_ijk_same = True
+    goto_counter = 0
+
+    # def __init__(self):
+    #     is_all_ijk_same = self.check_is_all_ijk_same()
 
     @classmethod
     def parse_cl_list(cls, nc_seq_obj) -> list[str]:
+        cls.set_is_all_ijk_same(nc_seq_obj=nc_seq_obj)
+
         cl_list = nc_seq_obj.cl_list[nc_seq_obj.cl_start_index: nc_seq_obj.cl_end_index]
+
         result_list = []
+        cls.goto_counter = 0
         for line_index in range(len(cl_list)):
             if "PPRINT /" in cl_list[line_index]:
                 result = cls.parse_PPRINT(cl_list=cl_list, line_index=line_index)
@@ -113,8 +128,9 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
 
     @classmethod
     def parse_GOTO(cls, cl_list: list[str], line_index: int, nc_seq_obj) -> list[str]:
-        result_list = list()
+        final_result_list = list()
         res_list = list()
+        cls.goto_counter += 1
 
         if "RAPID" in cl_list[line_index - 1] and cls.is_G00_needed:
             res_list.extend(cls.parse_RAPID())
@@ -154,12 +170,73 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
                 res_list.append(f"X{x} Y{y} Z{z}")
 
             elif len(right_part_list) == 6:
-                pass
+                x, y, z, i, j, k = right_part_list
+
+                a = CoordsParser.count_A_angle_by_orts(j=j, k=k)
+                y, z = CoordsParser.count_new_Y_Z_for_A_rotation(y_start=y, z_start=z, angle_A_deg=a)
+
+                if cls.goto_counter == 1 and cls.is_all_ijk_same is False:
+                    final_result_list.append(f"M11")
+                    final_result_list.append(f"G00 G90 A{a}")
+                    res_list.append(f"X{x} Y{y} Z{z}")
+                elif cls.goto_counter == 1 and cls.is_all_ijk_same:
+                    final_result_list.append(f"M11")
+                    final_result_list.append(f"G00 G90 A{a}")
+                    final_result_list.append(f"M10")
+                    res_list.append(f"X{x} Y{y} Z{z}")
+                else:
+                    if cls.is_all_ijk_same:
+                        res_list.append(f"X{x} Y{y} Z{z}")
+                    else:
+                        res_list.append(f"A{a} X{x} Y{y} Z{z}")
+
+                #
+                # if a == cls.current_A and cls.goto_counter == 1:
+                #     res_list.append(f"X{x} Y{y} Z{z}")
+                # else:
+                #     if cls.is_all_ijk_same and cls.goto_counter == 1:
+                #         # g01_g00_popped = res_list.pop()
+                #         # logger.debug(f"Popping G00 or G01 from res_list: {g01_g00_popped}")
+                #         final_result_list.append(f"M11")
+                #         final_result_list.append(f"G00 G90 A{a}")
+                #         final_result_list.append(f"M10")
+                #         res_list.append(f"X{x} Y{y} Z{z}")
+                #     elif cls.is_all_ijk_same and cls.goto_counter > 1:
+                #         res_list.append(f"X{x} Y{y} Z{z}")
+                #     elif cls.is_all_ijk_same is False and cls.goto_counter == 1:
+                #         final_result_list.append(f"M11")
+                #         final_result_list.append(f"G00 G90 A{a}")
+                #         res_list.append(f"A{a} X{x} Y{y} Z{z}")
+                #     elif cls.is_all_ijk_same is False and cls.goto_counter > 1:
+                #         res_list.append(f"A{a} X{x} Y{y} Z{z}")
             else:
                 print("error with num of scalars")
         if res_list:
-            result_list.append("".join(res_list))
-        return result_list
+            final_result_list.append("".join(res_list))
+        return final_result_list
+
+    @classmethod
+    def set_is_all_ijk_same(cls, *, nc_seq_obj):
+        cl_list = nc_seq_obj.cl_list[nc_seq_obj.cl_start_index: nc_seq_obj.cl_end_index]
+        unic_ijk_set = set()
+        for line in cl_list:
+            if "GOTO" in line:
+                right_part_list = line.split(sep=" / ")[1].strip().split(sep=",")
+                if len(right_part_list) == 6:
+                    right_part_str = " ".join(right_part_list[3::])
+                    unic_ijk_set.add(right_part_str)
+        logger.debug(f"{unic_ijk_set}")
+        if len(unic_ijk_set) == 1:
+            cls.is_all_ijk_same = True
+            logger.debug(f"check_is_all_ijk_same = {cls.is_all_ijk_same}")
+            return True
+        elif len(unic_ijk_set) > 1:
+            cls.is_all_ijk_same = False
+            logger.debug(f"check_is_all_ijk_same = {cls.is_all_ijk_same}")
+            return False
+        else:
+            logger.critical("While check of ijk if same - len of set is 0")
+            return False
 
     @classmethod
     def parse_CYCLE(cls, cl_list: list[str], line_index: int, nc_seq_obj) -> list[str]:
