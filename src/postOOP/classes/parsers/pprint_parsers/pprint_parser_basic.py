@@ -1,5 +1,5 @@
 from src.postOOP.classes.others.formatter import Formatter
-
+from src.postOOP import config
 import logging
 
 logger = logging.getLogger(__name__)
@@ -17,11 +17,19 @@ class PprintParserBasic:
     @staticmethod
     def get_index_of_occurence_in_cl_list_in_range(*, cl_list: list[str],
                                                    search_for: str,
+                                                   nc_massive_copy_counter: int,
                                                    start_index: int = 0,
                                                    end_index: int) -> int:
+        findings_counter = 0
         for line_index in range(start_index, end_index):
             if search_for in cl_list[line_index]:
-                return line_index
+                findings_counter += 1
+                if nc_massive_copy_counter < 2:
+                    return line_index
+                elif nc_massive_copy_counter != findings_counter:
+                    continue
+                else:
+                    return line_index
 
     @staticmethod
     def count_nc_sequences_in_cl_list(*, cl_list: list[str]) -> int:
@@ -34,7 +42,6 @@ class PprintParserBasic:
     @staticmethod
     def get_list_of_nc_sequence_names(*, cl_list: list[str]) -> list[str]:
         lst_of_names = []
-
         for line in cl_list:
             if "PPRINT / NC SEQUENCE NAME :" in line:
                 lst_of_names.append(Formatter.get_cl_line_part_after_colon(cl_line=line))

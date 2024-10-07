@@ -1,27 +1,39 @@
-2024-10-07 13:58:35 INFO     --- Logger src started. --- src:33 
-2024-10-07 13:58:35 DEBUG    --- NCL parser set to: NclParserBasic --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:9 
-2024-10-07 13:58:35 DEBUG    --- NCL parser set to: NclParserBasicMillSyntec --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic_mill_syntec:10 
-2024-10-07 13:58:35 DEBUG    --- NCL parser set to: NclParserMill3axisSyntec --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec:10 
-2024-10-07 13:58:35 DEBUG    --- NCL parser set to: NclParserMill3axisSyntecTF --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec_TF:10 
-2024-10-07 13:58:35 DEBUG    --- NCL parser set to: NclParserMill4axisASyntec --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:12 
-2024-10-07 13:58:35 INFO     --- Started execution from __main__ --- src:25 
-2024-10-07 13:58:35 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:20 
-2024-10-07 13:58:35 DEBUG    --- Setting cwd in debug mode --- src.postOOP.classes.gui.desktop_window_app:164 
-2024-10-07 13:58:35 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:59 
-2024-10-07 13:58:35 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:66 
-2024-10-07 13:58:35 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:85 
-2024-10-07 13:58:37 INFO     --- Post name from config: <<<MILL 4AXIS A SYNTEC POST>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:40 
-2024-10-07 13:58:37 DEBUG    --- nc_operation class name : <<<NcOperationMill4AxisASyntec>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:41 
-2024-10-07 13:58:37 DEBUG    --- nc_sequence class name : <<<NcSequenceMill4AxisASyntec>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:42 
-2024-10-07 13:58:37 DEBUG    --- Pprint_parser class name: <<<PprintParserMill4AxisA>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:43 
-2024-10-07 13:58:37 DEBUG    --- Ncl_parser class name : <<<NclParserMill4axisASyntec>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:44 
-2024-10-07 13:58:37 DEBUG    --- list_of_nc_sequences_names ['KONTUR_1', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING'] --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:82 
-2024-10-07 13:58:37 DEBUG    --- {'0.0000000  -0.1736482  0.9848078'} --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:228 
-2024-10-07 13:58:37 DEBUG    --- check_is_all_ijk_same = True --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:231 
-2024-10-07 13:58:37 DEBUG    --- {' 0.0000000  -0.3420201  0.9396926'} --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:228 
-2024-10-07 13:58:37 DEBUG    --- check_is_all_ijk_same = True --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:231 
-2024-10-07 13:58:37 DEBUG    --- {' 0.0000000  -0.3420201  0.9396926'} --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:228 
-2024-10-07 13:58:37 DEBUG    --- check_is_all_ijk_same = True --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:231 
-2024-10-07 13:58:37 DEBUG    --- {' 0.0000000  -0.3420201  0.9396926'} --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:228 
-2024-10-07 13:58:37 DEBUG    --- check_is_all_ijk_same = True --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:231 
-2024-10-07 13:58:37 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4] --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:101 
+2024-10-07 15:43:40 INFO     --- Logger src started. --- src:33 
+2024-10-07 15:43:40 DEBUG    --- NCL parser set to: NclParserBasic --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:9 
+2024-10-07 15:43:40 DEBUG    --- NCL parser set to: NclParserBasicMillSyntec --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic_mill_syntec:10 
+2024-10-07 15:43:40 DEBUG    --- NCL parser set to: NclParserMill3axisSyntec --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec:10 
+2024-10-07 15:43:40 DEBUG    --- NCL parser set to: NclParserMill3axisSyntecTF --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec_TF:10 
+2024-10-07 15:43:40 DEBUG    --- NCL parser set to: NclParserMill4axisASyntec --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:12 
+2024-10-07 15:43:40 INFO     --- Started execution from __main__ --- src:25 
+2024-10-07 15:43:40 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:20 
+2024-10-07 15:43:40 DEBUG    --- Setting cwd in debug mode --- src.postOOP.classes.gui.desktop_window_app:164 
+2024-10-07 15:43:40 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:59 
+2024-10-07 15:43:40 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:66 
+2024-10-07 15:43:40 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:85 
+2024-10-07 15:43:42 INFO     --- Post name from config: <<<MILL 4AXIS A SYNTEC POST>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:40 
+2024-10-07 15:43:42 INFO     --- Post name from config: <<<MILL 4AXIS A SYNTEC POST>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:40 
+2024-10-07 15:43:42 DEBUG    --- list_of_nc_sequences_names ['KONTUR_1', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING'] --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:82 
+2024-10-07 15:43:42 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:101 
+2024-10-07 15:43:42 DEBUG    --- end   index: 40 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:110 
+2024-10-07 15:43:42 DEBUG    --- {'0.0000000  -0.1736482  0.9848078'} --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:228 
+2024-10-07 15:43:42 DEBUG    --- check_is_all_ijk_same = True --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:231 
+2024-10-07 15:43:42 DEBUG    --- start index: 42 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:101 
+2024-10-07 15:43:42 DEBUG    --- end   index: 70 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:110 
+2024-10-07 15:43:42 DEBUG    --- {' 0.0000000  -0.3420201  0.9396926'} --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:228 
+2024-10-07 15:43:42 DEBUG    --- check_is_all_ijk_same = True --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:231 
+2024-10-07 15:43:42 DEBUG    --- start index: 72 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:101 
+2024-10-07 15:43:42 DEBUG    --- end   index: 100 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:110 
+2024-10-07 15:43:42 DEBUG    --- {'0.0000000  -0.5000000  0.8660254'} --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:228 
+2024-10-07 15:43:42 DEBUG    --- check_is_all_ijk_same = True --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:231 
+2024-10-07 15:43:42 DEBUG    --- start index: 102 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:101 
+2024-10-07 15:43:42 DEBUG    --- end   index: 130 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:110 
+2024-10-07 15:43:42 DEBUG    --- {'0.0000000  -0.6427876  0.7660444'} --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:228 
+2024-10-07 15:43:42 DEBUG    --- check_is_all_ijk_same = True --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:231 
+2024-10-07 15:43:42 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4] --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:107 
+2024-10-07 15:44:57 INFO     --- Post name from config: <<<MILL 4AXIS A SYNTEC POST>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:40 
+2024-10-07 15:44:57 DEBUG    --- list_of_nc_sequences_names ['MULTAX_WHEEL'] --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:82 
+2024-10-07 15:44:57 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:101 
+2024-10-07 15:44:57 DEBUG    --- end   index: 75 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:110 
+2024-10-07 15:44:57 DEBUG    --- {'0.0000000  0.0000000  -1.0000000', '0.0000000  0.3420201  -0.9396926', '0.0000000  0.0000000  1.0000000', '0.0000000  0.9396926  -0.3420201', '0.0000000  1.0000000  0.0000000', '0.0000000  -0.8660254  -0.5000000', '0.0000000  0.7660444  0.6427876', '0.0000000  -0.8660254  0.5000000', '0.0000000  0.9396926  0.3420201', '0.0000000  0.3420201  0.9396926', '0.0000000  -1.0000000  0.0000000', '0.0000000  -0.9396926  -0.3420201', '0.0000000  -0.5000000  -0.8660254', '0.0000000  0.7660444  -0.6427876', '0.0000000  -0.5000000  0.8660254', '0.0000000  0.8660254  -0.5000000', '0.0000000  0.8660254  0.5000000', '0.0000000  0.6427876  0.7660444', '0.0000000  0.5000000  -0.8660254', '0.0000000  -0.6427876  -0.7660444', '0.0000000  -0.6427876  0.7660444', '0.0000000  0.5000000  0.8660254', '0.0000000  -0.7660444  -0.6427876', '0.0000000  -0.9848078  0.1736482', '0.0000000  0.9848078  -0.1736482', '0.0000000  -0.9848078  -0.1736482', '0.0000000  0.9848078  0.1736482', '0.0000000  -0.3420201  0.9396926', '0.0000000  -0.7660444  0.6427876', '0.0000000  -0.9396926  0.3420201', '0.0000000  -0.3420201  -0.9396926', '0.0000000  -0.1736482  0.9848078', '0.0000000  0.1736482  -0.9848078', '0.0000000  0.1736482  0.9848078', '0.0000000  -0.1736482  -0.9848078', '0.0000000  0.6427876  -0.7660444'} --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:228 
+2024-10-07 15:44:57 DEBUG    --- check_is_all_ijk_same = False --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:235 
+2024-10-07 15:44:57 DEBUG    --- self.list_of_nc_sequences_objects [1] --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:107 

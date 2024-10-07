@@ -1,3 +1,4 @@
+import logging
 from src.postOOP.classes.nc_sequence_classes.nc_program_basic import NcProgramBasic
 from src.postOOP import config
 from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_basic import PprintParserBasic
@@ -6,6 +7,7 @@ from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic import NclParserBa
 from src.postOOP.classes.others.file_operator_basic import FileOperatorBasic
 from src.postOOP.classes.others.formatter import Formatter
 
+logger = logging.getLogger(__name__)
 
 class NcSequenceBasic(NcProgramBasic):
     nc_sequence_class_name = "NcSequenceBasic"
@@ -48,6 +50,7 @@ class NcSequenceBasic(NcProgramBasic):
             file_operator_class: FileOperatorBasic,
             detail_name: str,
             nc_sequence_name: str,
+            nc_massive_copy_counter: int,
             cl_list: list,
             nc_operation_number: int,
             nc_sequence_number: int,
@@ -65,6 +68,7 @@ class NcSequenceBasic(NcProgramBasic):
         self.nc_operation_number = nc_operation_number
         self.nc_sequence_number = nc_sequence_number
         self.nc_sequences_count = nc_sequences_count
+        self.nc_massive_copy_counter = nc_massive_copy_counter
         self.date_of_creation = date_of_creation
         self.set_nc_filename()
 
@@ -90,16 +94,20 @@ class NcSequenceBasic(NcProgramBasic):
     def set_cl_start_index(self):
         self.cl_start_index = self.pprint_parser_class.get_index_of_occurence_in_cl_list_in_range(cl_list=self.cl_list,
                                                                                                   search_for=self.nc_sequence_name,
+                                                                                                  nc_massive_copy_counter=self.nc_massive_copy_counter,
                                                                                                   start_index=0,
                                                                                                   end_index=len(
                                                                                                       self.cl_list))
+        logger.debug(f"start index: {self.cl_start_index}")
 
     def set_cl_end_index(self):
         self.cl_end_index = self.pprint_parser_class.get_index_of_occurence_in_cl_list_in_range(cl_list=self.cl_list,
+                                                                                                nc_massive_copy_counter=0,
                                                                                                 search_for=config.NC_END_KEYWORD,
                                                                                                 start_index=self.cl_start_index,
                                                                                                 end_index=len(
                                                                                                     self.cl_list))
+        logger.debug(f"end   index: {self.cl_end_index}")
 
     def set_work_offset(self):
         self.work_offset = self.pprint_parser_class.get_work_offset(cl_list=self.cl_list)

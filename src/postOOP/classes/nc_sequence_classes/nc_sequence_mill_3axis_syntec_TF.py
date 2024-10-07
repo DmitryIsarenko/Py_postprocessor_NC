@@ -11,6 +11,7 @@ class NcSequenceMill3AxisSyntecTF(NcSequenceMillBasicSyntec):
             file_operator_class,
             detail_name: str,
             nc_sequence_name: str,
+            nc_massive_copy_counter: int,
             cl_list: list,
             nc_operation_number: int,
             nc_sequence_number: int,
@@ -27,6 +28,7 @@ class NcSequenceMill3AxisSyntecTF(NcSequenceMillBasicSyntec):
             nc_operation_number=nc_operation_number,
             nc_sequence_number=nc_sequence_number,
             nc_sequences_count=nc_sequences_count,
+            nc_massive_copy_counter=nc_massive_copy_counter,
             date_of_creation=date_of_creation,
         )
 

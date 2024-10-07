@@ -9,7 +9,7 @@ PROGRAM_MAIN_DIGIT = "5"
 DEBUG = True
 # DEBUG = False
 DEBUG_CWD = r"c:\WORK_DIRECTORY\10 Programming\Projects\py post"
-DELETE_TEMP_FILE = True
+DELETE_TEMP_FILE = False
 STARTS_FROM_EXE = False
 # misc
 POST_OBJ = None
