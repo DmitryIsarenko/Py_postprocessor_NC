@@ -10,7 +10,7 @@ class CoordsParser:
             angle_rot = 0
         elif j < 0 and k > 0:  # angle <90 deg
             angle_rot = math.atan(abs(j) / abs(k))
-        elif j == 1:  # angle 90 deg
+        elif j == -1:  # angle 90 deg
             angle_rot = 0.5 * math.pi
         elif j < 0 and k < 0:  # angle 90 < 180 deg
             angle_rot = math.atan(abs(k) / abs(j))
@@ -20,7 +20,7 @@ class CoordsParser:
         elif j > 0 and k < 0:  # angle 180 < 270 deg
             angle_rot = math.atan(abs(j) / abs(k))
             angle_rot += math.pi * 1
-        elif j == -1:  # angle 270 deg
+        elif j == 1:  # angle 270 deg
             angle_rot = 1.5 * math.pi
         elif j > 0 and k > 0:  # angle > 270 deg
             angle_rot = math.atan(abs(k) / abs(j))
