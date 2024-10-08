@@ -6,7 +6,7 @@ logger = logging.getLogger(__name__)
 
 class NclParserBasic:
     ncl_parser_class_name = "NclParserBasic"
-    logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
+    # logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
 
     current_FEED = 0
     current_SPINDLE = 0
@@ -120,7 +120,7 @@ class NclParserBasic:
         result_list = list()
         right_part_str = cl_list[line_index].split(sep=" / ")[1]
         right_part_list = right_part_str.split(sep=",")
-        csys_coords = [round(float(char), ndigits=5) for char in right_part_list]
+        csys_coords = [round(float(char), ndigits=config.NDIGITS_XYZ) for char in right_part_list]
         return result_list
 
     @classmethod
@@ -189,7 +189,7 @@ class NclParserBasic:
                 res_list.append(f"G00 ")
 
             right_part_list = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=",")
-            right_part_list = [round(float(item), ndigits=5) for item in right_part_list]
+            right_part_list = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in right_part_list]
 
             if len(right_part_list) == 3:
                 x, y, z = right_part_list
@@ -198,7 +198,7 @@ class NclParserBasic:
             elif len(right_part_list) == 6:
                 pass
             else:
-                print("error with num of scalars")
+                logger.critical("error with num of scalars")
         if res_list:
             result_list.append("".join(res_list))
         return result_list
@@ -208,7 +208,7 @@ class NclParserBasic:
         cls.is_G00_needed = False
         cls.is_G01_needed = True
         right_part_list = cl_line.split(sep=" / ")[1].strip().split(sep=",")
-        feedrate = round(float(right_part_list[0]), ndigits=2)
+        feedrate = round(float(right_part_list[0]), ndigits=config.NDIGITS_FEEDRATE_G94)
         cls.current_FEED = feedrate
 
     @classmethod
@@ -221,7 +221,7 @@ class NclParserBasic:
         result_list = list()
         res_list = list()
         right_part_list = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=",")
-        feedrate = round(float(right_part_list[0]), ndigits=2)
+        feedrate = round(float(right_part_list[0]), ndigits=config.NDIGITS_FEEDRATE_G94)
         res_list.append(f"G01 F{feedrate} ")
 
         result_list = res_list
@@ -275,22 +275,22 @@ class NclParserBasic:
         result_list = list()
         res_list = list()
         prev_coords_list_str = cl_list[line_index - 1].split(sep=" / ")[1].strip().split(sep=",")
-        prev_coords_list_float = [round(float(item), ndigits=5) for item in prev_coords_list_str]
+        prev_coords_list_float = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in prev_coords_list_str]
         x_start_abs, y_start_abs, z_start_abs = prev_coords_list_float
 
         right_part_list = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=",")
-        right_part_list_float = [round(float(item), ndigits=5) for item in right_part_list]
+        right_part_list_float = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in right_part_list]
 
         end_coords = cl_list[line_index + 1].split(sep=" / ")[1].strip().split(sep=",")
-        end_coords_float = [round(float(item), ndigits=5) for item in end_coords]
+        end_coords_float = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in end_coords]
         x_end_abs, y_end_abs, z_end_abs = end_coords_float
 
         (x_center_abs, y_center_abs, z_center_abs,
          csys_vector_i, csys_vector_j, csys_vector_k, radius) = right_part_list_float
 
-        x_center_incr = round(x_center_abs - x_start_abs, ndigits=5)
-        y_center_incr = round(y_center_abs - y_start_abs, ndigits=5)
-        z_center_incr = round(z_center_abs - z_start_abs, ndigits=5)
+        x_center_incr = round(x_center_abs - x_start_abs, ndigits=config.NDIGITS_XYZ)
+        y_center_incr = round(y_center_abs - y_start_abs, ndigits=config.NDIGITS_XYZ)
+        z_center_incr = round(z_center_abs - z_start_abs, ndigits=config.NDIGITS_XYZ)
 
         if csys_vector_k == -1:
             res_list.append("G02 ")

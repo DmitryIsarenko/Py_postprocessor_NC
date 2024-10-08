@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 
 class NclParserMill3axisSyntecTF(NclParserMill3axisSyntec):
     ncl_parser_class_name = "NclParserMill3axisSyntecTF"
-    logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
+    # logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
 
     @classmethod
     def parse_cl_list(cls, nc_seq_obj) -> list[str]:

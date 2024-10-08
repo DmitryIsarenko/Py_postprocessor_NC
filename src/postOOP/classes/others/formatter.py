@@ -1,6 +1,8 @@
 # from src.postOOP.config import config.LINE_ENDING_EOB
 from src.postOOP import config
+import logging
 
+logger = logging.getLogger(__name__)
 
 class Formatter:
     @staticmethod
@@ -60,7 +62,7 @@ class Formatter:
                     cl_list_or_str = int(round(float(cl_list_or_str), ndigits=0))
                     return cl_list_or_str
                 except TypeError:
-                    print("Type Error")
+                    logger.warning("Type Error")
             elif ndigits >= 1:
                 try:
                     cl_list_or_str = round(float(cl_list_or_str), ndigits=ndigits)
@@ -68,7 +70,7 @@ class Formatter:
                         cl_list_or_str = int(cl_list_or_str)
                     return cl_list_or_str
                 except TypeError:
-                    print("Type Error")
+                    logger.warning("Type Error")
                 pass
             else:
                 raise FloatingPointError

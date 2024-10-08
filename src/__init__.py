@@ -30,4 +30,4 @@ logger.addHandler(console_handler)
 logger.addHandler(logfile_handler)
 logger.addHandler(rotating_logfile_handler)
 
-logger.info(f"Logger {__name__} started.")
+logger.debug(f"Logger {__name__} started.")

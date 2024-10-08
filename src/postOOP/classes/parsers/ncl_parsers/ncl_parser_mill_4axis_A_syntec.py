@@ -1,7 +1,7 @@
 from src.postOOP import config
 from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec import NclParserMill3axisSyntec
 from src.postOOP.classes.parsers.coords_parser import CoordsParser
-
+# from src.postOOP.classes.nc_sequence_classes.nc_sequence_mill_4axis_A_syntec import NcSequenceMill4AxisASyntec
 import logging
 
 logger = logging.getLogger(__name__)
@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
     ncl_parser_class_name = "NclParserMill4axisASyntec"
-    logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
+    # logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
 
     current_X = 0
     current_Y = 0
@@ -22,16 +22,16 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
     is_A_clamped = True
     is_A_clamp_needed = True
 
-    is_all_ijk_same = True
+    is_positional_multax = True
     goto_counter = 0
 
-    # def __init__(self):
-    #     is_all_ijk_same = self.check_is_all_ijk_same()
+    is_multax_active = False
+    # is_multax_operation = False
 
     @classmethod
     def parse_cl_list(cls, nc_seq_obj) -> list[str]:
         cls.set_is_all_ijk_same(nc_seq_obj=nc_seq_obj)
-
+        cls.is_multax_operation = nc_seq_obj.is_multax_operation
         cl_list = nc_seq_obj.cl_list[nc_seq_obj.cl_start_index: nc_seq_obj.cl_end_index]
 
         result_list = []
@@ -91,6 +91,8 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
             elif "$$" in cl_list[line_index]:
                 result = cls.parse_DOUBLE_DOLLAR(cl_list=cl_list, line_index=line_index)
                 result_list.extend(result)
+            elif "MULTAX / ON" in cl_list[line_index]:
+                nc_seq_obj.is_multax_active = True
             else:
                 cls.parse_UNPARSED(cl_list=cl_list, line_index=line_index)
 
@@ -154,6 +156,9 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
             res_list.append(cls.create_G43_addition(nc_seq_obj=nc_seq_obj))
             cls.is_G43_ON = True
 
+        # если кругового нет позади, но есть впереди
+        # если круговое есть позади, но нет впереди
+        # если кругового нет ни позади, ни впереди
         if ("CIRCLE" not in cl_list[line_index - 1] and "CIRCLE" in cl_list[line_index + 1]) \
                 or ("CIRCLE" in cl_list[line_index - 1] and "CIRCLE" not in cl_list[line_index + 1]) \
                 or ("CIRCLE" not in cl_list[line_index - 1] and "CIRCLE" not in cl_list[line_index + 1]):
@@ -163,11 +168,20 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
                 res_list.append(f"G00 ")
 
             right_part_list = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=",")
-            right_part_list = [round(float(item), ndigits=5) for item in right_part_list]
+            right_part_list = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in right_part_list]
 
             if len(right_part_list) == 3:
                 x, y, z = right_part_list
-                res_list.append(f"X{x} Y{y} Z{z}")
+                if cls.is_multax_operation is False:
+                    res_list.append(f"X{x} Y{y} Z{z}")
+                elif cls.is_multax_operation:
+                    if cls.goto_counter == 1:
+                        final_result_list.append(f"M11")
+                        final_result_list.append(f"G00 G90 A0")
+                        final_result_list.append(f"M10")
+                        res_list.append(f"X{x} Y{y} Z{z}")
+                    else:
+                        res_list.append(f"X{x} Y{y} Z{z}")
 
             elif len(right_part_list) == 6:
                 x, y, z, i, j, k = right_part_list
@@ -175,42 +189,30 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
                 a = CoordsParser.count_A_angle_by_orts(j=j, k=k)
                 y, z = CoordsParser.count_new_Y_Z_for_A_rotation(y_start=y, z_start=z, angle_A_deg=a)
 
-                if cls.goto_counter == 1 and cls.is_all_ijk_same is False:
-                    final_result_list.append(f"M11")
-                    final_result_list.append(f"G00 G90 A{a}")
-                    res_list.append(f"X{x} Y{y} Z{z}")
-                elif cls.goto_counter == 1 and cls.is_all_ijk_same:
-                    final_result_list.append(f"M11")
-                    final_result_list.append(f"G00 G90 A{a}")
-                    final_result_list.append(f"M10")
-                    res_list.append(f"X{x} Y{y} Z{z}")
-                else:
-                    if cls.is_all_ijk_same:
+                # первая строка
+                if cls.goto_counter == 1:
+                    # позиционная обработка
+                    if cls.is_positional_multax:
+                        final_result_list.append(f"M11")
+                        final_result_list.append(f"G00 G90 A{a}")
+                        final_result_list.append(f"M10")
                         res_list.append(f"X{x} Y{y} Z{z}")
+                    # непрерывная обработка
+                    else:
+                        final_result_list.append(f"M11")
+                        final_result_list.append(f"G00 G90 A{a}")
+                        res_list.append(f"X{x} Y{y} Z{z}")
+                # не первая строка
+                else:
+                    # позиционная обработка
+                    if cls.is_positional_multax:
+                        res_list.append(f"X{x} Y{y} Z{z}")
+                    # непрерывная обработка
                     else:
                         res_list.append(f"A{a} X{x} Y{y} Z{z}")
-
-                #
-                # if a == cls.current_A and cls.goto_counter == 1:
-                #     res_list.append(f"X{x} Y{y} Z{z}")
-                # else:
-                #     if cls.is_all_ijk_same and cls.goto_counter == 1:
-                #         # g01_g00_popped = res_list.pop()
-                #         # logger.debug(f"Popping G00 or G01 from res_list: {g01_g00_popped}")
-                #         final_result_list.append(f"M11")
-                #         final_result_list.append(f"G00 G90 A{a}")
-                #         final_result_list.append(f"M10")
-                #         res_list.append(f"X{x} Y{y} Z{z}")
-                #     elif cls.is_all_ijk_same and cls.goto_counter > 1:
-                #         res_list.append(f"X{x} Y{y} Z{z}")
-                #     elif cls.is_all_ijk_same is False and cls.goto_counter == 1:
-                #         final_result_list.append(f"M11")
-                #         final_result_list.append(f"G00 G90 A{a}")
-                #         res_list.append(f"A{a} X{x} Y{y} Z{z}")
-                #     elif cls.is_all_ijk_same is False and cls.goto_counter > 1:
-                #         res_list.append(f"A{a} X{x} Y{y} Z{z}")
             else:
-                print("error with num of scalars")
+                logger.critical(f"Wrong num of scalars in right part of GOTO")
+                raise ValueError
         if res_list:
             final_result_list.append("".join(res_list))
         return final_result_list
@@ -227,15 +229,15 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
                     unic_ijk_set.add(right_part_str)
         logger.debug(f"{unic_ijk_set}")
         if len(unic_ijk_set) == 1:
-            cls.is_all_ijk_same = True
-            logger.debug(f"check_is_all_ijk_same = {cls.is_all_ijk_same}")
+            cls.is_positional_multax = True
+            # logger.debug(f"check_is_all_ijk_same = {cls.is_positional_multax}")
             return True
         elif len(unic_ijk_set) > 1:
-            cls.is_all_ijk_same = False
-            logger.debug(f"check_is_all_ijk_same = {cls.is_all_ijk_same}")
+            cls.is_positional_multax = False
+            # logger.debug(f"check_is_all_ijk_same = {cls.is_positional_multax}")
             return False
         else:
-            logger.critical("While check of ijk if same - len of set is 0")
+            logger.debug("While check of ijk if same - len of set is 0")
             return False
 
     @classmethod
@@ -265,29 +267,32 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
             if "MMPM" in right_part_list:
                 operation_data["FEED_TYPE"] = "G94"
                 feed_type_index = right_part_list.index("MMPM")
-                operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]), ndigits=4)
+                operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]),
+                                                    ndigits=config.NDIGITS_FEEDRATE_G94)
                 res_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
-
             elif "MMPR" in right_part_list:
                 operation_data["FEED_TYPE"] = "G95"
                 feed_type_index = right_part_list.index("MMPR")
-                operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]), ndigits=4)
+                operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]),
+                                                    ndigits=config.NDIGITS_FEEDRATE_G95)
                 res_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
+
             if "DEPTH" in right_part_list:
                 depth_index = right_part_list.index("DEPTH")
-                operation_data["DEPTH"] = round(float(right_part_list[depth_index + 1]), ndigits=5)
+                operation_data["DEPTH"] = round(float(right_part_list[depth_index + 1]), ndigits=config.NDIGITS_XYZ)
                 res_list.append(f"Z{operation_data["DEPTH"]} ")
             if "STEP" in right_part_list:
                 step_index = right_part_list.index("STEP")
-                operation_data["STEP"] = round(float(right_part_list[step_index + 1]), ndigits=5)
+                operation_data["STEP"] = round(float(right_part_list[step_index + 1]), ndigits=config.NDIGITS_XYZ)
                 res_list.append(f"Q{operation_data["STEP"]} ")
             if "CLEAR" in right_part_list:
                 clear_index = right_part_list.index("CLEAR")
-                operation_data["CLEAR"] = round(float(right_part_list[clear_index + 1]), ndigits=5)
+                operation_data["CLEAR"] = round(float(right_part_list[clear_index + 1]), ndigits=config.NDIGITS_XYZ)
                 res_list.append(f"R{operation_data["CLEAR"]} ")
             if "ZFEED" in right_part_list:
                 zfeed_index = right_part_list.index("ZFEED")
-                operation_data["ZFEED"] = round(float(right_part_list[zfeed_index + 1]), ndigits=4)
+                operation_data["ZFEED"] = round(float(right_part_list[zfeed_index + 1]),
+                                                ndigits=config.NDIGITS_FEEDRATE_G95)
             result_list.append("".join(res_list))
         return result_list
 
@@ -317,3 +322,85 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
             else:
                 continue
         return result_list
+
+    @classmethod
+    def parse_CIRCLE(cls, cl_list: list[str], line_index: int) -> list[str]:
+        cls.is_G00_ON = False
+        cls.is_G01_ON = False
+        final_result_list = list()
+        res_list = list()
+
+        start_coords_list_str = cl_list[line_index - 1].split(sep=" / ")[1].strip().split(sep=",")
+        center_coords_list_str = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=",")
+        end_coords_list_str = cl_list[line_index + 1].split(sep=" / ")[1].strip().split(sep=",")
+
+        start_coords_list_float = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in start_coords_list_str]
+        center_coords_list_float = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in center_coords_list_str]
+        end_coords_list_float = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in end_coords_list_str]
+
+        (x_center_abs, y_center_abs, z_center_abs,
+         csys_vector_i, csys_vector_j, csys_vector_k, radius) = center_coords_list_float
+
+        if len(end_coords_list_float) == 3 and len(start_coords_list_float) == 3:
+            x_start_abs, y_start_abs, z_start_abs = start_coords_list_float
+            x_end_abs, y_end_abs, z_end_abs = end_coords_list_float
+
+            x_center_incr = round(x_center_abs - x_start_abs, ndigits=config.NDIGITS_XYZ)
+            y_center_incr = round(y_center_abs - y_start_abs, ndigits=config.NDIGITS_XYZ)
+            z_center_incr = round(z_center_abs - z_start_abs, ndigits=config.NDIGITS_XYZ)
+
+            if csys_vector_k == -1:
+                res_list.append("G02 ")
+            elif csys_vector_k == 1:
+                res_list.append("G03 ")
+
+            res_list.append(f"X{x_end_abs} "
+                            f"Y{y_end_abs} "
+                            f"Z{z_end_abs} "
+                            f"I{x_center_incr} "
+                            f"J{y_center_incr} "
+                            f"K{z_center_incr}"
+                            )
+            final_result_list.append("".join(res_list))
+            return final_result_list
+
+        elif len(end_coords_list_float) == 6 and len(start_coords_list_float) == 6:
+            (x_start_abs, y_start_abs, z_start_abs,
+             i_start, j_start, k_start) = start_coords_list_float
+
+            (x_end_abs, y_end_abs, z_end_abs,
+             i_end, j_end, k_end) = end_coords_list_float
+
+            start_a = CoordsParser.count_A_angle_by_orts(j=j_start, k=k_start)
+            end_a = CoordsParser.count_A_angle_by_orts(j=j_end, k=k_end)
+
+            if start_a == end_a:
+                y_start_abs, z_start_abs = CoordsParser.count_new_Y_Z_for_A_rotation(y_start=y_start_abs,
+                                                                                     z_start=z_start_abs,
+                                                                                     angle_A_deg=start_a)
+                y_center_abs, z_center_abs = CoordsParser.count_new_Y_Z_for_A_rotation(y_start=y_center_abs,
+                                                                                       z_start=z_center_abs,
+                                                                                       angle_A_deg=start_a)
+
+                x_center_incr = round(x_center_abs - x_start_abs, ndigits=config.NDIGITS_XYZ)
+                y_center_incr = round(y_center_abs - y_start_abs, ndigits=config.NDIGITS_XYZ)
+                z_center_incr = round(z_center_abs - z_start_abs, ndigits=config.NDIGITS_XYZ)
+
+                res_list.append(f"X{x_end_abs} "
+                                f"Y{y_end_abs} "
+                                f"Z{z_end_abs} "
+                                f"I{x_center_incr} "
+                                f"J{y_center_incr} "
+                                f"K{z_center_incr}"
+                                )
+                final_result_list.append("".join(res_list))
+                return final_result_list
+
+
+            else:
+                logger.critical("Different start and end angles in a CIRCLE cl line!")
+                raise ValueError
+
+        else:
+            logger.critical("Different start and end len of GOTO lines around a CIRCLE cl line!")
+            raise IndexError

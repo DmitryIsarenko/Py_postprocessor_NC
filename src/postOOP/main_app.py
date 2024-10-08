@@ -22,6 +22,5 @@ def main_ui():
 
 
 if __name__ == "__main__":
-    logger.info(f"Started execution from {__name__}")
-    print(__name__)
+    logger.debug(f"Started execution from {__name__}")
     main_ui()

@@ -146,7 +146,7 @@ class NcSequenceBasic(NcProgramBasic):
         elif self.nc_sequence_number < 99:
             num_in_str = str(self.nc_sequence_number)
         else:
-            print(f"Too many nc sequences")
+            logger.critical(f"Too many nc sequences")
             raise ValueError
         self.nc_file_number = (config.PROGRAM_MAIN_DIGIT +
                                str(self.nc_operation_number) +

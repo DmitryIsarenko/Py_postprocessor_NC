@@ -11,9 +11,18 @@ DEBUG = True
 DEBUG_CWD = r"c:\WORK_DIRECTORY\10 Programming\Projects\py post"
 DELETE_TEMP_FILE = False
 STARTS_FROM_EXE = False
+
+# tolerances
+NDIGITS_XYZ = 3
+NDIGITS_ABC = 2
+NDIGITS_FEEDRATE_G94 = 2
+NDIGITS_FEEDRATE_G95 = 3
+# NDIGITS_FEEDRATE_G95 = 2
+
 # misc
 POST_OBJ = None
 CWD = None
+
 
 # key_filename_part_1 = "ust"  # will be searched for matches in dir
 CL_DATA_FILE_EXTENSION = ".ncl"  # will be searched for matches in dir

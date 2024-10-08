@@ -1,8 +1,11 @@
 import os
+import logging
 # from src.postOOP.config import config.TEMP_FILE_NAME_PREFIX, config.CL_DATA_FILE_EXTENSION
 from src.postOOP.classes.others.formatter import Formatter
 
 from src.postOOP import config
+
+logger = logging.getLogger(__name__)
 
 class FileOperatorBasic:
 
@@ -14,7 +17,7 @@ class FileOperatorBasic:
         # os.chdir("../../")
         os.chdir(path=path)
         lst = os.listdir()
-        print(f"Files found in cwd: {lst}")
+        logger.info(f"Files found in cwd: {lst}")
 
         unic_files = set(file for file in lst if config.CL_DATA_FILE_EXTENSION in file)
         if unic_files:
@@ -30,7 +33,7 @@ class FileOperatorBasic:
             # print(f"Found files to postprocess: {sorted(final_filenames)}")
             return sorted(final_filenames)
         else:
-            print(f"No files with '{config.CL_DATA_FILE_EXTENSION}' extension were found")
+            logger.info(f"No files with '{config.CL_DATA_FILE_EXTENSION}' extension were found")
             return None
 
     @staticmethod
@@ -45,7 +48,7 @@ class FileOperatorBasic:
             os.remove(path=filepath)
             return True
         except FileNotFoundError:
-            print("no temp file was found")
+            logger.info("no temp file was found")
             return False
         except TypeError:
             return False
@@ -61,7 +64,7 @@ class FileOperatorBasic:
             FileOperatorBasic.remove_file(filepath=temp_filepath)
             lines = cls.get_all_cl_lines(filepath=filepath)
             lines = Formatter.trim_line_connectors_in_cl_list(cl_list=lines)
-            print(f'.ncl file "{filepath}" has been read')
+            logger.info(f'.ncl file "{filepath}" has been read')
             cls.append_lines_to_file(filepath=temp_filepath, list_with_lines=lines)
             return temp_filepath
 
@@ -95,4 +98,4 @@ class FileOperatorBasic:
         if cls.check_if_file_is_present(filepath=filepath):
             cls.remove_file(filepath=filepath)
         with open(file=filepath, mode="w"):
-            print(f"created file '{filepath}'")
+            logger.info(f"created file '{filepath}'")

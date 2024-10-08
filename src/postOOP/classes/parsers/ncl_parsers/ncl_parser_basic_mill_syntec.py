@@ -7,7 +7,6 @@ logger = logging.getLogger(__name__)
 
 class NclParserBasicMillSyntec(NclParserBasic):
     ncl_parser_class_name = "NclParserBasicMillSyntec"
-    logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
 
     is_G43_needed = False
 
@@ -152,7 +151,7 @@ class NclParserBasicMillSyntec(NclParserBasic):
             elif len(right_part_list) == 6:
                 pass
             else:
-                print("error with num of scalars")
+                logger.critical("error with num of scalars")
         if res_list:
             result_list.append("".join(res_list))
         return result_list

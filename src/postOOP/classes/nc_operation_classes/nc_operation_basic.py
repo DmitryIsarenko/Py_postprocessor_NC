@@ -66,7 +66,7 @@ class NcOperationBasic(NcProgramBasic):
             self.file_operator_class.create_file(filepath=self.nc_filename_with_extension)
             self.file_operator_class.append_lines_to_file(filepath=self.nc_filename_with_extension, list_with_lines=self.nc_list)
         else:
-            print(f"Empty self.cl_list for {self.filepath}")
+            logger.warning(f"Empty self.cl_list for {self.filepath}")
 
         if config.DELETE_TEMP_FILE:
             self.file_operator_class.remove_file(filepath=temp_filepath)
@@ -135,7 +135,7 @@ class NcOperationBasic(NcProgramBasic):
         if self.operation_number < 10:
             num_in_str = str(self.operation_number) + "00"
         else:
-            print(f"Too many nc operations")
+            logger.critical(f"Too many nc operations")
             raise ValueError
 
         self.nc_filename = config.PROGRAM_MAIN_LETTER + config.PROGRAM_MAIN_DIGIT + num_in_str

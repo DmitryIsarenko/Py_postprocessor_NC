@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 
 class NclParserMill3axisSyntec(NclParserBasicMillSyntec):
     ncl_parser_class_name = "NclParserMill3axisSyntec"
-    logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
+    # logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
 
     current_X = 0
     current_Y = 0

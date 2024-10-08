@@ -17,7 +17,7 @@ class PprintParserBasic:
     @staticmethod
     def get_index_of_occurence_in_cl_list_in_range(*, cl_list: list[str],
                                                    search_for: str,
-                                                   nc_massive_copy_counter: int,
+                                                   nc_massive_copy_counter: int = 1,
                                                    start_index: int = 0,
                                                    end_index: int) -> int:
         findings_counter = 0

@@ -1,9 +1,14 @@
 from src.postOOP.classes.nc_sequence_classes.nc_sequence_mill_3axis_syntec import NcSequenceMill3AxisSyntec
 from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec import NclParserMill3axisSyntec
+from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_mill_4axis_A import PprintParserMill4AxisA
+import logging
 
+logger = logging.getLogger(__name__)
 
 class NcSequenceMill4AxisASyntec(NcSequenceMill3AxisSyntec):
     nc_sequence_class_name = "NcSequenceMill4AxisASyntec"
+    is_multax_active = False
+    is_multax_operation = "asdgfkljas"
 
     def __init__(
             self,
@@ -17,8 +22,11 @@ class NcSequenceMill4AxisASyntec(NcSequenceMill3AxisSyntec):
             nc_operation_number: int,
             nc_sequence_number: int,
             nc_sequences_count: int,
-            date_of_creation: str
+            date_of_creation: str,
+            is_multax_operation: bool,
+            multax_line_index: int,
     ):
+        self.is_multax_operation = is_multax_operation
         super().__init__(
             ncl_parser_class=ncl_parser_class,
             pprint_parser_class=pprint_parser_class,
@@ -33,6 +41,21 @@ class NcSequenceMill4AxisASyntec(NcSequenceMill3AxisSyntec):
             date_of_creation=date_of_creation,
         )
 
-    # def generate_nc_body_lines(self) -> list:
-    #     nc_lines = NclParserMill3axisSyntec.parse_cl_list(nc_seq_obj=self)
-    #     return nc_lines
+
+        # if self.is_multax_operation and multax_line_index:
+        #     if self.cl_start_index < multax_line_index < self.cl_end_index:
+        #         self.is_multax_active = True
+        #     else:
+        #         self.is_multax_active = False
+
+        # self.is_multax_active = bool(
+        #     PprintParserMill4AxisA.get_index_of_occurence_in_cl_list_in_range(start_index=self.cl_start_index,
+        #                                                                       end_index=self.cl_end_index,
+        #                                                                       search_for="MULTAX / ON",
+        #                                                                       cl_list=self.cl_list, ))
+        # logger.debug(f"self.is_multax_active = {self.is_multax_active}")
+
+
+    def generate_nc_body_lines(self) -> list:
+        nc_lines = self.ncl_parser_class.parse_cl_list(nc_seq_obj=self)
+        return nc_lines

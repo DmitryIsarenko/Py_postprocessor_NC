@@ -1,4 +1,5 @@
 import math
+from src.postOOP import config
 
 
 class CoordsParser:
@@ -27,7 +28,7 @@ class CoordsParser:
             angle_rot += math.pi * 1.5
 
         angle_rot = angle_rot * 180 / math.pi
-        return round(angle_rot, ndigits=2)
+        return round(angle_rot, ndigits=config.NDIGITS_ABC)
 
     @staticmethod
     def count_B_angle_by_orts(i: float, k: float) -> float:
@@ -53,7 +54,7 @@ class CoordsParser:
             angle_rot += math.pi * 1.5
 
         angle_rot = angle_rot * 180 / math.pi
-        return angle_rot
+        return round(angle_rot, ndigits=config.NDIGITS_ABC)
 
     # def count_C_angle_by_orts(i: float, j: float) -> float:
     #     if j == 1:
@@ -77,7 +78,7 @@ class CoordsParser:
     #         angle += math.pi * 1.5
     #
     #     angle = angle * 180 / math.pi
-    #     return angle
+    #     return round(angle_rot, ndigits=config.NDIGITS_ABC)
 
     @staticmethod
     def count_new_Y_Z_for_A_rotation(*, y_start: float | int,
@@ -86,7 +87,7 @@ class CoordsParser:
         angle_A_deg = angle_A_deg * math.pi / 180
         y_end = y_start * math.cos(angle_A_deg) + z_start * math.sin(angle_A_deg)
         z_end = z_start * math.cos(angle_A_deg) - y_start * math.sin(angle_A_deg)
-        return round(y_end, ndigits=4), round(z_end, ndigits=4)
+        return round(y_end, ndigits=config.NDIGITS_XYZ), round(z_end, ndigits=config.NDIGITS_XYZ)
 
     @staticmethod
     def count_new_X_Z_for_B_rotation(*, x_start: float | int,
@@ -95,7 +96,7 @@ class CoordsParser:
         angle_C_deg = - angle_C_deg * math.pi / 180
         x_end = x_start * math.cos(angle_C_deg) + z_start * math.sin(angle_C_deg)
         z_end = z_start * math.cos(angle_C_deg) - x_start * math.sin(angle_C_deg)
-        return round(x_end, ndigits=4), round(z_end, ndigits=4)
+        return round(x_end, ndigits=config.NDIGITS_XYZ), round(z_end, ndigits=config.NDIGITS_XYZ)
 
     @staticmethod
     def count_new_X_Y_for_C_rotation(*, x_start: float | int,
@@ -104,24 +105,24 @@ class CoordsParser:
         angle_C_deg = angle_C_deg * math.pi / 180
         x_end = x_start * math.cos(angle_C_deg) + y_start * math.sin(angle_C_deg)
         y_end = y_start * math.cos(angle_C_deg) - x_start * math.sin(angle_C_deg)
-        return round(x_end, ndigits=4), round(y_end, ndigits=4)
+        return round(x_end, ndigits=config.NDIGITS_XYZ), round(y_end, ndigits=config.NDIGITS_XYZ)
 
 
 if __name__ == '__main__':
-    angle = count_A_angle_by_orts(j=-0.1736482, k=0.9848078)
-    # angle = count_A_angle_by_orts(j=-0.9848078, k=-0.1736482)
-    # angle = count_A_angle_by_orts(j=0.1736482, k=-0.9848078)
-    # angle = count_A_angle_by_orts(j=0.9848078, k=0.1736482)
+    angle = CoordsParser.count_A_angle_by_orts(j=-0.1736482, k=0.9848078)
+    # angle = CoordsParser.count_A_angle_by_orts(j=-0.9848078, k=-0.1736482)
+    # angle = CoordsParser.count_A_angle_by_orts(j=0.1736482, k=-0.9848078)
+    # angle = CoordsParser.count_A_angle_by_orts(j=0.9848078, k=0.1736482)
 
-    # angle = count_B_angle_by_orts(i=0.1736482, k=0.9848078)
-    # angle = count_B_angle_by_orts(i=0.9848078, k=-0.1736482)
-    # angle = count_B_angle_by_orts(i=-0.1736482, k=-0.9848078)
-    # angle = count_B_angle_by_orts(i=-0.9848078, k=0.1736482)
+    # angle = CoordsParser.count_B_angle_by_orts(i=0.1736482, k=0.9848078)
+    # angle = CoordsParser.count_B_angle_by_orts(i=0.9848078, k=-0.1736482)
+    # angle = CoordsParser.count_B_angle_by_orts(i=-0.1736482, k=-0.9848078)
+    # angle = CoordsParser.count_B_angle_by_orts(i=-0.9848078, k=0.1736482)
     #
-    # angle = count_C_angle_by_orts(i=0.1736482, j=0.9848078)
-    # angle = count_C_angle_by_orts(i=0.9848078, j=-0.1736482)
-    # angle = count_C_angle_by_orts(i=-0.1736482, j=-0.9848078)
-    # angle = count_C_angle_by_orts(i=-0.9848078, j=0.1736482)
+    # angle = CoordsParser.count_C_angle_by_orts(i=0.1736482, j=0.9848078)
+    # angle = CoordsParser.count_C_angle_by_orts(i=0.9848078, j=-0.1736482)
+    # angle = CoordsParser.count_C_angle_by_orts(i=-0.1736482, j=-0.9848078)
+    # angle = CoordsParser.count_C_angle_by_orts(i=-0.9848078, j=0.1736482)
 
     # print(angle)
 
@@ -141,8 +142,8 @@ if __name__ == '__main__':
     lisB = [187.9385, 68.4040, 100]
     lisB = [68.4040, -187.9385, 190]
     lisB = [-187.9385, -68.4040, 280]
-    cordsB = count_new_X_Z_for_B_rotation(x_start=lisB[0],
-                                          z_start=lisB[1],
-                                          angle_C_deg=lisB[2])
+    cordsB = CoordsParser.count_new_X_Z_for_B_rotation(x_start=lisB[0],
+                                                       z_start=lisB[1],
+                                                       angle_C_deg=lisB[2])
 
     print(cordsB)
