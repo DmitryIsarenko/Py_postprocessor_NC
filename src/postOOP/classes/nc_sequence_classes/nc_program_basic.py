@@ -1,7 +1,8 @@
 from pprint import pprint
 from src.postOOP import config
 
-class NcProgram:
+
+class NcProgramBasic:
     main_digit = config.PROGRAM_MAIN_DIGIT
     main_letter = config.PROGRAM_MAIN_LETTER
     file_extension = config.G_CODE_FILE_EXTENSION

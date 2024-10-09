@@ -21,9 +21,9 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
 
-        if config.STARTS_FROM_EXE == 0:
+        if not config.STARTS_FROM_EXE:
             self.set_cwd_if_started_from_project()
-        elif config.STARTS_FROM_EXE == 1:
+        elif config.STARTS_FROM_EXE:
             self.set_cwd_if_started_from_exe()
 
         self.push_config_to_ui_boxes()
@@ -160,10 +160,14 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.textEdit_tab1_log_output.append(f"Changes declined for 3rd tab")
 
     def set_cwd_if_started_from_project(self):
-        pprint(sys.path)
-        path = sys.path[1]
-        self.lineEdit_tab1_path_to_cwd.setText(path)
-        config.CWD = path
+        if config.DEBUG:
+            logger.debug("Setting cwd in debug mode")
+            self.lineEdit_tab1_path_to_cwd.setText(config.DEBUG_CWD)
+        else:
+            pprint(sys.path)
+            path = sys.path[1]
+            self.lineEdit_tab1_path_to_cwd.setText(path)
+            config.CWD = path
 
     def set_cwd_if_started_from_exe(self):
         pprint(os.getcwd())

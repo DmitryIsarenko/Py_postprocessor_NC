@@ -1,13 +1,18 @@
-from src.postOOP.classes.nc_sequence_classes.nc_program_basic import NcProgram
+import logging
+from src.postOOP.classes.nc_sequence_classes.nc_program_basic import NcProgramBasic
 from src.postOOP import config
-from src.postOOP.classes.parsers.pprint_parser import PprintParser
+from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_basic import PprintParserBasic
 # from src.postOOP.classes.parsers.ncl_parser_mill_tf import NclParserMill3axisSyntecTF
-from src.postOOP.classes.parsers.ncl_parser_basic import NclParserBasic
-from src.postOOP.classes.others.file_operator import FileOperator
+from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic import NclParserBasic
+from src.postOOP.classes.others.file_operator_basic import FileOperatorBasic
 from src.postOOP.classes.others.formatter import Formatter
 
+logger = logging.getLogger(__name__)
 
-class NcSequence(NcProgram):
+
+class NcSequenceBasic(NcProgramBasic):
+    nc_sequence_class_name = "NcSequenceBasic"
+
     nc_start_keyword = config.NC_START_KEYWORD
     nc_end_keyword = config.NC_END_KEYWORD
     GOHOME_LINES = [
@@ -41,8 +46,13 @@ class NcSequence(NcProgram):
 
     def __init__(
             self,
+            ncl_parser_class: NclParserBasic,
+            pprint_parser_class: PprintParserBasic,
+            file_operator_class: FileOperatorBasic,
             detail_name: str,
             nc_sequence_name: str,
+            nc_sequence_parent_name_of_massive: str,
+            nc_massive_copy_counter: int,
             cl_list: list,
             nc_operation_number: int,
             nc_sequence_number: int,
@@ -50,12 +60,18 @@ class NcSequence(NcProgram):
             date_of_creation: str
     ):
 
+        self.ncl_parser_class = ncl_parser_class
+        self.pprint_parser_class = pprint_parser_class
+        self.file_operator_class = file_operator_class
+
         self.detail_name = detail_name
         self.nc_sequence_name = nc_sequence_name
+        self.nc_sequence_parent_name_of_massive = nc_sequence_parent_name_of_massive
         self.cl_list = cl_list
         self.nc_operation_number = nc_operation_number
         self.nc_sequence_number = nc_sequence_number
         self.nc_sequences_count = nc_sequences_count
+        self.nc_massive_copy_counter = nc_massive_copy_counter
         self.date_of_creation = date_of_creation
         self.set_nc_filename()
 
@@ -74,51 +90,77 @@ class NcSequence(NcProgram):
         self.nc_list = self.generate_nc_list()
         # print(self.nc_list)
 
-        FileOperator.create_file(filepath=self.nc_filename_with_extension)
-        FileOperator.append_lines_to_file(filepath=self.nc_filename_with_extension, list_with_lines=self.nc_list)
+        self.file_operator_class.create_file(filepath=self.nc_filename_with_extension)
+        self.file_operator_class.append_lines_to_file(filepath=self.nc_filename_with_extension,
+                                                      list_with_lines=self.nc_list)
 
     def set_cl_start_index(self):
-        self.cl_start_index = PprintParser.get_index_of_occurence_in_cl_list_in_range(cl_list=self.cl_list,
-                                                                                      search_for=self.nc_sequence_name,
-                                                                                      start_index=0,
-                                                                                      end_index=len(self.cl_list))
+        if self.nc_sequence_name == self.nc_sequence_parent_name_of_massive:
+            self.cl_start_index = self.pprint_parser_class.get_index_of_occurence_in_cl_list_in_range(
+                cl_list=self.cl_list,
+                search_for=self.nc_sequence_name,
+                nc_massive_copy_counter=self.nc_massive_copy_counter,
+                start_index=0,
+                end_index=len(
+                    self.cl_list))
+        elif self.nc_sequence_name in config.sequence_massive_names:
+            cl_parent_seq_index = self.pprint_parser_class.get_index_of_occurence_in_cl_list_in_range(
+                cl_list=self.cl_list,
+                search_for=self.nc_sequence_parent_name_of_massive,
+                nc_massive_copy_counter=0,
+                start_index=0,
+                end_index=len(
+                    self.cl_list))
+
+            self.cl_start_index = self.pprint_parser_class.get_index_of_occurence_in_cl_list_in_range(
+                cl_list=self.cl_list,
+                search_for=self.nc_sequence_name,
+                nc_massive_copy_counter=self.nc_massive_copy_counter,
+                start_index=cl_parent_seq_index,
+                end_index=len(
+                    self.cl_list))
+
+        logger.debug(f"start index: {self.cl_start_index}")
 
     def set_cl_end_index(self):
-        self.cl_end_index = PprintParser.get_index_of_occurence_in_cl_list_in_range(cl_list=self.cl_list,
-                                                                                    search_for=config.NC_END_KEYWORD,
-                                                                                    start_index=self.cl_start_index,
-                                                                                    end_index=len(self.cl_list))
+        self.cl_end_index = self.pprint_parser_class.get_index_of_occurence_in_cl_list_in_range(cl_list=self.cl_list,
+                                                                                                nc_massive_copy_counter=0,
+                                                                                                search_for=config.NC_END_KEYWORD,
+                                                                                                start_index=self.cl_start_index,
+                                                                                                end_index=len(
+                                                                                                    self.cl_list))
+        logger.debug(f"end   index: {self.cl_end_index}")
 
     def set_work_offset(self):
-        self.work_offset = PprintParser.get_work_offset(cl_list=self.cl_list)
+        self.work_offset = self.pprint_parser_class.get_work_offset(cl_list=self.cl_list)
 
     def set_machining_time(self):
-        self.machining_time = PprintParser.get_machining_time_in_cl_list(
+        self.machining_time = self.pprint_parser_class.get_machining_time_in_cl_list(
             cl_list=self.cl_list[self.cl_start_index:self.cl_end_index])
 
     def set_tool_name(self):
-        self.tool_name = PprintParser.get_tool_name_in_cl_list_range(cl_list=self.cl_list,
-                                                                     start_index=self.cl_start_index,
-                                                                     end_index=self.cl_end_index)
+        self.tool_name = self.pprint_parser_class.get_tool_name_in_cl_list_range(cl_list=self.cl_list,
+                                                                                 start_index=self.cl_start_index,
+                                                                                 end_index=self.cl_end_index)
 
     def set_tool_pot(self):
-        self.tool_pot = PprintParser.get_tool_pot_in_cl_list_range(cl_list=self.cl_list,
-                                                                   start_index=self.cl_start_index,
-                                                                   end_index=self.cl_end_index)
+        self.tool_pot = self.pprint_parser_class.get_tool_pot_in_cl_list_range(cl_list=self.cl_list,
+                                                                               start_index=self.cl_start_index,
+                                                                               end_index=self.cl_end_index)
 
     def set_spindle_master_data(self):
-        spindle_data = PprintParser.get_spindle_data_in_cl_list_range(cl_list=self.cl_list,
-                                                                      start_index=self.cl_start_index,
-                                                                      end_index=self.cl_end_index)
+        spindle_data = self.pprint_parser_class.get_spindle_data_in_cl_list_range(cl_list=self.cl_list,
+                                                                                  start_index=self.cl_start_index,
+                                                                                  end_index=self.cl_end_index)
         if spindle_data:
             self.spindle_speed_master = spindle_data[0]
             self.spindle_units_master = spindle_data[1]
             self.spindle_direction_master = spindle_data[2]
 
     def set_cut_feed_master(self):
-        self.cut_feed_master = PprintParser.get_cut_feed_in_cl_list_range(cl_list=self.cl_list,
-                                                                          start_index=self.cl_start_index,
-                                                                          end_index=self.cl_end_index)
+        self.cut_feed_master = self.pprint_parser_class.get_cut_feed_in_cl_list_range(cl_list=self.cl_list,
+                                                                                      start_index=self.cl_start_index,
+                                                                                      end_index=self.cl_end_index)
 
     def set_nc_filename(self):
         if self.nc_sequence_number < 10:
@@ -126,7 +168,7 @@ class NcSequence(NcProgram):
         elif self.nc_sequence_number < 99:
             num_in_str = str(self.nc_sequence_number)
         else:
-            print(f"Too many nc sequences")
+            logger.critical(f"Too many nc sequences")
             raise ValueError
         self.nc_file_number = (config.PROGRAM_MAIN_DIGIT +
                                str(self.nc_operation_number) +
@@ -158,7 +200,7 @@ class NcSequence(NcProgram):
         return nc_lines
 
     def generate_nc_body_lines(self) -> list:
-        nc_lines = NclParserBasic.parse_cl_list(nc_seq_obj=self)
+        nc_lines = self.ncl_parser_class.parse_cl_list(nc_seq_obj=self)
         return nc_lines
 
     @staticmethod
@@ -176,6 +218,6 @@ class NcSequence(NcProgram):
             raise TypeError
 
     def set_tool_type(self):
-        self.tool_type = PprintParser.get_tool_type(cl_list=self.cl_list,
-                                                    start_index=self.cl_start_index,
-                                                    end_index=self.cl_end_index)
+        self.tool_type = self.pprint_parser_class.get_tool_type(cl_list=self.cl_list,
+                                                                start_index=self.cl_start_index,
+                                                                end_index=self.cl_end_index)

@@ -2,18 +2,24 @@ import logging
 
 from src.postOOP import config
 
-from src.postOOP.classes.parsers.pprint_parser import PprintParser
-from src.postOOP.classes.nc_sequence_classes.nc_program_basic import NcProgram
-from src.postOOP.classes.nc_sequence_classes.nc_sequence_basic import NcSequence
-from src.postOOP.classes.others.file_operator import FileOperator
+from src.postOOP.classes.nc_sequence_classes.nc_program_basic import NcProgramBasic
+from src.postOOP.classes.nc_sequence_classes.nc_sequence_basic import NcSequenceBasic
+from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_basic import PprintParserBasic
+from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic import NclParserBasic
+from src.postOOP.classes.others.file_operator_basic import FileOperatorBasic
 from src.postOOP.classes.others.formatter import Formatter
 
-
-# from src.postOOP.classes.ncl_parser import NclParser
 logger = logging.getLogger(__name__)
 
-class NcOperation(NcProgram):
+
+class NcOperationBasic(NcProgramBasic):
+    nc_sequence_class: NcSequenceBasic = NcSequenceBasic
+    pprint_parser_class: PprintParserBasic = PprintParserBasic
+    ncl_parser_class: NclParserBasic = NclParserBasic
+    file_operator_class: FileOperatorBasic = FileOperatorBasic
+
     postprocessor_name = "BASIC POST CLASS"
+
     detail_name = None
     date_of_creation = None
 
@@ -32,10 +38,14 @@ class NcOperation(NcProgram):
         self.filepath = filepath
         config.POST_NAME = self.postprocessor_name
         logger.info(f"Post name from config: <<<{config.POST_NAME}>>>")
+        # logger.debug(f"nc_operation class name : <<<{self.__class__.__name__}>>>")
+        # logger.debug(f"nc_sequence class name : <<<{self.nc_sequence_class.nc_sequence_class_name}>>>")
+        # logger.debug(f"Pprint_parser class name: <<<{self.pprint_parser_class.pprint_parser_class_name}>>>")
+        # logger.debug(f"Ncl_parser class name : <<<{self.ncl_parser_class.ncl_parser_class_name}>>>")
 
     def start_postprocessing(self):
-        temp_filepath = FileOperator.create_temp_formatted_ncl_file(filepath=self.filepath)
-        self.cl_list = FileOperator.get_all_cl_lines(filepath=temp_filepath)
+        temp_filepath = self.file_operator_class.create_temp_formatted_ncl_file(filepath=self.filepath)
+        self.cl_list = self.file_operator_class.get_all_cl_lines(filepath=temp_filepath)
 
         if self.cl_list:
             self.set_cl_lines_count()
@@ -53,33 +63,56 @@ class NcOperation(NcProgram):
             # self.show()
             self.nc_list = self.generate_nc_list()
             # print(self.nc_list)
-            FileOperator.create_file(filepath=self.nc_filename_with_extension)
-            FileOperator.append_lines_to_file(filepath=self.nc_filename_with_extension, list_with_lines=self.nc_list)
+            self.file_operator_class.create_file(filepath=self.nc_filename_with_extension)
+            self.file_operator_class.append_lines_to_file(filepath=self.nc_filename_with_extension,
+                                                          list_with_lines=self.nc_list)
         else:
-            print(f"Empty self.cl_list for {self.filepath}")
+            logger.warning(f"Empty self.cl_list for {self.filepath}")
 
         if config.DELETE_TEMP_FILE:
-            FileOperator.remove_file(filepath=temp_filepath)
+            self.file_operator_class.remove_file(filepath=temp_filepath)
         else:
             pass
 
     def set_nc_sequences_count(self):
-        self.nc_sequences_count: int = PprintParser.count_nc_sequences_in_cl_list(cl_list=self.cl_list)
+        self.nc_sequences_count: int = self.pprint_parser_class.count_nc_sequences_in_cl_list(cl_list=self.cl_list)
 
     def set_nc_sequences_names_in_list(self):
-        self.list_of_nc_sequences_names: list[str] = PprintParser.get_list_of_nc_sequence_names(
+        self.list_of_nc_sequences_names: list[str] = self.pprint_parser_class.get_list_of_nc_sequence_names(
             cl_list=self.cl_list)
+        logger.debug(f"list_of_nc_sequences_names {self.list_of_nc_sequences_names}")
 
     def set_nc_sequences_objects_in_list(self):
         lst_of_objects = []
         nc_counter = 0
+        nc_massive_copy_counter = 0
+
         for nc_sequence_name in self.list_of_nc_sequences_names:
             nc_counter += 1
+
+            if nc_sequence_name in config.sequence_massive_names:
+                nc_sequence_parent_name_of_massive = lst_of_objects[-1].nc_sequence_parent_name_of_massive
+                nc_massive_copy_counter += 1
+
+            else:
+                nc_sequence_parent_name_of_massive = nc_sequence_name
+                nc_massive_copy_counter = 0
             lst_of_objects.append(
-                NcSequence(detail_name=self.detail_name, nc_sequence_name=nc_sequence_name, cl_list=self.cl_list,
-                           nc_sequence_number=nc_counter, nc_sequences_count=self.nc_sequences_count,
-                           nc_operation_number=self.operation_number, date_of_creation=self.date_of_creation))
-        self.list_of_nc_sequences_objects: list[NcSequence] = lst_of_objects
+                self.nc_sequence_class(ncl_parser_class=self.ncl_parser_class,
+                                       pprint_parser_class=self.pprint_parser_class,
+                                       file_operator_class=self.file_operator_class,
+                                       detail_name=self.detail_name,
+                                       nc_sequence_name=nc_sequence_name,
+                                       nc_sequence_parent_name_of_massive=nc_sequence_parent_name_of_massive,
+                                       nc_massive_copy_counter=nc_massive_copy_counter,
+                                       cl_list=self.cl_list,
+                                       nc_sequence_number=nc_counter,
+                                       nc_sequences_count=self.nc_sequences_count,
+                                       nc_operation_number=self.operation_number,
+                                       date_of_creation=self.date_of_creation))
+        self.list_of_nc_sequences_objects: list = lst_of_objects
+        logger.debug(
+            f"self.list_of_nc_sequences_objects {[item.nc_sequence_number for item in self.list_of_nc_sequences_objects]}")
 
     def set_sum_machining_time(self):
         sum_time = 0
@@ -88,29 +121,29 @@ class NcOperation(NcProgram):
         self.sum_machining_time = round(sum_time, ndigits=2)
 
     def set_cl_lines_count(self):
-        self.cl_lines_count = PprintParser.count_cl_lines_in_cl_list(cl_list=self.cl_list)
+        self.cl_lines_count = self.pprint_parser_class.count_cl_lines_in_cl_list(cl_list=self.cl_list)
 
     def set_detail_name(self):
-        self.detail_name = PprintParser.get_detail_name_in_cl_list(cl_list=self.cl_list)
+        self.detail_name = self.pprint_parser_class.get_detail_name_in_cl_list(cl_list=self.cl_list)
 
     def set_date_of_creation(self):
-        self.date_of_creation = PprintParser.get_date_time_in_cl_list(cl_list=self.cl_list)
+        self.date_of_creation = self.pprint_parser_class.get_date_time_in_cl_list(cl_list=self.cl_list)
 
     def set_operation_num_from_name(self):
         num = ""
-        for char in self.operation_name:
+        for char in self.operation_name[0:8:1]:
             if char.isdigit():
                 num += char
         self.operation_number = int(num)
 
     def set_operation_name(self):
-        self.operation_name: str = PprintParser.get_operation_name_in_cl_list(cl_list=self.cl_list)
+        self.operation_name: str = self.pprint_parser_class.get_operation_name_in_cl_list(cl_list=self.cl_list)
 
     def set_nc_filename(self):
         if self.operation_number < 10:
             num_in_str = str(self.operation_number) + "00"
         else:
-            print(f"Too many nc operations")
+            logger.critical(f"Too many nc operations")
             raise ValueError
 
         self.nc_filename = config.PROGRAM_MAIN_LETTER + config.PROGRAM_MAIN_DIGIT + num_in_str

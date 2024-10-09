@@ -5,16 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="OOP work version">
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser_basic_mill_syntec.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser_mill_3axis_syntec.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logs/rotating_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/rotating_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_4axis_A_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_4axis_A_syntec.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_basic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_basic_mill_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_basic_mill_syntec.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_tf_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_tf_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser_mill_3axis_tf_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parser_basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_syntec_TF.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_4axis_A_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_4axis_A_syntec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/coords_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/coords_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_A_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_A_syntec.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/pprint_parsers/pprint_parser_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/pprint_parsers/pprint_parser_basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,22 +52,24 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.coords_parser.executor": "Debug",
     "Python.dasfasd.executor": "Run",
     "Python.desktop_window_app.executor": "Run",
     "Python.file_analyzer.executor": "Run",
+    "Python.geb.executor": "Debug",
     "Python.gui.executor": "Run",
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
-    "Python.main_app.executor": "Run",
+    "Python.main_app.executor": "Debug",
     "Python.main_gui.executor": "Run",
     "Python.main_gui_app.executor": "Run",
     "Python.main_oop.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "parsers",
+    "git-widget-placeholder": "4axis",
     "last_opened_file_path": "C:/WORK_DIRECTORY/10 Programming/Projects/py post/py post v2 OOP/src/postOOP/config.py",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -71,14 +77,36 @@
       <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP\src\postOOP\parsers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post\py post v2 OOP\src\postOOP\classes\others" />
-      <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post\py post v2 OOP\src\postOOP\classes\gui" />
-      <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post\py post v2 OOP\src\postOOP" />
-      <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post\py post v2 OOP\src" />
-      <recent name="W:\Техбюро\Исаренко\Projects\py post v2 OOP\src\postOOP\classes\others\" />
+      <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post\py post v2 OOP\src\postOOP\classes\parsers" />
+      <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post\py post v2 OOP\src\postOOP\classes\nc_sequence_classes" />
+      <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post\py post v2 OOP\src\postOOP\classes\nc_operation_classes" />
+      <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post\py post v2 OOP\src\postOOP\classes\parsers\pprint_parsers" />
+      <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post\py post v2 OOP\src\postOOP\classes\parsers\ncl_parsers" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main_app">
+    <configuration name="coords_parser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="py post v2 OOP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/postOOP/classes/parsers" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/postOOP/classes/parsers/coords_parser.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="dasfasd" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py post v2 OOP" />
       <option name="ENV_FILES" value="" />
@@ -123,7 +151,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="geb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="py post v2 OOP" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,11 +160,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/postOOP" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP\src\postOOP\main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/geb.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -167,35 +195,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="postprocess_executor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="py post v2 OOP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/postOOP" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\WORK_DIRECTORY\10 Programming\Projects\py post\py post v2 OOP\src\postOOP\classes\others\postprocess_executor.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main_app" />
+        <item itemvalue="Python.coords_parser" />
+        <item itemvalue="Python.geb" />
         <item itemvalue="Python.desktop_window_app" />
         <item itemvalue="Python.dasfasd" />
-        <item itemvalue="Python.postprocess_executor" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -340,5 +346,30 @@
     <MESSAGE value="v1.0 with GUI. 1 tab works" />
     <MESSAGE value="v1.0 with GUI. 1 tab works" />
     <option name="LAST_COMMIT_MESSAGE" value="v1.0 with GUI. 1 tab works" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_basic.py</url>
+          <line>141</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="name.split(&quot;.&quot;)" language="Python" />
+        <watch expression="cls.is_all_ijk_same" language="Python" />
+        <watch expression="final_result_list" />
+        <watch expression="cls.goto_counter" language="Python" />
+        <watch expression="result_list" language="Python" />
+        <watch expression="prev_coords_list_str" language="Python" />
+        <watch expression="self.is_multax_operation" language="Python" />
+        <watch expression="self.nc_sequence_name" language="Python" />
+        <watch expression="self.nc_sequence_parent_name_of_massive" language="Python" />
+        <watch expression="self.cl_start_index" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
