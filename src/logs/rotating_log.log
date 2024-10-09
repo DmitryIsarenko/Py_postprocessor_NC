@@ -327,3 +327,8 @@
 2024-10-08 15:53:19 WARNING  --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:240 
 2024-10-08 16:02:26 CRITICAL --- Operation is Multax = True --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:72 
 2024-10-08 16:02:26 WARNING  --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:240 
+2024-10-09 09:30:49 CRITICAL --- got None index into get_index_of_occurence! --- src.postOOP.classes.parsers.pprint_parsers.pprint_parser_basic:24 
+2024-10-09 09:36:15 CRITICAL --- got None index into get_index_of_occurence! --- src.postOOP.classes.parsers.pprint_parsers.pprint_parser_basic:24 
+2024-10-09 15:35:38 CRITICAL --- Too many nc operations --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:146 
+2024-10-09 15:35:44 CRITICAL --- Too many nc operations --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:146 
+2024-10-09 15:36:27 CRITICAL --- Too many nc operations --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:146 

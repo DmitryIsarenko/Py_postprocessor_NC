@@ -64,7 +64,8 @@ class NcOperationBasic(NcProgramBasic):
             self.nc_list = self.generate_nc_list()
             # print(self.nc_list)
             self.file_operator_class.create_file(filepath=self.nc_filename_with_extension)
-            self.file_operator_class.append_lines_to_file(filepath=self.nc_filename_with_extension, list_with_lines=self.nc_list)
+            self.file_operator_class.append_lines_to_file(filepath=self.nc_filename_with_extension,
+                                                          list_with_lines=self.nc_list)
         else:
             logger.warning(f"Empty self.cl_list for {self.filepath}")
 
@@ -85,26 +86,33 @@ class NcOperationBasic(NcProgramBasic):
         lst_of_objects = []
         nc_counter = 0
         nc_massive_copy_counter = 0
+
         for nc_sequence_name in self.list_of_nc_sequences_names:
             nc_counter += 1
+
             if nc_sequence_name in config.sequence_massive_names:
+                nc_sequence_parent_name_of_massive = lst_of_objects[-1].nc_sequence_parent_name_of_massive
                 nc_massive_copy_counter += 1
+
             else:
+                nc_sequence_parent_name_of_massive = nc_sequence_name
                 nc_massive_copy_counter = 0
             lst_of_objects.append(
                 self.nc_sequence_class(ncl_parser_class=self.ncl_parser_class,
                                        pprint_parser_class=self.pprint_parser_class,
                                        file_operator_class=self.file_operator_class,
-                                       detail_name=self.detail_name, 
+                                       detail_name=self.detail_name,
                                        nc_sequence_name=nc_sequence_name,
+                                       nc_sequence_parent_name_of_massive=nc_sequence_parent_name_of_massive,
                                        nc_massive_copy_counter=nc_massive_copy_counter,
                                        cl_list=self.cl_list,
-                                       nc_sequence_number=nc_counter, 
+                                       nc_sequence_number=nc_counter,
                                        nc_sequences_count=self.nc_sequences_count,
                                        nc_operation_number=self.operation_number,
                                        date_of_creation=self.date_of_creation))
         self.list_of_nc_sequences_objects: list = lst_of_objects
-        logger.debug(f"self.list_of_nc_sequences_objects {[item.nc_sequence_number for item in self.list_of_nc_sequences_objects]}")
+        logger.debug(
+            f"self.list_of_nc_sequences_objects {[item.nc_sequence_number for item in self.list_of_nc_sequences_objects]}")
 
     def set_sum_machining_time(self):
         sum_time = 0
@@ -123,7 +131,7 @@ class NcOperationBasic(NcProgramBasic):
 
     def set_operation_num_from_name(self):
         num = ""
-        for char in self.operation_name:
+        for char in self.operation_name[0:8:1]:
             if char.isdigit():
                 num += char
         self.operation_number = int(num)

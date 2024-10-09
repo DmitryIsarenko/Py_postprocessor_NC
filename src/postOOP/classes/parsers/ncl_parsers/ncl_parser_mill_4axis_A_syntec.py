@@ -26,6 +26,7 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
     goto_counter = 0
 
     is_multax_active = False
+
     # is_multax_operation = False
 
     @classmethod
@@ -168,10 +169,11 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
                 res_list.append(f"G00 ")
 
             right_part_list = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=",")
-            right_part_list = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in right_part_list]
+            right_part_list = [round(float(item), ndigits=config.NDIGITS_CALC_XYZ) for item in right_part_list]
 
             if len(right_part_list) == 3:
                 x, y, z = right_part_list
+                x, y, z = round(x, config.NDIGITS_XYZ), round(y, config.NDIGITS_XYZ), round(z, config.NDIGITS_XYZ)
                 if cls.is_multax_operation is False:
                     res_list.append(f"X{x} Y{y} Z{z}")
                 elif cls.is_multax_operation:
@@ -189,6 +191,8 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
                 a = CoordsParser.count_A_angle_by_orts(j=j, k=k)
                 y, z = CoordsParser.count_new_Y_Z_for_A_rotation(y_start=y, z_start=z, angle_A_deg=a)
 
+                x, y, z = round(x, config.NDIGITS_XYZ), round(y, config.NDIGITS_XYZ), round(z, config.NDIGITS_XYZ)
+                a = round(a, config.NDIGITS_ABC)
                 # первая строка
                 if cls.goto_counter == 1:
                     # позиционная обработка
@@ -227,7 +231,7 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
                 if len(right_part_list) == 6:
                     right_part_str = " ".join(right_part_list[3::])
                     unic_ijk_set.add(right_part_str)
-        logger.debug(f"{unic_ijk_set}")
+        # logger.debug(f"{unic_ijk_set}")
         if len(unic_ijk_set) == 1:
             cls.is_positional_multax = True
             # logger.debug(f"check_is_all_ijk_same = {cls.is_positional_multax}")
@@ -330,16 +334,26 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
         final_result_list = list()
         res_list = list()
 
+        # logger.debug(f"cl_list[line_index - 1] = {cl_list[line_index - 1]}")
+        # logger.debug(f"cl_list[line_index] = {cl_list[line_index]}")
+        # logger.debug(f"cl_list[line_index + 1] = {cl_list[line_index + 1]}")
+
         start_coords_list_str = cl_list[line_index - 1].split(sep=" / ")[1].strip().split(sep=",")
         center_coords_list_str = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=",")
         end_coords_list_str = cl_list[line_index + 1].split(sep=" / ")[1].strip().split(sep=",")
 
-        start_coords_list_float = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in start_coords_list_str]
-        center_coords_list_float = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in center_coords_list_str]
-        end_coords_list_float = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in end_coords_list_str]
+        # logger.debug(f"start_coords_list_str = {start_coords_list_str}")
+        # logger.debug(f"center_coords_list_str = {center_coords_list_str}")
+        # logger.debug(f"end_coords_list_str = {end_coords_list_str}")
+
+        start_coords_list_float = [round(float(item), ndigits=config.NDIGITS_CALC_XYZ) for item in
+                                   start_coords_list_str]
+        center_coords_list_float = [round(float(item), ndigits=config.NDIGITS_CALC_XYZ) for item in
+                                    center_coords_list_str]
+        end_coords_list_float = [round(float(item), ndigits=config.NDIGITS_CALC_XYZ) for item in end_coords_list_str]
 
         (x_center_abs, y_center_abs, z_center_abs,
-         csys_vector_i, csys_vector_j, csys_vector_k, radius) = center_coords_list_float
+         i_center, j_center, k_center, radius) = center_coords_list_float
 
         if len(end_coords_list_float) == 3 and len(start_coords_list_float) == 3:
             x_start_abs, y_start_abs, z_start_abs = start_coords_list_float
@@ -349,9 +363,13 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
             y_center_incr = round(y_center_abs - y_start_abs, ndigits=config.NDIGITS_XYZ)
             z_center_incr = round(z_center_abs - z_start_abs, ndigits=config.NDIGITS_XYZ)
 
-            if csys_vector_k == -1:
+            x_end_abs = round(x_end_abs, config.NDIGITS_XYZ)
+            y_end_abs = round(y_end_abs, config.NDIGITS_XYZ)
+            z_end_abs = round(z_end_abs, config.NDIGITS_XYZ)
+
+            if k_center == -1:
                 res_list.append("G02 ")
-            elif csys_vector_k == 1:
+            elif k_center == 1:
                 res_list.append("G03 ")
 
             res_list.append(f"X{x_end_abs} "
@@ -374,6 +392,22 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
             start_a = CoordsParser.count_A_angle_by_orts(j=j_start, k=k_start)
             end_a = CoordsParser.count_A_angle_by_orts(j=j_end, k=k_end)
 
+            i_sum_vector = (i_start + i_center) / 2
+            j_sum_vector = (j_start + j_center) / 2
+            k_sum_vector = (k_start + k_center) / 2
+
+            sum_angle = CoordsParser.count_A_angle_by_orts(j=j_sum_vector, k=k_sum_vector)
+
+            # logger.debug(f"start ijk = {i_start} {j_start} {k_start}")
+            # logger.debug(f"center ijk = {i_center} {j_center} {k_center}")
+            # logger.debug(f"sum_ijk = {i_sum_vector} {j_sum_vector} {k_sum_vector}")
+            # logger.debug(f"sum_angle = {sum_angle}")
+            # logger.debug(f"start_a   = {start_a}")
+            if i_sum_vector == 0 and j_sum_vector == 0 and k_sum_vector == 0:
+                res_list.append("G02 ")
+            elif i_start == i_center and j_start == j_center and k_start == k_center:
+                res_list.append("G03 ")
+
             if start_a == end_a:
                 y_start_abs, z_start_abs = CoordsParser.count_new_Y_Z_for_A_rotation(y_start=y_start_abs,
                                                                                      z_start=z_start_abs,
@@ -381,10 +415,17 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
                 y_center_abs, z_center_abs = CoordsParser.count_new_Y_Z_for_A_rotation(y_start=y_center_abs,
                                                                                        z_start=z_center_abs,
                                                                                        angle_A_deg=start_a)
+                y_end_abs, z_end_abs = CoordsParser.count_new_Y_Z_for_A_rotation(y_start=y_end_abs,
+                                                                                 z_start=z_end_abs,
+                                                                                 angle_A_deg=end_a)
 
                 x_center_incr = round(x_center_abs - x_start_abs, ndigits=config.NDIGITS_XYZ)
                 y_center_incr = round(y_center_abs - y_start_abs, ndigits=config.NDIGITS_XYZ)
                 z_center_incr = round(z_center_abs - z_start_abs, ndigits=config.NDIGITS_XYZ)
+
+                x_end_abs = round(x_end_abs, config.NDIGITS_XYZ)
+                y_end_abs = round(y_end_abs, config.NDIGITS_XYZ)
+                z_end_abs = round(z_end_abs, config.NDIGITS_XYZ)
 
                 res_list.append(f"X{x_end_abs} "
                                 f"Y{y_end_abs} "

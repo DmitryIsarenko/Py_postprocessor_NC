@@ -1,6 +1,7 @@
 from src.postOOP.classes.nc_sequence_classes.nc_sequence_basic_mill_syntec import NcSequenceMillBasicSyntec
 from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec_TF import NclParserMill3axisSyntecTF
 
+
 class NcSequenceMill3AxisSyntecTF(NcSequenceMillBasicSyntec):
     nc_sequence_class_name = "NcSequenceMill3AxisSyntecTF"
 
@@ -11,6 +12,7 @@ class NcSequenceMill3AxisSyntecTF(NcSequenceMillBasicSyntec):
             file_operator_class,
             detail_name: str,
             nc_sequence_name: str,
+            nc_sequence_parent_name_of_massive: str,
             nc_massive_copy_counter: int,
             cl_list: list,
             nc_operation_number: int,
@@ -24,6 +26,7 @@ class NcSequenceMill3AxisSyntecTF(NcSequenceMillBasicSyntec):
             file_operator_class=file_operator_class,
             detail_name=detail_name,
             nc_sequence_name=nc_sequence_name,
+            nc_sequence_parent_name_of_massive=nc_sequence_parent_name_of_massive,
             cl_list=cl_list,
             nc_operation_number=nc_operation_number,
             nc_sequence_number=nc_sequence_number,

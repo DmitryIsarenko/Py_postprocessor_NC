@@ -20,6 +20,9 @@ class PprintParserBasic:
                                                    nc_massive_copy_counter: int = 1,
                                                    start_index: int = 0,
                                                    end_index: int) -> int:
+        if start_index is None or end_index is None:
+            logger.fatal(f"got None index into get_index_of_occurence!")
+            raise ValueError
         findings_counter = 0
         for line_index in range(start_index, end_index):
             if search_for in cl_list[line_index]:

@@ -24,18 +24,26 @@ class NcOperationMill4AxisASyntec(NcOperationMill3AxisSyntec):
         lst_of_objects = []
         nc_counter = 0
         nc_massive_copy_counter = 0
+
         for nc_sequence_name in self.list_of_nc_sequences_names:
             nc_counter += 1
+
             if nc_sequence_name in config.sequence_massive_names:
+                nc_sequence_parent_name_of_massive = lst_of_objects[-1].nc_sequence_parent_name_of_massive
                 nc_massive_copy_counter += 1
+
             else:
+                nc_sequence_parent_name_of_massive = nc_sequence_name
                 nc_massive_copy_counter = 0
+            logger.debug(f"nc_sequence_name={nc_sequence_name}")
+            logger.debug(f"nc_sequence_parent_name_of_massive={nc_sequence_parent_name_of_massive}")
             lst_of_objects.append(
                 self.nc_sequence_class(ncl_parser_class=self.ncl_parser_class,
                                        pprint_parser_class=self.pprint_parser_class,
                                        file_operator_class=self.file_operator_class,
                                        detail_name=self.detail_name,
                                        nc_sequence_name=nc_sequence_name,
+                                       nc_sequence_parent_name_of_massive=nc_sequence_parent_name_of_massive,
                                        nc_massive_copy_counter=nc_massive_copy_counter,
                                        cl_list=self.cl_list,
                                        nc_sequence_number=nc_counter,
@@ -45,8 +53,10 @@ class NcOperationMill4AxisASyntec(NcOperationMill3AxisSyntec):
                                        is_multax_operation=self.is_multax_operation,
                                        multax_line_index=self.multax_line_index))
         self.list_of_nc_sequences_objects: list = lst_of_objects
-        logger.debug(
-            f"self.list_of_nc_sequences_objects {[item.nc_sequence_number for item in self.list_of_nc_sequences_objects]}")
+        # logger.debug(
+        #     f"self.list_of_nc_sequences_objects {[item.nc_sequence_number for item in self.list_of_nc_sequences_objects]}")
+        # logger.debug(
+        #     f"self.list_of_nc_sequences_objects {[item.nc_sequence_name for item in self.list_of_nc_sequences_objects]}")
 
     def start_postprocessing(self):
         temp_filepath = self.file_operator_class.create_temp_formatted_ncl_file(filepath=self.filepath)

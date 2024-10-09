@@ -1,37 +1,225 @@
-2024-10-08 16:04:48 DEBUG    --- Logger src started. --- src:33 
-2024-10-08 16:04:48 DEBUG    --- Started execution from __main__ --- src:25 
-2024-10-08 16:04:48 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:20 
-2024-10-08 16:04:48 DEBUG    --- Setting cwd in debug mode --- src.postOOP.classes.gui.desktop_window_app:164 
-2024-10-08 16:04:48 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:59 
-2024-10-08 16:04:48 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:66 
-2024-10-08 16:04:48 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:85 
-2024-10-08 16:04:50 INFO     --- Files found in cwd: ['O5100', 'O5101', 'O5102', 'O5103', 'O5104', 'O5105', 'py post v2 OOP', 'PyQt', 'temporary_file_ust__1_.ncl.3', 'ustanovi', 'ust__1_.ncl.3'] --- src.postOOP.classes.others.file_operator_basic:20 
-2024-10-08 16:04:50 INFO     --- Post name from config: <<<MILL 4AXIS A SYNTEC POST>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:40 
-2024-10-08 16:04:50 INFO     --- Post name from config: <<<MILL 4AXIS A SYNTEC POST>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:40 
-2024-10-08 16:04:50 INFO     --- Empty self.cl_list for temporary_file_ust__1_.ncl.3 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:88 
-2024-10-08 16:04:50 INFO     --- .ncl file "ust__1_.ncl.3" has been read --- src.postOOP.classes.others.file_operator_basic:67 
-2024-10-08 16:04:50 INFO     --- Operation is Multax = True --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:72 
-2024-10-08 16:04:50 DEBUG    --- list_of_nc_sequences_names ['A0_DISK', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING'] --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:82 
-2024-10-08 16:04:50 DEBUG    --- start index: 13 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:101 
-2024-10-08 16:04:50 DEBUG    --- end   index: 136 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:110 
-2024-10-08 16:04:50 DEBUG    --- set() --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:230 
-2024-10-08 16:04:50 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:240 
-2024-10-08 16:04:50 INFO     --- created file 'O5101' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-08 16:04:50 DEBUG    --- start index: 138 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:101 
-2024-10-08 16:04:50 DEBUG    --- end   index: 262 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:110 
-2024-10-08 16:04:50 DEBUG    --- {'0.0000000  0.5877853  0.8090170'} --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:230 
-2024-10-08 16:04:50 INFO     --- created file 'O5102' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-08 16:04:50 DEBUG    --- start index: 264 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:101 
-2024-10-08 16:04:50 DEBUG    --- end   index: 387 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:110 
-2024-10-08 16:04:50 DEBUG    --- {'0.0000000  0.9510565  0.3090170'} --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:230 
-2024-10-08 16:04:50 INFO     --- created file 'O5103' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-08 16:04:50 DEBUG    --- start index: 389 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:101 
-2024-10-08 16:04:50 DEBUG    --- end   index: 510 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:110 
-2024-10-08 16:04:50 DEBUG    --- {'0.0000000  0.9510565  -0.3090170'} --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:230 
-2024-10-08 16:04:50 INFO     --- created file 'O5104' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-08 16:04:50 DEBUG    --- start index: 512 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:101 
-2024-10-08 16:04:50 DEBUG    --- end   index: 633 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:110 
-2024-10-08 16:04:50 DEBUG    --- {'0.0000000  0.5877853  -0.8090170'} --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:230 
-2024-10-08 16:04:50 INFO     --- created file 'O5105' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-08 16:04:50 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4, 5] --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:48 
-2024-10-08 16:04:50 INFO     --- created file 'O5100' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:27 DEBUG    --- Logger src started. --- src:33 
+2024-10-09 15:55:27 DEBUG    --- Started execution from __main__ --- src:25 
+2024-10-09 15:55:27 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:20 
+2024-10-09 15:55:27 DEBUG    --- Setting cwd in debug mode --- src.postOOP.classes.gui.desktop_window_app:164 
+2024-10-09 15:55:27 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:59 
+2024-10-09 15:55:27 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:66 
+2024-10-09 15:55:27 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:85 
+2024-10-09 15:55:29 INFO     --- Files found in cwd: ['O7100', 'O7101', 'O7102', 'O7103', 'O7104', 'O7105', 'O7106', 'O7107', 'O7108', 'O7109', 'O7110', 'O7111', 'O7112', 'O7113', 'O7114', 'O7115', 'O7116', 'O7117', 'O7118', 'O7119', 'O7120', 'O7121', 'O7122', 'O7123', 'O7124', 'O7125', 'O7126', 'O7127', 'O7128', 'O7129', 'O7130', 'O7131', 'O7132', 'O7133', 'O7134', 'O7135', 'O7136', 'O7137', 'O7138', 'O7139', 'O7140', 'O7141', 'O7142', 'O7200', 'O7201', 'O7202', 'O7203', 'O7204', 'O7205', 'O7206', 'O7207', 'O7208', 'O7209', 'O7210', 'O7211', 'O7212', 'py post v2 OOP', 'PyQt', 'ustanovi', 'ust__1_drl.ncl.1'] --- src.postOOP.classes.others.file_operator_basic:20 
+2024-10-09 15:55:29 INFO     --- Post name from config: <<<MILL 4AXIS A SYNTEC POST>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:40 
+2024-10-09 15:55:29 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:51 
+2024-10-09 15:55:29 INFO     --- .ncl file "ust__1_drl.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:67 
+2024-10-09 15:55:29 INFO     --- Operation is Multax = True --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:82 
+2024-10-09 15:55:29 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'GLUBOKOE_SV', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'ZENKOVANIE', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'RAZVERTIVANIE', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'REZBA_METCHIK', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'RASTOCHKA', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING', 'HOLEMAKING'] --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:83 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=NEPRERIVNOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 37 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:244 
+2024-10-09 15:55:29 INFO     --- created file 'H5101' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 39 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 66 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5102' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 68 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 94 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5103' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 96 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 122 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5104' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 124 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 150 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5105' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 152 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 178 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5106' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=PRERIVISTOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 180 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 206 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5107' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 208 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 234 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5108' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 236 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 262 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5109' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 264 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 290 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5110' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 292 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 318 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5111' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 320 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 346 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5112' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=GLUBOKOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=GLUBOKOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 348 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 374 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5113' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=GLUBOKOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 376 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 402 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5114' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=GLUBOKOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 404 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 430 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5115' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=GLUBOKOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 432 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 458 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5116' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=GLUBOKOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 460 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 486 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5117' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=GLUBOKOE_SV --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 488 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 514 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5118' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=ZENKOVANIE --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=ZENKOVANIE --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 516 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 543 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5119' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=ZENKOVANIE --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 545 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 572 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5120' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=ZENKOVANIE --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 574 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 601 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5121' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=ZENKOVANIE --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 603 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 630 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5122' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=ZENKOVANIE --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 632 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 659 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5123' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=ZENKOVANIE --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 661 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 688 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5124' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=RAZVERTIVANIE --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=RAZVERTIVANIE --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 690 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 713 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5125' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=RAZVERTIVANIE --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 715 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 738 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5126' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=RAZVERTIVANIE --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 740 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 763 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5127' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=RAZVERTIVANIE --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 765 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 788 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5128' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=RAZVERTIVANIE --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 790 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 813 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5129' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=RAZVERTIVANIE --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 815 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 838 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5130' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=REZBA_METCHIK --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=REZBA_METCHIK --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 840 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 866 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5131' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=REZBA_METCHIK --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 868 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 894 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5132' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=REZBA_METCHIK --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 896 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 922 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5133' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=REZBA_METCHIK --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 924 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 950 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5134' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=REZBA_METCHIK --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 952 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 978 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5135' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=REZBA_METCHIK --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 980 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 1006 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5136' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=RASTOCHKA --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=RASTOCHKA --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 1008 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 1030 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5137' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=RASTOCHKA --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 1032 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 1054 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5138' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=RASTOCHKA --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 1056 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 1078 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5139' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=RASTOCHKA --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 1080 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 1102 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5140' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=RASTOCHKA --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 1104 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 1126 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5141' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:38 
+2024-10-09 15:55:29 DEBUG    --- nc_sequence_parent_name_of_massive=RASTOCHKA --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_A_syntec:39 
+2024-10-09 15:55:29 DEBUG    --- start index: 1128 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
+2024-10-09 15:55:29 DEBUG    --- end   index: 1150 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
+2024-10-09 15:55:29 INFO     --- created file 'H5142' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-09 15:55:29 INFO     --- created file 'H5100' --- src.postOOP.classes.others.file_operator_basic:101 

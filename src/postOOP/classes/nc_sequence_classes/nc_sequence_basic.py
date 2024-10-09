@@ -9,6 +9,7 @@ from src.postOOP.classes.others.formatter import Formatter
 
 logger = logging.getLogger(__name__)
 
+
 class NcSequenceBasic(NcProgramBasic):
     nc_sequence_class_name = "NcSequenceBasic"
 
@@ -50,6 +51,7 @@ class NcSequenceBasic(NcProgramBasic):
             file_operator_class: FileOperatorBasic,
             detail_name: str,
             nc_sequence_name: str,
+            nc_sequence_parent_name_of_massive: str,
             nc_massive_copy_counter: int,
             cl_list: list,
             nc_operation_number: int,
@@ -64,6 +66,7 @@ class NcSequenceBasic(NcProgramBasic):
 
         self.detail_name = detail_name
         self.nc_sequence_name = nc_sequence_name
+        self.nc_sequence_parent_name_of_massive = nc_sequence_parent_name_of_massive
         self.cl_list = cl_list
         self.nc_operation_number = nc_operation_number
         self.nc_sequence_number = nc_sequence_number
@@ -92,12 +95,31 @@ class NcSequenceBasic(NcProgramBasic):
                                                       list_with_lines=self.nc_list)
 
     def set_cl_start_index(self):
-        self.cl_start_index = self.pprint_parser_class.get_index_of_occurence_in_cl_list_in_range(cl_list=self.cl_list,
-                                                                                                  search_for=self.nc_sequence_name,
-                                                                                                  nc_massive_copy_counter=self.nc_massive_copy_counter,
-                                                                                                  start_index=0,
-                                                                                                  end_index=len(
-                                                                                                      self.cl_list))
+        if self.nc_sequence_name == self.nc_sequence_parent_name_of_massive:
+            self.cl_start_index = self.pprint_parser_class.get_index_of_occurence_in_cl_list_in_range(
+                cl_list=self.cl_list,
+                search_for=self.nc_sequence_name,
+                nc_massive_copy_counter=self.nc_massive_copy_counter,
+                start_index=0,
+                end_index=len(
+                    self.cl_list))
+        elif self.nc_sequence_name in config.sequence_massive_names:
+            cl_parent_seq_index = self.pprint_parser_class.get_index_of_occurence_in_cl_list_in_range(
+                cl_list=self.cl_list,
+                search_for=self.nc_sequence_parent_name_of_massive,
+                nc_massive_copy_counter=0,
+                start_index=0,
+                end_index=len(
+                    self.cl_list))
+
+            self.cl_start_index = self.pprint_parser_class.get_index_of_occurence_in_cl_list_in_range(
+                cl_list=self.cl_list,
+                search_for=self.nc_sequence_name,
+                nc_massive_copy_counter=self.nc_massive_copy_counter,
+                start_index=cl_parent_seq_index,
+                end_index=len(
+                    self.cl_list))
+
         logger.debug(f"start index: {self.cl_start_index}")
 
     def set_cl_end_index(self):
