@@ -1,6 +1,6 @@
 from src.postOOP.classes.nc_operation_classes.nc_operation_mill_3axis_syntec import NcOperationMill3AxisSyntec
 from src.postOOP.classes.nc_sequence_classes.nc_sequence_mill_4axis_A_syntec import NcSequenceMill4AxisASyntec
-from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec import NclParserMill4axisASyntec
+from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec import NclParserMill4AxisASyntec
 from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_mill_4axis_A import PprintParserMill4AxisA
 from src.postOOP import config
 import logging
@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 class NcOperationMill4AxisASyntec(NcOperationMill3AxisSyntec):
     nc_sequence_class: NcSequenceMill4AxisASyntec = NcSequenceMill4AxisASyntec
     pprint_parser_class: PprintParserMill4AxisA = PprintParserMill4AxisA
-    ncl_parser_class: NclParserMill4axisASyntec = NclParserMill4axisASyntec
+    ncl_parser_class: NclParserMill4AxisASyntec = NclParserMill4AxisASyntec
 
     postprocessor_name = "MILL 4AXIS A SYNTEC POST"
     is_multax_operation = False
@@ -51,7 +51,8 @@ class NcOperationMill4AxisASyntec(NcOperationMill3AxisSyntec):
                                        nc_operation_number=self.operation_number,
                                        date_of_creation=self.date_of_creation,
                                        is_multax_operation=self.is_multax_operation,
-                                       multax_line_index=self.multax_line_index))
+                                       # multax_line_index=self.multax_line_index
+                                       ))
         self.list_of_nc_sequences_objects: list = lst_of_objects
         # logger.debug(
         #     f"self.list_of_nc_sequences_objects {[item.nc_sequence_number for item in self.list_of_nc_sequences_objects]}")

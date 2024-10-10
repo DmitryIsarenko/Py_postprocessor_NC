@@ -7,7 +7,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
+class NclParserMill4AxisASyntec(NclParserMill3axisSyntec):
     ncl_parser_class_name = "NclParserMill4axisASyntec"
     # logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
 
@@ -119,7 +119,8 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
         if "OFF" in right_part:
             result_list.append("G00 G28 Z0.0 G49")
         elif int(float(right_part)).is_integer():
-            result_list.append(f"G{right_part}")
+            # result_list.append(f"G{right_part}")
+            pass
         return result_list
 
     @classmethod
@@ -174,6 +175,14 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
             if len(right_part_list) == 3:
                 x, y, z = right_part_list
                 x, y, z = round(x, config.NDIGITS_XYZ), round(y, config.NDIGITS_XYZ), round(z, config.NDIGITS_XYZ)
+
+                if x == -0.0:
+                    x = 0.0
+                if y == -0.0:
+                    y = 0.0
+                if z == -0.0:
+                    z = 0.0
+
                 if cls.is_multax_operation is False:
                     res_list.append(f"X{x} Y{y} Z{z}")
                 elif cls.is_multax_operation:
@@ -181,6 +190,7 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
                         final_result_list.append(f"M11")
                         final_result_list.append(f"G00 G90 A0")
                         final_result_list.append(f"M10")
+                        # final_result_list.append(f"")
                         res_list.append(f"X{x} Y{y} Z{z}")
                     else:
                         res_list.append(f"X{x} Y{y} Z{z}")
@@ -193,6 +203,14 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
 
                 x, y, z = round(x, config.NDIGITS_XYZ), round(y, config.NDIGITS_XYZ), round(z, config.NDIGITS_XYZ)
                 a = round(a, config.NDIGITS_ABC)
+
+                if x == -0.0:
+                    x = 0.0
+                if y == -0.0:
+                    y = 0.0
+                if z == -0.0:
+                    z = 0.0
+
                 # первая строка
                 if cls.goto_counter == 1:
                     # позиционная обработка
@@ -200,6 +218,7 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
                         final_result_list.append(f"M11")
                         final_result_list.append(f"G00 G90 A{a}")
                         final_result_list.append(f"M10")
+                        # final_result_list.append(f"")
                         res_list.append(f"X{x} Y{y} Z{z}")
                     # непрерывная обработка
                     else:
@@ -306,6 +325,7 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
         result_list.append("G00 G28 Z0.0")
         result_list.append("G00 G28 X0.0")
         result_list.append("G00 G28 Y0.0")
+        result_list.append("G00 G28 A0.0")
         result_list.append("M00")
         return result_list
 
@@ -372,6 +392,20 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
             elif k_center == 1:
                 res_list.append("G03 ")
 
+            if x_end_abs == -0.0:
+                x_end_abs = 0.0
+            if y_end_abs == -0.0:
+                y_end_abs = 0.0
+            if z_end_abs == -0.0:
+                z_end_abs = 0.0
+            if x_center_incr == -0.0:
+                x_center_incr = 0.0
+            if y_center_incr == -0.0:
+                y_center_incr = 0.0
+            if z_center_incr == -0.0:
+                z_center_incr = 0.0
+
+
             res_list.append(f"X{x_end_abs} "
                             f"Y{y_end_abs} "
                             f"Z{z_end_abs} "
@@ -426,6 +460,19 @@ class NclParserMill4axisASyntec(NclParserMill3axisSyntec):
                 x_end_abs = round(x_end_abs, config.NDIGITS_XYZ)
                 y_end_abs = round(y_end_abs, config.NDIGITS_XYZ)
                 z_end_abs = round(z_end_abs, config.NDIGITS_XYZ)
+
+                if x_end_abs == -0.0:
+                    x_end_abs = 0.0
+                if y_end_abs == -0.0:
+                    y_end_abs = 0.0
+                if z_end_abs == -0.0:
+                    z_end_abs = 0.0
+                if x_center_incr == -0.0:
+                    x_center_incr = 0.0
+                if y_center_incr == -0.0:
+                    y_center_incr = 0.0
+                if z_center_incr == -0.0:
+                    z_center_incr = 0.0
 
                 res_list.append(f"X{x_end_abs} "
                                 f"Y{y_end_abs} "

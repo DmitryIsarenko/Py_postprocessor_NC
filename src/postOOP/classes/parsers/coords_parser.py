@@ -92,10 +92,10 @@ class CoordsParser:
     @staticmethod
     def count_new_X_Z_for_B_rotation(*, x_start: float | int,
                                      z_start: float | int,
-                                     angle_C_deg: float | int) -> tuple[float | int, float | int]:
-        angle_C_deg = - angle_C_deg * math.pi / 180
-        x_end = x_start * math.cos(angle_C_deg) + z_start * math.sin(angle_C_deg)
-        z_end = z_start * math.cos(angle_C_deg) - x_start * math.sin(angle_C_deg)
+                                     angle_B_deg: float | int) -> tuple[float | int, float | int]:
+        angle_B_deg = - angle_B_deg * math.pi / 180
+        x_end = x_start * math.cos(angle_B_deg) + z_start * math.sin(angle_B_deg)
+        z_end = z_start * math.cos(angle_B_deg) - x_start * math.sin(angle_B_deg)
         return round(x_end, ndigits=config.NDIGITS_CALC_XYZ), round(z_end, ndigits=config.NDIGITS_CALC_XYZ)
 
     @staticmethod
@@ -148,4 +148,56 @@ if __name__ == '__main__':
     #
     # print(cordsB)
 
-    print(CoordsParser.count_A_angle_by_orts(j=0, k=0))
+    # print(CoordsParser.count_A_angle_by_orts(j=0, k=0))
+    pass
+
+    # B0
+    IJK = [0.0, 0.0, 1.0]
+    START_COORDS = [0.0000, 0.0000, -0.2000]
+    # START_COORDS = [50.0000, 0.0000, -0.2000]
+    # START_COORDS = [50.0000, 50.0000, -0.2000]
+    # START_COORDS = [0.0000, 50.0000, -0.2000]
+    # START_COORDS = [0.0000, 0.0000, -0.2000]
+    # # B60
+    # IJK = [0.8660254, 0.0000000, 0.5000000]
+    # START_COORDS = [-0.1732, 0.0000, -0.1000,]
+    # START_COORDS = [24.8268, 0.0000, -43.4013]
+    # START_COORDS = [24.8268, 50.0000, -43.4013]
+    # START_COORDS = [-0.1732, 50.0000, -0.1000]
+    # START_COORDS = [-0.1732, 0.0000, -0.1000]
+    # # B120
+    # IJK = [0.8660254, 0.0000000, -0.5000000]
+    # START_COORDS = [-0.1732, 0.0000, 0.1000]
+    # START_COORDS = [-25.1732, 0.0000, -43.2013]
+    # START_COORDS = [-25.1732, 50.0000, -43.2013]
+    # START_COORDS = [-0.1732, 50.0000, 0.1000]
+    # START_COORDS = [-0.1732, 0.0000, 0.1000]
+    # # B180
+    # IJK = [0.0000000, 0.0000000, -1.0000000]
+    # START_COORDS = [0.0000, 0.0000, 0.2000]
+    # START_COORDS = [-50.0000, 0.0000, 0.2000]
+    # START_COORDS = [-50.0000, 50.0000, 0.2000]
+    # START_COORDS = [0.0000, 50.0000, 0.2000]
+    # START_COORDS = [0.0000, 0.0000, 0.2000]
+    # # B240
+    # IJK = [-0.8660254, 0.0000000, -0.5000000]
+    # START_COORDS = [0.1732, 0.0000, 0.1000]
+    # START_COORDS = [-24.8268, 0.0000, 43.4013]
+    # START_COORDS = [-24.8268, 50.0000, 43.4013]
+    # START_COORDS = [0.1732, 50.0000, 0.1000]
+    # START_COORDS = [0.1732, 0.0000, 0.1000]
+    # # B300
+    # IJK = [-0.8660254, 0.0000000, 0.5000000]
+    # START_COORDS = [0.1732, 0.0000, -0.1000]
+    # START_COORDS = [25.1732, 0.0000, 43.2013]
+    # START_COORDS = [25.1732, 50.0000, 43.2013]
+    # START_COORDS = [0.1732, 50.0000, -0.1000]
+    # START_COORDS = [0.1732, 0.0000, -0.1000]
+
+    B = CoordsParser.count_B_angle_by_orts(i=IJK[0], k=IJK[2])
+    print(B)
+    Y = START_COORDS[1]
+    X, Z = CoordsParser.count_new_X_Z_for_B_rotation(x_start=START_COORDS[0],
+                                                     z_start=START_COORDS[2],
+                                                     angle_B_deg=B)
+    print([round(X,ndigits=config.NDIGITS_XYZ), round(Y,ndigits=config.NDIGITS_XYZ), round(Z,ndigits=config.NDIGITS_XYZ)])

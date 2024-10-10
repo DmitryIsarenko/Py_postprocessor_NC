@@ -193,7 +193,7 @@ class NcSequenceBasic(NcProgramBasic):
             f"(PROG: {self.nc_sequence_name})",
             f"(TOOL: {self.tool_name})",
             f"(POT:  {self.tool_pot})",
-            f"",
+            # f"",
             f"G{self.work_offset}",
             f"{config.SAFETY_LINE_DEFAULT}"
         ]

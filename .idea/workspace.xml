@@ -5,20 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="OOP work version">
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_4axis_A_syntec_TF.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_4axis_B_syntec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_4axis_B_syntec_TF.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_4axis_A_syntec_TF.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_4axis_B_syntec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_4axis_B_syntec_TF.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/coords_parser_TF.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_A_syntec_TF.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_B_syntec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_B_syntec_TF.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/pprint_parsers/pprint_parser_mill_4axis_B.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logs/rotating_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/rotating_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_basic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_4axis_A_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_4axis_A_syntec.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_basic_mill_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_basic_mill_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_syntec_TF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_4axis_A_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_4axis_A_syntec.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/coords_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/coords_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_A_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_A_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/pprint_parsers/pprint_parser_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/pprint_parsers/pprint_parser_basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/post_lister.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/post_lister.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +57,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python.coords_parser.executor": "Debug",
+    "Python.coords_parser.executor": "Run",
     "Python.dasfasd.executor": "Run",
     "Python.desktop_window_app.executor": "Run",
     "Python.file_analyzer.executor": "Run",
@@ -60,7 +65,7 @@
     "Python.gui.executor": "Run",
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
-    "Python.main_app.executor": "Debug",
+    "Python.main_app.executor": "Run",
     "Python.main_gui.executor": "Run",
     "Python.main_gui_app.executor": "Run",
     "Python.main_oop.executor": "Run",
@@ -68,8 +73,8 @@
     "ShowUsagesActions.previewPropertyKey": "true",
     "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "4axis",
-    "last_opened_file_path": "C:/WORK_DIRECTORY/10 Programming/Projects/py post/py post v2 OOP/src/postOOP/config.py",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "last_opened_file_path": "W:/Техбюро/PyPackages/pycharm packages/Material_Theme_UI-9.6.0.zip",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -208,7 +213,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-f5635417b835-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18968.29" />
+        <option value="bundled-python-sdk-0e3be3396995-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23339.19" />
       </set>
     </attachedChunks>
   </component>
@@ -348,15 +353,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="v1.0 with GUI. 1 tab works" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_basic.py</url>
-          <line>141</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="name.split(&quot;.&quot;)" language="Python" />

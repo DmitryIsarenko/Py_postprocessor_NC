@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 class NcSequenceMill4AxisASyntec(NcSequenceMill3AxisSyntec):
     nc_sequence_class_name = "NcSequenceMill4AxisASyntec"
     is_multax_active = False
-    is_multax_operation = "asdgfkljas"
+    is_multax_operation = False
 
     def __init__(
             self,
@@ -25,7 +25,6 @@ class NcSequenceMill4AxisASyntec(NcSequenceMill3AxisSyntec):
             nc_sequences_count: int,
             date_of_creation: str,
             is_multax_operation: bool,
-            multax_line_index: int,
     ):
         self.is_multax_operation = is_multax_operation
         super().__init__(
