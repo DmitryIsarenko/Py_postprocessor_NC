@@ -332,3 +332,13 @@
 2024-10-09 15:35:38 CRITICAL --- Too many nc operations --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:146 
 2024-10-09 15:35:44 CRITICAL --- Too many nc operations --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:146 
 2024-10-09 15:36:27 CRITICAL --- Too many nc operations --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:146 
+2024-10-11 16:44:16 WARNING  --- Empty self.cl_list for temporary_file_ust__1_drl.ncl.1 --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:70 
+2024-10-11 17:57:08 WARNING  --- Empty self.cl_list for temporary_file_ust__1_drl.ncl.1 --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:70 
+2024-10-11 17:57:45 WARNING  --- Empty self.cl_list for temporary_file_ust__1_drl.ncl.1 --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:70 
+2024-10-11 17:58:43 WARNING  --- Empty self.cl_list for temporary_file_ust__1_drl.ncl.1 --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:70 
+2024-10-11 17:59:19 WARNING  --- Empty self.cl_list for temporary_file_ust__1_drl.ncl.1 --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:70 
+2024-10-11 17:59:38 WARNING  --- Empty self.cl_list for temporary_file_ust__1_drl.ncl.1 --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:70 
+2024-10-11 18:00:41 WARNING  --- Empty self.cl_list for temporary_file_ust__1_drl.ncl.1 --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:70 
+2024-10-11 18:02:11 WARNING  --- Empty self.cl_list for temporary_file_ust__1_drl.ncl.1 --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:70 
+2024-10-11 18:04:55 WARNING  --- Empty self.cl_list for temporary_file_ust__1_drl.ncl.1 --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:70 
+2024-10-11 18:04:55 WARNING  --- Empty self.cl_list for temporary_file_ust__2_mill_4_axis_a_pos.ncl.1 --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:70 
