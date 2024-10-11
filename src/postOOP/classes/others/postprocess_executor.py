@@ -1,7 +1,7 @@
 import sys
 
 from src.postOOP.classes.others.file_operator_basic import FileOperatorBasic
-from src.postOOP.classes.nc_operation_classes.nc_operation_mill_3axis_syntec_TF import NcOperationMill3AxisSyntecTF
+from src.postOOP.classes.nc_operation_classes.tauras_fenix.nc_operation_mill_3axis_syntec_TF import NcOperationMill3AxisSyntecTF
 from src.postOOP import config
 
 

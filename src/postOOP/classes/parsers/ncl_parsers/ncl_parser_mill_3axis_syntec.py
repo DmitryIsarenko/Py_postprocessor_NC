@@ -122,17 +122,33 @@ class NclParserMill3axisSyntec(NclParserBasicMillSyntec):
             cls.is_G01_ON = False
             cls.is_G02_ON = False
             cls.is_G03_ON = False
+        elif "RAPID" in cl_list[line_index - 2] and cls.is_G00_needed:
+            res_list.extend(cls.parse_RAPID())
+            cls.is_G00_ON = True
+            cls.is_G01_ON = False
+            cls.is_G02_ON = False
+            cls.is_G03_ON = False
         elif "FEDRAT" in cl_list[line_index - 1] and cls.is_G01_needed:
             cls.is_G00_ON = False
             cls.is_G01_ON = True
             cls.is_G02_ON = False
             cls.is_G03_ON = False
             res_list.extend(cls.parse_FEDRAT(cl_list=cl_list, line_index=line_index - 1))
+        elif "FEDRAT" in cl_list[line_index - 2] and cls.is_G01_needed:
+            cls.is_G00_ON = False
+            cls.is_G01_ON = True
+            cls.is_G02_ON = False
+            cls.is_G03_ON = False
+            res_list.extend(cls.parse_FEDRAT(cl_list=cl_list, line_index=line_index - 2))
 
         if "CUTCOM / LEFT" in cl_list[line_index - 1] \
                 or "CUTCOM / RIGHT" in cl_list[line_index - 1] \
                 or "CUTCOM / OFF" in cl_list[line_index - 1]:
             res_list.extend(cls.parse_CUTCOM(cl_list=cl_list, line_index=line_index - 1, nc_seq_obj=nc_seq_obj))
+        if "CUTCOM / LEFT" in cl_list[line_index - 2] \
+                or "CUTCOM / RIGHT" in cl_list[line_index - 2] \
+                or "CUTCOM / OFF" in cl_list[line_index - 2]:
+            res_list.extend(cls.parse_CUTCOM(cl_list=cl_list, line_index=line_index - 2, nc_seq_obj=nc_seq_obj))
 
         if cls.is_G43_ON is False and cls.is_G43_needed is True:
             res_list.append(cls.create_G43_addition(nc_seq_obj=nc_seq_obj))

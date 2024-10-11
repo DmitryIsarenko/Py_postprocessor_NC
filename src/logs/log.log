@@ -1,76 +1,180 @@
-2024-10-10 16:26:45 DEBUG    --- Logger src started. --- src:33 
-2024-10-10 16:26:45 DEBUG    --- Started execution from __main__ --- src:25 
-2024-10-10 16:26:45 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:20 
-2024-10-10 16:26:46 DEBUG    --- Setting cwd in debug mode --- src.postOOP.classes.gui.desktop_window_app:164 
-2024-10-10 16:26:46 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:59 
-2024-10-10 16:26:46 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:66 
-2024-10-10 16:26:46 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:85 
-2024-10-10 16:26:49 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:95 
-2024-10-10 16:26:50 INFO     --- Files found in cwd: ['py post v2 OOP', 'PyQt', 'ustanovi', 'ust__3_mill_4_axis_b_pos.ncl.1'] --- src.postOOP.classes.others.file_operator_basic:20 
-2024-10-10 16:26:50 INFO     --- Post name from config: <<<MILL 4AXIS B SYNTEC TF POST>>> --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:40 
-2024-10-10 16:26:50 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:51 
-2024-10-10 16:26:50 INFO     --- .ncl file "ust__3_mill_4_axis_b_pos.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:67 
-2024-10-10 16:26:50 INFO     --- Operation is Multax = True --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:83 
-2024-10-10 16:26:50 DEBUG    --- list_of_nc_sequences_names ['G02', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING', 'G03', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING', 'TRAJECTORY MILLING'] --- src.postOOP.classes.nc_operation_classes.nc_operation_basic:83 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_name=G02 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:38 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_parent_name_of_massive=G02 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:39 
-2024-10-10 16:26:50 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
-2024-10-10 16:26:50 DEBUG    --- end   index: 43 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
-2024-10-10 16:26:50 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:263 
-2024-10-10 16:26:50 INFO     --- created file 'H5301' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:38 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_parent_name_of_massive=G02 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:39 
-2024-10-10 16:26:50 DEBUG    --- start index: 45 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
-2024-10-10 16:26:50 DEBUG    --- end   index: 78 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
-2024-10-10 16:26:50 INFO     --- created file 'H5302' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:38 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_parent_name_of_massive=G02 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:39 
-2024-10-10 16:26:50 DEBUG    --- start index: 80 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
-2024-10-10 16:26:50 DEBUG    --- end   index: 112 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
-2024-10-10 16:26:50 INFO     --- created file 'H5303' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:38 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_parent_name_of_massive=G02 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:39 
-2024-10-10 16:26:50 DEBUG    --- start index: 114 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
-2024-10-10 16:26:50 DEBUG    --- end   index: 146 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
-2024-10-10 16:26:50 INFO     --- created file 'H5304' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:38 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_parent_name_of_massive=G02 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:39 
-2024-10-10 16:26:50 DEBUG    --- start index: 148 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
-2024-10-10 16:26:50 DEBUG    --- end   index: 180 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
-2024-10-10 16:26:50 INFO     --- created file 'H5305' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:38 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_parent_name_of_massive=G02 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:39 
-2024-10-10 16:26:50 DEBUG    --- start index: 182 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
-2024-10-10 16:26:50 DEBUG    --- end   index: 214 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
-2024-10-10 16:26:50 INFO     --- created file 'H5306' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_name=G03 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:38 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_parent_name_of_massive=G03 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:39 
-2024-10-10 16:26:50 DEBUG    --- start index: 216 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
-2024-10-10 16:26:50 DEBUG    --- end   index: 248 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
-2024-10-10 16:26:50 INFO     --- created file 'H5307' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:38 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_parent_name_of_massive=G03 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:39 
-2024-10-10 16:26:50 DEBUG    --- start index: 250 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
-2024-10-10 16:26:50 DEBUG    --- end   index: 282 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
-2024-10-10 16:26:50 INFO     --- created file 'H5308' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:38 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_parent_name_of_massive=G03 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:39 
-2024-10-10 16:26:50 DEBUG    --- start index: 284 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
-2024-10-10 16:26:50 DEBUG    --- end   index: 316 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
-2024-10-10 16:26:50 INFO     --- created file 'H5309' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:38 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_parent_name_of_massive=G03 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:39 
-2024-10-10 16:26:50 DEBUG    --- start index: 318 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
-2024-10-10 16:26:50 DEBUG    --- end   index: 350 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
-2024-10-10 16:26:50 INFO     --- created file 'H5310' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:38 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_parent_name_of_massive=G03 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:39 
-2024-10-10 16:26:50 DEBUG    --- start index: 352 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
-2024-10-10 16:26:50 DEBUG    --- end   index: 384 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
-2024-10-10 16:26:50 INFO     --- created file 'H5311' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:38 
-2024-10-10 16:26:50 DEBUG    --- nc_sequence_parent_name_of_massive=G03 --- src.postOOP.classes.nc_operation_classes.nc_operation_mill_4axis_B_syntec:39 
-2024-10-10 16:26:50 DEBUG    --- start index: 386 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:123 
-2024-10-10 16:26:50 DEBUG    --- end   index: 418 --- src.postOOP.classes.nc_sequence_classes.nc_sequence_basic:132 
-2024-10-10 16:26:50 INFO     --- created file 'H5312' --- src.postOOP.classes.others.file_operator_basic:101 
-2024-10-10 16:26:50 INFO     --- created file 'H5300' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:21 DEBUG    --- Logger src started. --- src:33 
+2024-10-11 18:05:21 DEBUG    --- Started execution from __main__ --- src:25 
+2024-10-11 18:05:21 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:20 
+2024-10-11 18:05:21 DEBUG    --- Setting cwd in debug mode --- src.postOOP.classes.gui.desktop_window_app:164 
+2024-10-11 18:05:21 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:59 
+2024-10-11 18:05:21 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:66 
+2024-10-11 18:05:21 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:85 
+2024-10-11 18:05:25 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:95 
+2024-10-11 18:05:26 INFO     --- Files found in cwd: ['O7100', 'O7101', 'O7201', 'PyQt', 'py_post_v2_OOP', 'temporary_file_ust__1_drl.ncl.1', 'temporary_file_ust__2_mill_4_axis_a_pos.ncl.1', 'ustanovi', 'ust__1_drl.ncl.1', 'ust__2_mill_4_axis_a_pos.ncl.1', 'ust__3_mill_4_axis_b_pos.ncl.1'] --- src.postOOP.classes.others.file_operator_basic:20 
+2024-10-11 18:05:26 INFO     --- Post name from config: <<<MILL 4AXIS A FANUC TF POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:40 
+2024-10-11 18:05:26 INFO     --- Post name from config: <<<MILL 4AXIS A FANUC TF POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:40 
+2024-10-11 18:05:26 INFO     --- Post name from config: <<<MILL 4AXIS A FANUC TF POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:40 
+2024-10-11 18:05:26 INFO     --- Post name from config: <<<MILL 4AXIS A FANUC TF POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:40 
+2024-10-11 18:05:26 INFO     --- Post name from config: <<<MILL 4AXIS A FANUC TF POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:40 
+2024-10-11 18:05:26 INFO     --- Empty self.cl_list for temporary_file_ust__1_drl.ncl.1 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:98 
+2024-10-11 18:05:26 INFO     --- Empty self.cl_list for temporary_file_ust__2_mill_4_axis_a_pos.ncl.1 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:98 
+2024-10-11 18:05:26 INFO     --- .ncl file "ust__1_drl.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:67 
+2024-10-11 18:05:26 INFO     --- Operation is Multax = False --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:82 
+2024-10-11 18:05:26 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV'] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:83 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_name=NEPRERIVNOE_SV --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:37 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:38 
+2024-10-11 18:05:26 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:05:26 DEBUG    --- end   index: 37 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:05:26 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
+2024-10-11 18:05:26 INFO     --- created file 'O7101' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:26 INFO     --- created file 'O7100' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:26 INFO     --- .ncl file "ust__2_mill_4_axis_a_pos.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:67 
+2024-10-11 18:05:26 INFO     --- Operation is Multax = True --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:82 
+2024-10-11 18:05:26 DEBUG    --- list_of_nc_sequences_names ['MILL_G02', 'TRAJECTORY MILLING', 'MILL_G03', 'TRAJECTORY MILLING', 'G03_REZBO_FR_RIGHT', 'THREAD MILLING', 'G02_REZBO_FR_LEFT', 'THREAD MILLING'] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:83 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_name=MILL_G02 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:37 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_parent_name_of_massive=MILL_G02 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:38 
+2024-10-11 18:05:26 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:05:26 DEBUG    --- end   index: 40 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:05:26 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
+2024-10-11 18:05:26 INFO     --- created file 'O7201' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:37 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_parent_name_of_massive=MILL_G02 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:38 
+2024-10-11 18:05:26 DEBUG    --- start index: 42 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:05:26 DEBUG    --- end   index: 72 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:05:26 INFO     --- created file 'O7202' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_name=MILL_G03 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:37 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_parent_name_of_massive=MILL_G03 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:38 
+2024-10-11 18:05:26 DEBUG    --- start index: 74 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:05:26 DEBUG    --- end   index: 103 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:05:26 INFO     --- created file 'O7203' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:37 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_parent_name_of_massive=MILL_G03 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:38 
+2024-10-11 18:05:26 DEBUG    --- start index: 105 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:05:26 DEBUG    --- end   index: 134 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:05:26 INFO     --- created file 'O7204' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_name=G03_REZBO_FR_RIGHT --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:37 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_parent_name_of_massive=G03_REZBO_FR_RIGHT --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:38 
+2024-10-11 18:05:26 DEBUG    --- start index: 136 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:05:26 DEBUG    --- end   index: 183 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:05:26 INFO     --- created file 'O7205' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_name=THREAD MILLING --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:37 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_parent_name_of_massive=G03_REZBO_FR_RIGHT --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:38 
+2024-10-11 18:05:26 DEBUG    --- start index: 185 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:05:26 DEBUG    --- end   index: 232 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:05:26 INFO     --- created file 'O7206' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_name=G02_REZBO_FR_LEFT --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:37 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_parent_name_of_massive=G02_REZBO_FR_LEFT --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:38 
+2024-10-11 18:05:26 DEBUG    --- start index: 234 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:05:26 DEBUG    --- end   index: 281 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:05:26 INFO     --- created file 'O7207' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_name=THREAD MILLING --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:37 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_parent_name_of_massive=G02_REZBO_FR_LEFT --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:38 
+2024-10-11 18:05:26 DEBUG    --- start index: 283 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:05:26 DEBUG    --- end   index: 330 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:05:26 INFO     --- created file 'O7208' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:26 INFO     --- created file 'O7200' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:26 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:51 
+2024-10-11 18:05:26 INFO     --- .ncl file "ust__3_mill_4_axis_b_pos.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:67 
+2024-10-11 18:05:26 INFO     --- Operation is Multax = True --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:82 
+2024-10-11 18:05:26 DEBUG    --- list_of_nc_sequences_names ['G02', 'G03', 'TRAJECTORY MILLING'] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:83 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_name=G02 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:37 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_parent_name_of_massive=G02 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:38 
+2024-10-11 18:05:26 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:05:26 DEBUG    --- end   index: 47 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:05:26 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
+2024-10-11 18:05:26 INFO     --- created file 'O7301' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_name=G03 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:37 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_parent_name_of_massive=G03 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:38 
+2024-10-11 18:05:26 DEBUG    --- start index: 49 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:05:26 DEBUG    --- end   index: 85 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:05:26 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
+2024-10-11 18:05:26 INFO     --- created file 'O7302' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:37 
+2024-10-11 18:05:26 DEBUG    --- nc_sequence_parent_name_of_massive=G03 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec:38 
+2024-10-11 18:05:26 DEBUG    --- start index: 87 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:05:26 DEBUG    --- end   index: 124 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:05:26 INFO     --- created file 'O7303' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:05:26 INFO     --- created file 'O7300' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:95 
+2024-10-11 18:06:09 INFO     --- Files found in cwd: ['O7100', 'O7101', 'O7200', 'O7201', 'O7202', 'O7203', 'O7204', 'O7205', 'O7206', 'O7207', 'O7208', 'O7300', 'O7301', 'O7302', 'O7303', 'PyQt', 'py_post_v2_OOP', 'temporary_file_ust__1_drl.ncl.1', 'temporary_file_ust__2_mill_4_axis_a_pos.ncl.1', 'temporary_file_ust__3_mill_4_axis_b_pos.ncl.1', 'ustanovi', 'ust__1_drl.ncl.1', 'ust__2_mill_4_axis_a_pos.ncl.1', 'ust__3_mill_4_axis_b_pos.ncl.1'] --- src.postOOP.classes.others.file_operator_basic:20 
+2024-10-11 18:06:09 INFO     --- Post name from config: <<<MILL 4AXIS B FANUC TF POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:40 
+2024-10-11 18:06:09 INFO     --- Post name from config: <<<MILL 4AXIS B FANUC TF POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:40 
+2024-10-11 18:06:09 INFO     --- Post name from config: <<<MILL 4AXIS B FANUC TF POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:40 
+2024-10-11 18:06:09 INFO     --- Post name from config: <<<MILL 4AXIS B FANUC TF POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:40 
+2024-10-11 18:06:09 INFO     --- Post name from config: <<<MILL 4AXIS B FANUC TF POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:40 
+2024-10-11 18:06:09 INFO     --- Post name from config: <<<MILL 4AXIS B FANUC TF POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:40 
+2024-10-11 18:06:09 INFO     --- Empty self.cl_list for temporary_file_ust__1_drl.ncl.1 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:98 
+2024-10-11 18:06:09 INFO     --- Empty self.cl_list for temporary_file_ust__2_mill_4_axis_a_pos.ncl.1 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:98 
+2024-10-11 18:06:09 INFO     --- Empty self.cl_list for temporary_file_ust__3_mill_4_axis_b_pos.ncl.1 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:98 
+2024-10-11 18:06:09 INFO     --- .ncl file "ust__1_drl.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:67 
+2024-10-11 18:06:09 INFO     --- Operation is Multax = False --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:82 
+2024-10-11 18:06:09 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV'] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:83 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_name=NEPRERIVNOE_SV --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:37 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:38 
+2024-10-11 18:06:09 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:06:09 DEBUG    --- end   index: 37 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:06:09 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
+2024-10-11 18:06:09 INFO     --- created file 'O7101' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 INFO     --- created file 'O7100' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 INFO     --- .ncl file "ust__2_mill_4_axis_a_pos.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:67 
+2024-10-11 18:06:09 INFO     --- Operation is Multax = True --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:82 
+2024-10-11 18:06:09 DEBUG    --- list_of_nc_sequences_names ['MILL_G02', 'TRAJECTORY MILLING', 'MILL_G03', 'TRAJECTORY MILLING', 'G03_REZBO_FR_RIGHT', 'THREAD MILLING', 'G02_REZBO_FR_LEFT', 'THREAD MILLING'] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:83 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_name=MILL_G02 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:37 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_parent_name_of_massive=MILL_G02 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:38 
+2024-10-11 18:06:09 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:06:09 DEBUG    --- end   index: 40 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:06:09 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
+2024-10-11 18:06:09 INFO     --- created file 'O7201' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:37 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_parent_name_of_massive=MILL_G02 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:38 
+2024-10-11 18:06:09 DEBUG    --- start index: 42 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:06:09 DEBUG    --- end   index: 72 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:06:09 INFO     --- created file 'O7202' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_name=MILL_G03 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:37 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_parent_name_of_massive=MILL_G03 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:38 
+2024-10-11 18:06:09 DEBUG    --- start index: 74 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:06:09 DEBUG    --- end   index: 103 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:06:09 INFO     --- created file 'O7203' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:37 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_parent_name_of_massive=MILL_G03 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:38 
+2024-10-11 18:06:09 DEBUG    --- start index: 105 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:06:09 DEBUG    --- end   index: 134 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:06:09 INFO     --- created file 'O7204' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_name=G03_REZBO_FR_RIGHT --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:37 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_parent_name_of_massive=G03_REZBO_FR_RIGHT --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:38 
+2024-10-11 18:06:09 DEBUG    --- start index: 136 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:06:09 DEBUG    --- end   index: 183 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:06:09 INFO     --- created file 'O7205' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_name=THREAD MILLING --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:37 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_parent_name_of_massive=G03_REZBO_FR_RIGHT --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:38 
+2024-10-11 18:06:09 DEBUG    --- start index: 185 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:06:09 DEBUG    --- end   index: 232 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:06:09 INFO     --- created file 'O7206' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_name=G02_REZBO_FR_LEFT --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:37 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_parent_name_of_massive=G02_REZBO_FR_LEFT --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:38 
+2024-10-11 18:06:09 DEBUG    --- start index: 234 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:06:09 DEBUG    --- end   index: 281 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:06:09 INFO     --- created file 'O7207' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_name=THREAD MILLING --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:37 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_parent_name_of_massive=G02_REZBO_FR_LEFT --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:38 
+2024-10-11 18:06:09 DEBUG    --- start index: 283 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:06:09 DEBUG    --- end   index: 330 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:06:09 INFO     --- created file 'O7208' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 INFO     --- created file 'O7200' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 INFO     --- .ncl file "ust__3_mill_4_axis_b_pos.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:67 
+2024-10-11 18:06:09 INFO     --- Operation is Multax = True --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:82 
+2024-10-11 18:06:09 DEBUG    --- list_of_nc_sequences_names ['G02', 'G03', 'TRAJECTORY MILLING'] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:83 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_name=G02 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:37 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_parent_name_of_massive=G02 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:38 
+2024-10-11 18:06:09 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:06:09 DEBUG    --- end   index: 47 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:06:09 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
+2024-10-11 18:06:09 INFO     --- created file 'O7301' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_name=G03 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:37 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_parent_name_of_massive=G03 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:38 
+2024-10-11 18:06:09 DEBUG    --- start index: 49 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:06:09 DEBUG    --- end   index: 85 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:06:09 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
+2024-10-11 18:06:09 INFO     --- created file 'O7302' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_name=TRAJECTORY MILLING --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:37 
+2024-10-11 18:06:09 DEBUG    --- nc_sequence_parent_name_of_massive=G03 --- src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec:38 
+2024-10-11 18:06:09 DEBUG    --- start index: 87 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-11 18:06:09 DEBUG    --- end   index: 124 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-11 18:06:09 INFO     --- created file 'O7303' --- src.postOOP.classes.others.file_operator_basic:101 
+2024-10-11 18:06:09 INFO     --- created file 'O7300' --- src.postOOP.classes.others.file_operator_basic:101 
