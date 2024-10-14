@@ -45,6 +45,7 @@ class FileOperatorBasic:
     @staticmethod
     def remove_file(*, filepath: str) -> bool:
         try:
+            # os.remove(path="".join([filepath, r"/.."]))
             os.remove(path=filepath)
             return True
         except FileNotFoundError:
@@ -57,7 +58,7 @@ class FileOperatorBasic:
     def create_temp_formatted_ncl_file(cls, *, filepath: str, temp_filepath: str = None) -> str | None:
         if temp_filepath is None:
             # temp_filepath = str(config.TEMP_FILE_NAME_PREFIX + filepath)
-            temp_filepath = f"{config.TEMP_FILE_NAME_PREFIX}{filepath}"
+            temp_filepath = f"{filepath}/../{config.TEMP_FILE_NAME_PREFIX}{config.CL_DATA_FILE_EXTENSION}.1"
         if "temp" in filepath:
             return None
         else:

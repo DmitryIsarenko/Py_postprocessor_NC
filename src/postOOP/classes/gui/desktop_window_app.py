@@ -176,7 +176,18 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         config.CWD = path
 
     def open_file_explorer(self):
-        pass
+        fname = QtWidgets.QFileDialog.getOpenFileName(
+            self,
+            "Open File",
+            "",
+            "NCL Files (*.ncl.*);;All Files (*);;",
+            # "All Files (*);; Python Files (*.py);; PNG Files (*.png)",
+        )
+        logger.debug(f"Filepath selected: {fname[0]}")
+        if fname[0]:
+            self.lineEdit_tab1_path_to_cwd.setText(fname[0])
+            config.CWD = fname[0]
+
 
     def btn_clicked_start_postprocess(self):
         self.textEdit_tab1_log_output.append(f"postprocessing started")

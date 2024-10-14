@@ -13,12 +13,16 @@ from src.postOOP.classes.nc_operation_classes.tauras_fenix.nc_operation_mill_4ax
 class PostLister:
     post_dict = {
         # NcOperationBasic.postprocessor_name: NcOperationBasic,
+        "----------basic SYNTEC:----------":NcOperationMill3AxisSyntec,
         NcOperationMill3AxisSyntec.postprocessor_name: NcOperationMill3AxisSyntec,
         NcOperationMill4AxisASyntec.postprocessor_name: NcOperationMill4AxisASyntec,
         NcOperationMill4AxisBSyntec.postprocessor_name: NcOperationMill4AxisBSyntec,
+        "----------TF SYNTEC:----------":NcOperationMill3AxisSyntecTF,
         NcOperationMill3AxisSyntecTF.postprocessor_name: NcOperationMill3AxisSyntecTF,
         NcOperationMill4AxisASyntecTF.postprocessor_name: NcOperationMill4AxisASyntecTF,
+
         NcOperationMill4AxisBSyntecTF.postprocessor_name: NcOperationMill4AxisBSyntecTF,
+        "----------TF Fanuc:----------":NcOperationMill3AxisFanucTF,
         NcOperationMill3AxisFanucTF.postprocessor_name: NcOperationMill3AxisFanucTF,
         NcOperationMill4AxisAFanucTF.postprocessor_name: NcOperationMill4AxisAFanucTF,
         NcOperationMill4AxisBFanucTF.postprocessor_name: NcOperationMill4AxisBFanucTF,

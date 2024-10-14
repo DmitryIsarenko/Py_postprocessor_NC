@@ -5,54 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="OOP work version">
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/basic/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/common/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/tauras_fenix/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/tauras_fenix/nc_operation_mill_3axis_fanuc_TF.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/tauras_fenix/nc_operation_mill_3axis_syntec_TF.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/tauras_fenix/nc_operation_mill_4axis_A_fanuc_TF.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/tauras_fenix/nc_operation_mill_4axis_A_syntec_TF.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/tauras_fenix/nc_operation_mill_4axis_B_fanuc_TF.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/tauras_fenix/nc_operation_mill_4axis_B_syntec_TF.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/basic/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/common/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/tauras_fenix/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/tauras_fenix/nc_sequence_mill_3axis_fanuc_TF.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/tauras_fenix/nc_sequence_mill_4axis_A_fanuc_TF.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/tauras_fenix/nc_sequence_mill_4axis_A_syntec_TF.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/tauras_fenix/nc_sequence_mill_4axis_B_fanuc_TF.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/tauras_fenix/nc_sequence_mill_4axis_B_syntec_TF.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/coord_parsers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/py post v2 OOP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/py post v2 OOP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logs/rotating_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/rotating_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/basic/nc_operation_basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_basic_mill_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/basic/nc_operation_basic_mill_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/common/nc_operation_mill_3axis_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_3axis_syntec_TF.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_4axis_A_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/common/nc_operation_mill_4axis_A_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_4axis_A_syntec_TF.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_4axis_B_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/common/nc_operation_mill_4axis_B_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/nc_operation_mill_4axis_B_syntec_TF.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_program_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/basic/nc_program_basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/basic/nc_sequence_basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_basic_mill_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/basic/nc_sequence_basic_mill_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/common/nc_sequence_mill_3axis_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_3axis_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/tauras_fenix/nc_sequence_mill_3axis_syntec_TF.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_4axis_A_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/common/nc_sequence_mill_4axis_A_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_4axis_A_syntec_TF.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_4axis_B_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/common/nc_sequence_mill_4axis_B_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_sequence_classes/nc_sequence_mill_4axis_B_syntec_TF.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/gui/desktop_window_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/desktop_window_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/gui/qt_design.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/gui/qt_design.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/others/file_operator_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/file_operator_basic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/others/postprocess_executor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/postprocess_executor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/coords_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/coord_parsers/coords_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/coords_parser_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/coord_parsers/coords_parser_TF.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_3axis_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_3axis_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_A_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_A_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_A_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_A_syntec_TF.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_B_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_B_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_B_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/parsers/ncl_parsers/ncl_parser_mill_4axis_B_syntec_TF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/post_lister.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/post_lister.py" afterDir="false" />
     </list>
@@ -103,7 +61,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "4axis",
+    "git-widget-placeholder": "file-browser",
     "last_opened_file_path": "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/py_post_v2_OOP",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
@@ -361,7 +319,12 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="BEK_SORT_TYPE" value="1" />
+              <option name="GRAPH_OPTIONS">
+                <list>
+                  <option value="Base" />
+                  <option value="Standard" />
+                </list>
+              </option>
             </State>
           </value>
         </entry>
