@@ -196,7 +196,7 @@ class NclParserBasic:
                 res_list.append(f"X{x} Y{y} Z{z}")
 
             elif len(right_part_list) == 6:
-                pass
+                logger.critical(f"Got 6 args in GOTO len. This post does not handle MULTAX")
             else:
                 logger.critical("error with num of scalars")
         if res_list:
@@ -276,36 +276,39 @@ class NclParserBasic:
         res_list = list()
         prev_coords_list_str = cl_list[line_index - 1].split(sep=" / ")[1].strip().split(sep=",")
         prev_coords_list_float = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in prev_coords_list_str]
-        x_start_abs, y_start_abs, z_start_abs = prev_coords_list_float
+        try:
+            x_start_abs, y_start_abs, z_start_abs = prev_coords_list_float
+            right_part_list = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=",")
+            right_part_list_float = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in right_part_list]
 
-        right_part_list = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=",")
-        right_part_list_float = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in right_part_list]
+            end_coords = cl_list[line_index + 1].split(sep=" / ")[1].strip().split(sep=",")
+            end_coords_float = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in end_coords]
+            x_end_abs, y_end_abs, z_end_abs = end_coords_float
 
-        end_coords = cl_list[line_index + 1].split(sep=" / ")[1].strip().split(sep=",")
-        end_coords_float = [round(float(item), ndigits=config.NDIGITS_XYZ) for item in end_coords]
-        x_end_abs, y_end_abs, z_end_abs = end_coords_float
+            (x_center_abs, y_center_abs, z_center_abs,
+             csys_vector_i, csys_vector_j, csys_vector_k, radius) = right_part_list_float
 
-        (x_center_abs, y_center_abs, z_center_abs,
-         csys_vector_i, csys_vector_j, csys_vector_k, radius) = right_part_list_float
+            x_center_incr = round(x_center_abs - x_start_abs, ndigits=config.NDIGITS_XYZ)
+            y_center_incr = round(y_center_abs - y_start_abs, ndigits=config.NDIGITS_XYZ)
+            z_center_incr = round(z_center_abs - z_start_abs, ndigits=config.NDIGITS_XYZ)
 
-        x_center_incr = round(x_center_abs - x_start_abs, ndigits=config.NDIGITS_XYZ)
-        y_center_incr = round(y_center_abs - y_start_abs, ndigits=config.NDIGITS_XYZ)
-        z_center_incr = round(z_center_abs - z_start_abs, ndigits=config.NDIGITS_XYZ)
+            if csys_vector_k == -1:
+                res_list.append("G02 ")
+            elif csys_vector_k == 1:
+                res_list.append("G03 ")
 
-        if csys_vector_k == -1:
-            res_list.append("G02 ")
-        elif csys_vector_k == 1:
-            res_list.append("G03 ")
-
-        res_list.append(f"X{x_end_abs} "
-                        f"Y{y_end_abs} "
-                        f"Z{z_end_abs} "
-                        f"I{x_center_incr} "
-                        f"J{y_center_incr} "
-                        f"K{z_center_incr}"
-                        )
-        result_list.append("".join(res_list))
-        return result_list
+            res_list.append(f"X{x_end_abs} "
+                            f"Y{y_end_abs} "
+                            f"Z{z_end_abs} "
+                            f"I{x_center_incr} "
+                            f"J{y_center_incr} "
+                            f"K{z_center_incr}"
+                            )
+            result_list.append("".join(res_list))
+            return result_list
+        except ValueError:
+            logger.critical("This post does not handle MULTAX")
+            return []
 
     @classmethod
     def parse_COOLNT(cls, cl_list: list[str], line_index: int) -> list[str]:
@@ -356,5 +359,6 @@ class NclParserBasic:
     @classmethod
     def parse_UNPARSED(cls, cl_list: list[str], line_index: int) -> list[str]:
         result_list = list()
-        print(f"HAVENT PARSED cl record: {cl_list[line_index]}")
+        # print(f"HAVENT PARSED cl record: {cl_list[line_index]}")
+        logger.warning(f"Haven't parsed cl record: {cl_list[line_index]}")
         return result_list

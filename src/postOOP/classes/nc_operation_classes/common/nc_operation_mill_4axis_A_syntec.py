@@ -89,8 +89,8 @@ class NcOperationMill4AxisASyntec(NcOperationMill3AxisSyntec):
             # self.show()
             self.nc_list = self.generate_nc_list()
             # print(self.nc_list)
-            self.file_operator_class.create_file(filepath=self.nc_filename_with_extension)
-            self.file_operator_class.append_lines_to_file(filepath=self.nc_filename_with_extension,
+            self.file_operator_class.create_file(filepath=f"{config.CWD}/../{self.nc_filename_with_extension}")
+            self.file_operator_class.append_lines_to_file(filepath=f"{config.CWD}/../{self.nc_filename_with_extension}",
                                                           list_with_lines=self.nc_list)
 
 

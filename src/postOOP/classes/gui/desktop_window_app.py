@@ -47,6 +47,9 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def setup_1st_tab(self):
         self.connect_buttons_1_tab()
+        self.pushButton_tab1_confirm_changed_options.setEnabled(False)
+        self.pushButton_tab1_discard_changed_options.setEnabled(False)
+        self.comboBox_tab1_post_select.currentTextChanged.connect(self.write_values_from_1_tab_to_config)
 
     def setup_2nd_tab(self):
         self.connect_buttons_2_tab()
@@ -95,9 +98,9 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         logger.info("writing values from boxes 1 tab to config")
         config.POST_NAME = self.comboBox_tab1_post_select.currentText()
         config.POST_OBJ = PostLister.post_dict[config.POST_NAME]
-        config.CWD = self.lineEdit_tab1_path_to_cwd.text()
+        # config.CWD = self.lineEdit_tab1_path_to_cwd.text()
 
-        self.textEdit_tab1_log_output.append(f"Changes accepted for 1st tab")
+        self.textEdit_tab1_log_output.append(f"Postprocessor selected: {config.POST_NAME}")
 
         # self.textEdit_tab1_log_output.append(f"Rewritten value: POST NAME to {config.POST_NAME}")
         # self.textEdit_tab1_log_output.append(f"Rewritten value: CWD to {config.CWD}")
@@ -184,6 +187,7 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
             # "All Files (*);; Python Files (*.py);; PNG Files (*.png)",
         )
         logger.debug(f"Filepath selected: {fname[0]}")
+        self.textEdit_tab1_log_output.append(f"Filepath selected: {fname[0]}")
         if fname[0]:
             self.lineEdit_tab1_path_to_cwd.setText(fname[0])
             config.CWD = fname[0]

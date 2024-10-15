@@ -1,9 +1,199 @@
-2024-10-14 17:48:16 DEBUG    --- Logger src started. --- src:33 
-2024-10-14 17:48:16 DEBUG    --- Started execution from __main__ --- src:25 
-2024-10-14 17:48:16 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:20 
-2024-10-14 17:48:16 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:59 
-2024-10-14 17:48:16 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:66 
-2024-10-14 17:48:16 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:85 
-2024-10-14 17:48:43 DEBUG    --- Filepath selected:  --- src.postOOP.classes.gui.desktop_window_app:186 
-2024-10-14 17:48:56 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:95 
-2024-10-14 17:48:59 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:95 
+2024-10-15 09:04:19 DEBUG    --- Logger src started. --- src:38 
+2024-10-15 09:04:19 DEBUG    --- Started execution from __main__ --- src:25 
+2024-10-15 09:04:19 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:20 
+2024-10-15 09:04:19 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:62 
+2024-10-15 09:04:19 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:69 
+2024-10-15 09:04:19 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:88 
+2024-10-15 09:04:24 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:98 
+2024-10-15 09:04:29 DEBUG    --- Filepath selected: C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1 --- src.postOOP.classes.gui.desktop_window_app:189 
+2024-10-15 09:04:30 INFO     --- Post name from config: <<<MILL 3AXIS SYNTEC POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:40 
+2024-10-15 09:04:30 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
+2024-10-15 09:04:30 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:68 
+2024-10-15 09:04:30 DEBUG    --- list_of_nc_sequences_names ['MILL_G02', 'TRAJECTORY MILLING', 'MILL_G03', 'TRAJECTORY MILLING', 'G03_REZBO_FR_RIGHT', 'THREAD MILLING', 'G02_REZBO_FR_LEFT', 'THREAD MILLING'] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:84 
+2024-10-15 09:04:30 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:30 DEBUG    --- end   index: 40 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:30 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7201' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:30 DEBUG    --- start index: 42 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:30 DEBUG    --- end   index: 72 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:30 WARNING  --- Haven't parsed cl record: MULTAX / ON
+ --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:363 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7202' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:30 DEBUG    --- start index: 74 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:30 DEBUG    --- end   index: 103 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7203' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:30 DEBUG    --- start index: 105 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:30 DEBUG    --- end   index: 134 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7204' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:30 DEBUG    --- start index: 136 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:30 DEBUG    --- end   index: 183 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7205' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:30 DEBUG    --- start index: 185 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:30 DEBUG    --- end   index: 232 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7206' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:30 DEBUG    --- start index: 234 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:30 DEBUG    --- end   index: 281 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7207' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:30 DEBUG    --- start index: 283 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:30 DEBUG    --- end   index: 330 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:30 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7208' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:30 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4, 5, 6, 7, 8] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:115 
+2024-10-15 09:04:30 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7200' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:48 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:98 
+2024-10-15 09:04:49 INFO     --- Post name from config: <<<MILL 3AXIS SYNTEC TF POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:40 
+2024-10-15 09:04:49 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
+2024-10-15 09:04:49 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:68 
+2024-10-15 09:04:49 DEBUG    --- list_of_nc_sequences_names ['MILL_G02', 'TRAJECTORY MILLING', 'MILL_G03', 'TRAJECTORY MILLING', 'G03_REZBO_FR_RIGHT', 'THREAD MILLING', 'G02_REZBO_FR_LEFT', 'THREAD MILLING'] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:84 
+2024-10-15 09:04:49 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:49 DEBUG    --- end   index: 40 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:49 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7201' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:49 DEBUG    --- start index: 42 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:49 DEBUG    --- end   index: 72 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:49 WARNING  --- Haven't parsed cl record: MULTAX / ON
+ --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:363 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7202' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:49 DEBUG    --- start index: 74 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:49 DEBUG    --- end   index: 103 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7203' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:49 DEBUG    --- start index: 105 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:49 DEBUG    --- end   index: 134 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7204' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:49 DEBUG    --- start index: 136 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:49 DEBUG    --- end   index: 183 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7205' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:49 DEBUG    --- start index: 185 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:49 DEBUG    --- end   index: 232 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7206' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:49 DEBUG    --- start index: 234 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:49 DEBUG    --- end   index: 281 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7207' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:49 DEBUG    --- start index: 283 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:49 DEBUG    --- end   index: 330 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:49 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7208' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:49 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4, 5, 6, 7, 8] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:115 
+2024-10-15 09:04:49 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7200' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:55 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:98 
+2024-10-15 09:04:55 INFO     --- Post name from config: <<<MILL 3AXIS FANUC TF POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:40 
+2024-10-15 09:04:55 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
+2024-10-15 09:04:55 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:68 
+2024-10-15 09:04:55 DEBUG    --- list_of_nc_sequences_names ['MILL_G02', 'TRAJECTORY MILLING', 'MILL_G03', 'TRAJECTORY MILLING', 'G03_REZBO_FR_RIGHT', 'THREAD MILLING', 'G02_REZBO_FR_LEFT', 'THREAD MILLING'] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:84 
+2024-10-15 09:04:55 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:55 DEBUG    --- end   index: 40 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:55 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7201' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:55 DEBUG    --- start index: 42 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:55 DEBUG    --- end   index: 72 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:55 WARNING  --- Haven't parsed cl record: MULTAX / ON
+ --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:363 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7202' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:55 DEBUG    --- start index: 74 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:55 DEBUG    --- end   index: 103 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7203' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:55 DEBUG    --- start index: 105 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:55 DEBUG    --- end   index: 134 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7204' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:55 DEBUG    --- start index: 136 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:55 DEBUG    --- end   index: 183 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7205' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:55 DEBUG    --- start index: 185 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:55 DEBUG    --- end   index: 232 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7206' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:55 DEBUG    --- start index: 234 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:55 DEBUG    --- end   index: 281 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:55 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7207' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:56 DEBUG    --- start index: 283 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:123 
+2024-10-15 09:04:56 DEBUG    --- end   index: 330 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:132 
+2024-10-15 09:04:56 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:56 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:56 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:56 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:56 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:56 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:56 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-15 09:04:56 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7208' --- src.postOOP.classes.others.file_operator_basic:102 
+2024-10-15 09:04:56 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4, 5, 6, 7, 8] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:115 
+2024-10-15 09:04:56 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_mill_4_axis_a_pos.ncl.1/../O7200' --- src.postOOP.classes.others.file_operator_basic:102 
