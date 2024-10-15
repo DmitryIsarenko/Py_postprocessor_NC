@@ -1,7 +1,7 @@
 from src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_3axis_syntec import NcOperationMill3AxisSyntec
 from src.postOOP.classes.nc_sequence_classes.common.nc_sequence_mill_4axis_B_syntec import NcSequenceMill4AxisBSyntec
 from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec import NclParserMill4AxisBSyntec
-from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_mill_4axis_B import PprintParserMill4AxisB
+from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_mill_4axis import PprintParserMill4Axis
 from src.postOOP import config
 import logging
 
@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 class NcOperationMill4AxisBSyntec(NcOperationMill3AxisSyntec):
     nc_sequence_class: NcSequenceMill4AxisBSyntec = NcSequenceMill4AxisBSyntec
-    pprint_parser_class: PprintParserMill4AxisB = PprintParserMill4AxisB
+    pprint_parser_class: PprintParserMill4Axis = PprintParserMill4Axis
     ncl_parser_class: NclParserMill4AxisBSyntec = NclParserMill4AxisBSyntec
 
     postprocessor_name = "MILL 4AXIS B SYNTEC POST"

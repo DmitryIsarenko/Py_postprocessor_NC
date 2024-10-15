@@ -40,7 +40,3 @@ class NcSequenceMillBasicSyntec(NcSequenceBasic):
             nc_massive_copy_counter=nc_massive_copy_counter,
             date_of_creation=date_of_creation,
         )
-
-    # def generate_nc_body_lines(self) -> list:
-    #     nc_lines = NclParserBasicMillSyntec.parse_cl_list(nc_seq_obj=self)
-    #     return nc_lines

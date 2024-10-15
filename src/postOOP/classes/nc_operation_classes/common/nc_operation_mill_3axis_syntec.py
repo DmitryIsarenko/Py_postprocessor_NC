@@ -1,12 +1,12 @@
 from src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic_mill_syntec import NcOperationBasicMillSyntec
 from src.postOOP.classes.nc_sequence_classes.common.nc_sequence_mill_3axis_syntec import NcSequenceMill3AxisSyntec
-from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_mill_3axis import PprintParserMill3Axis
+from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_basic import PprintParserBasic
 from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec import NclParserMill3axisSyntec
 
 
 class NcOperationMill3AxisSyntec(NcOperationBasicMillSyntec):
     nc_sequence_class: NcSequenceMill3AxisSyntec = NcSequenceMill3AxisSyntec
-    pprint_parser_class: PprintParserMill3Axis = PprintParserMill3Axis
+    pprint_parser_class: PprintParserBasic = PprintParserBasic
     ncl_parser_class: NclParserMill3axisSyntec = NclParserMill3axisSyntec
 
     postprocessor_name = "MILL 3AXIS SYNTEC POST"
@@ -14,20 +14,3 @@ class NcOperationMill3AxisSyntec(NcOperationBasicMillSyntec):
     def __init__(self, filepath: str):
         super().__init__(filepath=filepath)
 
-    # def set_nc_sequences_objects_in_list(self):
-    #     lst_of_objects = []
-    #     nc_counter = 0
-    #     for nc_sequence_name in self.list_of_nc_sequences_names:
-    #         nc_counter += 1
-    #         lst_of_objects.append(
-    #             NcSequenceMillBasicSyntec(
-    #                 detail_name=self.detail_name,
-    #                 nc_sequence_name=nc_sequence_name,
-    #                 cl_list=self.cl_list,
-    #                 nc_sequence_number=nc_counter,
-    #                 nc_sequences_count=self.nc_sequences_count,
-    #                 nc_operation_number=self.operation_number,
-    #                 date_of_creation=self.date_of_creation
-    #             )
-    #         )
-    #     self.list_of_nc_sequences_objects: list[NcSequenceMillBasicSyntec] = lst_of_objects

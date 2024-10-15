@@ -1,7 +1,7 @@
 from src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec import NcOperationMill4AxisASyntec
 from src.postOOP.classes.nc_sequence_classes.tauras_fenix.nc_sequence_mill_4axis_A_fanuc_TF import NcSequenceMill4AxisAFanucTF
 from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec_TF import NclParserMill4AxisASyntecTF
-from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_mill_4axis_A import PprintParserMill4AxisA
+from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_mill_4axis import PprintParserMill4Axis
 from src.postOOP.classes.others.formatter import Formatter
 from src.postOOP import config
 import logging
@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 class NcOperationMill4AxisAFanucTF(NcOperationMill4AxisASyntec):
     nc_sequence_class: NcSequenceMill4AxisAFanucTF = NcSequenceMill4AxisAFanucTF
-    pprint_parser_class: PprintParserMill4AxisA = PprintParserMill4AxisA
+    pprint_parser_class: PprintParserMill4Axis = PprintParserMill4Axis
     ncl_parser_class: NclParserMill4AxisASyntecTF = NclParserMill4AxisASyntecTF
 
     postprocessor_name = "MILL 4AXIS A FANUC TF POST"

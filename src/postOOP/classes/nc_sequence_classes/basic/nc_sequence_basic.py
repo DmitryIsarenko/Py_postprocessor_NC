@@ -1,5 +1,4 @@
 import logging
-from src.postOOP.classes.nc_sequence_classes.basic.nc_program_basic import NcProgramBasic
 from src.postOOP import config
 from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_basic import PprintParserBasic
 # from src.postOOP.classes.parsers.ncl_parser_mill_tf import NclParserMill3axisSyntecTF
@@ -10,8 +9,16 @@ from src.postOOP.classes.others.formatter import Formatter
 logger = logging.getLogger(__name__)
 
 
-class NcSequenceBasic(NcProgramBasic):
+class NcSequenceBasic:
     nc_sequence_class_name = "NcSequenceBasic"
+
+    main_digit = config.PROGRAM_MAIN_DIGIT
+    main_letter = config.PROGRAM_MAIN_LETTER
+    file_extension = config.G_CODE_FILE_EXTENSION
+    programmer_name = config.PROGRAMMER_NAME
+
+    cl_list: list[str] = []
+    nc_list: list[str] = []
 
     nc_start_keyword = config.NC_START_KEYWORD
     nc_end_keyword = config.NC_END_KEYWORD

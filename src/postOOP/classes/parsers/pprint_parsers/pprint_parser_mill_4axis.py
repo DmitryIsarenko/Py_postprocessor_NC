@@ -1,7 +1,8 @@
-from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_mill_3axis import PprintParserMill3Axis
+# from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_mill_3axis import PprintParserMill3Axis
+from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_basic import PprintParserBasic
 
 
-class PprintParserMill4AxisA(PprintParserMill3Axis):
+class PprintParserMill4Axis(PprintParserBasic):
     pprint_parser_class_name = "PprintParserMill4AxisA"
 
     def __init__(self):
