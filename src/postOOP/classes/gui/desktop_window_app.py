@@ -1,7 +1,10 @@
 import sys
 import os
 import logging
+import time
 from pprint import pprint
+from time import sleep
+
 from src.postOOP.classes.gui.qt_design import Ui_MainWindow
 from PyQt6 import QtWidgets
 from src.postOOP.classes.others.postprocess_executor import execute_postprocess
@@ -49,6 +52,7 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.connect_buttons_1_tab()
         self.pushButton_tab1_confirm_changed_options.setEnabled(False)
         self.pushButton_tab1_discard_changed_options.setEnabled(False)
+        self.pushButton_tab1_postprocess_start.setEnabled(False)
         self.comboBox_tab1_post_select.currentTextChanged.connect(self.write_values_from_1_tab_to_config)
 
     def setup_2nd_tab(self):
@@ -168,9 +172,10 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_tab1_path_to_cwd.setText(config.DEBUG_CWD)
         else:
             pprint(sys.path)
-            path = sys.path[1]
+            # path = sys.path[1]
+            path = config.work_ncl_file_path
             self.lineEdit_tab1_path_to_cwd.setText(path)
-            config.work_ncl_file_path = path
+            # config.work_ncl_file_path = path
 
     def set_cwd_if_started_from_exe(self):
         pprint(os.getcwd())
@@ -191,12 +196,20 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         if fname[0]:
             self.lineEdit_tab1_path_to_cwd.setText(fname[0])
             config.work_ncl_file_path = fname[0]
+            self.pushButton_tab1_postprocess_start.setEnabled(True)
 
 
     def btn_clicked_start_postprocess(self):
         self.textEdit_tab1_log_output.append(f"postprocessing started")
-        execute_postprocess(post_obj=config.POST_OBJ, work_dir_path=config.work_ncl_file_path)
+        self.pushButton_tab1_postprocess_start.setEnabled(False)
+        self.pushButton_tab1_postprocess_start.setText("Postprocessing . . .")
+
+        execute_postprocess(post_obj=config.POST_OBJ)
+
         self.textEdit_tab1_log_output.append(f"postprocessing finished")
+        self.pushButton_tab1_postprocess_start.setEnabled(True)
+        self.pushButton_tab1_postprocess_start.setText("Запустить постпроцессирование")
+
 
 
 def main_ui():

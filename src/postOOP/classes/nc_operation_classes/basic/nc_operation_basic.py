@@ -41,8 +41,9 @@ class NcOperationBasic:
     list_of_nc_sequences_objects = None
     sum_machining_time = None
 
-    def __init__(self, filepath: str):
-        self.filepath = filepath
+    # def __init__(self, filepath: str):
+    def __init__(self):
+        # self.filepath = filepath
         config.POST_NAME = self.postprocessor_name
         logger.info(f"Post name from config: <<<{config.POST_NAME}>>>")
         # logger.debug(f"nc_operation class name : <<<{self.__class__.__name__}>>>")
@@ -75,7 +76,7 @@ class NcOperationBasic:
             self.file_operator_class.append_lines_to_file(filepath=f"{config.work_ncl_file_path}/../{self.nc_filename_with_extension}",
                                                           list_with_lines=self.nc_list)
         else:
-            logger.warning(f"Empty self.cl_list for {self.filepath}")
+            logger.warning(f"Empty self.cl_list for {config.work_ncl_file_path}")
 
         if config.DELETE_TEMP_FILE:
             self.file_operator_class.remove_file(filepath=temp_filepath)

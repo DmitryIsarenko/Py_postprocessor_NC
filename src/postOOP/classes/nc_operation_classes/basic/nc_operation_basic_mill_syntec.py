@@ -13,5 +13,7 @@ class NcOperationBasicMillSyntec(NcOperationBasic):
 
 
 
-    def __init__(self, filepath: str):
-        super().__init__(filepath=filepath)
+    # def __init__(self, filepath: str):
+    #     super().__init__(filepath=filepath)
+    def __init__(self):
+        super().__init__()

@@ -18,8 +18,12 @@ class NcOperationMill3AxisFanucTF(NcOperationBasicMillSyntec):
 
     postprocessor_name = "MILL 3AXIS FANUC TF POST"
 
-    def __init__(self, filepath: str):
-        super().__init__(filepath=filepath)
+    # def __init__(self, filepath: str):
+    #     super().__init__(filepath=filepath)
+
+    def __init__(self):
+        super().__init__()
+
     #     pprint(NcOperationMill3AxisFanucTF.__mro__)
     #
     # def generate_nc_list(self) -> list:

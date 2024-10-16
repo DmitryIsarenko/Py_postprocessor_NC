@@ -17,8 +17,11 @@ class NcOperationMill4AxisASyntecTF(NcOperationMill4AxisASyntec):
     postprocessor_name = "MILL 4AXIS A SYNTEC TF POST"
     is_multax_operation = False
 
-    def __init__(self, filepath: str):
-        super().__init__(filepath=filepath)
+    # def __init__(self, filepath: str):
+    #     super().__init__(filepath=filepath)
+
+    def __init__(self):
+        super().__init__()
 
     def generate_nc_list(self) -> list:
         nc_lines = list()

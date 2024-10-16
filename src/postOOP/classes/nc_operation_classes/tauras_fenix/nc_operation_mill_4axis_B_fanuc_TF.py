@@ -17,8 +17,11 @@ class NcOperationMill4AxisBFanucTF(NcOperationMill4AxisBSyntec):
     postprocessor_name = "MILL 4AXIS B FANUC TF POST"
     is_multax_operation = False
 
-    def __init__(self, filepath: str):
-        super().__init__(filepath=filepath)
+    # def __init__(self, filepath: str):
+    #     super().__init__(filepath=filepath)
+
+    def __init__(self):
+        super().__init__()
 
     def generate_nc_list(self) -> list:
         pre_percent = ["%", ]

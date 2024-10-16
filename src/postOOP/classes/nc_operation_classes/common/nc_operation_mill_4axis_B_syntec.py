@@ -16,8 +16,12 @@ class NcOperationMill4AxisBSyntec(NcOperationMill3AxisSyntec):
     postprocessor_name = "MILL 4AXIS B SYNTEC POST"
     is_multax_operation = False
 
-    def __init__(self, filepath: str):
-        super().__init__(filepath=filepath)
+    # def __init__(self, filepath: str):
+    #     super().__init__(filepath=filepath)
+
+    def __init__(self):
+        super().__init__()
+
 
     def set_nc_sequences_objects_in_list(self):
         lst_of_objects = []

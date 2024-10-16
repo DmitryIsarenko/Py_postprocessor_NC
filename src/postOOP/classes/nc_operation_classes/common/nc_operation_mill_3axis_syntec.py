@@ -11,6 +11,8 @@ class NcOperationMill3AxisSyntec(NcOperationBasicMillSyntec):
 
     postprocessor_name = "MILL 3AXIS SYNTEC POST"
 
-    def __init__(self, filepath: str):
-        super().__init__(filepath=filepath)
+    # def __init__(self, filepath: str):
+    #     super().__init__(filepath=filepath)
 
+    def __init__(self):
+        super().__init__()

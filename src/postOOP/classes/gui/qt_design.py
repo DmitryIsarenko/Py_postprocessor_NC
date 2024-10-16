@@ -52,6 +52,7 @@ class Ui_MainWindow(object):
         self.label_tab1_post_select.setObjectName("label_tab1_post_select")
         self.gridLayout_tab1_upper_box.addWidget(self.label_tab1_post_select, 0, 0, 1, 1)
         self.lineEdit_tab1_path_to_cwd = QtWidgets.QLineEdit(parent=self.gridLayoutWidget)
+        self.lineEdit_tab1_path_to_cwd.setReadOnly(True)
         self.lineEdit_tab1_path_to_cwd.setObjectName("lineEdit_tab1_path_to_cwd")
         self.gridLayout_tab1_upper_box.addWidget(self.lineEdit_tab1_path_to_cwd, 1, 1, 1, 2)
         spacerItem = QtWidgets.QSpacerItem(550, 20, QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Minimum)
