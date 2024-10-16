@@ -72,11 +72,11 @@ class NcOperationBasic:
             self.nc_list = self.generate_nc_list()
             # print(self.nc_list)
 
-            self.file_operator_class.create_file(filepath=f"{config.work_ncl_file_path}/../{self.nc_filename_with_extension}")
-            self.file_operator_class.append_lines_to_file(filepath=f"{config.work_ncl_file_path}/../{self.nc_filename_with_extension}",
+            self.file_operator_class.create_file(filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}")
+            self.file_operator_class.append_lines_to_file(filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}",
                                                           list_with_lines=self.nc_list)
         else:
-            logger.warning(f"Empty self.cl_list for {config.work_ncl_file_path}")
+            logger.warning(f"Empty self.cl_list for {config.abs_path_to_selected_file}")
 
         if config.DELETE_TEMP_FILE:
             self.file_operator_class.remove_file(filepath=temp_filepath)

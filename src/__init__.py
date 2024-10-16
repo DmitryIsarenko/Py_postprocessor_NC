@@ -15,7 +15,6 @@ logfile_formatter = logging.Formatter(fmt=logfile_format_string, datefmt=logfile
 
 console_handler = logging.StreamHandler()
 logfile_handler = logging.FileHandler(filename="../logs/log.log", mode="w")
-# logfile_local_handler = logging.FileHandler(filename=f"{config.CWD}/../log.log", mode="w")
 rotating_logfile_handler = logging.handlers.RotatingFileHandler(filename="../logs/rotating_log.log",
                                                                 maxBytes=1000000,
                                                                 backupCount=2)

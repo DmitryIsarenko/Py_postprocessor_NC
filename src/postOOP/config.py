@@ -25,7 +25,7 @@ NDIGITS_CALC_FEEDRATE_G95 = 4
 
 # misc
 POST_OBJ = None
-work_ncl_file_path = None
+abs_path_to_selected_file = None
 
 
 # key_filename_part_1 = "ust"  # will be searched for matches in dir

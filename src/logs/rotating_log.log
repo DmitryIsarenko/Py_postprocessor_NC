@@ -504,3 +504,4 @@
 2024-10-15 09:04:56 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
 2024-10-15 09:04:56 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
 2024-10-15 09:04:56 CRITICAL --- This post does not handle MULTAX --- src.postOOP.classes.parsers.ncl_parsers.ncl_parser_basic:310 
+2024-10-16 13:08:06 WARNING  --- Selected post is None --- src.postOOP.classes.others.postprocess_executor:8 

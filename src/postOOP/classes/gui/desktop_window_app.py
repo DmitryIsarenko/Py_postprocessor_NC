@@ -16,8 +16,8 @@ logger = logging.getLogger(__name__)
 
 
 class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
-    config.POST_NAME = PostLister.default_post_name
-    config.POST_OBJ = PostLister.default_post_obj
+    config.POST_NAME = PostLister().default_post_name
+    config.POST_OBJ = PostLister().default_post_obj
 
     def __init__(self):
         logger.info("Started init of window.")
@@ -67,7 +67,7 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.comboBox_tab1_post_select.clear()
         self.comboBox_tab1_post_select.addItems(PostLister.post_dict.keys())
         self.comboBox_tab1_post_select.setCurrentText(config.POST_NAME)
-        self.lineEdit_tab1_path_to_cwd.setText(config.work_ncl_file_path)
+        self.lineEdit_tab1_path_to_cwd.setText(config.abs_path_to_selected_file)
 
     def push_values_from_config_2_tab(self):
         logger.info("pushing values from config to 2 tab")
@@ -173,7 +173,7 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         else:
             pprint(sys.path)
             # path = sys.path[1]
-            path = config.work_ncl_file_path
+            path = config.abs_path_to_selected_file
             self.lineEdit_tab1_path_to_cwd.setText(path)
             # config.work_ncl_file_path = path
 
@@ -181,7 +181,7 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         pprint(os.getcwd())
         path = os.getcwd()
         self.lineEdit_tab1_path_to_cwd.setText(path)
-        config.work_ncl_file_path = path
+        config.abs_path_to_selected_file = path
 
     def open_file_explorer(self):
         fname = QtWidgets.QFileDialog.getOpenFileName(
@@ -195,18 +195,23 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.textEdit_tab1_log_output.append(f"Filepath selected: {fname[0]}")
         if fname[0]:
             self.lineEdit_tab1_path_to_cwd.setText(fname[0])
-            config.work_ncl_file_path = fname[0]
+            config.abs_path_to_selected_file = fname[0]
             self.pushButton_tab1_postprocess_start.setEnabled(True)
 
 
     def btn_clicked_start_postprocess(self):
-        self.textEdit_tab1_log_output.append(f"postprocessing started")
-        self.pushButton_tab1_postprocess_start.setEnabled(False)
-        self.pushButton_tab1_postprocess_start.setText("Postprocessing . . .")
+        if config.POST_OBJ is None:
+            self.textEdit_tab1_log_output.append(f"Select different POST")
+        else:
+            self.textEdit_tab1_log_output.append(f"postprocessing started")
+            self.pushButton_tab1_postprocess_start.setEnabled(False)
+            self.pushButton_tab1_postprocess_start.setText("Postprocessing . . .")
+            is_executed = execute_postprocess(post_obj=config.POST_OBJ)
+            if is_executed:
+                self.textEdit_tab1_log_output.append(f"postprocessing finished")
+            else:
+                self.textEdit_tab1_log_output.append(f"postprocessing terminated with errors")
 
-        execute_postprocess(post_obj=config.POST_OBJ)
-
-        self.textEdit_tab1_log_output.append(f"postprocessing finished")
         self.pushButton_tab1_postprocess_start.setEnabled(True)
         self.pushButton_tab1_postprocess_start.setText("Запустить постпроцессирование")
 
