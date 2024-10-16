@@ -11,7 +11,7 @@ from src.postOOP.classes.others.formatter import Formatter
 logger = logging.getLogger(__name__)
 
 
-class NcOperationBasic_MillSyntec:
+class NcOperationBasic:
     nc_sequence_class: NcSequenceBasic = NcSequenceBasic
     pprint_parser_class: PprintParserBasic = PprintParserBasic
     ncl_parser_class: NclParserBasic = NclParserBasic
@@ -51,7 +51,7 @@ class NcOperationBasic_MillSyntec:
         # logger.debug(f"Ncl_parser class name : <<<{self.ncl_parser_class.ncl_parser_class_name}>>>")
 
     def start_postprocessing(self):
-        temp_filepath = self.file_operator_class.create_temp_formatted_ncl_file(filepath=self.filepath)
+        temp_filepath = self.file_operator_class.create_temp_formatted_ncl_file()
         self.cl_list = self.file_operator_class.get_all_cl_lines(filepath=temp_filepath)
 
         if self.cl_list:
@@ -71,8 +71,8 @@ class NcOperationBasic_MillSyntec:
             self.nc_list = self.generate_nc_list()
             # print(self.nc_list)
 
-            self.file_operator_class.create_file(filepath=f"{config.CWD}/../{self.nc_filename_with_extension}")
-            self.file_operator_class.append_lines_to_file(filepath=f"{config.CWD}/../{self.nc_filename_with_extension}",
+            self.file_operator_class.create_file(filepath=f"{config.work_ncl_file_path}/../{self.nc_filename_with_extension}")
+            self.file_operator_class.append_lines_to_file(filepath=f"{config.work_ncl_file_path}/../{self.nc_filename_with_extension}",
                                                           list_with_lines=self.nc_list)
         else:
             logger.warning(f"Empty self.cl_list for {self.filepath}")

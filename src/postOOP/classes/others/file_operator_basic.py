@@ -55,19 +55,15 @@ class FileOperatorBasic:
             return False
 
     @classmethod
-    def create_temp_formatted_ncl_file(cls, *, filepath: str, temp_filepath: str = None) -> str | None:
+    def create_temp_formatted_ncl_file(cls, *, temp_filepath: str = None) -> str | None:
         if temp_filepath is None:
-            # temp_filepath = str(config.TEMP_FILE_NAME_PREFIX + filepath)
-            temp_filepath = f"{filepath}/../{config.TEMP_FILE_NAME_PREFIX}{config.CL_DATA_FILE_EXTENSION}.1"
-        if "temp" in filepath:
-            return None
-        else:
-            FileOperatorBasic.remove_file(filepath=temp_filepath)
-            lines = cls.get_all_cl_lines(filepath=filepath)
-            lines = Formatter.trim_line_connectors_in_cl_list(cl_list=lines)
-            logger.info(f'.ncl file "{filepath}" has been read')
-            cls.append_lines_to_file(filepath=temp_filepath, list_with_lines=lines)
-            return temp_filepath
+            temp_filepath = f"{config.work_ncl_file_path}/../{config.TEMP_FILE_NAME_PREFIX}{config.CL_DATA_FILE_EXTENSION}.1"
+        FileOperatorBasic.remove_file(filepath=temp_filepath)
+        lines = cls.get_all_cl_lines(filepath=config.work_ncl_file_path)
+        lines = Formatter.trim_line_connectors_in_cl_list(cl_list=lines)
+        logger.info(f'.ncl file "{config.work_ncl_file_path}" has been read')
+        cls.append_lines_to_file(filepath=temp_filepath, list_with_lines=lines)
+        return temp_filepath
 
     @staticmethod
     def check_if_file_is_present(*, filepath: str) -> bool:

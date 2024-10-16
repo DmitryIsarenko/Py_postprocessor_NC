@@ -4,7 +4,6 @@ from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec impo
 from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_mill_4axis import PprintParserMill4Axis
 from src.postOOP import config
 import logging
-
 logger = logging.getLogger(__name__)
 
 
@@ -59,7 +58,7 @@ class NcOperationMill4AxisASyntec(NcOperationMill3AxisSyntec):
         #     f"self.list_of_nc_sequences_objects {[item.nc_sequence_name for item in self.list_of_nc_sequences_objects]}")
 
     def start_postprocessing(self):
-        temp_filepath = self.file_operator_class.create_temp_formatted_ncl_file(filepath=self.filepath)
+        temp_filepath = self.file_operator_class.create_temp_formatted_ncl_file()
         self.cl_list = self.file_operator_class.get_all_cl_lines(filepath=temp_filepath)
 
         if self.cl_list:
@@ -89,8 +88,8 @@ class NcOperationMill4AxisASyntec(NcOperationMill3AxisSyntec):
             # self.show()
             self.nc_list = self.generate_nc_list()
             # print(self.nc_list)
-            self.file_operator_class.create_file(filepath=f"{config.CWD}/../{self.nc_filename_with_extension}")
-            self.file_operator_class.append_lines_to_file(filepath=f"{config.CWD}/../{self.nc_filename_with_extension}",
+            self.file_operator_class.create_file(filepath=f"{config.work_ncl_file_path}/../{self.nc_filename_with_extension}")
+            self.file_operator_class.append_lines_to_file(filepath=f"{config.work_ncl_file_path}/../{self.nc_filename_with_extension}",
                                                           list_with_lines=self.nc_list)
 
 

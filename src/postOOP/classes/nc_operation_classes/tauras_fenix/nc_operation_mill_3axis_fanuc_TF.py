@@ -1,5 +1,8 @@
 from src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic_mill_syntec import NcOperationBasicMillSyntec
-from src.postOOP.classes.nc_sequence_classes.tauras_fenix.nc_sequence_mill_3axis_fanuc_TF import NcSequenceMill3AxisFanucTF
+from src.postOOP.classes.nc_operation_classes.mixin_TF_oper_filler_fanuc import MixinTFOperFillerFanuc
+from src.postOOP.classes.nc_operation_classes.mixin_plug import MixinEndPlug
+from src.postOOP.classes.nc_sequence_classes.tauras_fenix.nc_sequence_mill_3axis_fanuc_TF import \
+    NcSequenceMill3AxisFanucTF
 from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_basic import PprintParserBasic
 from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec_TF import NclParserMill3axisSyntecTF
 from src.postOOP.classes.others.formatter import Formatter
@@ -7,6 +10,7 @@ from src.postOOP import config
 from pprint import pprint
 
 
+# class NcOperationMill3AxisFanucTF(NcOperationBasicMillSyntec, MixinTFOperFillerFanuc, MixinEndPlug):
 class NcOperationMill3AxisFanucTF(NcOperationBasicMillSyntec):
     nc_sequence_class: NcSequenceMill3AxisFanucTF = NcSequenceMill3AxisFanucTF
     pprint_parser_class: PprintParserBasic = PprintParserBasic
@@ -16,6 +20,19 @@ class NcOperationMill3AxisFanucTF(NcOperationBasicMillSyntec):
 
     def __init__(self, filepath: str):
         super().__init__(filepath=filepath)
+    #     pprint(NcOperationMill3AxisFanucTF.__mro__)
+    #
+    # def generate_nc_list(self) -> list:
+    #     return MixinTFOperFillerFanuc(self).generate_nc_list()
+    #
+    # def generate_nc_head_lines(self) -> list:
+    #     return MixinTFOperFillerFanuc(self).generate_nc_head_lines()
+    #
+    # def generate_nc_body_lines(self) -> list:
+    #     return MixinTFOperFillerFanuc(self).generate_nc_body_lines()
+    #
+    # def generate_nc_tail_lines(self) -> list:
+    #     return MixinTFOperFillerFanuc(self).generate_nc_tail_lines()
 
     def generate_nc_list(self) -> list:
         pre_percent = [r"%",]

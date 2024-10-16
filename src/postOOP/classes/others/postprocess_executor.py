@@ -7,7 +7,7 @@ from src.postOOP import config
 def execute_postprocess(post_obj, work_dir_path: str):
     operations = list()
 
-    filepath = config.CWD
+    filepath = config.work_ncl_file_path
     if filepath:
         operations.append(post_obj(filepath=filepath))
 

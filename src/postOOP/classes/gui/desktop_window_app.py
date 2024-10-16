@@ -63,7 +63,7 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.comboBox_tab1_post_select.clear()
         self.comboBox_tab1_post_select.addItems(PostLister.post_dict.keys())
         self.comboBox_tab1_post_select.setCurrentText(config.POST_NAME)
-        self.lineEdit_tab1_path_to_cwd.setText(config.CWD)
+        self.lineEdit_tab1_path_to_cwd.setText(config.work_ncl_file_path)
 
     def push_values_from_config_2_tab(self):
         logger.info("pushing values from config to 2 tab")
@@ -170,13 +170,13 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
             pprint(sys.path)
             path = sys.path[1]
             self.lineEdit_tab1_path_to_cwd.setText(path)
-            config.CWD = path
+            config.work_ncl_file_path = path
 
     def set_cwd_if_started_from_exe(self):
         pprint(os.getcwd())
         path = os.getcwd()
         self.lineEdit_tab1_path_to_cwd.setText(path)
-        config.CWD = path
+        config.work_ncl_file_path = path
 
     def open_file_explorer(self):
         fname = QtWidgets.QFileDialog.getOpenFileName(
@@ -190,12 +190,12 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.textEdit_tab1_log_output.append(f"Filepath selected: {fname[0]}")
         if fname[0]:
             self.lineEdit_tab1_path_to_cwd.setText(fname[0])
-            config.CWD = fname[0]
+            config.work_ncl_file_path = fname[0]
 
 
     def btn_clicked_start_postprocess(self):
         self.textEdit_tab1_log_output.append(f"postprocessing started")
-        execute_postprocess(post_obj=config.POST_OBJ, work_dir_path=config.CWD)
+        execute_postprocess(post_obj=config.POST_OBJ, work_dir_path=config.work_ncl_file_path)
         self.textEdit_tab1_log_output.append(f"postprocessing finished")
 
 

@@ -31,6 +31,7 @@ class PostLister:
     # 3axis TF
     # default_post_obj = post_dict[NcOperationMill3AxisSyntecTF.postprocessor_name]
     # default_post_name = NcOperationMill3AxisSyntecTF.postprocessor_name
+
     # 4axis basic
     default_post_obj = post_dict[NcOperationMill4AxisBSyntec.postprocessor_name]
     default_post_name = NcOperationMill4AxisBSyntec.postprocessor_name
