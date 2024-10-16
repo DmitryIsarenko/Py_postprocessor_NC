@@ -1,6 +1,43 @@
-2024-10-16 13:16:39 DEBUG    --- Logger src started. --- src:37 
-2024-10-16 13:16:39 DEBUG    --- Started execution from __main__ --- src:25 
-2024-10-16 13:16:39 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:23 
-2024-10-16 13:16:39 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:66 
-2024-10-16 13:16:39 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:73 
-2024-10-16 13:16:39 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:92 
+2024-10-16 13:21:46 DEBUG    --- Logger src started. --- src:37 
+2024-10-16 13:21:46 DEBUG    --- Started execution from __main__ --- src:25 
+2024-10-16 13:21:46 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:23 
+2024-10-16 13:21:46 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:66 
+2024-10-16 13:21:46 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:73 
+2024-10-16 13:21:46 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:92 
+2024-10-16 13:21:50 DEBUG    --- Filepath selected: C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_drl.ncl.1 --- src.postOOP.classes.gui.desktop_window_app:194 
+2024-10-16 13:21:50 INFO     --- Post name from config: <<<BASIC MILL SYNTEC POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:48 
+2024-10-16 13:21:50 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
+2024-10-16 13:21:50 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_drl.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
+2024-10-16 13:21:50 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:92 
+2024-10-16 13:21:50 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:130 
+2024-10-16 13:21:50 DEBUG    --- end   index: 38 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:139 
+2024-10-16 13:21:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_drl.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-16 13:21:50 DEBUG    --- start index: 40 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:130 
+2024-10-16 13:21:50 DEBUG    --- end   index: 67 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:139 
+2024-10-16 13:21:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_drl.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-16 13:21:50 DEBUG    --- start index: 69 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:130 
+2024-10-16 13:21:50 DEBUG    --- end   index: 97 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:139 
+2024-10-16 13:21:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_drl.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-16 13:21:50 DEBUG    --- start index: 99 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:130 
+2024-10-16 13:21:50 DEBUG    --- end   index: 127 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:139 
+2024-10-16 13:21:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_drl.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-16 13:21:50 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:123 
+2024-10-16 13:21:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_drl.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-16 13:21:57 INFO     --- Post name from config: <<<BASIC MILL SYNTEC POST>>> --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:48 
+2024-10-16 13:21:57 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
+2024-10-16 13:21:57 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_drl.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
+2024-10-16 13:21:57 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:92 
+2024-10-16 13:21:57 DEBUG    --- start index: 11 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:130 
+2024-10-16 13:21:57 DEBUG    --- end   index: 38 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:139 
+2024-10-16 13:21:57 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_drl.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-16 13:21:57 DEBUG    --- start index: 40 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:130 
+2024-10-16 13:21:57 DEBUG    --- end   index: 67 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:139 
+2024-10-16 13:21:57 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_drl.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-16 13:21:57 DEBUG    --- start index: 69 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:130 
+2024-10-16 13:21:57 DEBUG    --- end   index: 97 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:139 
+2024-10-16 13:21:57 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_drl.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-16 13:21:57 DEBUG    --- start index: 99 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:130 
+2024-10-16 13:21:57 DEBUG    --- end   index: 127 --- src.postOOP.classes.nc_sequence_classes.basic.nc_sequence_basic:139 
+2024-10-16 13:21:57 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_drl.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-16 13:21:57 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4] --- src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic:123 
+2024-10-16 13:21:57 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_drl.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 

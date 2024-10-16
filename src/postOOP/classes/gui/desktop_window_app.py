@@ -7,7 +7,7 @@ from time import sleep
 
 from src.postOOP.classes.gui.qt_design import Ui_MainWindow
 from PyQt6 import QtWidgets
-from src.postOOP.classes.others.postprocess_executor import execute_postprocess
+# from src.postOOP.classes.others.postprocess_executor import execute_postprocess
 from src.postOOP.post_lister import PostLister
 
 from src.postOOP import config
@@ -198,7 +198,6 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
             config.abs_path_to_selected_file = fname[0]
             self.pushButton_tab1_postprocess_start.setEnabled(True)
 
-
     def btn_clicked_start_postprocess(self):
         if config.POST_OBJ is None:
             self.textEdit_tab1_log_output.append(f"Select different POST")
@@ -206,7 +205,7 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.textEdit_tab1_log_output.append(f"postprocessing started")
             self.pushButton_tab1_postprocess_start.setEnabled(False)
             self.pushButton_tab1_postprocess_start.setText("Postprocessing . . .")
-            is_executed = execute_postprocess(post_obj=config.POST_OBJ)
+            is_executed = self.execute_postprocess(post_obj=config.POST_OBJ)
             if is_executed:
                 self.textEdit_tab1_log_output.append(f"postprocessing finished")
             else:
@@ -215,6 +214,20 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_tab1_postprocess_start.setEnabled(True)
         self.pushButton_tab1_postprocess_start.setText("Запустить постпроцессирование")
 
+    @staticmethod
+    def execute_postprocess(post_obj) -> bool:
+        if post_obj is None:
+            logger.warning("Selected post is None")
+            return False
+        else:
+            operations = list()
+
+            filepath = config.abs_path_to_selected_file
+            if filepath:
+                operations.append(post_obj())
+                for operation in operations:
+                    operation.start_postprocessing()
+                return True
 
 
 def main_ui():
