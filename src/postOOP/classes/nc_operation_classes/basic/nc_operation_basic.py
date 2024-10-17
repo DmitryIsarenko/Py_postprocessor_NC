@@ -11,13 +11,13 @@ from src.postOOP.classes.others.formatter import Formatter
 logger = logging.getLogger(__name__)
 
 
-class NcOperationBasic:
+class NcOperationMill3Axis:
     nc_sequence_class: NcSequenceBasic = NcSequenceBasic
     pprint_parser_class: PprintParserBasic = PprintParserBasic
     ncl_parser_class: NclParserBasic = NclParserBasic
     file_operator_class: FileOperatorBasic = FileOperatorBasic
 
-    postprocessor_name = "BASIC POST CLASS"
+    postprocessor_name = "NcOperationMill3Axis"
 
     main_digit = config.PROGRAM_MAIN_DIGIT
     main_letter = config.PROGRAM_MAIN_LETTER
@@ -41,9 +41,9 @@ class NcOperationBasic:
     list_of_nc_sequences_objects = None
     sum_machining_time = None
 
-    # def __init__(self, filepath: str):
-    def __init__(self):
-        # self.filepath = filepath
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
         config.POST_NAME = self.postprocessor_name
         logger.info(f"Post name from config: <<<{config.POST_NAME}>>>")
         # logger.debug(f"nc_operation class name : <<<{self.__class__.__name__}>>>")
@@ -72,9 +72,11 @@ class NcOperationBasic:
             self.nc_list = self.generate_nc_list()
             # print(self.nc_list)
 
-            self.file_operator_class.create_file(filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}")
-            self.file_operator_class.append_lines_to_file(filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}",
-                                                          list_with_lines=self.nc_list)
+            self.file_operator_class.create_file(
+                filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}")
+            self.file_operator_class.append_lines_to_file(
+                filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}",
+                list_with_lines=self.nc_list)
         else:
             logger.warning(f"Empty self.cl_list for {config.abs_path_to_selected_file}")
 
