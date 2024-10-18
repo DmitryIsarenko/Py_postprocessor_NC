@@ -1,10 +1,13 @@
 import sys
 import os
 import logging
+import time
 from pprint import pprint
+from time import sleep
+
 from src.postOOP.classes.gui.qt_design import Ui_MainWindow
 from PyQt6 import QtWidgets
-from src.postOOP.classes.others.postprocess_executor import execute_postprocess
+# from src.postOOP.classes.others.postprocess_executor import execute_postprocess
 from src.postOOP.post_lister import PostLister
 
 from src.postOOP import config
@@ -13,8 +16,8 @@ logger = logging.getLogger(__name__)
 
 
 class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
-    config.POST_NAME = PostLister.default_post_name
-    config.POST_OBJ = PostLister.default_post_obj
+    config.POST_NAME = PostLister().default_post_name
+    config.POST_OBJ = PostLister().default_post_obj
 
     def __init__(self):
         logger.info("Started init of window.")
@@ -47,6 +50,10 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def setup_1st_tab(self):
         self.connect_buttons_1_tab()
+        self.pushButton_tab1_confirm_changed_options.setEnabled(False)
+        self.pushButton_tab1_discard_changed_options.setEnabled(False)
+        self.pushButton_tab1_postprocess_start.setEnabled(False)
+        self.comboBox_tab1_post_select.currentTextChanged.connect(self.write_values_from_1_tab_to_config)
 
     def setup_2nd_tab(self):
         self.connect_buttons_2_tab()
@@ -60,7 +67,7 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.comboBox_tab1_post_select.clear()
         self.comboBox_tab1_post_select.addItems(PostLister.post_dict.keys())
         self.comboBox_tab1_post_select.setCurrentText(config.POST_NAME)
-        self.lineEdit_tab1_path_to_cwd.setText(config.CWD)
+        self.lineEdit_tab1_path_to_cwd.setText(config.abs_path_to_selected_file)
 
     def push_values_from_config_2_tab(self):
         logger.info("pushing values from config to 2 tab")
@@ -95,9 +102,9 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         logger.info("writing values from boxes 1 tab to config")
         config.POST_NAME = self.comboBox_tab1_post_select.currentText()
         config.POST_OBJ = PostLister.post_dict[config.POST_NAME]
-        config.CWD = self.lineEdit_tab1_path_to_cwd.text()
+        # config.CWD = self.lineEdit_tab1_path_to_cwd.text()
 
-        self.textEdit_tab1_log_output.append(f"Changes accepted for 1st tab")
+        self.textEdit_tab1_log_output.append(f"Postprocessor selected: {config.POST_NAME}")
 
         # self.textEdit_tab1_log_output.append(f"Rewritten value: POST NAME to {config.POST_NAME}")
         # self.textEdit_tab1_log_output.append(f"Rewritten value: CWD to {config.CWD}")
@@ -165,23 +172,62 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.lineEdit_tab1_path_to_cwd.setText(config.DEBUG_CWD)
         else:
             pprint(sys.path)
-            path = sys.path[1]
+            # path = sys.path[1]
+            path = config.abs_path_to_selected_file
             self.lineEdit_tab1_path_to_cwd.setText(path)
-            config.CWD = path
+            # config.work_ncl_file_path = path
 
     def set_cwd_if_started_from_exe(self):
         pprint(os.getcwd())
         path = os.getcwd()
         self.lineEdit_tab1_path_to_cwd.setText(path)
-        config.CWD = path
+        config.abs_path_to_selected_file = path
 
     def open_file_explorer(self):
-        pass
+        fname = QtWidgets.QFileDialog.getOpenFileName(
+            self,
+            "Open File",
+            "",
+            "NCL Files (*.ncl.*);;All Files (*);;",
+            # "All Files (*);; Python Files (*.py);; PNG Files (*.png)",
+        )
+        logger.debug(f"Filepath selected: {fname[0]}")
+        self.textEdit_tab1_log_output.append(f"Filepath selected: {fname[0]}")
+        if fname[0]:
+            self.lineEdit_tab1_path_to_cwd.setText(fname[0])
+            config.abs_path_to_selected_file = fname[0]
+            self.pushButton_tab1_postprocess_start.setEnabled(True)
 
     def btn_clicked_start_postprocess(self):
-        self.textEdit_tab1_log_output.append(f"postprocessing started")
-        execute_postprocess(post_obj=config.POST_OBJ, work_dir_path=config.CWD)
-        self.textEdit_tab1_log_output.append(f"postprocessing finished")
+        if config.POST_OBJ is None:
+            self.textEdit_tab1_log_output.append(f"Select different POST")
+        else:
+            self.textEdit_tab1_log_output.append(f"postprocessing started")
+            self.pushButton_tab1_postprocess_start.setEnabled(False)
+            self.pushButton_tab1_postprocess_start.setText("Postprocessing . . .")
+            is_executed = self.execute_postprocess(post_obj=config.POST_OBJ)
+            if is_executed:
+                self.textEdit_tab1_log_output.append(f"postprocessing finished")
+            else:
+                self.textEdit_tab1_log_output.append(f"postprocessing terminated with errors")
+
+        self.pushButton_tab1_postprocess_start.setEnabled(True)
+        self.pushButton_tab1_postprocess_start.setText("Запустить постпроцессирование")
+
+    @staticmethod
+    def execute_postprocess(post_obj) -> bool:
+        if post_obj is None:
+            logger.warning("Selected post is None")
+            return False
+        else:
+            operations = list()
+
+            filepath = config.abs_path_to_selected_file
+            if filepath:
+                operations.append(post_obj())
+                for operation in operations:
+                    operation.start_postprocessing()
+                return True
 
 
 def main_ui():

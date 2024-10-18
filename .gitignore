@@ -1,0 +1,6 @@
+.venv
+src/logs
+build
+dist
+
+*.spec

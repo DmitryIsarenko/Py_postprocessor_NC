@@ -6,10 +6,10 @@ PROGRAM_MAIN_DIGIT = "7"
 
 
 # debug
-DEBUG = True
+DEBUG = False
 # DEBUG = False
 DEBUG_CWD = r"c:\WORK_DIRECTORY\10_Programming\Projects\py_post"
-DELETE_TEMP_FILE = False
+DELETE_TEMP_FILE = True
 STARTS_FROM_EXE = False
 
 # tolerances
@@ -25,14 +25,14 @@ NDIGITS_CALC_FEEDRATE_G95 = 4
 
 # misc
 POST_OBJ = None
-CWD = None
+abs_path_to_selected_file = None
 
 
 # key_filename_part_1 = "ust"  # will be searched for matches in dir
 CL_DATA_FILE_EXTENSION = ".ncl"  # will be searched for matches in dir
 
 G_CODE_FILE_EXTENSION = ""
-TEMP_FILE_NAME_PREFIX = "temporary_file_"
+TEMP_FILE_NAME_PREFIX = "temp"
 
 NC_START_KEYWORD = "PPRINT / NC SEQUENCE NAME :"
 NC_END_KEYWORD = "$$-> END /"
@@ -52,8 +52,8 @@ G_CODE_TOOL_RPM_PARAMETER = "#101"
 G_CODE_TOOL_FEED_PARAMETER = "#102"
 G_CODE_TOOL_POT_PARAMETER = "#103"
 
-GATHER_MASSIVE_COPIES_AUTOMATICALLY = True
-GATHER_MASSIVE_COPIES_AUTOMATICALLY_VIA_PARAMS = True
+GATHER_MASSIVE_COPIES_AUTOMATICALLY = False
+GATHER_MASSIVE_COPIES_AUTOMATICALLY_VIA_PARAMS = False
 PPRINT_FOR_GATHERING_VIA_PARAMS = (
     "PPRINT / # : 1\n"
     "PPRINT / MASSIV : "

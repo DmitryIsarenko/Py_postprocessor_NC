@@ -1,32 +1,55 @@
-from src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_3axis_syntec import NcOperationMill3AxisSyntec
-from src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_A_syntec import NcOperationMill4AxisASyntec
-from src.postOOP.classes.nc_operation_classes.common.nc_operation_mill_4axis_B_syntec import NcOperationMill4AxisBSyntec
-from src.postOOP.classes.nc_operation_classes.tauras_fenix.nc_operation_mill_3axis_syntec_TF import NcOperationMill3AxisSyntecTF
-from src.postOOP.classes.nc_operation_classes.tauras_fenix.nc_operation_mill_4axis_A_syntec_TF import NcOperationMill4AxisASyntecTF
-from src.postOOP.classes.nc_operation_classes.tauras_fenix.nc_operation_mill_4axis_B_syntec_TF import NcOperationMill4AxisBSyntecTF
-from src.postOOP.classes.nc_operation_classes.tauras_fenix.nc_operation_mill_3axis_fanuc_TF import NcOperationMill3AxisFanucTF
-from src.postOOP.classes.nc_operation_classes.tauras_fenix.nc_operation_mill_4axis_A_fanuc_TF import NcOperationMill4AxisAFanucTF
-from src.postOOP.classes.nc_operation_classes.tauras_fenix.nc_operation_mill_4axis_B_fanuc_TF import NcOperationMill4AxisBFanucTF
-
+from src.postOOP.classes.posts.mill_posts.tauras_fenix.post_mill_3axis_fanuc_TF import \
+    NcOperationMill3AxisFanucTF
+from src.postOOP.classes.posts.mill_posts.tauras_fenix.post_mill_3axis_syntec_TF import \
+    NcOperationMill3AxisSyntecTF
+from src.postOOP.classes.posts.mill_posts.tauras_fenix.post_mill_4axis_A_fanuc_TF import \
+    NcOperationMill4AxisAFanucTF
+from src.postOOP.classes.posts.mill_posts.tauras_fenix.post_mill_4axis_A_syntec_TF import \
+    NcOperationMill4AxisASyntecTF
+from src.postOOP.classes.posts.mill_posts.tauras_fenix.post_mill_4axis_B_fanuc_TF import \
+    NcOperationMill4AxisBFanucTF
+from src.postOOP.classes.posts.mill_posts.tauras_fenix.post_mill_4axis_B_syntec_TF import \
+    NcOperationMill4AxisBSyntecTF
 
 
 class PostLister:
-    post_dict = {
-        # NcOperationBasic.postprocessor_name: NcOperationBasic,
-        NcOperationMill3AxisSyntec.postprocessor_name: NcOperationMill3AxisSyntec,
-        NcOperationMill4AxisASyntec.postprocessor_name: NcOperationMill4AxisASyntec,
-        NcOperationMill4AxisBSyntec.postprocessor_name: NcOperationMill4AxisBSyntec,
-        NcOperationMill3AxisSyntecTF.postprocessor_name: NcOperationMill3AxisSyntecTF,
-        NcOperationMill4AxisASyntecTF.postprocessor_name: NcOperationMill4AxisASyntecTF,
-        NcOperationMill4AxisBSyntecTF.postprocessor_name: NcOperationMill4AxisBSyntecTF,
-        NcOperationMill3AxisFanucTF.postprocessor_name: NcOperationMill3AxisFanucTF,
-        NcOperationMill4AxisAFanucTF.postprocessor_name: NcOperationMill4AxisAFanucTF,
-        NcOperationMill4AxisBFanucTF.postprocessor_name: NcOperationMill4AxisBFanucTF,
-    }
+    post_dict = dict()
 
-    # 3axis TF
-    # default_post_obj = post_dict[NcOperationMill3AxisSyntecTF.postprocessor_name]
-    # default_post_name = NcOperationMill3AxisSyntecTF.postprocessor_name
-    # 4axis basic
-    default_post_obj = post_dict[NcOperationMill4AxisBSyntec.postprocessor_name]
-    default_post_name = NcOperationMill4AxisBSyntec.postprocessor_name
+    def __init__(self):
+        self.set_default_post(NcOperationMill3AxisSyntecTF)
+
+        # self.add_post_to_list("--- debug ---")
+        # self.add_post_to_list(NcOperationBasic)
+        # self.add_post_to_list(NcOperationBasicMill)
+        # # self.add_post_to_list("--- common fanuc ---")
+        #
+        # self.add_post_to_list(" ")
+        # self.add_post_to_list("--- common syntec ---")
+        # self.add_post_to_list(NcOperationMill3Axis)
+        # self.add_post_to_list(NcOperationMill4AxisA)
+        # self.add_post_to_list(NcOperationMill4AxisB)
+
+        self.add_post_to_list("   ")
+        self.add_post_to_list("--- TF syntec ---")
+        self.add_post_to_list(NcOperationMill3AxisSyntecTF)
+        self.add_post_to_list(NcOperationMill4AxisASyntecTF)
+        self.add_post_to_list(NcOperationMill4AxisBSyntecTF)
+
+        self.add_post_to_list("  ")
+        self.add_post_to_list("--- TF fanuc ---")
+        self.add_post_to_list(NcOperationMill3AxisFanucTF)
+        self.add_post_to_list(NcOperationMill4AxisAFanucTF)
+        self.add_post_to_list(NcOperationMill4AxisBFanucTF)
+
+    @classmethod
+    def add_post_to_list(cls, nc_oper_class):
+        if type(nc_oper_class) is str:
+            cls.post_dict.update({nc_oper_class: None})
+        else:
+            cls.post_dict.update({nc_oper_class.postprocessor_name: nc_oper_class})
+
+    @classmethod
+    def set_default_post(cls, nc_oper_class):
+        cls.default_post_obj = nc_oper_class
+        cls.default_post_name = nc_oper_class.postprocessor_name
+        return

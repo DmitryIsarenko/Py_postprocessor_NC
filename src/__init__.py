@@ -1,4 +1,5 @@
 import logging.handlers
+from src.postOOP import config
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -20,14 +21,17 @@ rotating_logfile_handler = logging.handlers.RotatingFileHandler(filename="../log
 
 console_handler.setFormatter(console_formatter)
 logfile_handler.setFormatter(logfile_formatter)
+# logfile_local_handler.setFormatter(logfile_formatter)
 rotating_logfile_handler.setFormatter(logfile_formatter)
 
 console_handler.setLevel(logging.DEBUG)
 logfile_handler.setLevel(logging.DEBUG)
+# logfile_local_handler.setLevel(logging.DEBUG)
 rotating_logfile_handler.setLevel(logging.WARNING)
 
 logger.addHandler(console_handler)
 logger.addHandler(logfile_handler)
+# logger.addHandler(logfile_local_handler)
 logger.addHandler(rotating_logfile_handler)
 
 logger.debug(f"Logger {__name__} started.")
