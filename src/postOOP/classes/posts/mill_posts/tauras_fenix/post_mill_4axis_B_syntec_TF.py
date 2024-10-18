@@ -1,10 +1,11 @@
-from src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic import NcOperationMill3Axis
-from src.postOOP.classes.nc_operation_classes.mixins.mixin_oper_4axis import MixinOper4Axis
-from src.postOOP.classes.nc_operation_classes.mixins.mixin_oper_filler_syntec_TF import MixinOperFillerSyntecTF
-from src.postOOP.classes.nc_sequence_classes.tauras_fenix.nc_sequence_mill_4axis_B_syntec_TF import \
-    NcSequenceMill4AxisBSyntecTF
-from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec_TF import NclParserMill4AxisBSyntecTF
-from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_mill_4axis import PprintParserMill4Axis
+from src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis import NcOperationMill3Axis
+from src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis import MixinOper4Axis
+from src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_filler_syntec_TF import \
+    MixinOperFillerSyntecTF
+from src.postOOP.classes.mill.nc_sequence_classes.rdy_to_use.tauras_fenix.nc_sequence_mill_4axis_syntec_TF import \
+    NcSequenceMill4AxisSyntecTF
+from src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec_TF import NclParserMill4AxisBSyntecTF
+from src.postOOP.classes.mill.parsers.pprint_parsers.pprint_parser_mill_4axis import PprintParserMill4Axis
 
 import logging
 
@@ -12,7 +13,7 @@ logger = logging.getLogger(__name__)
 
 
 class NcOperationMill4AxisBSyntecTF(NcOperationMill3Axis, MixinOperFillerSyntecTF, MixinOper4Axis):
-    nc_sequence_class: NcSequenceMill4AxisBSyntecTF = NcSequenceMill4AxisBSyntecTF
+    nc_sequence_class: NcSequenceMill4AxisSyntecTF = NcSequenceMill4AxisSyntecTF
     pprint_parser_class: PprintParserMill4Axis = PprintParserMill4Axis
     ncl_parser_class: NclParserMill4AxisBSyntecTF = NclParserMill4AxisBSyntecTF
 

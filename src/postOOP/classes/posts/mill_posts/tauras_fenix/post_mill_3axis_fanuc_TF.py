@@ -1,9 +1,9 @@
-from src.postOOP.classes.nc_operation_classes.basic.nc_operation_basic import NcOperationMill3Axis
-from src.postOOP.classes.nc_operation_classes.mixins.mixin_oper_filler_fanuc_TF import MixinOperFillerFanucTF
-from src.postOOP.classes.nc_sequence_classes.tauras_fenix.nc_sequence_mill_3axis_fanuc_TF import \
+from src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis import NcOperationMill3Axis
+from src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_filler_fanuc_TF import MixinOperFillerFanucTF
+from src.postOOP.classes.mill.nc_sequence_classes.rdy_to_use.tauras_fenix.nc_sequence_mill_3axis_fanuc_TF import \
     NcSequenceMill3AxisFanucTF
-from src.postOOP.classes.parsers.pprint_parsers.pprint_parser_basic import PprintParserBasic
-from src.postOOP.classes.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec_TF import NclParserMill3axisSyntecTF
+from src.postOOP.classes.mill.parsers.pprint_parsers.pprint_parser_basic import PprintParserBasic
+from src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec_TF import NclParserMill3axisSyntecTF
 
 
 class NcOperationMill3AxisFanucTF(NcOperationMill3Axis, MixinOperFillerFanucTF):
