@@ -7,13 +7,8 @@
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/basic/nc_operation_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/basic/nc_operation_basic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/basic/nc_operation_basic_mill_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/basic/nc_operation_basic_mill_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/common/nc_operation_mill_3axis_syntec.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/common/nc_operation_mill_3axis_syntec.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/mixin_TF_oper_filler_fanuc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/mixin_TF_oper_filler_fanuc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/mixin_plug.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/mixin_end_plug.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/tauras_fenix/nc_operation_mill_3axis_fanuc_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/nc_operation_classes/tauras_fenix/nc_operation_mill_3axis_fanuc_TF.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/post_lister.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/post_lister.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/basic/nc_operation_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/basic/nc_operation_mill_3axis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/basic/nc_sequence_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/basic/nc_sequence_mill_3axis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +51,7 @@
     "Python.gui.executor": "Run",
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
-    "Python.main_app.executor": "Debug",
+    "Python.main_app.executor": "Run",
     "Python.main_gui.executor": "Run",
     "Python.main_gui_app.executor": "Run",
     "Python.main_oop.executor": "Run",
@@ -64,7 +59,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "refactor",
+    "git-widget-placeholder": "arrays",
     "last_opened_file_path": "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/py_post_v2_OOP",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }

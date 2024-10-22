@@ -83,6 +83,12 @@ class MixinOper4Axis:
             self.nc_oper_obj.set_nc_sequences_objects_in_list()
             self.nc_oper_obj.set_sum_machining_time()
 
+            for seq in self.nc_oper_obj.list_of_nc_sequences_objects:
+                seq.create_file()
+
+            for seq in self.nc_oper_obj.list_of_nc_sequences_objects:
+                seq.fill_file()
+
 
             self.nc_oper_obj.nc_list = self.nc_oper_obj.generate_nc_list()
 

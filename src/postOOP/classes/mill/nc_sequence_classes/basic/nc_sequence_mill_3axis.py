@@ -105,8 +105,12 @@ class NcSequenceMill3Axis(MixinRoot):
 
         self.nc_list = self.generate_nc_list()
 
+
+    def create_file(self):
         self.file_operator_class.create_file(
             filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}")
+
+    def fill_file(self):
         self.file_operator_class.append_lines_to_file(
             filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}",
             list_with_lines=self.nc_list)

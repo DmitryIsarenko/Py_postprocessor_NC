@@ -68,6 +68,12 @@ class NcOperationMill3Axis:
             self.set_nc_sequences_objects_in_list()
             self.set_sum_machining_time()
 
+            for seq in self.list_of_nc_sequences_objects:
+                seq.create_file()
+
+            for seq in self.list_of_nc_sequences_objects:
+                seq.fill_file()
+
             # self.show()
             self.nc_list = self.generate_nc_list()
             # print(self.nc_list)
