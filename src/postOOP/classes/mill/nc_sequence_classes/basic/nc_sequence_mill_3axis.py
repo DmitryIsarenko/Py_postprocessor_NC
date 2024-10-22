@@ -106,6 +106,10 @@ class NcSequenceMill3Axis(MixinRoot):
         self.nc_seq_head_lines = self.generate_nc_head_lines()
         self.nc_seq_body_lines = self.generate_nc_body_lines()
         self.nc_seq_tail_lines = self.generate_nc_tail_lines()
+
+        self.nc_list = []
+
+    def fill_nc_list(self):
         self.nc_list = self.generate_nc_list()
 
 
