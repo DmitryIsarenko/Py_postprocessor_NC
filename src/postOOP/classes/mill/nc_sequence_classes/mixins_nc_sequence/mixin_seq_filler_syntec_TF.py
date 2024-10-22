@@ -4,8 +4,8 @@ from src.postOOP import config
 
 """ pass into inheritance class
 
-def generate_nc_list(self):
-    return MixinSeqFillerFanucTF(self).generate_nc_list()
+# def generate_nc_list(self):
+#     return MixinSeqFillerFanucTF(self).generate_nc_list()
 
 def generate_nc_head_lines(self):
     return MixinSeqFillerFanucTF(self).generate_nc_head_lines()
@@ -28,14 +28,14 @@ class MixinSeqFillerSyntecTF(MixinRoot):
         self.nc_seq_obj = nc_seq_obj_for_syntec_filler
         super().__init__(**kwargs)
 
-    def generate_nc_list(self) -> list:
-        nc_lines = list()
-        nc_lines.extend(self.nc_seq_obj.nc_seq_head_lines)
-        nc_lines.extend(self.nc_seq_obj.nc_seq_body_lines)
-        nc_lines.extend(self.nc_seq_obj.nc_seq_tail_lines)
-        nc_lines = Formatter.append_line_endings_in_cl_list_or_str(cl_list_or_str=nc_lines)
-        nc_lines = Formatter.append_line_wraps_in_cl_list_or_str(cl_list_or_str=nc_lines)
-        return nc_lines
+    # def generate_nc_list(self) -> list:
+    #     nc_lines = list()
+    #     nc_lines.extend(self.nc_seq_obj.nc_seq_head_lines)
+    #     nc_lines.extend(self.nc_seq_obj.nc_seq_body_lines)
+    #     nc_lines.extend(self.nc_seq_obj.nc_seq_tail_lines)
+    #     nc_lines = Formatter.append_line_endings_in_cl_list_or_str(cl_list_or_str=nc_lines)
+    #     nc_lines = Formatter.append_line_wraps_in_cl_list_or_str(cl_list_or_str=nc_lines)
+    #     return nc_lines
 
     def generate_nc_head_lines(self) -> list:
         nc_lines = [

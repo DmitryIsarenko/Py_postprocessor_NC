@@ -1,14 +1,16 @@
+from src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_root import MixinRoot
+from src.postOOP.classes.mill.parsers.pprint_parsers.mixins_pprint_parser.mixin_pprint_arrays import MixinPprintArrays
 from src.postOOP.classes.others.formatter import Formatter
 from src.postOOP import config
 import logging
 
 logger = logging.getLogger(__name__)
 
-class PprintParserBasic:
+class PprintParserBasic(MixinPprintArrays, MixinRoot):
     pprint_parser_class_name = "PprintParserBasic"
 
-    def __init__(self):
-        pass
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
     @staticmethod
     def count_cl_lines_in_cl_list(*, cl_list: list[str]) -> int:

@@ -58,6 +58,8 @@ class NcSequenceMill3Axis(MixinRoot):
     is_m01_needed = False
     is_gohome_needed = False
 
+
+
     def __init__(
             self,
             ncl_parser_class: NclParserBasic,
@@ -75,11 +77,12 @@ class NcSequenceMill3Axis(MixinRoot):
             **kwargs,
     ):
 
-        super().__init__(**kwargs)
 
         self.ncl_parser_class = ncl_parser_class
         self.pprint_parser_class = pprint_parser_class
         self.file_operator_class = file_operator_class
+
+        self.is_file_needed = True
 
         self.detail_name = detail_name
         self.nc_sequence_name = nc_sequence_name
@@ -108,6 +111,8 @@ class NcSequenceMill3Axis(MixinRoot):
         self.nc_seq_tail_lines = self.generate_nc_tail_lines()
 
         self.nc_list = []
+
+        super().__init__(**kwargs)
 
     def fill_nc_list(self):
         self.nc_list = self.generate_nc_list()
