@@ -78,9 +78,9 @@ class MixinOper4Axis:
 
             logger.info(f"Operation is Multax = {self.s.is_multax_operation}")
 
-            self.s.set_nc_sequences_count()
             self.s.set_nc_sequences_names_in_list()
             self.s.set_nc_sequences_objects_in_list()
+            self.s.set_nc_sequences_count()
             self.s.set_sum_machining_time()
 
             for seq in self.s.list_of_nc_sequences_objects:

@@ -24,7 +24,6 @@ class MixinOperArrays(MixinRoot):
             self.o.set_operation_num_from_name()
             self.o.set_nc_filename()
 
-            self.o.set_nc_sequences_count()
             self.o.set_nc_sequences_names_in_list()
             self.o.set_nc_sequences_objects_in_list()
             self.o.set_sum_machining_time()
@@ -54,6 +53,8 @@ class MixinOperArrays(MixinRoot):
                         seq.nc_sequence_number = 1
                     seq.set_nc_filename()
                     self.show_if_seq_info(seq_ind=seq_ind)
+
+            self.o.set_nc_sequences_count()
 
             for seq_ind, seq in enumerate(self.o.list_of_nc_sequences_objects):
                 pass
@@ -122,3 +123,20 @@ class MixinOperArrays(MixinRoot):
             f"\t\tnum is {self.o.list_of_nc_sequences_objects[seq_ind].nc_sequence_number}")
         logger.debug(
             f"\t\tis file needed {self.o.list_of_nc_sequences_objects[seq_ind].is_file_needed}")
+
+
+    # def generate_nc_body_lines(self) -> list:
+    #     nc_lines = []
+    #     for seq_obj in self.o.list_of_nc_sequences_objects:
+    #         if seq_obj.is_file_needed:
+    #             if seq_obj.is_m00_before_needed is True:
+    #                 nc_lines.append("M00")
+    #             nc_lines.extend([
+    #                 f"M98P{seq_obj.nc_file_number}"
+    #                 f"(OPER {seq_obj.nc_sequence_number}/{seq_obj.nc_sequences_count}: {seq_obj.nc_sequence_name})",
+    #                 f"(POT: {seq_obj.tool_pot}, TOOL: {seq_obj.tool_name})",
+    #             ])
+    #             if seq_obj.is_m00_after_needed is True:
+    #                 nc_lines.append("M00")
+    #         nc_lines.append(f"")
+    #     return nc_lines

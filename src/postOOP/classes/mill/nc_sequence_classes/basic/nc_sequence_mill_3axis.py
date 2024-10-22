@@ -106,9 +106,11 @@ class NcSequenceMill3Axis(MixinRoot):
         self.set_cut_feed_master()
         self.set_machining_time()
 
-        self.nc_seq_head_lines = self.generate_nc_head_lines()
-        self.nc_seq_body_lines = self.generate_nc_body_lines()
-        self.nc_seq_tail_lines = self.generate_nc_tail_lines()
+        self.nc_seq_head_lines = []
+        self.nc_seq_body_lines = []
+        self.nc_seq_tail_lines = []
+
+        # self.nc_seq_head_lines = self.generate_nc_head_lines()
 
         self.nc_list = []
 
@@ -212,6 +214,9 @@ class NcSequenceMill3Axis(MixinRoot):
         self.nc_filename_with_extension = self.nc_filename + config.G_CODE_FILE_EXTENSION
 
     def generate_nc_list(self) -> list:
+        self.nc_seq_head_lines = self.generate_nc_head_lines()
+        self.nc_seq_body_lines = self.generate_nc_body_lines()
+        self.nc_seq_tail_lines = self.generate_nc_tail_lines()
         nc_lines = list()
         nc_lines.extend(self.nc_seq_head_lines)
         nc_lines.extend(self.nc_seq_body_lines)

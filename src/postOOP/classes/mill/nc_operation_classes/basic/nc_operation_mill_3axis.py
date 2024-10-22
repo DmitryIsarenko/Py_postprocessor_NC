@@ -67,11 +67,11 @@ class NcOperationMill3Axis:
             self.set_operation_num_from_name()
             self.set_nc_filename()
 
-            self.set_nc_sequences_count()
             self.set_nc_sequences_names_in_list()
             self.set_nc_sequences_objects_in_list()
             self.set_sum_machining_time()
 
+            self.set_nc_sequences_count()
             for seq in self.list_of_nc_sequences_objects:
                 seq.fill_nc_list()
 
@@ -102,7 +102,16 @@ class NcOperationMill3Axis:
             pass
 
     def set_nc_sequences_count(self):
-        self.nc_sequences_count: int = self.pprint_parser_class.count_nc_sequences_in_cl_list(cl_list=self.cl_list)
+        counter = 0
+        for seq in self.list_of_nc_sequences_objects:
+            if seq.is_file_needed:
+                counter += 1
+        self.nc_sequences_count: int = counter
+        for seq in self.list_of_nc_sequences_objects:
+            seq.nc_sequences_count = counter
+        logger.debug(f"self.nc_sequences_count = {self.nc_sequences_count}")
+
+        # self.nc_sequences_count: int = self.pprint_parser_class.count_nc_sequences_in_cl_list(cl_list=self.cl_list)
 
     def set_nc_sequences_names_in_list(self):
         self.list_of_nc_sequences_names: list[str] = self.pprint_parser_class.get_list_of_nc_sequence_names(
@@ -200,17 +209,18 @@ class NcOperationMill3Axis:
 
     def generate_nc_body_lines(self) -> list:
         nc_lines = []
-        for obj in self.list_of_nc_sequences_objects:
-            if obj.is_m00_before_needed is True:
-                nc_lines.append("M00")
-            nc_lines.extend([
-                f"M98P{obj.nc_file_number}"
-                f"(OPER {obj.nc_sequence_number}/{obj.nc_sequences_count}: {obj.nc_sequence_name})",
-                f"(POT: {obj.tool_pot}, TOOL: {obj.tool_name})",
-            ])
-            if obj.is_m00_after_needed is True:
-                nc_lines.append("M00")
-            nc_lines.append(f"")
+        for seq_obj in self.list_of_nc_sequences_objects:
+            if seq_obj.is_file_needed:
+                if seq_obj.is_m00_before_needed is True:
+                    nc_lines.append("M00")
+                nc_lines.extend([
+                    f"M98P{seq_obj.nc_file_number}"
+                    f"(OPER {seq_obj.nc_sequence_number}/{seq_obj.nc_sequences_count}: {seq_obj.nc_sequence_name})",
+                    f"(POT: {seq_obj.tool_pot}, TOOL: {seq_obj.tool_name})",
+                ])
+                if seq_obj.is_m00_after_needed is True:
+                    nc_lines.append("M00")
+                nc_lines.append(f"")
         return nc_lines
 
     def generate_nc_tail_lines(self) -> list:

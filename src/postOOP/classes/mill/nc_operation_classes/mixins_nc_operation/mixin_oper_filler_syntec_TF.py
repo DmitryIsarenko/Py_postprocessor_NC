@@ -46,17 +46,18 @@ class MixinOperFillerSyntecTF(MixinRoot):
 
     def generate_nc_body_lines(self) -> list:
         nc_lines = []
-        for obj in self.nc_oper_obj.list_of_nc_sequences_objects:
-            if obj.is_m00_before_needed is True:
-                nc_lines.append("M00")
-            nc_lines.extend([
-                f"M98P{obj.nc_file_number}//.T{obj.tool_pot}_{obj.tool_name}",
-                f"({obj.nc_sequence_number}/{obj.nc_sequences_count}      {obj.nc_sequence_name})",
-                # f"(           {obj.nc_sequence_name})",
-            ])
-            if obj.is_m00_after_needed is True:
-                nc_lines.append("M00")
-            nc_lines.append(f"")
+        for seq_obj in self.nc_oper_obj.list_of_nc_sequences_objects:
+            if seq_obj.is_file_needed:
+                if seq_obj.is_m00_before_needed is True:
+                    nc_lines.append("M00")
+                nc_lines.extend([
+                    f"M98P{seq_obj.nc_file_number}//.T{seq_obj.tool_pot}_{seq_obj.tool_name}",
+                    f"({seq_obj.nc_sequence_number}/{seq_obj.nc_sequences_count}      {seq_obj.nc_sequence_name})",
+                    # f"(           {seq_obj.nc_sequence_name})",
+                ])
+                if seq_obj.is_m00_after_needed is True:
+                    nc_lines.append("M00")
+                nc_lines.append(f"")
         return nc_lines
 
     def generate_nc_tail_lines(self) -> list:

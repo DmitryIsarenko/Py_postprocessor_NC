@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_arrays.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_arrays.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_arrays.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/rdy_to_use/tauras_fenix/nc_sequence_mill_3axis_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/rdy_to_use/tauras_fenix/nc_sequence_mill_3axis_syntec_TF.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_3axis_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_3axis_syntec_TF.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/basic/nc_operation_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/basic/nc_operation_mill_3axis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_4axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_4axis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_arrays.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_arrays.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_filler_fanuc_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_filler_fanuc_TF.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_filler_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_filler_syntec_TF.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/basic/nc_sequence_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/basic/nc_sequence_mill_3axis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +55,7 @@
     "Python.gui.executor": "Run",
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
-    "Python.main_app.executor": "Run",
+    "Python.main_app.executor": "Debug",
     "Python.main_gui.executor": "Run",
     "Python.main_gui_app.executor": "Run",
     "Python.main_oop.executor": "Run",
