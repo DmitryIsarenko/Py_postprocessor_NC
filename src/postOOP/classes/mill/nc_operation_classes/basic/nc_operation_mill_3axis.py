@@ -41,6 +41,10 @@ class NcOperationMill3Axis:
     list_of_nc_sequences_objects = None
     sum_machining_time = None
 
+    oper_nc_head_lines = []
+    oper_nc_body_lines = []
+    oper_nc_tail_lines = []
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
@@ -75,6 +79,9 @@ class NcOperationMill3Axis:
                 seq.fill_file()
 
             # self.show()
+            self.oper_nc_head_lines = self.generate_nc_head_lines()
+            self.oper_nc_body_lines = self.generate_nc_body_lines()
+            self.oper_nc_tail_lines = self.generate_nc_tail_lines()
             self.nc_list = self.generate_nc_list()
             # print(self.nc_list)
 
@@ -168,9 +175,9 @@ class NcOperationMill3Axis:
 
     def generate_nc_list(self) -> list:
         nc_lines = list()
-        nc_lines.extend(self.generate_nc_head_lines())
-        nc_lines.extend(self.generate_nc_body_lines())
-        nc_lines.extend(self.generate_nc_tail_lines())
+        nc_lines.extend(self.oper_nc_head_lines)
+        nc_lines.extend(self.oper_nc_body_lines)
+        nc_lines.extend(self.oper_nc_tail_lines)
         nc_lines = Formatter.append_line_endings_in_cl_list_or_str(cl_list_or_str=nc_lines)
         nc_lines = Formatter.append_line_wraps_in_cl_list_or_str(cl_list_or_str=nc_lines)
         # pprint(nc_lines)

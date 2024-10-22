@@ -1,212 +1,168 @@
-2024-10-22 08:36:43 DEBUG    --- Logger src started. --- src:37 
-2024-10-22 08:36:43 DEBUG    --- Started execution from __main__ --- src:25 
-2024-10-22 08:36:43 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:23 
-2024-10-22 08:36:43 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:66 
-2024-10-22 08:36:43 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:73 
-2024-10-22 08:36:43 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:92 
-2024-10-22 08:36:46 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
-2024-10-22 08:36:49 DEBUG    --- Filepath selected: C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1 --- src.postOOP.classes.gui.desktop_window_app:194 
-2024-10-22 08:36:50 INFO     --- Post name from config: <<<MILL 4AXIS A SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:48 
-2024-10-22 08:36:50 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
-2024-10-22 08:36:50 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
-2024-10-22 08:36:50 INFO     --- Operation is Multax = False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:79 
-2024-10-22 08:36:50 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:100 
-2024-10-22 08:36:50 DEBUG    --- nc_sequence_name=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:36:50 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:36:50 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:36:50 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:36:50 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:36:50 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:36:50 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:36:50 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:36:50 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:36:50 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:36:50 DEBUG    --- nc_sequence_name=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:36:50 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:36:50 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:36:50 DEBUG    --- end   index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:36:50 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:36:50 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:36:50 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:36:50 DEBUG    --- start index: 99 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:36:50 DEBUG    --- end   index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:36:50 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:36:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:36:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:36:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:36:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:36:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:00 DEBUG    --- Filepath selected:  --- src.postOOP.classes.gui.desktop_window_app:194 
-2024-10-22 08:37:07 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
-2024-10-22 08:37:08 INFO     --- Post name from config: <<<MILL 3AXIS SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:48 
-2024-10-22 08:37:08 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
-2024-10-22 08:37:08 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
-2024-10-22 08:37:08 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:100 
-2024-10-22 08:37:08 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:08 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:08 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:08 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:08 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:08 DEBUG    --- end   index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:08 DEBUG    --- start index: 99 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:08 DEBUG    --- end   index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:08 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:131 
-2024-10-22 08:37:08 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:08 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:08 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:08 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:08 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:15 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
-2024-10-22 08:37:16 INFO     --- Post name from config: <<<MILL 4AXIS A SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:48 
-2024-10-22 08:37:16 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
-2024-10-22 08:37:16 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
-2024-10-22 08:37:16 INFO     --- Operation is Multax = False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:79 
-2024-10-22 08:37:16 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:100 
-2024-10-22 08:37:16 DEBUG    --- nc_sequence_name=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:16 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:16 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:16 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:16 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:37:16 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:16 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:16 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:16 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:16 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:37:16 DEBUG    --- nc_sequence_name=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:16 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:16 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:16 DEBUG    --- end   index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:16 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:37:16 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:16 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:16 DEBUG    --- start index: 99 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:16 DEBUG    --- end   index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:16 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:37:16 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:16 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:16 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:16 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:16 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:20 INFO     --- Post name from config: <<<MILL 4AXIS A SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:48 
-2024-10-22 08:37:20 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
-2024-10-22 08:37:20 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
-2024-10-22 08:37:20 INFO     --- Operation is Multax = False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:79 
-2024-10-22 08:37:20 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:100 
-2024-10-22 08:37:20 DEBUG    --- nc_sequence_name=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:20 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:20 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:20 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:20 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:37:20 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:20 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:20 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:20 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:20 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:37:20 DEBUG    --- nc_sequence_name=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:20 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:20 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:20 DEBUG    --- end   index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:20 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:37:20 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:20 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:20 DEBUG    --- start index: 99 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:20 DEBUG    --- end   index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:20 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:37:20 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:20 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:20 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:20 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:20 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:22 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
-2024-10-22 08:37:23 INFO     --- Post name from config: <<<MILL 4AXIS B SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:48 
-2024-10-22 08:37:23 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
-2024-10-22 08:37:23 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
-2024-10-22 08:37:23 INFO     --- Operation is Multax = False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:79 
-2024-10-22 08:37:23 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:100 
-2024-10-22 08:37:23 DEBUG    --- nc_sequence_name=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:23 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:23 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:23 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:23 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
-2024-10-22 08:37:23 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:23 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:23 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:23 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:23 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
-2024-10-22 08:37:23 DEBUG    --- nc_sequence_name=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:23 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:23 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:23 DEBUG    --- end   index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:23 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
-2024-10-22 08:37:23 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:23 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:23 DEBUG    --- start index: 99 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:23 DEBUG    --- end   index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:23 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
-2024-10-22 08:37:23 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:23 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:23 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:23 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:23 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:26 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
-2024-10-22 08:37:26 INFO     --- Post name from config: <<<MILL 4AXIS A FANUC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:48 
-2024-10-22 08:37:26 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
-2024-10-22 08:37:26 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
-2024-10-22 08:37:26 INFO     --- Operation is Multax = False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:79 
-2024-10-22 08:37:26 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:100 
-2024-10-22 08:37:26 DEBUG    --- nc_sequence_name=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:26 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:26 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:26 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:26 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:37:26 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:26 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:26 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:26 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:26 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:37:26 DEBUG    --- nc_sequence_name=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:26 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:26 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:26 DEBUG    --- end   index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:26 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:37:26 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:26 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:26 DEBUG    --- start index: 99 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:26 DEBUG    --- end   index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:26 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
-2024-10-22 08:37:26 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:26 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:26 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:26 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:26 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:29 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
-2024-10-22 08:37:29 INFO     --- Post name from config: <<<MILL 4AXIS B FANUC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:48 
-2024-10-22 08:37:29 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
-2024-10-22 08:37:29 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
-2024-10-22 08:37:29 INFO     --- Operation is Multax = False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:79 
-2024-10-22 08:37:29 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:100 
-2024-10-22 08:37:29 DEBUG    --- nc_sequence_name=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:29 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:29 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:29 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:29 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
-2024-10-22 08:37:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:29 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:29 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:29 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:29 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
-2024-10-22 08:37:29 DEBUG    --- nc_sequence_name=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:29 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:29 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:29 DEBUG    --- end   index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:29 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
-2024-10-22 08:37:29 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
-2024-10-22 08:37:29 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
-2024-10-22 08:37:29 DEBUG    --- start index: 99 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:144 
-2024-10-22 08:37:29 DEBUG    --- end   index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:153 
-2024-10-22 08:37:29 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
-2024-10-22 08:37:29 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:29 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:29 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:29 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
-2024-10-22 08:37:29 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:18 DEBUG    --- Logger src started. --- src:37 
+2024-10-22 08:55:18 DEBUG    --- Started execution from __main__ --- src:25 
+2024-10-22 08:55:18 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:23 
+2024-10-22 08:55:18 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:66 
+2024-10-22 08:55:18 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:73 
+2024-10-22 08:55:18 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:92 
+2024-10-22 08:55:21 DEBUG    --- Filepath selected: C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1 --- src.postOOP.classes.gui.desktop_window_app:194 
+2024-10-22 08:55:22 INFO     --- Post name from config: <<<MILL 3AXIS SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:52 
+2024-10-22 08:55:22 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
+2024-10-22 08:55:22 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
+2024-10-22 08:55:22 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:107 
+2024-10-22 08:55:22 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:22 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:22 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:22 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:22 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:22 DEBUG    --- end   index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:22 DEBUG    --- start index: 99 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:22 DEBUG    --- end   index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:22 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:138 
+2024-10-22 08:55:22 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:22 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:22 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:22 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:22 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:46 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
+2024-10-22 08:55:47 INFO     --- Post name from config: <<<MILL 4AXIS A SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:52 
+2024-10-22 08:55:47 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
+2024-10-22 08:55:47 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
+2024-10-22 08:55:47 INFO     --- Operation is Multax = False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:79 
+2024-10-22 08:55:47 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:107 
+2024-10-22 08:55:47 DEBUG    --- nc_sequence_name=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:55:47 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:55:47 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:47 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:47 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
+2024-10-22 08:55:47 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:55:47 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:55:47 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:47 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:47 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
+2024-10-22 08:55:47 DEBUG    --- nc_sequence_name=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:55:47 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:55:47 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:47 DEBUG    --- end   index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:47 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
+2024-10-22 08:55:47 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:55:47 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:55:47 DEBUG    --- start index: 99 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:47 DEBUG    --- end   index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:47 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
+2024-10-22 08:55:47 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:47 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:47 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:47 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:47 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:49 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
+2024-10-22 08:55:50 INFO     --- Post name from config: <<<MILL 4AXIS B SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:52 
+2024-10-22 08:55:50 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
+2024-10-22 08:55:50 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
+2024-10-22 08:55:50 INFO     --- Operation is Multax = False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:79 
+2024-10-22 08:55:50 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:107 
+2024-10-22 08:55:50 DEBUG    --- nc_sequence_name=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:55:50 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:55:50 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:50 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:50 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
+2024-10-22 08:55:50 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:55:50 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:55:50 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:50 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:50 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
+2024-10-22 08:55:50 DEBUG    --- nc_sequence_name=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:55:50 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:55:50 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:50 DEBUG    --- end   index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:50 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
+2024-10-22 08:55:50 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:55:50 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:55:50 DEBUG    --- start index: 99 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:50 DEBUG    --- end   index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:50 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
+2024-10-22 08:55:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:52 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
+2024-10-22 08:55:53 INFO     --- Post name from config: <<<MILL 3AXIS FANUC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:52 
+2024-10-22 08:55:53 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
+2024-10-22 08:55:53 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
+2024-10-22 08:55:53 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:107 
+2024-10-22 08:55:53 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:53 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:53 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:53 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:53 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:53 DEBUG    --- end   index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:53 DEBUG    --- start index: 99 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:53 DEBUG    --- end   index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:53 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:138 
+2024-10-22 08:55:53 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:53 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:53 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:53 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:53 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:55 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
+2024-10-22 08:55:56 INFO     --- Post name from config: <<<MILL 4AXIS B FANUC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:52 
+2024-10-22 08:55:56 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
+2024-10-22 08:55:56 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
+2024-10-22 08:55:56 INFO     --- Operation is Multax = False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:79 
+2024-10-22 08:55:56 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:107 
+2024-10-22 08:55:56 DEBUG    --- nc_sequence_name=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:55:56 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:55:56 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:56 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:56 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
+2024-10-22 08:55:56 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:55:56 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:55:56 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:56 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:56 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
+2024-10-22 08:55:56 DEBUG    --- nc_sequence_name=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:55:56 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:55:56 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:56 DEBUG    --- end   index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:56 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
+2024-10-22 08:55:56 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:55:56 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:55:56 DEBUG    --- start index: 99 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:55:56 DEBUG    --- end   index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:55:56 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec:279 
+2024-10-22 08:55:56 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:56 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:56 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:56 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:56 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:55:59 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
+2024-10-22 08:56:00 INFO     --- Post name from config: <<<MILL 4AXIS A FANUC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:52 
+2024-10-22 08:56:00 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:52 
+2024-10-22 08:56:00 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1" has been read --- src.postOOP.classes.others.file_operator_basic:64 
+2024-10-22 08:56:00 INFO     --- Operation is Multax = False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:79 
+2024-10-22 08:56:00 DEBUG    --- list_of_nc_sequences_names ['NEPRERIVNOE_SV', 'HOLEMAKING', 'PRERIVISTOE_SV', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:107 
+2024-10-22 08:56:00 DEBUG    --- nc_sequence_name=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:56:00 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:56:00 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:56:00 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:56:00 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
+2024-10-22 08:56:00 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:56:00 DEBUG    --- nc_sequence_parent_name_of_massive=NEPRERIVNOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:56:00 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:56:00 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:56:00 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
+2024-10-22 08:56:00 DEBUG    --- nc_sequence_name=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:56:00 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:56:00 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:56:00 DEBUG    --- end   index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:56:00 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
+2024-10-22 08:56:00 DEBUG    --- nc_sequence_name=HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:39 
+2024-10-22 08:56:00 DEBUG    --- nc_sequence_parent_name_of_massive=PRERIVISTOE_SV --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_4axis:40 
+2024-10-22 08:56:00 DEBUG    --- start index: 99 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:147 
+2024-10-22 08:56:00 DEBUG    --- end   index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:156 
+2024-10-22 08:56:00 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec:279 
+2024-10-22 08:56:00 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7101' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:56:00 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7102' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:56:00 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7103' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:56:00 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7104' --- src.postOOP.classes.others.file_operator_basic:98 
+2024-10-22 08:56:00 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_mas.ncl.1/../O7100' --- src.postOOP.classes.others.file_operator_basic:98 

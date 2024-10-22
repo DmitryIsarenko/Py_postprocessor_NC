@@ -32,9 +32,9 @@ class MixinSeqFillerFanucTF(MixinRoot):
         pre_percent = ["%", ]
         end_percent = ["%", ]
         nc_lines = list()
-        nc_lines.extend(self.nc_seq_obj.generate_nc_head_lines())
-        nc_lines.extend(self.nc_seq_obj.generate_nc_body_lines())
-        nc_lines.extend(self.nc_seq_obj.generate_nc_tail_lines())
+        nc_lines.extend(self.nc_seq_obj.nc_seq_head_lines)
+        nc_lines.extend(self.nc_seq_obj.nc_seq_body_lines)
+        nc_lines.extend(self.nc_seq_obj.nc_seq_tail_lines)
 
         nc_lines = Formatter.append_line_endings_in_cl_list_or_str(cl_list_or_str=nc_lines)
 

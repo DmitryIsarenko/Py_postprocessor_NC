@@ -103,6 +103,9 @@ class NcSequenceMill3Axis(MixinRoot):
         self.set_cut_feed_master()
         self.set_machining_time()
 
+        self.nc_seq_head_lines = self.generate_nc_head_lines()
+        self.nc_seq_body_lines = self.generate_nc_body_lines()
+        self.nc_seq_tail_lines = self.generate_nc_tail_lines()
         self.nc_list = self.generate_nc_list()
 
 
@@ -199,9 +202,9 @@ class NcSequenceMill3Axis(MixinRoot):
 
     def generate_nc_list(self) -> list:
         nc_lines = list()
-        nc_lines.extend(self.generate_nc_head_lines())
-        nc_lines.extend(self.generate_nc_body_lines())
-        nc_lines.extend(self.generate_nc_tail_lines())
+        nc_lines.extend(self.nc_seq_head_lines)
+        nc_lines.extend(self.nc_seq_body_lines)
+        nc_lines.extend(self.nc_seq_tail_lines)
         nc_lines = Formatter.append_line_endings_in_cl_list_or_str(cl_list_or_str=nc_lines)
         nc_lines = Formatter.append_line_wraps_in_cl_list_or_str(cl_list_or_str=nc_lines)
         return nc_lines
