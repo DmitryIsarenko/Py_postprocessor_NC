@@ -119,13 +119,15 @@ class NcSequenceMill3Axis(MixinRoot):
 
 
     def create_file(self):
-        self.file_operator_class.create_file(
-            filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}")
+        if self.is_file_needed:
+            self.file_operator_class.create_file(
+                filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}")
 
     def fill_file(self):
-        self.file_operator_class.append_lines_to_file(
-            filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}",
-            list_with_lines=self.nc_list)
+        if self.is_file_needed:
+            self.file_operator_class.append_lines_to_file(
+                filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}",
+                list_with_lines=self.nc_list)
 
     def set_cl_start_index(self):
         if self.nc_sequence_name == self.nc_sequence_parent_name_of_massive:

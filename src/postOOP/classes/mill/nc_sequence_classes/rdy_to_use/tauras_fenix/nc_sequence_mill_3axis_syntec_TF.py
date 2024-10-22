@@ -1,7 +1,7 @@
 from src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis import NcSequenceMill3Axis
 from src.postOOP.classes.mill.nc_sequence_classes.mixins_nc_sequence.mixin_m0_before_boring_bar import \
     MixinM0BeforeBoringBar
-from src.postOOP.classes.mill.nc_sequence_classes.mixins_nc_sequence.mixin_seq_arrays import MixinArrays
+from src.postOOP.classes.mill.nc_sequence_classes.mixins_nc_sequence.mixin_seq_arrays import MixinSeqArrays
 from src.postOOP.classes.mill.nc_sequence_classes.mixins_nc_sequence.mixin_seq_filler_syntec_TF import \
     MixinSeqFillerSyntecTF
 
@@ -9,7 +9,7 @@ from src.postOOP.classes.mill.nc_sequence_classes.mixins_nc_sequence.mixin_seq_f
 class NcSequenceMill3AxisSyntecTF(NcSequenceMill3Axis,
                                   MixinM0BeforeBoringBar,
                                   MixinSeqFillerSyntecTF,
-                                  MixinArrays,
+                                  MixinSeqArrays,
                                   ):
     nc_sequence_class_name = "NcSequenceMill3AxisSyntecTF"
 
@@ -41,4 +41,4 @@ class NcSequenceMill3AxisSyntecTF(NcSequenceMill3Axis,
 
     # MixinArrays
     def generate_nc_list(self):
-        return MixinArrays(self).generate_nc_list()
+        return MixinSeqArrays(self).generate_nc_list()

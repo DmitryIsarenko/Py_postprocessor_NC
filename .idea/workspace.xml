@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/pprint_parsers/mixins_pprint_parser/mixin_pprint_arrays.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_arrays.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/basic/nc_sequence_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/basic/nc_sequence_mill_3axis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_arrays.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_arrays.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_filler_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_filler_syntec_TF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/rdy_to_use/tauras_fenix/nc_sequence_mill_3axis_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/rdy_to_use/tauras_fenix/nc_sequence_mill_3axis_syntec_TF.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_3axis_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_3axis_syntec_TF.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
     "Python.gui.executor": "Run",
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
-    "Python.main_app.executor": "Debug",
+    "Python.main_app.executor": "Run",
     "Python.main_gui.executor": "Run",
     "Python.main_gui_app.executor": "Run",
     "Python.main_oop.executor": "Run",
@@ -350,16 +349,9 @@
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="name.split(&quot;.&quot;)" language="Python" />
-        <watch expression="cls.is_all_ijk_same" language="Python" />
-        <watch expression="final_result_list" />
-        <watch expression="cls.goto_counter" language="Python" />
-        <watch expression="result_list" language="Python" />
-        <watch expression="prev_coords_list_str" language="Python" />
-        <watch expression="self.is_multax_operation" language="Python" />
-        <watch expression="self.nc_sequence_name" language="Python" />
-        <watch expression="self.nc_sequence_parent_name_of_massive" language="Python" />
-        <watch expression="self.cl_start_index" language="Python" />
+        <watch expression="seq.nc_sequence_number" language="Python" />
+        <watch expression="self.o.list_of_nc_sequences_objects[seq_ind].nc_sequence_number" language="Python" />
+        <watch expression="seq.nc_sequence_name" language="Python" />
       </configuration>
     </watches-manager>
   </component>
