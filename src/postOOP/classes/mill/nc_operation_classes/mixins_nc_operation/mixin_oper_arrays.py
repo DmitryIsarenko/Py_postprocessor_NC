@@ -56,37 +56,76 @@ class MixinOperArrays(MixinRoot):
 
             self.o.set_nc_sequences_count()
 
-            for seq_ind, seq in enumerate(self.o.list_of_nc_sequences_objects):
-                pass
+            # for seq_ind, seq in enumerate(self.o.list_of_nc_sequences_objects):
+            #     if seq.is_array and seq.is_copy is False:
+            #         array_copies = seq.array_copies_amount
+            #         nc_lines = []
+            #         nc_lines.extend(seq.nc_body_lines)
+            #         for copy in self.o.list_of_nc_sequences_objects[seq_ind : seq_ind + seq.array_copies_amount]:
+            #
+            #
+            #
+            #             """
+            #             сделать срез из списка копий
+            #             из каждой вытащить body
+            #             запихнуть в боди головной штуки
+            #             """
 
             for seq in self.o.list_of_nc_sequences_objects:
-                seq.fill_nc_list()
+                seq.generate_nc_seq_head_body_tail_lists()
 
             for seq in self.o.list_of_nc_sequences_objects:
-                seq.create_file()
+                seq.combine_nc_seq_head_body_tail_lines_in_one_list()
 
             for seq in self.o.list_of_nc_sequences_objects:
-                seq.fill_file()
+                seq.create_seq_file()
+
+            for seq in self.o.list_of_nc_sequences_objects:
+                seq.fill_seq_file()
 
             # self.o.show()
-            self.o.oper_nc_head_lines = self.o.generate_nc_head_lines()
-            self.o.oper_nc_body_lines = self.o.generate_nc_body_lines()
-            self.o.oper_nc_tail_lines = self.o.generate_nc_tail_lines()
-            self.o.nc_list = self.o.generate_nc_list()
+            self.o.oper_nc_head_lines = self.o.generate_nc_oper_head_lines()
+            self.o.oper_nc_body_lines = self.o.generate_nc_oper_body_lines()
+            self.o.oper_nc_tail_lines = self.o.generate_nc_oper_tail_lines()
+            self.o.nc_list = self.o.combine_nc_oper_head_body_tail_lines_in_one_list()
             # print(self.o.nc_list)
 
-            self.o.file_operator_class.create_file(
-                filepath=f"{config.abs_path_to_selected_file}/../{self.o.nc_filename_with_extension}")
-            self.o.file_operator_class.append_lines_to_file(
-                filepath=f"{config.abs_path_to_selected_file}/../{self.o.nc_filename_with_extension}",
-                list_with_lines=self.o.nc_list)
+            self.o.generate_nc_oper_head_body_tail_lists()
+            self.o.nc_list = self.o.combine_nc_oper_head_body_tail_lines_in_one_list()
+
+            self.o.create_oper_file()
+            self.o.fill_oper_file()
+
         else:
-            logger.warning(f"Empty self.o.cl_list for {config.abs_path_to_selected_file}")
+            logger.warning(f"Empty self.cl_list for {config.abs_path_to_selected_file}")
 
         if config.DELETE_TEMP_FILE:
             self.o.file_operator_class.remove_file(filepath=temp_filepath)
         else:
             pass
+
+    def create_oper_file(self):
+        self.o.file_operator_class.create_file(
+            filepath=f"{config.abs_path_to_selected_file}/../{self.o.nc_filename_with_extension}")
+
+    def fill_oper_file(self):
+        self.o.file_operator_class.append_lines_to_file(
+            filepath=f"{config.abs_path_to_selected_file}/../{self.o.nc_filename_with_extension}",
+            list_with_lines=self.o.nc_list)
+
+
+        #     self.o.file_operator_class.create_seq_file(
+        #         filepath=f"{config.abs_path_to_selected_file}/../{self.o.nc_filename_with_extension}")
+        #     self.o.file_operator_class.append_lines_to_file(
+        #         filepath=f"{config.abs_path_to_selected_file}/../{self.o.nc_filename_with_extension}",
+        #         list_with_lines=self.o.nc_list)
+        # else:
+        #     logger.warning(f"Empty self.o.cl_list for {config.abs_path_to_selected_file}")
+        #
+        # if config.DELETE_TEMP_FILE:
+        #     self.o.file_operator_class.remove_file(filepath=temp_filepath)
+        # else:
+        #     pass
 
     def set_file_is_copy_for_copies(self, seq_ind: int, copies_amount: int):
         list_of_seq_obj = [obj for obj in self.o.list_of_nc_sequences_objects[seq_ind + 1: seq_ind + copies_amount]]

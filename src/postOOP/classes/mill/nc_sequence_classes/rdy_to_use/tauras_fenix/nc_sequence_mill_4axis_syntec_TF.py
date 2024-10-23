@@ -29,7 +29,7 @@ class NcSequenceMill4AxisSyntecTF(NcSequenceMill4Axis, MixinM0BeforeBoringBar, M
         MixinM0BeforeBoringBar(self).set_is_m00_before_needed()
 
     # MixinSeqFillerSyntecTF
-    def generate_nc_list(self):
+    def combine_nc_head_body_tail_lines_in_one_list(self):
         return MixinSeqFillerSyntecTF(self).generate_nc_list()
 
     def generate_nc_head_lines(self):

@@ -116,16 +116,19 @@ class NcSequenceMill3Axis(MixinRoot):
 
         super().__init__(**kwargs)
 
-    def fill_nc_list(self):
-        self.nc_list = self.generate_nc_list()
+    def generate_nc_seq_head_body_tail_lists(self):
+        # self.nc_list = self.combine_nc_head_body_tail_lines_in_one_list()
+        self.nc_seq_head_lines = self.generate_nc_seq_head_lines()
+        self.nc_seq_body_lines = self.generate_nc_seq_body_lines()
+        self.nc_seq_tail_lines = self.generate_nc_seq_tail_lines()
 
 
-    def create_file(self):
+    def create_seq_file(self):
         if self.is_file_needed:
             self.file_operator_class.create_file(
                 filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}")
 
-    def fill_file(self):
+    def fill_seq_file(self):
         if self.is_file_needed:
             self.file_operator_class.append_lines_to_file(
                 filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}",
@@ -213,19 +216,18 @@ class NcSequenceMill3Axis(MixinRoot):
         self.nc_filename = config.PROGRAM_MAIN_LETTER + self.nc_file_number
         self.nc_filename_with_extension = self.nc_filename + config.G_CODE_FILE_EXTENSION
 
-    def generate_nc_list(self) -> list:
-        self.nc_seq_head_lines = self.generate_nc_head_lines()
-        self.nc_seq_body_lines = self.generate_nc_body_lines()
-        self.nc_seq_tail_lines = self.generate_nc_tail_lines()
+    def combine_nc_seq_head_body_tail_lines_in_one_list(self) -> list:
+        self.nc_seq_head_lines = self.generate_nc_seq_head_lines()
         nc_lines = list()
         nc_lines.extend(self.nc_seq_head_lines)
         nc_lines.extend(self.nc_seq_body_lines)
         nc_lines.extend(self.nc_seq_tail_lines)
         nc_lines = Formatter.append_line_endings_in_cl_list_or_str(cl_list_or_str=nc_lines)
         nc_lines = Formatter.append_line_wraps_in_cl_list_or_str(cl_list_or_str=nc_lines)
+        self.nc_list = nc_lines
         return nc_lines
 
-    def generate_nc_head_lines(self) -> list:
+    def generate_nc_seq_head_lines(self) -> list:
         nc_lines = [
             f"(PART: {self.detail_name})",
             f"(DATE: {self.date_of_creation})",
@@ -239,12 +241,12 @@ class NcSequenceMill3Axis(MixinRoot):
         ]
         return nc_lines
 
-    def generate_nc_body_lines(self) -> list:
+    def generate_nc_seq_body_lines(self) -> list:
         nc_lines = self.ncl_parser_class.parse_cl_list(nc_seq_obj=self)
         return nc_lines
 
     @staticmethod
-    def generate_nc_tail_lines() -> list:
+    def generate_nc_seq_tail_lines() -> list:
         nc_lines = list()
         nc_lines.extend(config.NC_SEQUENCE_TAIL_LINES)
         return nc_lines

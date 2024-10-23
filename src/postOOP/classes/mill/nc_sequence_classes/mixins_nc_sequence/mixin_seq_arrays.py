@@ -21,7 +21,7 @@ class MixinSeqArrays(MixinRoot):
 
         super().__init__(**kwargs)
 
-    def generate_nc_list(self) -> list:
+    def combine_nc_seq_head_body_tail_lines_in_one_list(self) -> list:
         nc_lines = list()
 
         if self.s.is_copy is False:

@@ -24,17 +24,17 @@ class MixinOperFillerSyntecTF(MixinRoot):
         self.nc_oper_obj = nc_oper_obj_for_syntec_filler
         super().__init__(**kwargs)
 
-    def generate_nc_list(self) -> list:
+    def combine_nc_oper_head_body_tail_lines_in_one_list(self) -> list:
         nc_lines = list()
-        nc_lines.extend(self.nc_oper_obj.generate_nc_head_lines())
-        nc_lines.extend(self.nc_oper_obj.generate_nc_body_lines())
-        nc_lines.extend(self.nc_oper_obj.generate_nc_tail_lines())
+        nc_lines.extend(self.nc_oper_obj.generate_nc_oper_head_lines())
+        nc_lines.extend(self.nc_oper_obj.generate_nc_oper_body_lines())
+        nc_lines.extend(self.nc_oper_obj.generate_nc_oper_tail_lines())
         nc_lines = Formatter.append_line_endings_in_cl_list_or_str(cl_list_or_str=nc_lines)
         nc_lines = Formatter.append_line_wraps_in_cl_list_or_str(cl_list_or_str=nc_lines)
         # pprint(nc_lines)
         return nc_lines
 
-    def generate_nc_head_lines(self) -> list:
+    def generate_nc_oper_head_lines(self) -> list:
         nc_lines = [
             f"({self.nc_oper_obj.detail_name}_{self.nc_oper_obj.operation_name})",
             f"(PROGRAMMER=(NULL))",
@@ -44,7 +44,7 @@ class MixinOperFillerSyntecTF(MixinRoot):
         ]
         return nc_lines
 
-    def generate_nc_body_lines(self) -> list:
+    def generate_nc_oper_body_lines(self) -> list:
         nc_lines = []
         for seq_obj in self.nc_oper_obj.list_of_nc_sequences_objects:
             if seq_obj.is_file_needed:
@@ -60,7 +60,7 @@ class MixinOperFillerSyntecTF(MixinRoot):
                 nc_lines.append(f"")
         return nc_lines
 
-    def generate_nc_tail_lines(self) -> list:
+    def generate_nc_oper_tail_lines(self) -> list:
         nc_lines = [
             "G0 G53 Z0.0",
             "G00 X0.0",

@@ -73,26 +73,23 @@ class NcOperationMill3Axis:
 
             self.set_nc_sequences_count()
             for seq in self.list_of_nc_sequences_objects:
-                seq.fill_nc_list()
+                seq.generate_nc_seq_head_body_tail_lists()
 
             for seq in self.list_of_nc_sequences_objects:
-                seq.create_file()
+                seq.combine_nc_seq_head_body_tail_lines_in_one_list()
 
             for seq in self.list_of_nc_sequences_objects:
-                seq.fill_file()
+                seq.create_seq_file()
 
-            # self.show()
-            self.oper_nc_head_lines = self.generate_nc_head_lines()
-            self.oper_nc_body_lines = self.generate_nc_body_lines()
-            self.oper_nc_tail_lines = self.generate_nc_tail_lines()
-            self.nc_list = self.generate_nc_list()
-            # print(self.nc_list)
+            for seq in self.list_of_nc_sequences_objects:
+                seq.fill_seq_file()
 
-            self.file_operator_class.create_file(
-                filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}")
-            self.file_operator_class.append_lines_to_file(
-                filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}",
-                list_with_lines=self.nc_list)
+            self.generate_nc_oper_head_body_tail_lists()
+            self.nc_list = self.combine_nc_oper_head_body_tail_lines_in_one_list()
+
+            self.create_oper_file()
+            self.fill_oper_file()
+
         else:
             logger.warning(f"Empty self.cl_list for {config.abs_path_to_selected_file}")
 
@@ -100,6 +97,23 @@ class NcOperationMill3Axis:
             self.file_operator_class.remove_file(filepath=temp_filepath)
         else:
             pass
+
+    def create_oper_file(self):
+        self.file_operator_class.create_file(
+            filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}")
+
+    def fill_oper_file(self):
+        self.file_operator_class.append_lines_to_file(
+            filepath=f"{config.abs_path_to_selected_file}/../{self.nc_filename_with_extension}",
+            list_with_lines=self.nc_list)
+
+
+
+    def generate_nc_oper_head_body_tail_lists(self):
+        self.oper_nc_head_lines = self.generate_nc_oper_head_lines()
+        self.oper_nc_body_lines = self.generate_nc_oper_body_lines()
+        self.oper_nc_tail_lines = self.generate_nc_oper_tail_lines()
+
 
     def set_nc_sequences_count(self):
         counter = 0
@@ -185,7 +199,7 @@ class NcOperationMill3Axis:
         self.nc_filename = config.PROGRAM_MAIN_LETTER + config.PROGRAM_MAIN_DIGIT + num_in_str
         self.nc_filename_with_extension = self.nc_filename + config.G_CODE_FILE_EXTENSION
 
-    def generate_nc_list(self) -> list:
+    def combine_nc_oper_head_body_tail_lines_in_one_list(self) -> list:
         nc_lines = list()
         nc_lines.extend(self.oper_nc_head_lines)
         nc_lines.extend(self.oper_nc_body_lines)
@@ -195,7 +209,7 @@ class NcOperationMill3Axis:
         # pprint(nc_lines)
         return nc_lines
 
-    def generate_nc_head_lines(self) -> list:
+    def generate_nc_oper_head_lines(self) -> list:
         nc_lines = [
             f"(POST: {config.POST_NAME})",
             f"(PART: {self.detail_name})",
@@ -207,7 +221,7 @@ class NcOperationMill3Axis:
         ]
         return nc_lines
 
-    def generate_nc_body_lines(self) -> list:
+    def generate_nc_oper_body_lines(self) -> list:
         nc_lines = []
         for seq_obj in self.list_of_nc_sequences_objects:
             if seq_obj.is_file_needed:
@@ -223,7 +237,7 @@ class NcOperationMill3Axis:
                 nc_lines.append(f"")
         return nc_lines
 
-    def generate_nc_tail_lines(self) -> list:
+    def generate_nc_oper_tail_lines(self) -> list:
         nc_lines = [
             "G53",
             "G00 Z0.0",

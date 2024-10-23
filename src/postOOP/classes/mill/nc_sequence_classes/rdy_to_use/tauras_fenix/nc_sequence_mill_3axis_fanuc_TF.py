@@ -23,7 +23,7 @@ class NcSequenceMill3AxisFanucTF(NcSequenceMill3Axis, MixinM0BeforeBoringBar, Mi
         MixinM0BeforeBoringBar(self).set_is_m00_before_needed()
 
     # MixinSeqFillerFanucTF
-    def generate_nc_list(self):
+    def combine_nc_head_body_tail_lines_in_one_list(self):
         return MixinSeqFillerFanucTF(self).generate_nc_list()
 
     def generate_nc_head_lines(self):

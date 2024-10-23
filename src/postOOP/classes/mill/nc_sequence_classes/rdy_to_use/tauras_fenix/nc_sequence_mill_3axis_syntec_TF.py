@@ -40,5 +40,5 @@ class NcSequenceMill3AxisSyntecTF(NcSequenceMill3Axis,
         return MixinSeqFillerSyntecTF(self).generate_nc_tail_lines()
 
     # MixinArrays
-    def generate_nc_list(self):
+    def combine_nc_head_body_tail_lines_in_one_list(self):
         return MixinSeqArrays(self).generate_nc_list()

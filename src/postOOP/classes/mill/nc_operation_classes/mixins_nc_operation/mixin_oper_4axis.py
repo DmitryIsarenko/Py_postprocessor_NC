@@ -84,26 +84,26 @@ class MixinOper4Axis:
             self.s.set_sum_machining_time()
 
             for seq in self.s.list_of_nc_sequences_objects:
-                seq.fill_nc_list()
+                seq.generate_nc_seq_head_body_tail_lists()
 
             for seq in self.s.list_of_nc_sequences_objects:
-                seq.create_file()
+                seq.combine_nc_seq_head_body_tail_lines_in_one_list()
 
             for seq in self.s.list_of_nc_sequences_objects:
-                seq.fill_file()
+                seq.create_seq_file()
+
+            for seq in self.s.list_of_nc_sequences_objects:
+                seq.fill_seq_file()
 
 
-            self.s.nc_list = self.s.generate_nc_list()
+            self.s.generate_nc_oper_head_body_tail_lists()
+            self.s.nc_list = self.s.combine_nc_oper_head_body_tail_lines_in_one_list()
 
-            self.s.file_operator_class.create_file(
-                filepath=f"{config.abs_path_to_selected_file}/../{self.s.nc_filename_with_extension}")
-            self.s.file_operator_class.append_lines_to_file(
-                filepath=f"{config.abs_path_to_selected_file}/../{self.s.nc_filename_with_extension}",
-                list_with_lines=self.s.nc_list)
-
+            self.s.create_oper_file()
+            self.s.fill_oper_file()
 
         else:
-            logger.info(f"Empty self.nc_oper_obj.cl_list for {self.s.filepath}")
+            logger.warning(f"Empty self.cl_list for {config.abs_path_to_selected_file}")
 
         if config.DELETE_TEMP_FILE:
             self.s.file_operator_class.remove_file(filepath=temp_filepath)
