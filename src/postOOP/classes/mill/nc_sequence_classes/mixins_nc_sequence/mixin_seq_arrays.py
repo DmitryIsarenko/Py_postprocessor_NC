@@ -36,6 +36,16 @@ class MixinSeqArrays(MixinRoot):
         nc_lines = Formatter.append_line_wraps_in_cl_list_or_str(cl_list_or_str=nc_lines)
         return nc_lines
 
+    def generate_nc_seq_body_lines(self) -> list:
+        nc_lines: list = self.s.ncl_parser_class.parse_cl_list(nc_seq_obj=self.s)
+        if self.s.is_copy:
+            excluding_values = ["M05", "M09"]
+            for line in nc_lines:
+                if excluding_values in line:
+                    nc_lines.remove(excluding_values)
+        return nc_lines
+
+
     def set_is_array(self):
         return self.s.pprint_parser_class.get_is_array(cl_list=self.s.cl_list,
                                                        start_index=self.s.cl_start_index,

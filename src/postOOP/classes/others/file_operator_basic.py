@@ -11,10 +11,6 @@ class FileOperatorBasic:
 
     @staticmethod
     def get_all_ncl_files_in_dir(path: str) -> list[str] | None:
-
-        # os.chdir("../../../../../")
-        # os.chdir("../../../")
-        # os.chdir("../../")
         os.chdir(path=path)
         lst = os.listdir()
         logger.info(f"Files found in cwd: {lst}")
@@ -41,6 +37,8 @@ class FileOperatorBasic:
         with open(file=filepath, mode="w") as file:
             for line in list_with_lines:
                 file.write(line)
+        logger.info(f"Filled file '{filepath}'")
+
 
     @staticmethod
     def remove_file(*, filepath: str) -> bool:

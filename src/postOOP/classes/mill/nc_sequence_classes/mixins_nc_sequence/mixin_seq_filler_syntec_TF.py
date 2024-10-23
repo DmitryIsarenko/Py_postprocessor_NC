@@ -25,7 +25,7 @@ class MixinSeqFillerSyntecTF(MixinRoot):
             nc_seq_obj_for_syntec_filler,
             **kwargs,
     ):
-        self.nc_seq_obj = nc_seq_obj_for_syntec_filler
+        self.s = nc_seq_obj_for_syntec_filler
         super().__init__(**kwargs)
 
     # def generate_nc_list(self) -> list:
@@ -39,19 +39,19 @@ class MixinSeqFillerSyntecTF(MixinRoot):
 
     def generate_nc_seq_head_lines(self) -> list:
         nc_lines = [
-            f"T{self.nc_seq_obj.tool_pot}//..T{self.nc_seq_obj.tool_pot}_{self.nc_seq_obj.tool_name}",
+            f"T{self.s.tool_pot}//..T{self.s.tool_pot}_{self.s.tool_name}",
             # f"(T{self.nc_seq_obj.tool_pot}//..T{self.nc_seq_obj.tool_pot}_{self.nc_seq_obj.tool_name})",
-            f"(DETAIL={self.nc_seq_obj.detail_name})",
-            f"({self.nc_seq_obj.nc_sequence_name})",
-            f"(DATA={self.nc_seq_obj.date_of_creation})",
-            f"(PROG NUM: {self.nc_seq_obj.nc_sequence_number} / {self.nc_seq_obj.nc_sequences_count})",
-            f"G{self.nc_seq_obj.work_offset}",
+            f"(DETAIL={self.s.detail_name})",
+            f"({self.s.nc_sequence_name})",
+            f"(DATA={self.s.date_of_creation})",
+            f"(PROG NUM: {self.s.nc_sequence_number} / {self.s.nc_sequences_count})",
+            f"G{self.s.work_offset}",
             f"{config.SAFETY_LINE_DEFAULT}"
         ]
         return nc_lines
 
     def generate_nc_seq_body_lines(self) -> list:
-        nc_lines = self.nc_seq_obj.ncl_parser_class.parse_cl_list(nc_seq_obj=self.nc_seq_obj)
+        nc_lines = self.s.ncl_parser_class.parse_cl_list(nc_seq_obj=self.s)
         return nc_lines
 
     @staticmethod

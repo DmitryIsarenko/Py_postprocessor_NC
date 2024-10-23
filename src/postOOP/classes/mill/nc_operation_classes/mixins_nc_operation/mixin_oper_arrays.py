@@ -1,3 +1,5 @@
+from pprint import pprint
+
 from src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_root import MixinRoot
 from src.postOOP import config
 import logging
@@ -39,7 +41,8 @@ class MixinOperArrays(MixinRoot):
                         array_copies = seq.array_copies_amount
                         self.set_file_is_copy_for_copies(seq_ind=seq_ind, copies_amount=array_copies)
                         if seq_ind != 0:
-                            seq.nc_sequence_number = self.o.list_of_nc_sequences_objects[seq_ind - 1].nc_sequence_number + 1
+                            seq.nc_sequence_number = self.o.list_of_nc_sequences_objects[
+                                                         seq_ind - 1].nc_sequence_number + 1
                         else:
                             seq.nc_sequence_number = 1
                         seq.set_nc_filename()
@@ -56,39 +59,41 @@ class MixinOperArrays(MixinRoot):
 
             self.o.set_nc_sequences_count()
 
-            # for seq_ind, seq in enumerate(self.o.list_of_nc_sequences_objects):
-            #     if seq.is_array and seq.is_copy is False:
-            #         array_copies = seq.array_copies_amount
-            #         nc_lines = []
-            #         nc_lines.extend(seq.nc_body_lines)
-            #         for copy in self.o.list_of_nc_sequences_objects[seq_ind : seq_ind + seq.array_copies_amount]:
-            #
-            #
-            #
-            #             """
-            #             сделать срез из списка копий
-            #             из каждой вытащить body
-            #             запихнуть в боди головной штуки
-            #             """
-
             for seq in self.o.list_of_nc_sequences_objects:
                 seq.generate_nc_seq_head_body_tail_lists()
 
+
+            for seq_ind, seq in enumerate(self.o.list_of_nc_sequences_objects):
+                if seq.is_array and seq.is_copy is False:
+                    combined_body_nc_lines = []
+                    combined_body_nc_lines.extend(seq.nc_seq_body_lines)
+                    i_start = seq_ind + 1
+                    i_end = seq_ind + seq.array_copies_amount
+                    for seq_arr_copy in self.o.list_of_nc_sequences_objects[i_start:i_end]:
+                        combined_body_nc_lines.extend(seq_arr_copy.nc_seq_body_lines)
+
+
+                    seq.nc_seq_body_lines = combined_body_nc_lines
+
+
+            for seq in self.o.list_of_nc_sequences_objects:
+                # logger.debug(f"HEAD")
+                # logger.debug(f"{seq.nc_seq_head_lines}")
+                # logger.debug(f"BODY")
+                # logger.debug(f"{seq.nc_seq_body_lines}")
+                # logger.debug(f"TAIL")
+                # logger.debug(f"{seq.nc_seq_tail_lines}")
+                pass
+
             for seq in self.o.list_of_nc_sequences_objects:
                 seq.combine_nc_seq_head_body_tail_lines_in_one_list()
+
 
             for seq in self.o.list_of_nc_sequences_objects:
                 seq.create_seq_file()
 
             for seq in self.o.list_of_nc_sequences_objects:
                 seq.fill_seq_file()
-
-            # self.o.show()
-            self.o.oper_nc_head_lines = self.o.generate_nc_oper_head_lines()
-            self.o.oper_nc_body_lines = self.o.generate_nc_oper_body_lines()
-            self.o.oper_nc_tail_lines = self.o.generate_nc_oper_tail_lines()
-            self.o.nc_list = self.o.combine_nc_oper_head_body_tail_lines_in_one_list()
-            # print(self.o.nc_list)
 
             self.o.generate_nc_oper_head_body_tail_lists()
             self.o.nc_list = self.o.combine_nc_oper_head_body_tail_lines_in_one_list()
@@ -104,15 +109,16 @@ class MixinOperArrays(MixinRoot):
         else:
             pass
 
+
     def create_oper_file(self):
         self.o.file_operator_class.create_file(
             filepath=f"{config.abs_path_to_selected_file}/../{self.o.nc_filename_with_extension}")
+
 
     def fill_oper_file(self):
         self.o.file_operator_class.append_lines_to_file(
             filepath=f"{config.abs_path_to_selected_file}/../{self.o.nc_filename_with_extension}",
             list_with_lines=self.o.nc_list)
-
 
         #     self.o.file_operator_class.create_seq_file(
         #         filepath=f"{config.abs_path_to_selected_file}/../{self.o.nc_filename_with_extension}")
@@ -127,11 +133,13 @@ class MixinOperArrays(MixinRoot):
         # else:
         #     pass
 
+
     def set_file_is_copy_for_copies(self, seq_ind: int, copies_amount: int):
         list_of_seq_obj = [obj for obj in self.o.list_of_nc_sequences_objects[seq_ind + 1: seq_ind + copies_amount]]
 
         for ind, seq in enumerate(list_of_seq_obj):
             seq.is_copy = True
+
 
     def set_new_seq_num_for_copies(self, seq_ind: int, copies_amount: int):
         # list_of_seq_obj = [obj for obj in self.o.list_of_nc_sequences_objects[seq_ind + 1: seq_ind + copies_amount]]
@@ -148,10 +156,12 @@ class MixinOperArrays(MixinRoot):
                 seq.nc_sequence_number = new_seq_num
                 seq.set_nc_filename()
 
+
     def set_file_is_not_needed_for_copies(self, seq_ind: int, copies_amount: int):
         list_of_seq_obj = [obj for obj in self.o.list_of_nc_sequences_objects[seq_ind + 1: seq_ind + copies_amount]]
         for ind, seq in enumerate(list_of_seq_obj):
             seq.is_file_needed = False
+
 
     def show_if_seq_info(self, seq_ind: int):
         logger.debug(
@@ -163,19 +173,3 @@ class MixinOperArrays(MixinRoot):
         logger.debug(
             f"\t\tis file needed {self.o.list_of_nc_sequences_objects[seq_ind].is_file_needed}")
 
-
-    # def generate_nc_body_lines(self) -> list:
-    #     nc_lines = []
-    #     for seq_obj in self.o.list_of_nc_sequences_objects:
-    #         if seq_obj.is_file_needed:
-    #             if seq_obj.is_m00_before_needed is True:
-    #                 nc_lines.append("M00")
-    #             nc_lines.extend([
-    #                 f"M98P{seq_obj.nc_file_number}"
-    #                 f"(OPER {seq_obj.nc_sequence_number}/{seq_obj.nc_sequences_count}: {seq_obj.nc_sequence_name})",
-    #                 f"(POT: {seq_obj.tool_pot}, TOOL: {seq_obj.tool_name})",
-    #             ])
-    #             if seq_obj.is_m00_after_needed is True:
-    #                 nc_lines.append("M00")
-    #         nc_lines.append(f"")
-    #     return nc_lines
