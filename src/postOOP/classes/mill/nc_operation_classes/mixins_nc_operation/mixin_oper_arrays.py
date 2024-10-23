@@ -76,6 +76,12 @@ class MixinOperArrays(MixinRoot):
                     seq.nc_seq_body_lines = combined_body_nc_lines
 
 
+            self.clear_copy_extra_gcodes()
+
+
+            for seq in self.o.list_of_nc_sequences_objects:
+                seq.combine_nc_seq_head_body_tail_lines_in_one_list()
+
             for seq in self.o.list_of_nc_sequences_objects:
                 # logger.debug(f"HEAD")
                 # logger.debug(f"{seq.nc_seq_head_lines}")
@@ -84,9 +90,6 @@ class MixinOperArrays(MixinRoot):
                 # logger.debug(f"TAIL")
                 # logger.debug(f"{seq.nc_seq_tail_lines}")
                 pass
-
-            for seq in self.o.list_of_nc_sequences_objects:
-                seq.combine_nc_seq_head_body_tail_lines_in_one_list()
 
 
             for seq in self.o.list_of_nc_sequences_objects:
@@ -172,4 +175,66 @@ class MixinOperArrays(MixinRoot):
             f"\t\tnum is {self.o.list_of_nc_sequences_objects[seq_ind].nc_sequence_number}")
         logger.debug(
             f"\t\tis file needed {self.o.list_of_nc_sequences_objects[seq_ind].is_file_needed}")
+
+    def clear_copy_extra_gcodes(self):
+        # deleting g-codes from 2nd copy to the end
+        for seq in self.o.list_of_nc_sequences_objects:
+            extra_gcodes_del_all_exept_start = [f"G{seq.work_offset}", f"T{seq.tool_pot}",
+                                                f"{config.G_CODE_TOOL_POT_PARAMETER}=",
+                                                f"{config.G_CODE_TOOL_RPM_PARAMETER}=",
+                                                f"{config.G_CODE_TOOL_FEED_PARAMETER}=",
+                                                "M03", "M04", "M3", "M4", "M6", "M06", "M08", "M8"]
+            if seq.is_file_needed and seq.is_array:
+                for gcode in extra_gcodes_del_all_exept_start:
+                    copy_counter = 0
+                    for ind_line, line in enumerate(seq.nc_seq_body_lines):
+                        if gcode in line and copy_counter < seq.array_copies_amount:
+                            if copy_counter >= 1:
+                                logger.debug(f"Clearing from 2nd copy to the end")
+                                # seq.nc_seq_body_lines[ind_line] = "   wo m6 s"
+                                seq.nc_seq_body_lines[ind_line] = ""
+                            copy_counter += 1
+
+        # deleting g-codes from 1st copy to the last one. Leaving last copy g-codes
+        extra_gcodes_del_all_exept_end = ["M05", "M5", "M09", "M9"]
+        for seq in self.o.list_of_nc_sequences_objects:
+            if seq.is_file_needed and seq.is_array:
+                for gcode in extra_gcodes_del_all_exept_end:
+                    copy_counter = 1
+                    for ind_line, line in enumerate(seq.nc_seq_body_lines):
+                        if gcode in line and copy_counter < seq.array_copies_amount:
+                            logger.debug(f"Clearing from 1st copy to the last one")
+                            copy_counter += 1
+                            # seq.nc_seq_body_lines[ind_line] = " m5 m9"
+                            seq.nc_seq_body_lines[ind_line] = ""
+            # for i, line in enumerate(seq.nc_seq_body_lines):
+            while "" in seq.nc_seq_body_lines:
+                seq.nc_seq_body_lines.remove("")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

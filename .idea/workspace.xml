@@ -9,9 +9,7 @@
       <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_arrays.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_arrays.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_arrays.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_arrays.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_filler_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_filler_syntec_TF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/rdy_to_use/tauras_fenix/nc_sequence_mill_3axis_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/rdy_to_use/tauras_fenix/nc_sequence_mill_3axis_syntec_TF.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/others/file_operator_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/others/file_operator_basic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -351,6 +349,8 @@
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="self" />
+        <watch expression="seq.nc_sequence_name" />
+        <watch expression="seq.nc_seq_body_lines" />
       </configuration>
     </watches-manager>
   </component>

@@ -21,29 +21,33 @@ class MixinSeqArrays(MixinRoot):
 
         super().__init__(**kwargs)
 
-    def combine_nc_seq_head_body_tail_lines_in_one_list(self) -> list:
-        nc_lines = list()
+    # def combine_nc_seq_head_body_tail_lines_in_one_list(self) -> list:
+    #     nc_lines = list()
+    #
+    #     if self.s.is_copy is False:
+    #         nc_lines.extend(self.s.nc_seq_head_lines)
+    #
+    #     nc_lines.extend(self.s.nc_seq_body_lines)
+    #
+    #     if self.s.is_copy is False:
+    #         nc_lines.extend(self.s.nc_seq_tail_lines)
+    #
+    #     nc_lines = Formatter.append_line_endings_in_cl_list_or_str(cl_list_or_str=nc_lines)
+    #     nc_lines = Formatter.append_line_wraps_in_cl_list_or_str(cl_list_or_str=nc_lines)
+    #     return nc_lines
 
-        if self.s.is_copy is False:
-            nc_lines.extend(self.s.nc_seq_head_lines)
-
-        nc_lines.extend(self.s.nc_seq_body_lines)
-
-        if self.s.is_copy is False:
-            nc_lines.extend(self.s.nc_seq_tail_lines)
-
-        nc_lines = Formatter.append_line_endings_in_cl_list_or_str(cl_list_or_str=nc_lines)
-        nc_lines = Formatter.append_line_wraps_in_cl_list_or_str(cl_list_or_str=nc_lines)
-        return nc_lines
-
-    def generate_nc_seq_body_lines(self) -> list:
-        nc_lines: list = self.s.ncl_parser_class.parse_cl_list(nc_seq_obj=self.s)
-        if self.s.is_copy:
-            excluding_values = ["M05", "M09"]
-            for line in nc_lines:
-                if excluding_values in line:
-                    nc_lines.remove(excluding_values)
-        return nc_lines
+    # def generate_nc_seq_body_lines(self) -> list:
+    #     # logger.debug(f"removed val: {val}")
+    #     nc_lines: list = self.s.ncl_parser_class.parse_cl_list(nc_seq_obj=self.s)
+    #     if self.s.is_copy:
+    #         logger.debug(f"removed val:")
+    #         excluding_values = ["M05", "M09"]
+    #         for val in excluding_values:
+    #
+    #             for ind_line, line in enumerate(nc_lines):
+    #                 if val in line:
+    #                     nc_lines[ind_line] = ""
+    #     return nc_lines
 
 
     def set_is_array(self):
