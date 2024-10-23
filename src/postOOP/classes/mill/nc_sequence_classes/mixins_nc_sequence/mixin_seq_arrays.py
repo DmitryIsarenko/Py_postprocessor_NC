@@ -15,9 +15,6 @@ class MixinSeqArrays(MixinRoot):
         if self.s.is_array:
             self.s.is_param_array = self.set_is_parameter_array()
             self.s.array_copies_amount = self.set_array_copies_amount()
-        # logger.debug(f"{self.s.nc_sequence_name} : self.s.is_array: {self.s.is_array}")
-        # logger.debug(f"{self.s.nc_sequence_name} : self.s.is_param_array: {self.s.is_param_array}")
-        # logger.debug(f"{self.s.nc_sequence_name} : self.s.array_copies_amount: {self.s.array_copies_amount}")
 
         super().__init__(**kwargs)
 

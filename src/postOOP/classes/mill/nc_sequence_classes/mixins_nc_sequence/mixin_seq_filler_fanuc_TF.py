@@ -28,7 +28,7 @@ class MixinSeqFillerFanucTF(MixinRoot):
         self.s = nc_seq_obj_for_fanuc_filler
         super().__init__(**kwargs)
 
-    def combine_nc_seq_head_body_tail_lines_in_one_list(self) -> list:
+    def combine_nc_seq_head_body_tail_lines_in_one_list(self):
         pre_percent = ["%", ]
         end_percent = ["%", ]
         nc_lines = list()
@@ -43,8 +43,8 @@ class MixinSeqFillerFanucTF(MixinRoot):
         all_lines.extend(end_percent)
 
         all_lines = Formatter.append_line_wraps_in_cl_list_or_str(cl_list_or_str=all_lines)
-        self.s.nc_list = nc_lines
-        return all_lines
+        self.s.nc_list = all_lines
+
 
     def generate_nc_seq_head_lines(self) -> list:
         nc_lines = [

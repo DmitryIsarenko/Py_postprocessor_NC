@@ -27,16 +27,16 @@ class NcOperationMill4AxisASyntecTF(NcOperationMill3Axis, MixinOperFillerSyntecT
 
     # MixinOperFillerSyntecTF
     def generate_nc_list(self) -> list:
-        return MixinOperFillerSyntecTF(self).generate_nc_list()
+        return MixinOperFillerSyntecTF(self).combine_nc_oper_head_body_tail_lines_in_one_list()
 
     def generate_nc_head_lines(self) -> list:
-        return MixinOperFillerSyntecTF(self).generate_nc_head_lines()
+        return MixinOperFillerSyntecTF(self).generate_nc_oper_head_lines()
 
     def generate_nc_body_lines(self) -> list:
-        return MixinOperFillerSyntecTF(self).generate_nc_body_lines()
+        return MixinOperFillerSyntecTF(self).generate_nc_oper_body_lines()
 
     def generate_nc_tail_lines(self) -> list:
-        return MixinOperFillerSyntecTF(self).generate_nc_tail_lines()
+        return MixinOperFillerSyntecTF(self).generate_nc_oper_tail_lines()
 
     # MixinOper4Axis
     def set_nc_sequences_objects_in_list(self):

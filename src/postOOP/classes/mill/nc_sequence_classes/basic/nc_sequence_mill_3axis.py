@@ -216,7 +216,7 @@ class NcSequenceMill3Axis(MixinRoot):
         self.nc_filename = config.PROGRAM_MAIN_LETTER + self.nc_file_number
         self.nc_filename_with_extension = self.nc_filename + config.G_CODE_FILE_EXTENSION
 
-    def combine_nc_seq_head_body_tail_lines_in_one_list(self) -> list:
+    def combine_nc_seq_head_body_tail_lines_in_one_list(self):
         self.nc_seq_head_lines = self.generate_nc_seq_head_lines()
         nc_lines = list()
         nc_lines.extend(self.nc_seq_head_lines)
@@ -225,7 +225,7 @@ class NcSequenceMill3Axis(MixinRoot):
         nc_lines = Formatter.append_line_endings_in_cl_list_or_str(cl_list_or_str=nc_lines)
         nc_lines = Formatter.append_line_wraps_in_cl_list_or_str(cl_list_or_str=nc_lines)
         self.nc_list = nc_lines
-        return nc_lines
+
 
     def generate_nc_seq_head_lines(self) -> list:
         nc_lines = [

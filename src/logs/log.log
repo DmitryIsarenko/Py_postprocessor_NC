@@ -1,251 +1,168 @@
-2024-10-23 16:49:55 DEBUG    --- Logger src started. --- src:37 
-2024-10-23 16:49:55 DEBUG    --- Started execution from __main__ --- src:25 
-2024-10-23 16:49:55 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:23 
-2024-10-23 16:49:55 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:66 
-2024-10-23 16:49:55 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:73 
-2024-10-23 16:49:55 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:92 
-2024-10-23 16:50:00 DEBUG    --- Filepath selected: C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3 --- src.postOOP.classes.gui.desktop_window_app:194 
-2024-10-23 16:50:02 INFO     --- Post name from config: <<<MILL 3AXIS SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:52 
-2024-10-23 16:50:02 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:50 
-2024-10-23 16:50:02 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3" has been read --- src.postOOP.classes.others.file_operator_basic:62 
-2024-10-23 16:50:02 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../temp.ncl.1' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:50:02 DEBUG    --- list_of_nc_sequences_names ['1_ARRAY_OF_2', 'HOLEMAKING', '1_NOT_ARRAY', '2_ARRAY_OF_3', 'HOLEMAKING', 'HOLEMAKING', '2_NOT_ARRAY'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:133 
-2024-10-23 16:50:02 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:50:02 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:50:02 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:50:02 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:50:02 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:50:02 DEBUG    --- end   index: 95 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:50:02 DEBUG    --- start index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:50:02 DEBUG    --- end   index: 125 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:50:02 DEBUG    --- start index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:50:02 DEBUG    --- end   index: 155 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:50:02 DEBUG    --- start index: 157 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:50:02 DEBUG    --- end   index: 185 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:50:02 DEBUG    --- start index: 187 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:50:02 DEBUG    --- end   index: 213 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:50:02 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4, 5, 6, 7] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:164 
-2024-10-23 16:50:02 DEBUG    --- 	1_ARRAY_OF_2 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:50:02 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:50:02 DEBUG    --- 		num is 1 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:50:02 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:50:02 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:50:02 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:50:02 DEBUG    --- 		num is 1 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:50:02 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:50:02 DEBUG    --- 	1_NOT_ARRAY --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:50:02 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:50:02 DEBUG    --- 		num is 2 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:50:02 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:50:02 DEBUG    --- 	2_ARRAY_OF_3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:50:02 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:50:02 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:50:02 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:50:02 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:50:02 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:50:02 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:50:02 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:50:02 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:50:02 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:50:02 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:50:02 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:50:02 DEBUG    --- 	2_NOT_ARRAY --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:50:02 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:50:02 DEBUG    --- 		num is 4 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:50:02 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:50:02 DEBUG    --- self.nc_sequences_count = 4 --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:126 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:50:02 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:50:02 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7101' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:50:02 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7102' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:50:02 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7103' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:50:02 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7104' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:50:02 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7101' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:50:02 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7102' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:50:02 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7103' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:50:02 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7104' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:50:02 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7100' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:50:02 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7100' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:50:15 INFO     --- writing values from boxes 2 tab to config --- src.postOOP.classes.gui.desktop_window_app:113 
-2024-10-23 16:50:17 INFO     --- Post name from config: <<<MILL 3AXIS SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:52 
-2024-10-23 16:50:17 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:50 
-2024-10-23 16:50:17 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3" has been read --- src.postOOP.classes.others.file_operator_basic:62 
-2024-10-23 16:50:17 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../temp.ncl.1' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:50:17 DEBUG    --- list_of_nc_sequences_names ['1_ARRAY_OF_2', 'HOLEMAKING', '1_NOT_ARRAY', '2_ARRAY_OF_3', 'HOLEMAKING', 'HOLEMAKING', '2_NOT_ARRAY'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:133 
-2024-10-23 16:50:17 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:50:17 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:50:17 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:50:17 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:50:17 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:50:17 DEBUG    --- end   index: 95 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:50:17 DEBUG    --- start index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:50:17 DEBUG    --- end   index: 125 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:50:17 DEBUG    --- start index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:50:17 DEBUG    --- end   index: 155 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:50:17 DEBUG    --- start index: 157 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:50:17 DEBUG    --- end   index: 185 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:50:17 DEBUG    --- start index: 187 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:50:17 DEBUG    --- end   index: 213 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:50:17 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4, 5, 6, 7] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:164 
-2024-10-23 16:50:17 DEBUG    --- 	1_ARRAY_OF_2 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:50:17 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:50:17 DEBUG    --- 		num is 1 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:50:17 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:50:17 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:50:17 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:50:17 DEBUG    --- 		num is 1 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:50:17 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:50:17 DEBUG    --- 	1_NOT_ARRAY --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:50:17 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:50:17 DEBUG    --- 		num is 2 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:50:17 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:50:17 DEBUG    --- 	2_ARRAY_OF_3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:50:17 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:50:17 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:50:17 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:50:17 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:50:17 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:50:17 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:50:17 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:50:17 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:50:17 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:50:17 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:50:17 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:50:17 DEBUG    --- 	2_NOT_ARRAY --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:50:17 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:50:17 DEBUG    --- 		num is 4 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:50:17 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:50:17 DEBUG    --- self.nc_sequences_count = 4 --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:126 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:50:17 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:50:17 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7101' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:50:17 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7102' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:50:17 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7103' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:50:17 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7104' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:50:17 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7101' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:50:17 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7102' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:50:17 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7103' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:50:17 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7104' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:50:17 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7100' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:50:17 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7100' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:51:50 INFO     --- Post name from config: <<<MILL 3AXIS SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:52 
-2024-10-23 16:51:50 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:50 
-2024-10-23 16:51:50 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3" has been read --- src.postOOP.classes.others.file_operator_basic:62 
-2024-10-23 16:51:50 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../temp.ncl.1' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:51:50 DEBUG    --- list_of_nc_sequences_names ['1_ARRAY_OF_2', 'HOLEMAKING', '1_NOT_ARRAY', '2_ARRAY_OF_3', 'HOLEMAKING', 'HOLEMAKING', '2_NOT_ARRAY'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:133 
-2024-10-23 16:51:50 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:51:50 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:51:50 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:51:50 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:51:50 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:51:50 DEBUG    --- end   index: 95 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:51:50 DEBUG    --- start index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:51:50 DEBUG    --- end   index: 125 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:51:50 DEBUG    --- start index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:51:50 DEBUG    --- end   index: 155 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:51:50 DEBUG    --- start index: 157 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:51:50 DEBUG    --- end   index: 185 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:51:50 DEBUG    --- start index: 187 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
-2024-10-23 16:51:50 DEBUG    --- end   index: 213 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
-2024-10-23 16:51:50 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4, 5, 6, 7] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:164 
-2024-10-23 16:51:50 DEBUG    --- 	1_ARRAY_OF_2 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:51:50 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:51:50 DEBUG    --- 		num is 1 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:51:50 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:51:50 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:51:50 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:51:50 DEBUG    --- 		num is 1 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:51:50 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:51:50 DEBUG    --- 	1_NOT_ARRAY --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:51:50 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:51:50 DEBUG    --- 		num is 2 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:51:50 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:51:50 DEBUG    --- 	2_ARRAY_OF_3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:51:50 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:51:50 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:51:50 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:51:50 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:51:50 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:51:50 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:51:50 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:51:50 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:51:50 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:51:50 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:51:50 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:51:50 DEBUG    --- 	2_NOT_ARRAY --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
-2024-10-23 16:51:50 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
-2024-10-23 16:51:50 DEBUG    --- 		num is 4 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
-2024-10-23 16:51:50 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
-2024-10-23 16:51:50 DEBUG    --- self.nc_sequences_count = 4 --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:126 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:51:50 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
-2024-10-23 16:51:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7101' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:51:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7102' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:51:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7103' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:51:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7104' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:51:50 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7101' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:51:50 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7102' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:51:50 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7103' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:51:50 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7104' --- src.postOOP.classes.others.file_operator_basic:40 
-2024-10-23 16:51:50 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7100' --- src.postOOP.classes.others.file_operator_basic:96 
-2024-10-23 16:51:50 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7100' --- src.postOOP.classes.others.file_operator_basic:40 
+2024-10-23 17:47:05 DEBUG    --- Logger src started. --- src:37 
+2024-10-23 17:47:05 DEBUG    --- Started execution from __main__ --- src:25 
+2024-10-23 17:47:05 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:23 
+2024-10-23 17:47:05 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:66 
+2024-10-23 17:47:05 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:73 
+2024-10-23 17:47:05 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:92 
+2024-10-23 17:47:08 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
+2024-10-23 17:47:12 DEBUG    --- Filepath selected: C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3 --- src.postOOP.classes.gui.desktop_window_app:194 
+2024-10-23 17:47:13 INFO     --- Post name from config: <<<MILL 3AXIS FANUC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:52 
+2024-10-23 17:47:13 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3" has been read --- src.postOOP.classes.others.file_operator_basic:62 
+2024-10-23 17:47:13 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../temp.ncl.1' --- src.postOOP.classes.others.file_operator_basic:40 
+2024-10-23 17:47:13 DEBUG    --- list_of_nc_sequences_names ['1_ARRAY_OF_2', 'HOLEMAKING', '1_NOT_ARRAY', '2_ARRAY_OF_3', 'HOLEMAKING', 'HOLEMAKING', '2_NOT_ARRAY'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:133 
+2024-10-23 17:47:13 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
+2024-10-23 17:47:13 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
+2024-10-23 17:47:13 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
+2024-10-23 17:47:13 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
+2024-10-23 17:47:13 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
+2024-10-23 17:47:13 DEBUG    --- end   index: 95 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
+2024-10-23 17:47:13 DEBUG    --- start index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
+2024-10-23 17:47:13 DEBUG    --- end   index: 125 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
+2024-10-23 17:47:13 DEBUG    --- start index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
+2024-10-23 17:47:13 DEBUG    --- end   index: 155 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
+2024-10-23 17:47:13 DEBUG    --- start index: 157 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
+2024-10-23 17:47:13 DEBUG    --- end   index: 185 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
+2024-10-23 17:47:13 DEBUG    --- start index: 187 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
+2024-10-23 17:47:13 DEBUG    --- end   index: 213 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
+2024-10-23 17:47:13 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4, 5, 6, 7] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:164 
+2024-10-23 17:47:13 DEBUG    --- 	1_ARRAY_OF_2 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
+2024-10-23 17:47:13 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
+2024-10-23 17:47:13 DEBUG    --- 		num is 1 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
+2024-10-23 17:47:13 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
+2024-10-23 17:47:13 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
+2024-10-23 17:47:13 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
+2024-10-23 17:47:13 DEBUG    --- 		num is 1 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
+2024-10-23 17:47:13 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
+2024-10-23 17:47:13 DEBUG    --- 	1_NOT_ARRAY --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
+2024-10-23 17:47:13 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
+2024-10-23 17:47:13 DEBUG    --- 		num is 2 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
+2024-10-23 17:47:13 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
+2024-10-23 17:47:13 DEBUG    --- 	2_ARRAY_OF_3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
+2024-10-23 17:47:13 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
+2024-10-23 17:47:13 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
+2024-10-23 17:47:13 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
+2024-10-23 17:47:13 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
+2024-10-23 17:47:13 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
+2024-10-23 17:47:13 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
+2024-10-23 17:47:13 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
+2024-10-23 17:47:13 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
+2024-10-23 17:47:13 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
+2024-10-23 17:47:13 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
+2024-10-23 17:47:13 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
+2024-10-23 17:47:13 DEBUG    --- 	2_NOT_ARRAY --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
+2024-10-23 17:47:13 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
+2024-10-23 17:47:13 DEBUG    --- 		num is 4 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
+2024-10-23 17:47:13 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
+2024-10-23 17:47:13 DEBUG    --- self.nc_sequences_count = 4 --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:126 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
+2024-10-23 17:47:13 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
+2024-10-23 17:47:13 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7101' --- src.postOOP.classes.others.file_operator_basic:96 
+2024-10-23 17:47:13 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7102' --- src.postOOP.classes.others.file_operator_basic:96 
+2024-10-23 17:47:13 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7103' --- src.postOOP.classes.others.file_operator_basic:96 
+2024-10-23 17:47:13 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7104' --- src.postOOP.classes.others.file_operator_basic:96 
+2024-10-23 17:47:13 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7101' --- src.postOOP.classes.others.file_operator_basic:40 
+2024-10-23 17:47:13 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7102' --- src.postOOP.classes.others.file_operator_basic:40 
+2024-10-23 17:47:13 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7103' --- src.postOOP.classes.others.file_operator_basic:40 
+2024-10-23 17:47:13 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7104' --- src.postOOP.classes.others.file_operator_basic:40 
+2024-10-23 17:47:13 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7100' --- src.postOOP.classes.others.file_operator_basic:96 
+2024-10-23 17:47:13 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7100' --- src.postOOP.classes.others.file_operator_basic:40 
+2024-10-23 17:47:26 INFO     --- writing values from boxes 2 tab to config --- src.postOOP.classes.gui.desktop_window_app:113 
+2024-10-23 17:47:28 INFO     --- Post name from config: <<<MILL 3AXIS FANUC TF POST>>> --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:52 
+2024-10-23 17:47:28 INFO     --- no temp file was found --- src.postOOP.classes.others.file_operator_basic:50 
+2024-10-23 17:47:28 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3" has been read --- src.postOOP.classes.others.file_operator_basic:62 
+2024-10-23 17:47:28 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../temp.ncl.1' --- src.postOOP.classes.others.file_operator_basic:40 
+2024-10-23 17:47:28 DEBUG    --- list_of_nc_sequences_names ['1_ARRAY_OF_2', 'HOLEMAKING', '1_NOT_ARRAY', '2_ARRAY_OF_3', 'HOLEMAKING', 'HOLEMAKING', '2_NOT_ARRAY'] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:133 
+2024-10-23 17:47:28 DEBUG    --- start index: 11 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
+2024-10-23 17:47:28 DEBUG    --- end   index: 38 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
+2024-10-23 17:47:28 DEBUG    --- start index: 40 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
+2024-10-23 17:47:28 DEBUG    --- end   index: 67 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
+2024-10-23 17:47:28 DEBUG    --- start index: 69 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
+2024-10-23 17:47:28 DEBUG    --- end   index: 95 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
+2024-10-23 17:47:28 DEBUG    --- start index: 97 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
+2024-10-23 17:47:28 DEBUG    --- end   index: 125 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
+2024-10-23 17:47:28 DEBUG    --- start index: 127 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
+2024-10-23 17:47:28 DEBUG    --- end   index: 155 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
+2024-10-23 17:47:28 DEBUG    --- start index: 157 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
+2024-10-23 17:47:28 DEBUG    --- end   index: 185 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
+2024-10-23 17:47:28 DEBUG    --- start index: 187 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:163 
+2024-10-23 17:47:28 DEBUG    --- end   index: 213 --- src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis:172 
+2024-10-23 17:47:28 DEBUG    --- self.list_of_nc_sequences_objects [1, 2, 3, 4, 5, 6, 7] --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:164 
+2024-10-23 17:47:28 DEBUG    --- 	1_ARRAY_OF_2 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
+2024-10-23 17:47:28 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
+2024-10-23 17:47:28 DEBUG    --- 		num is 1 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
+2024-10-23 17:47:28 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
+2024-10-23 17:47:28 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
+2024-10-23 17:47:28 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
+2024-10-23 17:47:28 DEBUG    --- 		num is 1 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
+2024-10-23 17:47:28 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
+2024-10-23 17:47:28 DEBUG    --- 	1_NOT_ARRAY --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
+2024-10-23 17:47:28 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
+2024-10-23 17:47:28 DEBUG    --- 		num is 2 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
+2024-10-23 17:47:28 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
+2024-10-23 17:47:28 DEBUG    --- 	2_ARRAY_OF_3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
+2024-10-23 17:47:28 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
+2024-10-23 17:47:28 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
+2024-10-23 17:47:28 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
+2024-10-23 17:47:28 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
+2024-10-23 17:47:28 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
+2024-10-23 17:47:28 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
+2024-10-23 17:47:28 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
+2024-10-23 17:47:28 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
+2024-10-23 17:47:28 DEBUG    --- 		is copy True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
+2024-10-23 17:47:28 DEBUG    --- 		num is 3 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
+2024-10-23 17:47:28 DEBUG    --- 		is file needed False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
+2024-10-23 17:47:28 DEBUG    --- 	2_NOT_ARRAY --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:170 
+2024-10-23 17:47:28 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:172 
+2024-10-23 17:47:28 DEBUG    --- 		num is 4 --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:174 
+2024-10-23 17:47:28 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:176 
+2024-10-23 17:47:28 DEBUG    --- self.nc_sequences_count = 4 --- src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis:126 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 2nd copy to the end --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:193 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
+2024-10-23 17:47:28 DEBUG    --- Clearing from 1st copy to the last one --- src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays:206 
+2024-10-23 17:47:28 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7101' --- src.postOOP.classes.others.file_operator_basic:96 
+2024-10-23 17:47:28 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7102' --- src.postOOP.classes.others.file_operator_basic:96 
+2024-10-23 17:47:28 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7103' --- src.postOOP.classes.others.file_operator_basic:96 
+2024-10-23 17:47:28 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7104' --- src.postOOP.classes.others.file_operator_basic:96 
+2024-10-23 17:47:28 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7101' --- src.postOOP.classes.others.file_operator_basic:40 
+2024-10-23 17:47:28 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7102' --- src.postOOP.classes.others.file_operator_basic:40 
+2024-10-23 17:47:28 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7103' --- src.postOOP.classes.others.file_operator_basic:40 
+2024-10-23 17:47:28 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7104' --- src.postOOP.classes.others.file_operator_basic:40 
+2024-10-23 17:47:28 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7100' --- src.postOOP.classes.others.file_operator_basic:96 
+2024-10-23 17:47:28 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__1_combo_arrays.ncl.3/../O7100' --- src.postOOP.classes.others.file_operator_basic:40 

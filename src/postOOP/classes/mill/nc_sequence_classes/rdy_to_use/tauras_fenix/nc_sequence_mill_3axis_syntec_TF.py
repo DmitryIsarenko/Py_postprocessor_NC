@@ -33,8 +33,8 @@ class NcSequenceMill3AxisSyntecTF(NcSequenceMill3Axis,
     def generate_nc_seq_head_lines(self):
         return MixinSeqFillerSyntecTF(self).generate_nc_seq_head_lines()
 
-    # def generate_nc_seq_body_lines(self):
-    #     return MixinSeqFillerSyntecTF(self).generate_nc_seq_body_lines()
+    def generate_nc_seq_body_lines(self):
+        return MixinSeqFillerSyntecTF(self).generate_nc_seq_body_lines()
 
     def generate_nc_seq_tail_lines(self):
         return MixinSeqFillerSyntecTF(self).generate_nc_seq_tail_lines()
