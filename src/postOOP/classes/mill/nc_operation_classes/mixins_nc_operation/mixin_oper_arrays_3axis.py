@@ -191,7 +191,7 @@ class MixinOperArrays3Axis(MixinRoot):
     def clear_for_usual_arrays_except_end(self, seq):
         # deleting g-codes from 1st copy to the last one. Leaving last copy g-codes
         extra_gcodes_del_all_exept_end = ["M05", "M5", "M09", "M9"]
-        if seq.is_file_needed and seq.is_array:
+        if seq.is_file_needed and seq.is_array and seq.is_param_array is False:
             for gcode in extra_gcodes_del_all_exept_end:
                 copy_counter = 1
                 for ind_line, line in enumerate(seq.nc_seq_body_lines):

@@ -54,7 +54,10 @@ class CoordsParser:
             angle_rot += math.pi * 1.5
 
         angle_rot = angle_rot * 180 / math.pi
-        return round(angle_rot, ndigits=config.NDIGITS_CALC_ABC)
+        not360_angle_rot = 360 - round(angle_rot, ndigits=config.NDIGITS_CALC_ABC)
+        if not360_angle_rot == 360:
+            not360_angle_rot = 0
+        return not360_angle_rot
 
     # def count_C_angle_by_orts(i: float, j: float) -> float:
     #     if j == 1:

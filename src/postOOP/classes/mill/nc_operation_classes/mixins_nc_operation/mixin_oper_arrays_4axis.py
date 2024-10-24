@@ -30,7 +30,7 @@ class MixinOperArrays4Axis(MixinOperArrays3Axis, MixinRoot):
 
     def gather_param_array(self, sequence_obj, sequence_index):
 
-        sequence_obj.start_angle_of_param_array = self.get_first_angle_coord_for_param_array(sequence_obj=sequence_obj)
+        rot_adr, sequence_obj.start_angle_of_param_array = self.get_first_rot_adr_and_angle_coord_for_param_array(sequence_obj=sequence_obj)
 
         logger.debug(f"\t\t\t\t{sequence_obj.start_angle_of_param_array}")
 
@@ -46,13 +46,13 @@ class MixinOperArrays4Axis(MixinOperArrays3Axis, MixinRoot):
         param_while_lines = [
             "WHILE[#3 GT 0]DO1",
             "M11",
-            "G0G90A#1",
+            f"G0G90{rot_adr}#1",
             "M10",
         ]
 
         param_end_lines = [
-            "# 1=#1+#2",
-            "# 3=#3-1",
+            "#1=#1+#2",
+            "#3=#3-1",
             "IF[#1 GT 360]GOTO1",
             "GOTO2",
             "N1",
@@ -61,8 +61,8 @@ class MixinOperArrays4Axis(MixinOperArrays3Axis, MixinRoot):
             "END1",
         ]
 
-        index_for_insert_param_pre_lines = 1
-        index_for_insert_param_while_lines = 2 + len(param_pre_lines)
+        index_for_insert_param_pre_lines = 0
+        index_for_insert_param_while_lines = 3 + len(param_pre_lines)
         index_for_insert_param_end_lines = -2
 
         for line in param_pre_lines:
@@ -77,16 +77,16 @@ class MixinOperArrays4Axis(MixinOperArrays3Axis, MixinRoot):
             sequence_obj.nc_seq_body_lines.insert(index_for_insert_param_end_lines, line)
             # index_for_insert_param_end_lines += 1
 
-    def get_first_angle_coord_for_param_array(self, sequence_obj):
+    def get_first_rot_adr_and_angle_coord_for_param_array(self, sequence_obj) -> tuple[str, str]:
         rotating_axis_adresses = ["A", "B", ]
         for rot_adr in rotating_axis_adresses:
             line_ind_with_rot_adr = self.get_line_with_axis_adr(list_nc_lines=sequence_obj.nc_seq_body_lines,
                                                                 adr=rot_adr)
             if line_ind_with_rot_adr:
-                adr_with_angle: str = self.get_angle_after_axis_adr(line=line_ind_with_rot_adr, adr=rot_adr)
-                return adr_with_angle
+                angle_str: str = self.get_angle_after_axis_adr(line=line_ind_with_rot_adr, adr=rot_adr)
+                return rot_adr, angle_str
             else:
-                return "0"
+                return "A", "0"
 
     @staticmethod
     def get_line_with_axis_adr(list_nc_lines: list[str], adr: str) -> str | None:
@@ -109,8 +109,10 @@ class MixinOperArrays4Axis(MixinOperArrays3Axis, MixinRoot):
             self.o.list_of_nc_sequences_objects[seq_ind],
             self.o.list_of_nc_sequences_objects[seq_ind + 1],
         ]
-        first_angle = self.get_first_angle_coord_for_param_array(sequence_obj=two_seq[0])
-        second_angle = self.get_first_angle_coord_for_param_array(sequence_obj=two_seq[1])
+        first_angle = self.get_first_rot_adr_and_angle_coord_for_param_array(sequence_obj=two_seq[0])[1]
+        second_angle = self.get_first_rot_adr_and_angle_coord_for_param_array(sequence_obj=two_seq[1])[1]
 
-        delta_angle = str(round(float(second_angle) - float(first_angle), ndigits=config.NDIGITS_ABC))
-        return delta_angle
+        delta_angle = float(second_angle) - float(first_angle)
+        if delta_angle > 180:
+            delta_angle = delta_angle - 360
+        return str(round(delta_angle, ndigits=config.NDIGITS_ABC))

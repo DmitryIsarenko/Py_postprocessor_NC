@@ -29,7 +29,10 @@ class CoordsParserTF(CoordsParser):
             angle_rot += math.pi * 1.5
 
         angle_rot = angle_rot * 180 / math.pi
-        return 360 - round(angle_rot, ndigits=config.NDIGITS_CALC_ABC)
+        tf_angle_rot = 360 - round(angle_rot, ndigits=config.NDIGITS_CALC_ABC)
+        if tf_angle_rot == 360:
+            tf_angle_rot = 0
+        return tf_angle_rot
 
     # @staticmethod
     # def count_B_angle_by_orts(i: float, k: float) -> float:
