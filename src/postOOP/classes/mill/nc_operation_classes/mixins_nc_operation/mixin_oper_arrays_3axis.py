@@ -24,6 +24,8 @@ class MixinOperArrays3Axis(MixinRoot):
             self.o.set_operation_num_from_name()
             self.o.set_nc_filename()
 
+            self.check_multax()
+
             self.o.set_nc_sequences_names_in_list()
             self.o.set_nc_sequences_objects_in_list()
             self.o.set_sum_machining_time()
@@ -182,3 +184,6 @@ class MixinOperArrays3Axis(MixinRoot):
             # for i, line in enumerate(seq.nc_seq_body_lines):
             while "" in seq.nc_seq_body_lines:
                 seq.nc_seq_body_lines.remove("")
+
+    def check_multax(self):
+        pass
