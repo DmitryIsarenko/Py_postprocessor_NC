@@ -1,5 +1,3 @@
-from pprint import pprint
-
 from src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_root import MixinRoot
 from src.postOOP import config
 import logging
@@ -7,7 +5,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class MixinOperArrays(MixinRoot):
+class MixinOperArrays4Axis(MixinRoot):
     def __init__(self,
                  nc_oper_obj_for_arrays,
                  **kwargs, ):
@@ -25,6 +23,18 @@ class MixinOperArrays(MixinRoot):
             self.o.set_operation_name()
             self.o.set_operation_num_from_name()
             self.o.set_nc_filename()
+
+            self.o.is_multax_operation = self.o.pprint_parser_class.get_is_oper_multax_in_cl_list(
+                cl_list=self.o.cl_list)
+            if self.o.is_multax_operation:
+                self.o.multax_line_index = self.o.pprint_parser_class.get_index_of_occurence_in_cl_list_in_range(
+                    cl_list=self.o.cl_list,
+                    search_for="MULTAX / ON",
+                    end_index=self.o.cl_lines_count)
+            else:
+                self.o.multax_line_index = None
+
+            logger.info(f"Operation is Multax = {self.o.is_multax_operation}")
 
             self.o.set_nc_sequences_names_in_list()
             self.o.set_nc_sequences_objects_in_list()
@@ -62,7 +72,6 @@ class MixinOperArrays(MixinRoot):
             for seq in self.o.list_of_nc_sequences_objects:
                 seq.generate_nc_seq_head_body_tail_lists()
 
-
             for seq_ind, seq in enumerate(self.o.list_of_nc_sequences_objects):
                 if seq.is_array and seq.is_copy is False:
                     combined_body_nc_lines = []
@@ -72,34 +81,30 @@ class MixinOperArrays(MixinRoot):
                     for seq_arr_copy in self.o.list_of_nc_sequences_objects[i_start:i_end]:
                         combined_body_nc_lines.extend(seq_arr_copy.nc_seq_body_lines)
 
-
                     seq.nc_seq_body_lines = combined_body_nc_lines
 
-
             self.clear_copy_extra_gcodes()
-
 
             for seq in self.o.list_of_nc_sequences_objects:
                 seq.combine_nc_seq_head_body_tail_lines_in_one_list()
 
             for seq in self.o.list_of_nc_sequences_objects:
-                # logger.debug(f"HEAD")
-                # logger.debug(f"{seq.nc_seq_head_lines}")
-                # logger.debug(f"BODY")
-                # logger.debug(f"{seq.nc_seq_body_lines}")
-                # logger.debug(f"TAIL")
-                # logger.debug(f"{seq.nc_seq_tail_lines}")
-                pass
-
+                seq.create_seq_file()
 
             for seq in self.o.list_of_nc_sequences_objects:
-                seq.create_seq_file()
+                logger.debug(f"HEAD")
+                logger.debug(f"{seq.nc_seq_head_lines}")
+                logger.debug(f"BODY")
+                logger.debug(f"{seq.nc_seq_body_lines}")
+                logger.debug(f"TAIL")
+                logger.debug(f"{seq.nc_seq_tail_lines}")
+                pass
 
             for seq in self.o.list_of_nc_sequences_objects:
                 seq.fill_seq_file()
 
-            self.o.generate_nc_oper_head_body_tail_lists()
             self.o.nc_list = self.o.combine_nc_oper_head_body_tail_lines_in_one_list()
+            self.o.generate_nc_oper_head_body_tail_lists()
 
             self.o.create_oper_file()
             self.o.fill_oper_file()
@@ -112,30 +117,14 @@ class MixinOperArrays(MixinRoot):
         else:
             pass
 
-
     def create_oper_file(self):
         self.o.file_operator_class.create_file(
             filepath=f"{config.abs_path_to_selected_file}/../{self.o.nc_filename_with_extension}")
-
 
     def fill_oper_file(self):
         self.o.file_operator_class.append_lines_to_file(
             filepath=f"{config.abs_path_to_selected_file}/../{self.o.nc_filename_with_extension}",
             list_with_lines=self.o.nc_list)
-
-        #     self.o.file_operator_class.create_seq_file(
-        #         filepath=f"{config.abs_path_to_selected_file}/../{self.o.nc_filename_with_extension}")
-        #     self.o.file_operator_class.append_lines_to_file(
-        #         filepath=f"{config.abs_path_to_selected_file}/../{self.o.nc_filename_with_extension}",
-        #         list_with_lines=self.o.nc_list)
-        # else:
-        #     logger.warning(f"Empty self.o.cl_list for {config.abs_path_to_selected_file}")
-        #
-        # if config.DELETE_TEMP_FILE:
-        #     self.o.file_operator_class.remove_file(filepath=temp_filepath)
-        # else:
-        #     pass
-
 
     def set_file_is_copy_for_copies(self, seq_ind: int, copies_amount: int):
         list_of_seq_obj = [obj for obj in self.o.list_of_nc_sequences_objects[seq_ind + 1: seq_ind + copies_amount]]
@@ -143,12 +132,8 @@ class MixinOperArrays(MixinRoot):
         for ind, seq in enumerate(list_of_seq_obj):
             seq.is_copy = True
 
-
     def set_new_seq_num_for_copies(self, seq_ind: int, copies_amount: int):
-        # list_of_seq_obj = [obj for obj in self.o.list_of_nc_sequences_objects[seq_ind + 1: seq_ind + copies_amount]]
-
         list_of_seq_obj = self.o.list_of_nc_sequences_objects
-
         new_seq_num = list_of_seq_obj[seq_ind].nc_sequence_number
         for ind, seq in enumerate(list_of_seq_obj):
             if seq_ind <= ind < (seq_ind + copies_amount):
@@ -159,12 +144,10 @@ class MixinOperArrays(MixinRoot):
                 seq.nc_sequence_number = new_seq_num
                 seq.set_nc_filename()
 
-
     def set_file_is_not_needed_for_copies(self, seq_ind: int, copies_amount: int):
         list_of_seq_obj = [obj for obj in self.o.list_of_nc_sequences_objects[seq_ind + 1: seq_ind + copies_amount]]
         for ind, seq in enumerate(list_of_seq_obj):
             seq.is_file_needed = False
-
 
     def show_if_seq_info(self, seq_ind: int):
         logger.debug(
@@ -210,31 +193,3 @@ class MixinOperArrays(MixinRoot):
             # for i, line in enumerate(seq.nc_seq_body_lines):
             while "" in seq.nc_seq_body_lines:
                 seq.nc_seq_body_lines.remove("")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -3,7 +3,7 @@ import logging
 from src.postOOP import config
 
 from src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_3axis import NcSequenceMill3Axis
-from src.postOOP.classes.mill.parsers.pprint_parsers.pprint_parser_basic import PprintParserBasic
+from src.postOOP.classes.mill.parsers.pprint_parsers.basic.pprint_parser_basic import PprintParserBasic
 from src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_basic import NclParserBasic
 from src.postOOP.classes.others.file_operator_basic import FileOperatorBasic
 from src.postOOP.classes.others.formatter import Formatter

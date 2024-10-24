@@ -5,19 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/pprint_parsers/basic/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/pprint_parsers/mixins_pprint_parser/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/pprint_parsers/mixins_pprint_parser/mixin_pprint_multax.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/pprint_parsers/rdy_to_use/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/pprint_parsers/rdy_to_use/pprint_parser_mill_3axis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/basic/nc_operation_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/basic/nc_operation_mill_3axis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/basic/nc_operation_mill_4axis_A.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/basic/nc_operation_mill_4axis_A.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/basic/nc_operation_mill_4axis_B.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/basic/nc_operation_mill_4axis_B.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_4axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_4axis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_arrays.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_arrays.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/basic/nc_sequence_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/basic/nc_sequence_mill_3axis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_arrays.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_arrays.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_filler_fanuc_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_filler_fanuc_TF.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_filler_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/mixins_nc_sequence/mixin_seq_filler_syntec_TF.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/rdy_to_use/tauras_fenix/nc_sequence_mill_3axis_fanuc_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/rdy_to_use/tauras_fenix/nc_sequence_mill_3axis_fanuc_TF.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/rdy_to_use/tauras_fenix/nc_sequence_mill_3axis_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/rdy_to_use/tauras_fenix/nc_sequence_mill_3axis_syntec_TF.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/basic/nc_sequence_mill_4axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/basic/nc_sequence_mill_4axis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/rdy_to_use/tauras_fenix/nc_sequence_mill_4axis_fanuc_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/rdy_to_use/tauras_fenix/nc_sequence_mill_4axis_fanuc_TF.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/rdy_to_use/tauras_fenix/nc_sequence_mill_4axis_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_sequence_classes/rdy_to_use/tauras_fenix/nc_sequence_mill_4axis_syntec_TF.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/pprint_parsers/pprint_parser_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/pprint_parsers/basic/pprint_parser_basic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/pprint_parsers/pprint_parser_mill_4axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/pprint_parsers/rdy_to_use/pprint_parser_mill_4axis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_3axis_fanuc_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_3axis_fanuc_TF.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_3axis_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_3axis_syntec_TF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_4axis_A_fanuc_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_4axis_A_fanuc_TF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_4axis_A_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_4axis_A_syntec_TF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_4axis_B_fanuc_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_4axis_B_fanuc_TF.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_4axis_B_syntec_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/posts/mill_posts/tauras_fenix/post_mill_4axis_B_syntec_TF.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/post_lister.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/post_lister.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,11 +91,11 @@
       <recent name="C:\WORK_DIRECTORY\10 Programming\Projects\py post v2 OOP\src\postOOP\parsers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\py_post\py_post_v2_OOP\src\postOOP\classes\mill\parsers\pprint_parsers\basic" />
+      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\py_post\py_post_v2_OOP\src\postOOP\classes\mill\parsers\pprint_parsers\rdy_to_use" />
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\py_post\py_post_v2_OOP\src\postOOP\classes\nc_operation_classes\common" />
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\py_post\py_post_v2_OOP\src\postOOP\classes\nc_operation_classes\tauras_fenix" />
       <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\py_post\py_post_v2_OOP\src\postOOP\classes\nc_operation_classes\basic" />
-      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\py_post\py_post_v2_OOP\src\postOOP\classes\nc_sequence_classes\common" />
-      <recent name="C:\WORK_DIRECTORY\10_Programming\Projects\py_post\py_post_v2_OOP\src\postOOP\classes\nc_sequence_classes\tauras_fenix" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main_app">
@@ -359,6 +372,10 @@
         <watch expression="self" />
         <watch expression="seq.nc_sequence_name" />
         <watch expression="seq.nc_seq_body_lines" />
+        <watch expression="config.abs_path_to_selected_file" language="Python" />
+        <watch expression="self.nc_filename_with_extension" language="Python" />
+        <watch expression="self.nc_list" language="Python" />
+        <watch expression="seq.nc_list" />
       </configuration>
     </watches-manager>
   </component>

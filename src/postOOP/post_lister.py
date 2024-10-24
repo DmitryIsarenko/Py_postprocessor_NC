@@ -16,7 +16,7 @@ class PostLister:
     post_dict = dict()
 
     def __init__(self):
-        self.set_default_post(NcOperationMill3AxisSyntecTF)
+        self.set_default_post(NcOperationMill4AxisASyntecTF)
 
         # self.add_post_to_list("--- debug ---")
         # self.add_post_to_list(NcOperationBasic)

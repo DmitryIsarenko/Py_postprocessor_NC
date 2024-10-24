@@ -1,6 +1,7 @@
 from src.postOOP.classes.mill.nc_sequence_classes.basic.nc_sequence_mill_4axis import NcSequenceMill4Axis
 from src.postOOP.classes.mill.nc_sequence_classes.mixins_nc_sequence.mixin_m0_before_boring_bar import \
     MixinM0BeforeBoringBar
+from src.postOOP.classes.mill.nc_sequence_classes.mixins_nc_sequence.mixin_seq_arrays import MixinSeqArrays
 from src.postOOP.classes.mill.nc_sequence_classes.mixins_nc_sequence.mixin_seq_filler_fanuc_TF import \
     MixinSeqFillerFanucTF
 import logging
@@ -8,7 +9,11 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class NcSequenceMill4AxisFanucTF(NcSequenceMill4Axis, MixinM0BeforeBoringBar, MixinSeqFillerFanucTF):
+class NcSequenceMill4AxisFanucTF(NcSequenceMill4Axis,
+                                 MixinM0BeforeBoringBar,
+                                 MixinSeqFillerFanucTF,
+                                 MixinSeqArrays,
+                                 ):
     nc_sequence_class_name = "NcSequenceMill4AxisAFanucTF"
 
     # is_multax_active = False
@@ -18,6 +23,7 @@ class NcSequenceMill4AxisFanucTF(NcSequenceMill4Axis, MixinM0BeforeBoringBar, Mi
         super().__init__(
             nc_seq_obj_for_fanuc_filler=self,
             nc_seq_obj_for_m0_before_boring_bar=self,
+            nc_seq_obj_for_arrays=self,
             **kwargs,
         )
 
@@ -29,17 +35,17 @@ class NcSequenceMill4AxisFanucTF(NcSequenceMill4Axis, MixinM0BeforeBoringBar, Mi
         MixinM0BeforeBoringBar(self).set_is_m00_before_needed()
 
     # MixinSeqFillerFanucTF
-    def combine_nc_head_body_tail_lines_in_one_list(self):
-        return MixinSeqFillerFanucTF(self).generate_nc_list()
+    def combine_nc_seq_head_body_tail_lines_in_one_list(self):
+        return MixinSeqFillerFanucTF(self).combine_nc_seq_head_body_tail_lines_in_one_list()
 
-    def generate_nc_head_lines(self):
-        return MixinSeqFillerFanucTF(self).generate_nc_head_lines()
+    def generate_nc_seq_head_lines(self):
+        return MixinSeqFillerFanucTF(self).generate_nc_seq_head_lines()
 
-    def generate_nc_body_lines(self):
-        return MixinSeqFillerFanucTF(self).generate_nc_body_lines()
+    def generate_nc_seq_body_lines(self):
+        return MixinSeqFillerFanucTF(self).generate_nc_seq_body_lines()
 
-    def generate_nc_tail_lines(self):
-        return MixinSeqFillerFanucTF(self).generate_nc_tail_lines()
+    def generate_nc_seq_tail_lines(self):
+        return MixinSeqFillerFanucTF(self).generate_nc_seq_tail_lines()
 
     #
     # def __init__(

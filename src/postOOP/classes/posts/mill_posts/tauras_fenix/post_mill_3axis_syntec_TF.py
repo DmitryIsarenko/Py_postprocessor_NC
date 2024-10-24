@@ -1,18 +1,20 @@
 from src.postOOP.classes.mill.nc_operation_classes.basic.nc_operation_mill_3axis import NcOperationMill3Axis
-from src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays import MixinOperArrays
-from src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_filler_syntec_TF import MixinOperFillerSyntecTF
+from src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays_3axis import MixinOperArrays3Axis
+from src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_filler_syntec_TF import \
+    MixinOperFillerSyntecTF
 from src.postOOP.classes.mill.nc_sequence_classes.rdy_to_use.tauras_fenix.nc_sequence_mill_3axis_syntec_TF import \
     NcSequenceMill3AxisSyntecTF
-from src.postOOP.classes.mill.parsers.pprint_parsers.pprint_parser_basic import PprintParserBasic
+from src.postOOP.classes.mill.parsers.pprint_parsers.basic.pprint_parser_basic import PprintParserBasic
 from src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec_TF import NclParserMill3axisSyntecTF
+from src.postOOP.classes.mill.parsers.pprint_parsers.rdy_to_use.pprint_parser_mill_3axis import PprintParserMill3Axis
 
 
 class NcOperationMill3AxisSyntecTF(NcOperationMill3Axis,
                                    MixinOperFillerSyntecTF,
-                                   MixinOperArrays,
+                                   MixinOperArrays3Axis,
                                    ):
     nc_sequence_class: NcSequenceMill3AxisSyntecTF = NcSequenceMill3AxisSyntecTF
-    pprint_parser_class: PprintParserBasic = PprintParserBasic
+    pprint_parser_class: PprintParserBasic = PprintParserMill3Axis
     ncl_parser_class: NclParserMill3axisSyntecTF = NclParserMill3axisSyntecTF
 
     postprocessor_name = "MILL 3AXIS SYNTEC TF POST"
@@ -39,4 +41,4 @@ class NcOperationMill3AxisSyntecTF(NcOperationMill3Axis,
 
     # MixinOperArrays
     def start_postprocessing(self):
-        return MixinOperArrays(self).start_postprocessing()
+        return MixinOperArrays3Axis(self).start_postprocessing()
