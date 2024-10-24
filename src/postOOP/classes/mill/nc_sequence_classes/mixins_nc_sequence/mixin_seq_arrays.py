@@ -10,13 +10,24 @@ class MixinSeqArrays(MixinRoot):
                  nc_seq_obj_for_arrays,
                  **kwargs):
         self.s = nc_seq_obj_for_arrays
+
         self.s.is_copy = False
+        self.s.is_param_array = False
+        self.s.array_copies_amount = 1
+
         self.s.is_array = self.set_is_array()
         if self.s.is_array:
             self.s.is_param_array = self.set_is_parameter_array()
             self.s.array_copies_amount = self.set_array_copies_amount()
-
+        self.show_array_info()
         super().__init__(**kwargs)
+
+
+    def show_array_info(self):
+        logger.debug(f"\tArray info for: {self.s.nc_sequence_name}")
+        logger.debug(f"\t\tIs array: {self.s.is_array}")
+        logger.debug(f"\t\tIs param array: {self.s.is_param_array}")
+        logger.debug(f"\t\tArray copies: {self.s.array_copies_amount}")
 
     # def combine_nc_seq_head_body_tail_lines_in_one_list(self) -> list:
     #     nc_lines = list()

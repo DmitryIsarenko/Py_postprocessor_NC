@@ -36,8 +36,8 @@ class MixinOper4Axis:
             else:
                 nc_sequence_parent_name_of_massive = nc_sequence_name
                 nc_massive_copy_counter = 0
-            logger.debug(f"nc_sequence_name={nc_sequence_name}")
-            logger.debug(f"nc_sequence_parent_name_of_massive={nc_sequence_parent_name_of_massive}")
+            # logger.debug(f"nc_sequence_name={nc_sequence_name}")
+            # logger.debug(f"nc_sequence_parent_name_of_massive={nc_sequence_parent_name_of_massive}")
             lst_of_objects.append(
                 self.o.nc_sequence_class(ncl_parser_class=self.o.ncl_parser_class,
                                          pprint_parser_class=self.o.pprint_parser_class,

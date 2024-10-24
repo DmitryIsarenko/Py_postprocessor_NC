@@ -62,19 +62,33 @@ class MixinOperArrays3Axis(MixinRoot):
             for seq in self.o.list_of_nc_sequences_objects:
                 seq.generate_nc_seq_head_body_tail_lists()
 
+
+
+
+
+            # combining body nc lines from all copies into 1st copy body lines
             for seq_ind, seq in enumerate(self.o.list_of_nc_sequences_objects):
-                if seq.is_array and seq.is_copy is False:
-                    combined_body_nc_lines = []
-                    combined_body_nc_lines.extend(seq.nc_seq_body_lines)
-                    i_start = seq_ind + 1
-                    i_end = seq_ind + seq.array_copies_amount
-                    for seq_arr_copy in self.o.list_of_nc_sequences_objects[i_start:i_end]:
-                        combined_body_nc_lines.extend(seq_arr_copy.nc_seq_body_lines)
+                if seq.is_param_array is False:
+                    self.gather_usual_array(sequence_obj=seq, sequence_index=seq_ind)
+                    # if (seq.is_array and
+                    #         seq.is_copy is False):
+                    #     combined_body_nc_lines = []
+                    #     combined_body_nc_lines.extend(seq.nc_seq_body_lines)
+                    #     i_start = seq_ind + 1
+                    #     i_end = seq_ind + seq.array_copies_amount
+                    #     for seq_arr_copy in self.o.list_of_nc_sequences_objects[i_start:i_end]:
+                    #         combined_body_nc_lines.extend(seq_arr_copy.nc_seq_body_lines)
+                    #
+                    #     seq.nc_seq_body_lines = combined_body_nc_lines
+                elif seq.is_param_array:
+                    if seq.is_array and seq.is_copy is False:
+                        self.gather_param_array(sequence_obj=seq, sequence_index=seq_ind)
 
-                    seq.nc_seq_body_lines = combined_body_nc_lines
 
-            self.clear_copy_extra_gcodes()
+            # trimming all redundant codes in combined body nc list
+            self.clear_redundant_gcodes_for_array_copies()
 
+            # glue up head, body and tail for every seq
             for seq in self.o.list_of_nc_sequences_objects:
                 seq.combine_nc_seq_head_body_tail_lines_in_one_list()
 
@@ -82,12 +96,12 @@ class MixinOperArrays3Axis(MixinRoot):
                 seq.create_seq_file()
 
             for seq in self.o.list_of_nc_sequences_objects:
-                logger.debug(f"HEAD")
-                logger.debug(f"{seq.nc_seq_head_lines}")
-                logger.debug(f"BODY")
-                logger.debug(f"{seq.nc_seq_body_lines}")
-                logger.debug(f"TAIL")
-                logger.debug(f"{seq.nc_seq_tail_lines}")
+                # logger.debug(f"HEAD")
+                # logger.debug(f"{seq.nc_seq_head_lines}")
+                # logger.debug(f"BODY")
+                # logger.debug(f"{seq.nc_seq_body_lines}")
+                # logger.debug(f"TAIL")
+                # logger.debug(f"{seq.nc_seq_tail_lines}")
                 pass
 
             for seq in self.o.list_of_nc_sequences_objects:
@@ -150,40 +164,74 @@ class MixinOperArrays3Axis(MixinRoot):
         logger.debug(
             f"\t\tis file needed {self.o.list_of_nc_sequences_objects[seq_ind].is_file_needed}")
 
-    def clear_copy_extra_gcodes(self):
+    def clear_redundant_gcodes_for_array_copies(self):
         # deleting g-codes from 2nd copy to the end
         for seq in self.o.list_of_nc_sequences_objects:
-            extra_gcodes_del_all_exept_start = [f"G{seq.work_offset}", f"T{seq.tool_pot}",
-                                                f"{config.G_CODE_TOOL_POT_PARAMETER}=",
-                                                f"{config.G_CODE_TOOL_RPM_PARAMETER}=",
-                                                f"{config.G_CODE_TOOL_FEED_PARAMETER}=",
-                                                "M03", "M04", "M3", "M4", "M6", "M06", "M08", "M8"]
-            if seq.is_file_needed and seq.is_array:
-                for gcode in extra_gcodes_del_all_exept_start:
-                    copy_counter = 0
-                    for ind_line, line in enumerate(seq.nc_seq_body_lines):
-                        if gcode in line and copy_counter < seq.array_copies_amount:
-                            if copy_counter >= 1:
-                                logger.debug(f"Clearing from 2nd copy to the end")
-                                # seq.nc_seq_body_lines[ind_line] = "   wo m6 s"
-                                seq.nc_seq_body_lines[ind_line] = ""
-                            copy_counter += 1
+            if seq.is_param_array is False:
+                self.clear_for_usual_arrays_except_start(seq=seq)
+            else:
+                self.clear_for_param_arrays_except_start(seq=seq)
 
+        for seq in self.o.list_of_nc_sequences_objects:
+            if seq.is_param_array is False:
+                self.clear_for_usual_arrays_except_end(seq=seq)
+            else:
+                self.clear_for_param_arrays_except_end(seq=seq)
+
+    def clear_for_usual_arrays_except_start(self, seq):
+        extra_gcodes_del_all_exept_start = [f"G{seq.work_offset}", f"T{seq.tool_pot}",
+                                            f"{config.G_CODE_TOOL_POT_PARAMETER}=",
+                                            f"{config.G_CODE_TOOL_RPM_PARAMETER}=",
+                                            f"{config.G_CODE_TOOL_FEED_PARAMETER}=",
+                                            "M03", "M04", "M3", "M4", "M6", "M06", "M08", "M8"]
+        if seq.is_file_needed and seq.is_array:
+            for gcode in extra_gcodes_del_all_exept_start:
+                copy_counter = 0
+                for ind_line, line in enumerate(seq.nc_seq_body_lines):
+                    if gcode in line and copy_counter < seq.array_copies_amount:
+                        if copy_counter >= 1:
+                            logger.debug(f"Clearing from 2nd copy to the end")
+                            # seq.nc_seq_body_lines[ind_line] = "   wo m6 s"
+                            seq.nc_seq_body_lines[ind_line] = ""
+                        copy_counter += 1
+
+    def clear_for_usual_arrays_except_end(self, seq):
         # deleting g-codes from 1st copy to the last one. Leaving last copy g-codes
         extra_gcodes_del_all_exept_end = ["M05", "M5", "M09", "M9"]
-        for seq in self.o.list_of_nc_sequences_objects:
-            if seq.is_file_needed and seq.is_array:
-                for gcode in extra_gcodes_del_all_exept_end:
-                    copy_counter = 1
-                    for ind_line, line in enumerate(seq.nc_seq_body_lines):
-                        if gcode in line and copy_counter < seq.array_copies_amount:
-                            logger.debug(f"Clearing from 1st copy to the last one")
-                            copy_counter += 1
-                            # seq.nc_seq_body_lines[ind_line] = " m5 m9"
-                            seq.nc_seq_body_lines[ind_line] = ""
-            # for i, line in enumerate(seq.nc_seq_body_lines):
-            while "" in seq.nc_seq_body_lines:
-                seq.nc_seq_body_lines.remove("")
+        if seq.is_file_needed and seq.is_array:
+            for gcode in extra_gcodes_del_all_exept_end:
+                copy_counter = 1
+                for ind_line, line in enumerate(seq.nc_seq_body_lines):
+                    if gcode in line and copy_counter < seq.array_copies_amount:
+                        logger.debug(f"Clearing from 1st copy to the last one")
+                        copy_counter += 1
+                        # seq.nc_seq_body_lines[ind_line] = " m5 m9"
+                        seq.nc_seq_body_lines[ind_line] = ""
+        # for i, line in enumerate(seq.nc_seq_body_lines):
+        while "" in seq.nc_seq_body_lines:
+            seq.nc_seq_body_lines.remove("")
+
+    def clear_for_param_arrays_except_start(self, seq):
+        self.clear_for_usual_arrays_except_start(seq=seq)
+
+    def clear_for_param_arrays_except_end(self, seq):
+        self.clear_for_usual_arrays_except_end(seq=seq)
 
     def check_multax(self):
         pass
+
+    def gather_usual_array(self, sequence_obj, sequence_index):
+        if (sequence_obj.is_array and
+                sequence_obj.is_copy is False):
+            combined_body_nc_lines = []
+            combined_body_nc_lines.extend(sequence_obj.nc_seq_body_lines)
+            i_start = sequence_index + 1
+            i_end = sequence_index + sequence_obj.array_copies_amount
+            for seq_arr_copy in self.o.list_of_nc_sequences_objects[i_start:i_end]:
+                combined_body_nc_lines.extend(seq_arr_copy.nc_seq_body_lines)
+
+            sequence_obj.nc_seq_body_lines = combined_body_nc_lines
+        pass
+
+    def gather_param_array(self, sequence_obj, sequence_index):
+        self.gather_usual_array(sequence_obj=sequence_obj, sequence_index=sequence_index)

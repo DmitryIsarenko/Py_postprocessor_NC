@@ -1,7 +1,6 @@
 from src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_oper_arrays_3axis import \
     MixinOperArrays3Axis
 from src.postOOP.classes.mill.nc_operation_classes.mixins_nc_operation.mixin_root import MixinRoot
-from src.postOOP import config
 import logging
 
 logger = logging.getLogger(__name__)
@@ -26,3 +25,27 @@ class MixinOperArrays4Axis(MixinOperArrays3Axis, MixinRoot):
                 end_index=self.o.cl_lines_count)
         else:
             self.o.multax_line_index = None
+
+    def gather_param_array(self, sequence_obj, sequence_index):
+        """
+
+        implement here new method
+
+        """
+        pass
+
+    def clear_for_param_arrays_except_start(self, seq):
+        """
+
+        implement here new method
+
+        """
+        pass
+
+    def clear_for_param_arrays_except_end(self, seq):
+        """
+
+        implement here new method
+
+        """
+        pass
