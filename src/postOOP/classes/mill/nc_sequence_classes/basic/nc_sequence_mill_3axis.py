@@ -160,8 +160,8 @@ class NcSequenceMill3Axis(MixinRoot):
                 end_index=len(
                     self.cl_list))
 
-        logger.debug(f"\tcl lines info for {self.nc_sequence_name}")
-        logger.debug(f"\t\tstart index: {self.cl_start_index}")
+        # logger.debug(f"\tcl lines info for {self.nc_sequence_name}")
+        # logger.debug(f"\t\tstart index: {self.cl_start_index}")
 
     def set_cl_end_index(self):
         self.cl_end_index = self.pprint_parser_class.get_index_of_occurence_in_cl_list_in_range(cl_list=self.cl_list,
@@ -170,7 +170,7 @@ class NcSequenceMill3Axis(MixinRoot):
                                                                                                 start_index=self.cl_start_index,
                                                                                                 end_index=len(
                                                                                                     self.cl_list))
-        logger.debug(f"\t\tend   index: {self.cl_end_index}")
+        # logger.debug(f"\t\tend   index: {self.cl_end_index}")
 
     def set_work_offset(self):
         self.work_offset = self.pprint_parser_class.get_work_offset(cl_list=self.cl_list)

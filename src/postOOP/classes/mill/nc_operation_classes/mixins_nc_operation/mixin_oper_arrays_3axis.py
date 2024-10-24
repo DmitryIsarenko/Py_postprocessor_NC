@@ -66,20 +66,13 @@ class MixinOperArrays3Axis(MixinRoot):
 
 
 
+
+
             # combining body nc lines from all copies into 1st copy body lines
             for seq_ind, seq in enumerate(self.o.list_of_nc_sequences_objects):
                 if seq.is_param_array is False:
                     self.gather_usual_array(sequence_obj=seq, sequence_index=seq_ind)
-                    # if (seq.is_array and
-                    #         seq.is_copy is False):
-                    #     combined_body_nc_lines = []
-                    #     combined_body_nc_lines.extend(seq.nc_seq_body_lines)
-                    #     i_start = seq_ind + 1
-                    #     i_end = seq_ind + seq.array_copies_amount
-                    #     for seq_arr_copy in self.o.list_of_nc_sequences_objects[i_start:i_end]:
-                    #         combined_body_nc_lines.extend(seq_arr_copy.nc_seq_body_lines)
-                    #
-                    #     seq.nc_seq_body_lines = combined_body_nc_lines
+
                 elif seq.is_param_array:
                     if seq.is_array and seq.is_copy is False:
                         self.gather_param_array(sequence_obj=seq, sequence_index=seq_ind)
@@ -190,7 +183,7 @@ class MixinOperArrays3Axis(MixinRoot):
                 for ind_line, line in enumerate(seq.nc_seq_body_lines):
                     if gcode in line and copy_counter < seq.array_copies_amount:
                         if copy_counter >= 1:
-                            logger.debug(f"Clearing from 2nd copy to the end")
+                            # logger.debug(f"Clearing from 2nd copy to the end")
                             # seq.nc_seq_body_lines[ind_line] = "   wo m6 s"
                             seq.nc_seq_body_lines[ind_line] = ""
                         copy_counter += 1
@@ -203,7 +196,7 @@ class MixinOperArrays3Axis(MixinRoot):
                 copy_counter = 1
                 for ind_line, line in enumerate(seq.nc_seq_body_lines):
                     if gcode in line and copy_counter < seq.array_copies_amount:
-                        logger.debug(f"Clearing from 1st copy to the last one")
+                        # logger.debug(f"Clearing from 1st copy to the last one")
                         copy_counter += 1
                         # seq.nc_seq_body_lines[ind_line] = " m5 m9"
                         seq.nc_seq_body_lines[ind_line] = ""
@@ -218,7 +211,17 @@ class MixinOperArrays3Axis(MixinRoot):
         self.clear_for_usual_arrays_except_end(seq=seq)
 
     def check_multax(self):
+        # logger.debug("check_multax from 3axis")
         pass
+
+    # def count_start_angle_of_param_array(self, sequence_obj):
+    #     sequence_obj.start_angle_of_param_array = 0
+    #     pass
+    #
+    # def count_delta_angle_of_param_array(self, sequence_obj):
+    #     sequence_obj.delta_angle_of_param_array = 0
+    #     pass
+
 
     def gather_usual_array(self, sequence_obj, sequence_index):
         if (sequence_obj.is_array and
@@ -234,4 +237,5 @@ class MixinOperArrays3Axis(MixinRoot):
         pass
 
     def gather_param_array(self, sequence_obj, sequence_index):
+        # logger.debug("gather param arrays from 3  axis")
         self.gather_usual_array(sequence_obj=sequence_obj, sequence_index=sequence_index)

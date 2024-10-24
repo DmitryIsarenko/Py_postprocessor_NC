@@ -56,4 +56,4 @@ class NcOperationMill4AxisBFanucTF(NcOperationMill3Axis,
 
     # MixinOperArrays
     def start_postprocessing(self):
-        return MixinOperArrays3Axis(self).start_postprocessing()
+        return MixinOperArrays4Axis(self).start_postprocessing()

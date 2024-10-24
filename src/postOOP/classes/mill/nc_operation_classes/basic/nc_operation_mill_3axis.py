@@ -123,7 +123,7 @@ class NcOperationMill3Axis:
         self.nc_sequences_count: int = counter
         for seq in self.list_of_nc_sequences_objects:
             seq.nc_sequences_count = counter
-        logger.debug(f"self.nc_sequences_count = {self.nc_sequences_count}")
+        # logger.debug(f"self.nc_sequences_count = {self.nc_sequences_count}")
 
         # self.nc_sequences_count: int = self.pprint_parser_class.count_nc_sequences_in_cl_list(cl_list=self.cl_list)
 

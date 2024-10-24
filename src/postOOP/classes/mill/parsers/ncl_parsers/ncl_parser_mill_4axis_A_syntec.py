@@ -276,7 +276,7 @@ class NclParserMill4AxisASyntec(NclParserMill3axisSyntec):
             # logger.debug(f"check_is_all_ijk_same = {cls.is_positional_multax}")
             return False
         else:
-            logger.debug("While check of ijk if same - len of set is 0")
+            # logger.debug("While check of ijk if same - len of set is 0")
             return False
 
     @classmethod
