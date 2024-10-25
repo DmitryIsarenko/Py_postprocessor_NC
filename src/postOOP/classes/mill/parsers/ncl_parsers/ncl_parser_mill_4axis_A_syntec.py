@@ -1,7 +1,7 @@
 from src.postOOP import config
 from src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec import NclParserMill3axisSyntec
-from src.postOOP.classes.mill.parsers.coord_parsers.coords_parser import CoordsParser
-# from src.postOOP.classes.nc_sequence_classes.nc_sequence_mill_4axis_A_syntec import NcSequenceMill4AxisASyntec
+from src.postOOP.classes.mill.parsers.coord_parsers.basic.coords_parser import CoordsParser
+# from src.postOOP.classes.nc_sequence.nc_sequence_mill_4axis_A_syntec import NcSequenceMill4AxisASyntec
 import logging
 
 logger = logging.getLogger(__name__)

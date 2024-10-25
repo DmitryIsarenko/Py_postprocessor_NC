@@ -7,10 +7,7 @@
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logs/rotating_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/rotating_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_arrays_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_arrays_3axis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_arrays_4axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_arrays_4axis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/coord_parsers/coords_parser_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/coord_parsers/coords_parser_TF.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

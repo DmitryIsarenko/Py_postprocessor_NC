@@ -1,6 +1,6 @@
 import logging
 from src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec import NclParserMill4AxisBSyntec
-from src.postOOP.classes.mill.parsers.coord_parsers.coords_parser_TF import CoordsParserTF
+from src.postOOP.classes.mill.parsers.coord_parsers.rdy_to_use.coords_parser_TF import CoordsParserTF
 from src.postOOP import config
 
 logger = logging.getLogger(__name__)
