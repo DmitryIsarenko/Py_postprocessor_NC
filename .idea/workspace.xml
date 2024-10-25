@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_arrays_4axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation_classes/mixins_nc_operation/mixin_oper_arrays_4axis.py" afterDir="false" />
-    </list>
+    <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +54,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ShowUsagesActions.previewPropertyKey": "true",
     "full.screen.before.presentation.mode": "false",
-    "git-widget-placeholder": "arrays",
+    "git-widget-placeholder": "refactor",
     "last_opened_file_path": "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/py_post_v2_OOP",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }

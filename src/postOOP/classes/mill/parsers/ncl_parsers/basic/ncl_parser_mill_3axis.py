@@ -1,12 +1,17 @@
-from src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_basic import NclParserBasic
 from src.postOOP import config
+from src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_basic_mill import NclParserBasicMill
 import logging
 
 logger = logging.getLogger(__name__)
 
 
-class NclParserBasicMillSyntec(NclParserBasic):
-    ncl_parser_class_name = "NclParserBasicMillSyntec"
+class NclParserMill3axis(NclParserBasicMill):
+    ncl_parser_class_name = "NclParserMill3axis"
+    # logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
+
+    current_X = 0
+    current_Y = 0
+    current_Z = 0
 
     is_G43_needed = False
 
@@ -117,17 +122,33 @@ class NclParserBasicMillSyntec(NclParserBasic):
             cls.is_G01_ON = False
             cls.is_G02_ON = False
             cls.is_G03_ON = False
+        elif "RAPID" in cl_list[line_index - 2] and cls.is_G00_needed:
+            res_list.extend(cls.parse_RAPID())
+            cls.is_G00_ON = True
+            cls.is_G01_ON = False
+            cls.is_G02_ON = False
+            cls.is_G03_ON = False
         elif "FEDRAT" in cl_list[line_index - 1] and cls.is_G01_needed:
             cls.is_G00_ON = False
             cls.is_G01_ON = True
             cls.is_G02_ON = False
             cls.is_G03_ON = False
             res_list.extend(cls.parse_FEDRAT(cl_list=cl_list, line_index=line_index - 1))
+        elif "FEDRAT" in cl_list[line_index - 2] and cls.is_G01_needed:
+            cls.is_G00_ON = False
+            cls.is_G01_ON = True
+            cls.is_G02_ON = False
+            cls.is_G03_ON = False
+            res_list.extend(cls.parse_FEDRAT(cl_list=cl_list, line_index=line_index - 2))
 
         if "CUTCOM / LEFT" in cl_list[line_index - 1] \
                 or "CUTCOM / RIGHT" in cl_list[line_index - 1] \
                 or "CUTCOM / OFF" in cl_list[line_index - 1]:
             res_list.extend(cls.parse_CUTCOM(cl_list=cl_list, line_index=line_index - 1, nc_seq_obj=nc_seq_obj))
+        if "CUTCOM / LEFT" in cl_list[line_index - 2] \
+                or "CUTCOM / RIGHT" in cl_list[line_index - 2] \
+                or "CUTCOM / OFF" in cl_list[line_index - 2]:
+            res_list.extend(cls.parse_CUTCOM(cl_list=cl_list, line_index=line_index - 2, nc_seq_obj=nc_seq_obj))
 
         if cls.is_G43_ON is False and cls.is_G43_needed is True:
             res_list.append(cls.create_G43_addition(nc_seq_obj=nc_seq_obj))
@@ -151,7 +172,7 @@ class NclParserBasicMillSyntec(NclParserBasic):
             elif len(right_part_list) == 6:
                 pass
             else:
-                logger.critical("error with num of scalars")
+                print("error with num of scalars")
         if res_list:
             result_list.append("".join(res_list))
         return result_list

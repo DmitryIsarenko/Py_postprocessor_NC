@@ -2,7 +2,7 @@ import logging
 from src.postOOP import config
 from src.postOOP.classes.mill.nc_operation.mixins.mixin_root import MixinRoot
 from src.postOOP.classes.mill.parsers.pprint_parsers.basic.pprint_parser_basic import PprintParserBasic
-from src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_basic import NclParserBasic
+from src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_basic import NclParserBasic
 from src.postOOP.classes.file_operator_basic import FileOperatorBasic
 from src.postOOP.classes.formatter import Formatter
 

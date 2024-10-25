@@ -3,7 +3,7 @@ import logging
 from src.postOOP.classes.mill.nc_operation.basic.nc_operation_mill_3axis import NcOperationMill3Axis
 from src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_4axis import MixinOper4Axis
 from src.postOOP.classes.mill.nc_sequence.basic.nc_sequence_mill_4axis import NcSequenceMill4Axis
-from src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_B_syntec import NclParserMill4AxisBSyntec
+from src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_B import NclParserMill4AxisB
 from src.postOOP.classes.mill.parsers.pprint_parsers.rdy_to_use.pprint_parser_mill_4axis import PprintParserMill4Axis
 
 logger = logging.getLogger(__name__)
@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 class NcOperationMill4AxisB(NcOperationMill3Axis, MixinOper4Axis):
     nc_sequence_class: NcSequenceMill4Axis = NcSequenceMill4Axis
     pprint_parser_class: PprintParserMill4Axis = PprintParserMill4Axis
-    ncl_parser_class: NclParserMill4AxisBSyntec = NclParserMill4AxisBSyntec
+    ncl_parser_class: NclParserMill4AxisB = NclParserMill4AxisB
 
     postprocessor_name = "NcOperationMill4AxisB"
     is_multax_operation = False

@@ -1,5 +1,5 @@
 from src.postOOP import config
-from src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec import NclParserMill3axisSyntec
+from src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_3axis import NclParserMill3axis
 from src.postOOP.classes.mill.parsers.coord_parsers.basic.coords_parser import CoordsParser
 # from src.postOOP.classes.nc_sequence.nc_sequence_mill_4axis_A_syntec import NcSequenceMill4AxisASyntec
 import logging
@@ -7,8 +7,8 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class NclParserMill4AxisBSyntec(NclParserMill3axisSyntec):
-    ncl_parser_class_name = "NclParserMill4axisASyntec"
+class NclParserMill4AxisA(NclParserMill3axis):
+    ncl_parser_class_name = "NclParserMill4AxisA"
     # logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
 
     current_X = 0
@@ -204,7 +204,7 @@ class NclParserMill4AxisBSyntec(NclParserMill3axisSyntec):
                 elif cls.is_multax_operation:
                     if cls.goto_counter == 1:
                         final_result_list.append(f"M11")
-                        final_result_list.append(f"G00 G90 B0")
+                        final_result_list.append(f"G00 G90 A0")
                         final_result_list.append(f"M10")
                         # final_result_list.append(f"")
                         res_list.append(f"X{x} Y{y} Z{z}")
@@ -214,11 +214,11 @@ class NclParserMill4AxisBSyntec(NclParserMill3axisSyntec):
             elif len(right_part_list) == 6:
                 x, y, z, i, j, k = right_part_list
 
-                b = CoordsParser.count_B_angle_by_orts(i=i, k=k)
-                x, z = CoordsParser.count_new_X_Z_for_B_rotation(x_start=x, z_start=z, angle_B_deg=b)
+                a = CoordsParser.count_A_angle_by_orts(j=j, k=k)
+                y, z = CoordsParser.count_new_Y_Z_for_A_rotation(y_start=y, z_start=z, angle_A_deg=a)
 
                 x, y, z = round(x, config.NDIGITS_XYZ), round(y, config.NDIGITS_XYZ), round(z, config.NDIGITS_XYZ)
-                b = round(b, config.NDIGITS_ABC)
+                a = round(a, config.NDIGITS_ABC)
 
                 if x == -0.0:
                     x = 0.0
@@ -232,14 +232,14 @@ class NclParserMill4AxisBSyntec(NclParserMill3axisSyntec):
                     # позиционная обработка
                     if cls.is_positional_multax:
                         final_result_list.append(f"M11")
-                        final_result_list.append(f"G00 G90 B{b}")
+                        final_result_list.append(f"G00 G90 A{a}")
                         final_result_list.append(f"M10")
                         # final_result_list.append(f"")
                         res_list.append(f"X{x} Y{y} Z{z}")
                     # непрерывная обработка
                     else:
                         final_result_list.append(f"M11")
-                        final_result_list.append(f"G00 G90 B{b}")
+                        final_result_list.append(f"G00 G90 A{a}")
                         res_list.append(f"X{x} Y{y} Z{z}")
                 # не первая строка
                 else:
@@ -248,7 +248,7 @@ class NclParserMill4AxisBSyntec(NclParserMill3axisSyntec):
                         res_list.append(f"X{x} Y{y} Z{z}")
                     # непрерывная обработка
                     else:
-                        res_list.append(f"B{b} X{x} Y{y} Z{z}")
+                        res_list.append(f"A{a} X{x} Y{y} Z{z}")
             else:
                 logger.critical(f"Wrong num of scalars in right part of GOTO")
                 raise ValueError
@@ -276,7 +276,7 @@ class NclParserMill4AxisBSyntec(NclParserMill3axisSyntec):
             # logger.debug(f"check_is_all_ijk_same = {cls.is_positional_multax}")
             return False
         else:
-            logger.debug("While check of ijk if same - len of set is 0")
+            # logger.debug("While check of ijk if same - len of set is 0")
             return False
 
     @classmethod
@@ -341,7 +341,7 @@ class NclParserMill4AxisBSyntec(NclParserMill3axisSyntec):
         result_list.append("G00 G28 Z0.0")
         result_list.append("G00 G28 X0.0")
         result_list.append("G00 G28 Y0.0")
-        result_list.append("G00 G28 B0.0")
+        result_list.append("G00 G28 A0.0")
         result_list.append("M00")
         return result_list
 
@@ -421,6 +421,7 @@ class NclParserMill4AxisBSyntec(NclParserMill3axisSyntec):
             if z_center_incr == -0.0:
                 z_center_incr = 0.0
 
+
             res_list.append(f"X{x_end_abs} "
                             f"Y{y_end_abs} "
                             f"Z{z_end_abs} "
@@ -438,14 +439,14 @@ class NclParserMill4AxisBSyntec(NclParserMill3axisSyntec):
             (x_end_abs, y_end_abs, z_end_abs,
              i_end, j_end, k_end) = end_coords_list_float
 
-            start_b = CoordsParser.count_B_angle_by_orts(i=i_start, k=k_start)
-            end_b = CoordsParser.count_B_angle_by_orts(i=i_end, k=k_end)
+            start_a = CoordsParser.count_A_angle_by_orts(j=j_start, k=k_start)
+            end_a = CoordsParser.count_A_angle_by_orts(j=j_end, k=k_end)
 
             i_sum_vector = (i_start + i_center) / 2
             j_sum_vector = (j_start + j_center) / 2
             k_sum_vector = (k_start + k_center) / 2
 
-            sum_angle = CoordsParser.count_B_angle_by_orts(i=i_sum_vector, k=k_sum_vector)
+            sum_angle = CoordsParser.count_A_angle_by_orts(j=j_sum_vector, k=k_sum_vector)
 
             # logger.debug(f"start ijk = {i_start} {j_start} {k_start}")
             # logger.debug(f"center ijk = {i_center} {j_center} {k_center}")
@@ -457,16 +458,16 @@ class NclParserMill4AxisBSyntec(NclParserMill3axisSyntec):
             elif i_start == i_center and j_start == j_center and k_start == k_center:
                 res_list.append("G03 ")
 
-            if start_b == end_b:
-                x_start_abs, z_start_abs = CoordsParser.count_new_X_Z_for_B_rotation(x_start=x_start_abs,
+            if start_a == end_a:
+                y_start_abs, z_start_abs = CoordsParser.count_new_Y_Z_for_A_rotation(y_start=y_start_abs,
                                                                                      z_start=z_start_abs,
-                                                                                     angle_B_deg=start_b)
-                x_center_abs, z_center_abs = CoordsParser.count_new_X_Z_for_B_rotation(x_start=x_center_abs,
+                                                                                     angle_A_deg=start_a)
+                y_center_abs, z_center_abs = CoordsParser.count_new_Y_Z_for_A_rotation(y_start=y_center_abs,
                                                                                        z_start=z_center_abs,
-                                                                                       angle_B_deg=start_b)
-                x_end_abs, z_end_abs = CoordsParser.count_new_X_Z_for_B_rotation(x_start=x_end_abs,
+                                                                                       angle_A_deg=start_a)
+                y_end_abs, z_end_abs = CoordsParser.count_new_Y_Z_for_A_rotation(y_start=y_end_abs,
                                                                                  z_start=z_end_abs,
-                                                                                 angle_B_deg=end_b)
+                                                                                 angle_A_deg=end_a)
 
                 x_center_incr = round(x_center_abs - x_start_abs, ndigits=config.NDIGITS_XYZ)
                 y_center_incr = round(y_center_abs - y_start_abs, ndigits=config.NDIGITS_XYZ)

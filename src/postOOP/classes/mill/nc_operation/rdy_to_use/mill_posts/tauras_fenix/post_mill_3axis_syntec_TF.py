@@ -5,7 +5,7 @@ from src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_filler_syntec_TF im
 from src.postOOP.classes.mill.nc_sequence.rdy_to_use.tauras_fenix.nc_sequence_mill_3axis_syntec_TF import \
     NcSequenceMill3AxisSyntecTF
 from src.postOOP.classes.mill.parsers.pprint_parsers.basic.pprint_parser_basic import PprintParserBasic
-from src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_3axis_syntec_TF import NclParserMill3axisSyntecTF
+from src.postOOP.classes.mill.parsers.ncl_parsers.rdy_to_use.tauras_fenix.ncl_parser_mill_3axis_TF import NclParserMill3axisTF
 from src.postOOP.classes.mill.parsers.pprint_parsers.rdy_to_use.pprint_parser_mill_3axis import PprintParserMill3Axis
 
 
@@ -15,7 +15,7 @@ class NcOperationMill3AxisSyntecTF(NcOperationMill3Axis,
                                    ):
     nc_sequence_class: NcSequenceMill3AxisSyntecTF = NcSequenceMill3AxisSyntecTF
     pprint_parser_class: PprintParserBasic = PprintParserMill3Axis
-    ncl_parser_class: NclParserMill3axisSyntecTF = NclParserMill3axisSyntecTF
+    ncl_parser_class: NclParserMill3axisTF = NclParserMill3axisTF
 
     postprocessor_name = "MILL 3AXIS SYNTEC TF POST"
 

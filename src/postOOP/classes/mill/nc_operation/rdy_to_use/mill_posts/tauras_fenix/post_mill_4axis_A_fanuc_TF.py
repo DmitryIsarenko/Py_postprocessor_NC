@@ -1,13 +1,12 @@
 from src.postOOP.classes.mill.nc_operation.basic.nc_operation_mill_3axis import NcOperationMill3Axis
 from src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_4axis import MixinOper4Axis
-from src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis import MixinOperArrays3Axis
 from src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_4axis import \
     MixinOperArrays4Axis
 from src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_filler_fanuc_TF import \
     MixinOperFillerFanucTF
 from src.postOOP.classes.mill.nc_sequence.rdy_to_use.tauras_fenix.nc_sequence_mill_4axis_fanuc_TF import \
     NcSequenceMill4AxisFanucTF
-from src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_mill_4axis_A_syntec_TF import NclParserMill4AxisASyntecTF
+from src.postOOP.classes.mill.parsers.ncl_parsers.rdy_to_use.tauras_fenix.ncl_parser_mill_4axis_A_TF import NclParserMill4AxisA_TF
 from src.postOOP.classes.mill.parsers.pprint_parsers.rdy_to_use.pprint_parser_mill_4axis import PprintParserMill4Axis
 
 import logging
@@ -22,7 +21,7 @@ class NcOperationMill4AxisAFanucTF(NcOperationMill3Axis,
                                    ):
     nc_sequence_class: NcSequenceMill4AxisFanucTF = NcSequenceMill4AxisFanucTF
     pprint_parser_class: PprintParserMill4Axis = PprintParserMill4Axis
-    ncl_parser_class: NclParserMill4AxisASyntecTF = NclParserMill4AxisASyntecTF
+    ncl_parser_class: NclParserMill4AxisA_TF = NclParserMill4AxisA_TF
 
     postprocessor_name = "MILL 4AXIS A FANUC TF POST"
     is_multax_operation = False
