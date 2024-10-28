@@ -1,95 +1,36 @@
-2024-10-28 16:58:03 DEBUG    --- Logger src started. --- src:37 
-2024-10-28 16:58:03 DEBUG    --- Started execution from __main__ --- src:25 
-2024-10-28 16:58:03 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:23 
-2024-10-28 16:58:03 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:66 
-2024-10-28 16:58:03 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:73 
-2024-10-28 16:58:03 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:92 
-2024-10-28 16:58:09 DEBUG    --- Filepath selected: C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2 --- src.postOOP.classes.gui.desktop_window_app:194 
-2024-10-28 16:58:12 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
-2024-10-28 16:58:13 INFO     --- Post name from config: <<<MILL 4AXIS B SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation.basic.nc_operation_mill_3axis:52 
-2024-10-28 16:58:13 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2" has been read --- src.postOOP.classes.file_operator_basic:63 
-2024-10-28 16:58:13 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../temp.ncl.1' --- src.postOOP.classes.file_operator_basic:41 
-2024-10-28 16:58:13 DEBUG    --- list_of_nc_sequences_names ['B0_CENTR', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation.basic.nc_operation_mill_3axis:133 
-2024-10-28 16:58:13 DEBUG    --- 	B0_CENTR --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:151 
-2024-10-28 16:58:13 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:153 
-2024-10-28 16:58:13 DEBUG    --- 		num is 1 --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:155 
-2024-10-28 16:58:13 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:157 
-2024-10-28 16:58:13 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:151 
-2024-10-28 16:58:13 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:153 
-2024-10-28 16:58:13 DEBUG    --- 		num is 2 --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:155 
-2024-10-28 16:58:13 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:157 
-2024-10-28 16:58:13 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_B:239 
-2024-10-28 16:58:13 DEBUG    --- next_goto_line_right_part_list: [0.0, -120.0, 40.0] --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_B:403 
-2024-10-28 16:58:13 DEBUG    --- next_goto_line_right_part_list: [-27.2799, -120.0, 29.2541, -0.6819984, 0.0, 0.7313537] --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_B:403 
-2024-10-28 16:58:13 DEBUG    --- x=-27.2799, z=29.2541, i=-0.6819984, k=0.7313537 --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_B:408 
-2024-10-28 16:58:13 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7201' --- src.postOOP.classes.file_operator_basic:97 
-2024-10-28 16:58:13 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7202' --- src.postOOP.classes.file_operator_basic:97 
-2024-10-28 16:58:13 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7201' --- src.postOOP.classes.file_operator_basic:41 
-2024-10-28 16:58:13 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7202' --- src.postOOP.classes.file_operator_basic:41 
-2024-10-28 16:58:13 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7200' --- src.postOOP.classes.file_operator_basic:97 
-2024-10-28 16:58:13 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7200' --- src.postOOP.classes.file_operator_basic:41 
-2024-10-28 16:58:13 DEBUG    --- MILL 4AXIS B SYNTEC TF POST --- src.postOOP.classes.gui.desktop_window_app:230 
-2024-10-28 16:58:13 DEBUG    --- NcSequenceMill4AxisSyntecTF --- src.postOOP.classes.gui.desktop_window_app:231 
-2024-10-28 16:58:13 DEBUG    --- PprintParserMill4Axis --- src.postOOP.classes.gui.desktop_window_app:232 
-2024-10-28 16:58:13 DEBUG    --- NclParserMill4AxisB_TF --- src.postOOP.classes.gui.desktop_window_app:233 
-2024-10-28 16:58:13 DEBUG    --- FileOperatorBasic --- src.postOOP.classes.gui.desktop_window_app:234 
-2024-10-28 16:58:13 DEBUG    --- CoordsParser4axisTF --- src.postOOP.classes.gui.desktop_window_app:236 
-2024-10-28 16:59:00 DEBUG    --- Filepath selected: C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_A_rot.ncl.1 --- src.postOOP.classes.gui.desktop_window_app:194 
-2024-10-28 16:59:01 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
-2024-10-28 16:59:02 INFO     --- Post name from config: <<<MILL 4AXIS A SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation.basic.nc_operation_mill_3axis:52 
-2024-10-28 16:59:02 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_A_rot.ncl.1" has been read --- src.postOOP.classes.file_operator_basic:63 
-2024-10-28 16:59:02 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_A_rot.ncl.1/../temp.ncl.1' --- src.postOOP.classes.file_operator_basic:41 
-2024-10-28 16:59:02 DEBUG    --- list_of_nc_sequences_names ['SVERLENIE', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation.basic.nc_operation_mill_3axis:133 
-2024-10-28 16:59:02 DEBUG    --- 	SVERLENIE --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:151 
-2024-10-28 16:59:02 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:153 
-2024-10-28 16:59:02 DEBUG    --- 		num is 1 --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:155 
-2024-10-28 16:59:02 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:157 
-2024-10-28 16:59:02 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:151 
-2024-10-28 16:59:02 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:153 
-2024-10-28 16:59:02 DEBUG    --- 		num is 2 --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:155 
-2024-10-28 16:59:02 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:157 
-2024-10-28 16:59:02 DEBUG    --- next_goto_line_right_part_list: [120.0, 0.0, 40.0] --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_A:405 
-2024-10-28 16:59:02 DEBUG    --- next_goto_line_right_part_list: [120.0, 6.9459, 39.3923, 0.0, 0.1736482, 0.9848078] --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_A:405 
-2024-10-28 16:59:02 DEBUG    --- y=6.9459, z=39.3923, j=0.1736482, k=0.9848078 --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_A:410 
-2024-10-28 16:59:02 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_A_rot.ncl.1/../O7201' --- src.postOOP.classes.file_operator_basic:97 
-2024-10-28 16:59:02 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_A_rot.ncl.1/../O7202' --- src.postOOP.classes.file_operator_basic:97 
-2024-10-28 16:59:02 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_A_rot.ncl.1/../O7201' --- src.postOOP.classes.file_operator_basic:41 
-2024-10-28 16:59:02 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_A_rot.ncl.1/../O7202' --- src.postOOP.classes.file_operator_basic:41 
-2024-10-28 16:59:02 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_A_rot.ncl.1/../O7200' --- src.postOOP.classes.file_operator_basic:97 
-2024-10-28 16:59:02 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_A_rot.ncl.1/../O7200' --- src.postOOP.classes.file_operator_basic:41 
-2024-10-28 16:59:02 DEBUG    --- MILL 4AXIS A SYNTEC TF POST --- src.postOOP.classes.gui.desktop_window_app:230 
-2024-10-28 16:59:02 DEBUG    --- NcSequenceMill4AxisSyntecTF --- src.postOOP.classes.gui.desktop_window_app:231 
-2024-10-28 16:59:02 DEBUG    --- PprintParserMill4Axis --- src.postOOP.classes.gui.desktop_window_app:232 
-2024-10-28 16:59:02 DEBUG    --- NclParserMill4AxisA_TF --- src.postOOP.classes.gui.desktop_window_app:233 
-2024-10-28 16:59:02 DEBUG    --- FileOperatorBasic --- src.postOOP.classes.gui.desktop_window_app:234 
-2024-10-28 16:59:02 DEBUG    --- CoordsParser4axisTF --- src.postOOP.classes.gui.desktop_window_app:236 
-2024-10-28 16:59:32 DEBUG    --- Filepath selected: C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2 --- src.postOOP.classes.gui.desktop_window_app:194 
-2024-10-28 16:59:33 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
-2024-10-28 16:59:34 INFO     --- Post name from config: <<<MILL 4AXIS B SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation.basic.nc_operation_mill_3axis:52 
-2024-10-28 16:59:34 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2" has been read --- src.postOOP.classes.file_operator_basic:63 
-2024-10-28 16:59:34 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../temp.ncl.1' --- src.postOOP.classes.file_operator_basic:41 
-2024-10-28 16:59:34 DEBUG    --- list_of_nc_sequences_names ['B0_CENTR', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation.basic.nc_operation_mill_3axis:133 
-2024-10-28 16:59:34 DEBUG    --- 	B0_CENTR --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:151 
-2024-10-28 16:59:34 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:153 
-2024-10-28 16:59:34 DEBUG    --- 		num is 1 --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:155 
-2024-10-28 16:59:34 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:157 
-2024-10-28 16:59:34 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:151 
-2024-10-28 16:59:34 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:153 
-2024-10-28 16:59:34 DEBUG    --- 		num is 2 --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:155 
-2024-10-28 16:59:34 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:157 
-2024-10-28 16:59:34 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_B:239 
-2024-10-28 16:59:34 DEBUG    --- next_goto_line_right_part_list: [0.0, -120.0, 40.0] --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_B:403 
-2024-10-28 16:59:34 DEBUG    --- next_goto_line_right_part_list: [-27.2799, -120.0, 29.2541, -0.6819984, 0.0, 0.7313537] --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_B:403 
-2024-10-28 16:59:34 DEBUG    --- x=-27.2799, z=29.2541, i=-0.6819984, k=0.7313537 --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_B:408 
-2024-10-28 16:59:34 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7201' --- src.postOOP.classes.file_operator_basic:97 
-2024-10-28 16:59:34 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7202' --- src.postOOP.classes.file_operator_basic:97 
-2024-10-28 16:59:34 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7201' --- src.postOOP.classes.file_operator_basic:41 
-2024-10-28 16:59:34 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7202' --- src.postOOP.classes.file_operator_basic:41 
-2024-10-28 16:59:34 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7200' --- src.postOOP.classes.file_operator_basic:97 
-2024-10-28 16:59:34 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7200' --- src.postOOP.classes.file_operator_basic:41 
-2024-10-28 16:59:34 DEBUG    --- MILL 4AXIS B SYNTEC TF POST --- src.postOOP.classes.gui.desktop_window_app:230 
-2024-10-28 16:59:34 DEBUG    --- NcSequenceMill4AxisSyntecTF --- src.postOOP.classes.gui.desktop_window_app:231 
-2024-10-28 16:59:34 DEBUG    --- PprintParserMill4Axis --- src.postOOP.classes.gui.desktop_window_app:232 
-2024-10-28 16:59:34 DEBUG    --- NclParserMill4AxisB_TF --- src.postOOP.classes.gui.desktop_window_app:233 
-2024-10-28 16:59:34 DEBUG    --- FileOperatorBasic --- src.postOOP.classes.gui.desktop_window_app:234 
-2024-10-28 16:59:34 DEBUG    --- CoordsParser4axisTF --- src.postOOP.classes.gui.desktop_window_app:236 
+2024-10-28 17:19:20 DEBUG    --- Logger src started. --- src:37 
+2024-10-28 17:19:20 DEBUG    --- Started execution from __main__ --- src:25 
+2024-10-28 17:19:20 INFO     --- Started init of window. --- src.postOOP.classes.gui.desktop_window_app:23 
+2024-10-28 17:19:20 INFO     --- pushing values from config to 1 tab --- src.postOOP.classes.gui.desktop_window_app:66 
+2024-10-28 17:19:20 INFO     --- pushing values from config to 2 tab --- src.postOOP.classes.gui.desktop_window_app:73 
+2024-10-28 17:19:20 INFO     --- pushing values from config to 3 tab --- src.postOOP.classes.gui.desktop_window_app:92 
+2024-10-28 17:19:23 INFO     --- writing values from boxes 1 tab to config --- src.postOOP.classes.gui.desktop_window_app:102 
+2024-10-28 17:19:27 DEBUG    --- Filepath selected: C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2 --- src.postOOP.classes.gui.desktop_window_app:194 
+2024-10-28 17:19:27 INFO     --- Post name from config: <<<MILL 4AXIS B SYNTEC TF POST>>> --- src.postOOP.classes.mill.nc_operation.basic.nc_operation_mill_3axis:52 
+2024-10-28 17:19:27 INFO     --- .ncl file "C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2" has been read --- src.postOOP.classes.file_operator_basic:63 
+2024-10-28 17:19:27 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../temp.ncl.1' --- src.postOOP.classes.file_operator_basic:41 
+2024-10-28 17:19:27 DEBUG    --- list_of_nc_sequences_names ['B0_CENTR', 'HOLEMAKING'] --- src.postOOP.classes.mill.nc_operation.basic.nc_operation_mill_3axis:133 
+2024-10-28 17:19:27 DEBUG    --- 	B0_CENTR --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:151 
+2024-10-28 17:19:27 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:153 
+2024-10-28 17:19:27 DEBUG    --- 		num is 1 --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:155 
+2024-10-28 17:19:27 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:157 
+2024-10-28 17:19:27 DEBUG    --- 	HOLEMAKING --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:151 
+2024-10-28 17:19:27 DEBUG    --- 		is copy False --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:153 
+2024-10-28 17:19:27 DEBUG    --- 		num is 2 --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:155 
+2024-10-28 17:19:27 DEBUG    --- 		is file needed True --- src.postOOP.classes.mill.nc_operation.mixins.mixin_oper_arrays_3axis:157 
+2024-10-28 17:19:27 DEBUG    --- While check of ijk if same - len of set is 0 --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_B:239 
+2024-10-28 17:19:27 DEBUG    --- next_goto_line_right_part_list: [0.0, -120.0, 40.0] --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_B:403 
+2024-10-28 17:19:27 DEBUG    --- next_goto_line_right_part_list: [-27.2799, -120.0, 29.2541, -0.6819984, 0.0, 0.7313537] --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_B:403 
+2024-10-28 17:19:27 DEBUG    --- x=-27.2799, z=29.2541, i=-0.6819984, k=0.7313537 --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_B:408 
+2024-10-28 17:19:27 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7201' --- src.postOOP.classes.file_operator_basic:97 
+2024-10-28 17:19:27 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7202' --- src.postOOP.classes.file_operator_basic:97 
+2024-10-28 17:19:27 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7201' --- src.postOOP.classes.file_operator_basic:41 
+2024-10-28 17:19:27 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7202' --- src.postOOP.classes.file_operator_basic:41 
+2024-10-28 17:19:27 INFO     --- created file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7200' --- src.postOOP.classes.file_operator_basic:97 
+2024-10-28 17:19:27 INFO     --- Filled file 'C:/WORK_DIRECTORY/10_Programming/Projects/py_post/ust__2_drl_4ax_b_rot.ncl.2/../O7200' --- src.postOOP.classes.file_operator_basic:41 
+2024-10-28 17:19:27 DEBUG    --- MILL 4AXIS B SYNTEC TF POST --- src.postOOP.classes.gui.desktop_window_app:230 
+2024-10-28 17:19:27 DEBUG    --- NcSequenceMill4AxisSyntecTF --- src.postOOP.classes.gui.desktop_window_app:231 
+2024-10-28 17:19:27 DEBUG    --- PprintParserMill4Axis --- src.postOOP.classes.gui.desktop_window_app:232 
+2024-10-28 17:19:27 DEBUG    --- NclParserMill4AxisB_TF --- src.postOOP.classes.gui.desktop_window_app:233 
+2024-10-28 17:19:27 DEBUG    --- FileOperatorBasic --- src.postOOP.classes.gui.desktop_window_app:234 
+2024-10-28 17:19:27 DEBUG    --- CoordsParser4axisTF --- src.postOOP.classes.gui.desktop_window_app:236 
