@@ -8,6 +8,7 @@ from src.postOOP import config
 logger = logging.getLogger(__name__)
 
 class FileOperatorBasic:
+    file_operator_class_name = "FileOperatorBasic"
 
     @staticmethod
     def get_all_ncl_files_in_dir(path: str) -> list[str] | None:

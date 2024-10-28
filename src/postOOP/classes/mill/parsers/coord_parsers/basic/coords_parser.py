@@ -2,7 +2,8 @@ import math
 from src.postOOP import config
 
 
-class CoordsParser:
+class CoordsParser4axisBasic:
+    coords_parser_class_name = "CoordsParser4axisBasic"
 
     @staticmethod
     def count_A_angle_by_orts(j: float, k: float) -> float:
@@ -197,10 +198,10 @@ if __name__ == '__main__':
     # START_COORDS = [0.1732, 50.0000, -0.1000]
     # START_COORDS = [0.1732, 0.0000, -0.1000]
 
-    B = CoordsParser.count_B_angle_by_orts(i=IJK[0], k=IJK[2])
+    B = CoordsParser4axisBasic.count_B_angle_by_orts(i=IJK[0], k=IJK[2])
     print(B)
     Y = START_COORDS[1]
-    X, Z = CoordsParser.count_new_X_Z_for_B_rotation(x_start=START_COORDS[0],
-                                                     z_start=START_COORDS[2],
-                                                     angle_B_deg=B)
+    X, Z = CoordsParser4axisBasic.count_new_X_Z_for_B_rotation(x_start=START_COORDS[0],
+                                                               z_start=START_COORDS[2],
+                                                               angle_B_deg=B)
     print([round(X,ndigits=config.NDIGITS_XYZ), round(Y,ndigits=config.NDIGITS_XYZ), round(Z,ndigits=config.NDIGITS_XYZ)])

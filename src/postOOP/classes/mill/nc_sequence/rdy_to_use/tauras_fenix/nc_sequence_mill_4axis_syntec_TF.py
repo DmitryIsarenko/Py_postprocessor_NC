@@ -14,7 +14,7 @@ class NcSequenceMill4AxisSyntecTF(NcSequenceMill4Axis,
                                   MixinSeqFillerSyntecTF,
                                   MixinSeqArrays,
                                   ):
-    nc_sequence_class_name = "NcSequenceMill4AxisASyntecTF"
+    nc_sequence_class_name = "NcSequenceMill4AxisSyntecTF"
 
     # is_multax_active = False
     # is_multax_operation = False

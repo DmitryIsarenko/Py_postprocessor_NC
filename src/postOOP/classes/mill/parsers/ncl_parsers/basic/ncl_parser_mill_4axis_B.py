@@ -1,6 +1,6 @@
 from src.postOOP import config
 from src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_3axis import NclParserMill3axis
-from src.postOOP.classes.mill.parsers.coord_parsers.basic.coords_parser import CoordsParser
+from src.postOOP.classes.mill.parsers.coord_parsers.basic.coords_parser import CoordsParser4axisBasic
 # from src.postOOP.classes.nc_sequence.nc_sequence_mill_4axis_A_syntec import NcSequenceMill4AxisASyntec
 import logging
 
@@ -9,6 +9,8 @@ logger = logging.getLogger(__name__)
 
 class NclParserMill4AxisB(NclParserMill3axis):
     ncl_parser_class_name = "NclParserMill4AxisB"
+    coords_parser_class = CoordsParser4axisBasic
+
     # logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
 
     current_X = 0
@@ -214,8 +216,8 @@ class NclParserMill4AxisB(NclParserMill3axis):
             elif len(right_part_list) == 6:
                 x, y, z, i, j, k = right_part_list
 
-                b = CoordsParser.count_B_angle_by_orts(i=i, k=k)
-                x, z = CoordsParser.count_new_X_Z_for_B_rotation(x_start=x, z_start=z, angle_B_deg=b)
+                b = cls.coords_parser_class.count_B_angle_by_orts(i=i, k=k)
+                x, z = cls.coords_parser_class.count_new_X_Z_for_B_rotation(x_start=x, z_start=z, angle_B_deg=b)
 
                 x, y, z = round(x, config.NDIGITS_XYZ), round(y, config.NDIGITS_XYZ), round(z, config.NDIGITS_XYZ)
                 b = round(b, config.NDIGITS_ABC)
@@ -438,14 +440,14 @@ class NclParserMill4AxisB(NclParserMill3axis):
             (x_end_abs, y_end_abs, z_end_abs,
              i_end, j_end, k_end) = end_coords_list_float
 
-            start_b = CoordsParser.count_B_angle_by_orts(i=i_start, k=k_start)
-            end_b = CoordsParser.count_B_angle_by_orts(i=i_end, k=k_end)
+            start_b = cls.coords_parser_class.count_B_angle_by_orts(i=i_start, k=k_start)
+            end_b = cls.coords_parser_class.count_B_angle_by_orts(i=i_end, k=k_end)
 
             i_sum_vector = (i_start + i_center) / 2
             j_sum_vector = (j_start + j_center) / 2
             k_sum_vector = (k_start + k_center) / 2
 
-            sum_angle = CoordsParser.count_B_angle_by_orts(i=i_sum_vector, k=k_sum_vector)
+            sum_angle = cls.coords_parser_class.count_B_angle_by_orts(i=i_sum_vector, k=k_sum_vector)
 
             # logger.debug(f"start ijk = {i_start} {j_start} {k_start}")
             # logger.debug(f"center ijk = {i_center} {j_center} {k_center}")
@@ -458,15 +460,15 @@ class NclParserMill4AxisB(NclParserMill3axis):
                 res_list.append("G03 ")
 
             if start_b == end_b:
-                x_start_abs, z_start_abs = CoordsParser.count_new_X_Z_for_B_rotation(x_start=x_start_abs,
-                                                                                     z_start=z_start_abs,
-                                                                                     angle_B_deg=start_b)
-                x_center_abs, z_center_abs = CoordsParser.count_new_X_Z_for_B_rotation(x_start=x_center_abs,
-                                                                                       z_start=z_center_abs,
-                                                                                       angle_B_deg=start_b)
-                x_end_abs, z_end_abs = CoordsParser.count_new_X_Z_for_B_rotation(x_start=x_end_abs,
-                                                                                 z_start=z_end_abs,
-                                                                                 angle_B_deg=end_b)
+                x_start_abs, z_start_abs = cls.coords_parser_class.count_new_X_Z_for_B_rotation(x_start=x_start_abs,
+                                                                                               z_start=z_start_abs,
+                                                                                               angle_B_deg=start_b)
+                x_center_abs, z_center_abs = cls.coords_parser_class.count_new_X_Z_for_B_rotation(x_start=x_center_abs,
+                                                                                                 z_start=z_center_abs,
+                                                                                                 angle_B_deg=start_b)
+                x_end_abs, z_end_abs = cls.coords_parser_class.count_new_X_Z_for_B_rotation(x_start=x_end_abs,
+                                                                                           z_start=z_end_abs,
+                                                                                           angle_B_deg=end_b)
 
                 x_center_incr = round(x_center_abs - x_start_abs, ndigits=config.NDIGITS_XYZ)
                 y_center_incr = round(y_center_abs - y_start_abs, ndigits=config.NDIGITS_XYZ)

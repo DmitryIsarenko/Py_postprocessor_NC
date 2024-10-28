@@ -1,9 +1,12 @@
 import math
 from src.postOOP import config
-from src.postOOP.classes.mill.parsers.coord_parsers.basic.coords_parser import CoordsParser
+from src.postOOP.classes.mill.parsers.coord_parsers.basic.coords_parser import CoordsParser4axisBasic
 
 
-class CoordsParserTF(CoordsParser):
+class CoordsParser4axisTF(CoordsParser4axisBasic):
+
+    coords_parser_class_name = "CoordsParser4axisTF"
+
 
     @staticmethod
     def count_A_angle_by_orts(j: float, k: float) -> float:

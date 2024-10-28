@@ -9,7 +9,7 @@ class PprintParserMill4Axis(PprintParserBasic,
                             MixinPprintArrays,
                             MixinPprintMultax,
                             ):
-    pprint_parser_class_name = "PprintParserMill4AxisA"
+    pprint_parser_class_name = "PprintParserMill4Axis"
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
