@@ -581,3 +581,15 @@
  --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_basic:363 
 2024-10-24 14:48:36 WARNING  --- Haven't parsed cl record: MULTAX / ON
  --- src.postOOP.classes.mill.parsers.ncl_parsers.ncl_parser_basic:363 
+2024-10-28 16:23:20 ERROR    --- Error on GOTO / 120.0000, 6.9459, 39.3923,0.0000000, 0.1736482, 0.9848078
+ --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_A:421 
+2024-10-28 16:24:04 ERROR    --- Error on GOTO / 120.0000, 6.9459, 39.3923,0.0000000, 0.1736482, 0.9848078
+ --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_A:421 
+2024-10-28 16:30:33 WARNING  --- Haven't parsed cl record: MULTAX / ON
+ --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_3axis:519 
+2024-10-28 16:31:28 WARNING  --- Haven't parsed cl record: MULTAX / ON
+ --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_3axis:519 
+2024-10-28 16:31:58 WARNING  --- Haven't parsed cl record: MULTAX / ON
+ --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_3axis:519 
+2024-10-28 16:37:57 ERROR    --- Error on GOTO / 120.0000, 6.9459, 39.3923,0.0000000, 0.1736482, 0.9848078
+ --- src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_4axis_A:421 

@@ -140,7 +140,7 @@ class NcOperationMill3Axis:
         for nc_sequence_name in self.list_of_nc_sequences_names:
             nc_counter += 1
 
-            if nc_sequence_name in config.sequence_massive_names:
+            if nc_sequence_name in config.sequence_massive_names and nc_counter > 1:
                 nc_sequence_parent_name_of_massive = lst_of_objects[-1].nc_sequence_parent_name_of_massive
                 nc_massive_copy_counter += 1
 

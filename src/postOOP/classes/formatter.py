@@ -32,7 +32,10 @@ class Formatter:
     def trim_line_connectors_in_cl_list(*, cl_list: list[str]) -> list[str]:
         for line_index in range(cl_list.__len__()):
             if cl_list[line_index][-2] == "$":
-                cl_list[line_index] = cl_list[line_index].replace("$\n", "").strip()
+                # cl_list[line_index] = cl_list[line_index].replace("$\n", " ").strip()
+                cl_list[line_index] = cl_list[line_index].replace("$\n", " ")
+                cl_list[line_index] = cl_list[line_index].strip("  ")
+
         return cl_list
 
     @staticmethod

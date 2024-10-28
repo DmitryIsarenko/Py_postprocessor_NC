@@ -7,12 +7,15 @@
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logs/rotating_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/rotating_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/formatter.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/formatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation/basic/nc_operation_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation/basic/nc_operation_mill_3axis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation/mixins/mixin_oper_4axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/nc_operation/mixins/mixin_oper_4axis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/ncl_parsers/basic/ncl_parser_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/ncl_parsers/basic/ncl_parser_mill_3axis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/ncl_parsers/basic/ncl_parser_mill_4axis_A.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/ncl_parsers/basic/ncl_parser_mill_4axis_A.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/ncl_parsers/basic/ncl_parser_mill_4axis_B.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/ncl_parsers/basic/ncl_parser_mill_4axis_B.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/ncl_parsers/rdy_to_use/tauras_fenix/ncl_parser_mill_3axis_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/ncl_parsers/rdy_to_use/tauras_fenix/ncl_parser_mill_3axis_TF.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/ncl_parsers/rdy_to_use/tauras_fenix/ncl_parser_mill_4axis_A_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/ncl_parsers/rdy_to_use/tauras_fenix/ncl_parser_mill_4axis_A_TF.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/ncl_parsers/rdy_to_use/tauras_fenix/ncl_parser_mill_4axis_B_TF.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/ncl_parsers/rdy_to_use/tauras_fenix/ncl_parser_mill_4axis_B_TF.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -351,13 +354,8 @@
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="self" />
-        <watch expression="seq.nc_sequence_name" />
-        <watch expression="seq.nc_seq_body_lines" />
-        <watch expression="config.abs_path_to_selected_file" language="Python" />
-        <watch expression="self.nc_filename_with_extension" language="Python" />
-        <watch expression="self.nc_list" language="Python" />
-        <watch expression="seq.nc_list" />
+        <watch expression="cl_list[line_index]" language="Python" />
+        <watch expression="cl_list[line_index + 1]" language="Python" />
       </configuration>
     </watches-manager>
   </component>

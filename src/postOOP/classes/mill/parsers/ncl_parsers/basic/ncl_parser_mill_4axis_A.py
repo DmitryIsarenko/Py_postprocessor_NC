@@ -1,4 +1,5 @@
 from src.postOOP import config
+from src.postOOP.classes.formatter import Formatter
 from src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_3axis import NclParserMill3axis
 from src.postOOP.classes.mill.parsers.coord_parsers.basic.coords_parser import CoordsParser4axisBasic
 # from src.postOOP.classes.nc_sequence.nc_sequence_mill_4axis_A_syntec import NcSequenceMill4AxisASyntec
@@ -395,3 +396,25 @@ class NclParserMill4AxisA(NclParserMill3axis):
         else:
             logger.critical("Different start and end len of GOTO lines around a CIRCLE cl line!")
             raise IndexError
+
+    @classmethod
+    def get_z_start_for_cycle(cls, cl_list: list[str], line_index: int) -> float:
+        next_goto_line_right_part_list = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=",")
+        next_goto_line_right_part_list = [round(float(x.strip()), ndigits=config.NDIGITS_CALC_XYZ)
+                                          for x in next_goto_line_right_part_list]
+        logger.debug(f"next_goto_line_right_part_list: {next_goto_line_right_part_list}")
+        if len(next_goto_line_right_part_list) == 3:
+            return round(float(next_goto_line_right_part_list[2]), ndigits=config.NDIGITS_CALC_XYZ)
+        elif len(next_goto_line_right_part_list) == 6:
+            _, y, z, _, j, k = next_goto_line_right_part_list
+            logger.debug(f"y={y}, z={z}, j={j}, k={k}")
+            a_angle = cls.coords_parser_class.count_A_angle_by_orts(j=j,
+                                                                    k=k
+                                                                    )
+            _, z_new = cls.coords_parser_class.count_new_Y_Z_for_A_rotation(y_start=y,
+                                                                            z_start=z,
+                                                                            angle_A_deg=a_angle,
+                                                                            )
+            return z_new
+        else:
+            logger.error(f"Error on {cl_list[line_index]}")

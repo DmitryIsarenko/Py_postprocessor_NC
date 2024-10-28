@@ -142,8 +142,12 @@ class NclParserMill3axisTF(NclParserMill3axis):
 
         if "OFF" in right_part_list:
             result_list.append("G80", )
-        elif right_part_list[  # если имя операции из перечня ключей словаря с типами операций
-            0] in config.dict_of_axial_operations_G_codes.keys():
+        # если имя операции из перечня ключей словаря с типами операций
+        elif right_part_list[0] in config.dict_of_axial_operations_G_codes.keys():
+
+            operation_data["Z_START"] = cls.get_z_start_for_cycle(cl_list=cl_list, line_index=line_index + 1)
+            cl_list[line_index + 1] = "$$-> line removed because CYCLE is parsed in previous line"
+
             res_list = list()
             res_list.append(f"G98 ")
             res_list.append(config.dict_of_axial_operations_G_codes[right_part_list[0]] + " ")
@@ -169,16 +173,20 @@ class NclParserMill3axisTF(NclParserMill3axis):
                     res_list.append(f"{operation_data["FEED_TYPE"]} F{config.G_CODE_TOOL_FEED_PARAMETER} ")
             if "DEPTH" in right_part_list:
                 depth_index = right_part_list.index("DEPTH")
-                operation_data["DEPTH"] = round(float(right_part_list[depth_index + 1]), ndigits=config.NDIGITS_XYZ)
-                res_list.append(f"Z{operation_data["DEPTH"]} ")
+                operation_data["DEPTH"] = round(float(right_part_list[depth_index + 1]),
+                                                ndigits=config.NDIGITS_CALC_XYZ)
+                drill_to_z = round(operation_data["Z_START"] - operation_data["DEPTH"], ndigits=config.NDIGITS_XYZ)
+                res_list.append(f"Z{drill_to_z} ")
             if "STEP" in right_part_list:
                 step_index = right_part_list.index("STEP")
                 operation_data["STEP"] = round(float(right_part_list[step_index + 1]), ndigits=config.NDIGITS_XYZ)
                 res_list.append(f"Q{operation_data["STEP"]} ")
             if "CLEAR" in right_part_list:
                 clear_index = right_part_list.index("CLEAR")
-                operation_data["CLEAR"] = round(float(right_part_list[clear_index + 1]), ndigits=config.NDIGITS_XYZ)
-                res_list.append(f"R{operation_data["CLEAR"]} ")
+                operation_data["CLEAR"] = round(float(right_part_list[clear_index + 1]),
+                                                ndigits=config.NDIGITS_CALC_XYZ)
+                retract_dist = round(operation_data["CLEAR"] + operation_data["Z_START"], ndigits=config.NDIGITS_XYZ)
+                res_list.append(f"R{retract_dist} ")
             if "ZFEED" in right_part_list:
                 zfeed_index = right_part_list.index("ZFEED")
                 operation_data["ZFEED"] = round(float(right_part_list[zfeed_index + 1]),

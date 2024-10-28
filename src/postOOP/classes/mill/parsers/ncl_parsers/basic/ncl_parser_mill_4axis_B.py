@@ -393,3 +393,26 @@ class NclParserMill4AxisB(NclParserMill3axis):
         else:
             logger.critical("Different start and end len of GOTO lines around a CIRCLE cl line!")
             raise IndexError
+
+
+    @classmethod
+    def get_z_start_for_cycle(cls, cl_list: list[str], line_index: int) -> float:
+        next_goto_line_right_part_list = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=",")
+        next_goto_line_right_part_list = [round(float(x.strip()), ndigits=config.NDIGITS_CALC_XYZ)
+                                          for x in next_goto_line_right_part_list]
+        logger.debug(f"next_goto_line_right_part_list: {next_goto_line_right_part_list}")
+        if len(next_goto_line_right_part_list) == 3:
+            return round(float(next_goto_line_right_part_list[2]), ndigits=config.NDIGITS_CALC_XYZ)
+        elif len(next_goto_line_right_part_list) == 6:
+            x, _, z, i, _, k = next_goto_line_right_part_list
+            logger.debug(f"x={x}, z={z}, i={i}, k={k}")
+            b_angle = cls.coords_parser_class.count_B_angle_by_orts(i=i,
+                                                                    k=k
+                                                                    )
+            _, z_new = cls.coords_parser_class.count_new_X_Z_for_B_rotation(x_start=x,
+                                                                            z_start=z,
+                                                                            angle_B_deg=b_angle,
+                                                                            )
+            return z_new
+        else:
+            logger.error(f"Error on {cl_list[line_index]}")
