@@ -7,73 +7,8 @@ logger = logging.getLogger(__name__)
 
 class NclParserMill3axisTF(NclParserMill3axis):
     ncl_parser_class_name = "NclParserMill3axisTF"
+
     # logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
-
-    @classmethod
-    def parse_cl_list(cls, nc_seq_obj) -> list[str]:
-        cl_list = nc_seq_obj.cl_list[nc_seq_obj.cl_start_index: nc_seq_obj.cl_end_index]
-        result_list = []
-        for line_index in range(len(cl_list)):
-            if "PPRINT /" in cl_list[line_index]:
-                result = cls.parse_PPRINT(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
-            elif "UNITS /" in cl_list[line_index]:
-                result = cls.parse_UNITS(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
-            elif "SET / OFSETL, " in cl_list[line_index]:
-                result = cls.parse_SET_OFSETL(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
-            elif "CSYS /" in cl_list[line_index]:
-                result = cls.parse_CSYS(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
-            elif "LOADTL /" in cl_list[line_index]:
-                result = cls.parse_LOADTL(cl_list=cl_list, line_index=line_index, nc_seq_obj=nc_seq_obj)
-                result_list.extend(result)
-            elif "SPINDL /" in cl_list[line_index]:
-                result = cls.parse_SPINDL(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
-            elif "COOLNT /" in cl_list[line_index]:
-                result = cls.parse_COOLNT(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
-            elif "FEDRAT / " in cl_list[line_index]:
-                cls.set_feedrate(cl_line=cl_list[line_index])
-            elif "CUTCOM / " in cl_list[line_index]:
-                cls.set_cutcom(cl_line=cl_list[line_index])
-            elif "GOTO / " in cl_list[line_index]:
-                result = cls.parse_GOTO(cl_list=cl_list, line_index=line_index, nc_seq_obj=nc_seq_obj)
-                result_list.extend(result)
-            elif "RAPID" in cl_list[line_index]:
-                cls.set_rapid()
-            elif "CIRCLE / " in cl_list[line_index]:
-                result = cls.parse_CIRCLE(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
-            elif "CYCLE /" in cl_list[line_index]:
-                result = cls.parse_CYCLE(cl_list=cl_list, line_index=line_index, nc_seq_obj=nc_seq_obj)
-                result_list.extend(result)
-            elif "OPSTOP" in cl_list[line_index][0:6]:
-                result = cls.parse_OPSTOP(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
-            elif "STOP" in cl_list[line_index][0:4]:
-                result = cls.parse_STOP(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
-            elif "GOHOME" in cl_list[line_index][0:6]:
-                result = cls.parse_GOHOME(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
-            elif "END /" in cl_list[line_index]:
-                result = cls.parse_END(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
-            elif "FINI" in cl_list[line_index]:
-                result = cls.parse_FINI(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
-            elif "$$" in cl_list[line_index]:
-                result = cls.parse_DOUBLE_DOLLAR(cl_list=cl_list, line_index=line_index)
-                result_list.extend(result)
-            else:
-                cls.parse_UNPARSED(cl_list=cl_list, line_index=line_index)
-
-        # cls.insert_G43H_on_first_Z_move(cl_list=cl_list, nc_seq_obj=nc_seq_obj)
-
-        return result_list
 
     @classmethod
     def parse_LOADTL(cls, cl_list: list[str], line_index: int, nc_seq_obj) -> list[str]:
@@ -216,7 +151,8 @@ class NclParserMill3axisTF(NclParserMill3axis):
             if "MMPM" in right_part_list:
                 operation_data["FEED_TYPE"] = "G94"
                 feed_type_index = right_part_list.index("MMPM")
-                operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]), ndigits=4)
+                operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]),
+                                                    ndigits=config.NDIGITS_FEEDRATE_G94)
                 if config.G_CODE_FEED_PARAMS_ENABLED is False or nc_seq_obj.cut_feed_master is None:
                     res_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
                 elif config.G_CODE_FEED_PARAMS_ENABLED is True:
@@ -225,26 +161,28 @@ class NclParserMill3axisTF(NclParserMill3axis):
             elif "MMPR" in right_part_list:
                 operation_data["FEED_TYPE"] = "G95"
                 feed_type_index = right_part_list.index("MMPR")
-                operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]), ndigits=4)
+                operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]),
+                                                    ndigits=config.NDIGITS_FEEDRATE_G95)
                 if config.G_CODE_FEED_PARAMS_ENABLED is False or nc_seq_obj.cut_feed_master is None:
                     res_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
                 elif config.G_CODE_FEED_PARAMS_ENABLED is True:
                     res_list.append(f"{operation_data["FEED_TYPE"]} F{config.G_CODE_TOOL_FEED_PARAMETER} ")
             if "DEPTH" in right_part_list:
                 depth_index = right_part_list.index("DEPTH")
-                operation_data["DEPTH"] = round(float(right_part_list[depth_index + 1]), ndigits=5)
+                operation_data["DEPTH"] = round(float(right_part_list[depth_index + 1]), ndigits=config.NDIGITS_XYZ)
                 res_list.append(f"Z{operation_data["DEPTH"]} ")
             if "STEP" in right_part_list:
                 step_index = right_part_list.index("STEP")
-                operation_data["STEP"] = round(float(right_part_list[step_index + 1]), ndigits=5)
+                operation_data["STEP"] = round(float(right_part_list[step_index + 1]), ndigits=config.NDIGITS_XYZ)
                 res_list.append(f"Q{operation_data["STEP"]} ")
             if "CLEAR" in right_part_list:
                 clear_index = right_part_list.index("CLEAR")
-                operation_data["CLEAR"] = round(float(right_part_list[clear_index + 1]), ndigits=5)
+                operation_data["CLEAR"] = round(float(right_part_list[clear_index + 1]), ndigits=config.NDIGITS_XYZ)
                 res_list.append(f"R{operation_data["CLEAR"]} ")
             if "ZFEED" in right_part_list:
                 zfeed_index = right_part_list.index("ZFEED")
-                operation_data["ZFEED"] = round(float(right_part_list[zfeed_index + 1]), ndigits=4)
+                operation_data["ZFEED"] = round(float(right_part_list[zfeed_index + 1]),
+                                                ndigits=config.NDIGITS_FEEDRATE_G95)
             result_list.append("".join(res_list))
         return result_list
 
@@ -257,19 +195,6 @@ class NclParserMill3axisTF(NclParserMill3axis):
     @classmethod
     def parse_STOP(cls, cl_list: list[str], line_index: int) -> list[str]:
         pass
-        # result_list = list()
-        # result_list.append("M00")
-        # return result_list
-
-    @classmethod
-    def parse_END(cls, cl_list: list[str], line_index: int) -> list[str]:
-        result_list = list()
-        result_list.append("M01")
-        result_list.append("M99")
-        result_list.append(f"")
-        cls.is_G43_ON = False
-        cls.is_G43_needed = False
-        return result_list
 
     @classmethod
     def insert_G43H_on_first_Z_move(cls, cl_list: list[str], nc_seq_obj):

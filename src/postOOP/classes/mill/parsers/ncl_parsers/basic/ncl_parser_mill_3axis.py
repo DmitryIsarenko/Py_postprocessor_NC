@@ -15,17 +15,14 @@ class NclParserMill3axis:
     current_Z = 0
 
     is_G43_needed = False
-
     is_G43_ON = False
 
     current_FEED = 0
     current_SPINDLE = 0
 
-    # is_G43_needed = False
     is_G41_cutcom_2D_needed = False
     is_G42_cutcom_2D_needed = False
 
-    # is_G43_ON = False
     is_G41_cutcom_2D_ON = False
     is_G42_cutcom_2D_ON = False
 
@@ -475,7 +472,7 @@ class NclParserMill3axis:
     @classmethod
     def parse_END(cls, cl_list: list[str], line_index: int) -> list[str]:
         result_list = list()
-        # result_list.append("M01")
+        result_list.append("M01")
         result_list.append("M99")
         result_list.append(f"")
         cls.is_G43_ON = False
