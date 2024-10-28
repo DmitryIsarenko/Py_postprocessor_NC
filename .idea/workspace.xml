@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c02b644c-8252-433a-9efc-af4b428f3efb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/logs/log.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/logs/log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/postOOP/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/ncl_parsers/basic/ncl_parser_mill_3axis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/postOOP/classes/mill/parsers/ncl_parsers/basic/ncl_parser_mill_3axis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -2,7 +2,7 @@ import logging
 from src.postOOP import config
 from src.postOOP.classes.mill.nc_operation.mixins.mixin_root import MixinRoot
 from src.postOOP.classes.mill.parsers.pprint_parsers.basic.pprint_parser_basic import PprintParserBasic
-from src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_basic import NclParserBasic
+from src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_3axis import NclParserMill3axis
 from src.postOOP.classes.file_operator_basic import FileOperatorBasic
 from src.postOOP.classes.formatter import Formatter
 
@@ -62,7 +62,7 @@ class NcSequenceMill3Axis(MixinRoot):
 
     def __init__(
             self,
-            ncl_parser_class: NclParserBasic,
+            ncl_parser_class: NclParserMill3axis,
             pprint_parser_class: PprintParserBasic,
             file_operator_class: FileOperatorBasic,
             detail_name: str,

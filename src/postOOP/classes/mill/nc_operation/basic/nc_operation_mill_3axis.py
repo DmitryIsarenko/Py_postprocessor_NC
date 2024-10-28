@@ -4,7 +4,7 @@ from src.postOOP import config
 
 from src.postOOP.classes.mill.nc_sequence.basic.nc_sequence_mill_3axis import NcSequenceMill3Axis
 from src.postOOP.classes.mill.parsers.pprint_parsers.basic.pprint_parser_basic import PprintParserBasic
-from src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_basic import NclParserBasic
+from src.postOOP.classes.mill.parsers.ncl_parsers.basic.ncl_parser_mill_3axis import NclParserMill3axis
 from src.postOOP.classes.file_operator_basic import FileOperatorBasic
 from src.postOOP.classes.formatter import Formatter
 
@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 class NcOperationMill3Axis:
     nc_sequence_class: NcSequenceMill3Axis = NcSequenceMill3Axis
     pprint_parser_class: PprintParserBasic = PprintParserBasic
-    ncl_parser_class: NclParserBasic = NclParserBasic
+    ncl_parser_class: NclParserMill3axis = NclParserMill3axis
     file_operator_class: FileOperatorBasic = FileOperatorBasic
 
     postprocessor_name = "NcOperationMill3Axis"
