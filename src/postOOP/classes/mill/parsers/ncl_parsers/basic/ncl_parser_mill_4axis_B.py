@@ -13,16 +13,16 @@ class NclParserMill4AxisB(NclParserMill3axis):
 
     # logger.debug(f"NCL parser set to: {ncl_parser_class_name}")
 
-    current_X = 0
-    current_Y = 0
-    current_Z = 0
+    # current_X = 0
+    # current_Y = 0
+    # current_Z = 0
     current_A = 0
 
-    is_G43_needed = False
-    is_G43_ON = False
+    # is_G43_needed = False
+    # is_G43_ON = False
 
-    is_A_clamped = True
-    is_A_clamp_needed = True
+    # is_A_clamped = True
+    # is_A_clamp_needed = True
 
     is_positional_multax = True
     goto_counter = 0
@@ -103,34 +103,34 @@ class NclParserMill4AxisB(NclParserMill3axis):
 
         return result_list
 
-    @classmethod
-    def parse_LOADTL(cls, cl_list: list[str], line_index: int, nc_seq_obj) -> list[str]:
-        result_list = list()
+    # @classmethod
+    # def parse_LOADTL(cls, cl_list: list[str], line_index: int, nc_seq_obj) -> list[str]:
+    #     result_list = list()
+    #
+    #     result_list.append(
+    #         f"T{nc_seq_obj.tool_pot} M6", )
+    #
+    #     cls.is_G43_needed = True
+    #     cls.is_G43_ON = False
+    #     return result_list
 
-        result_list.append(
-            f"T{nc_seq_obj.tool_pot} M6", )
-
-        cls.is_G43_needed = True
-        cls.is_G43_ON = False
-        return result_list
-
-    @classmethod
-    def parse_SET_OFSETL(cls, cl_list: list[str], line_index: int) -> list[str]:
-        result_list = list()
-        right_part = cl_list[line_index].split(sep=", ")[1].strip()
-        if "OFF" in right_part:
-            result_list.append("G00 G28 Z0.0 G49")
-        elif int(float(right_part)).is_integer():
-            # result_list.append(f"G{right_part}")
-            pass
-        return result_list
-
-    @classmethod
-    def create_G43_addition(cls, nc_seq_obj) -> str:
-        res_line = str()
-        res_line += f"G43 "
-        res_line += f"H{nc_seq_obj.tool_pot} "
-        return res_line
+    # @classmethod
+    # def parse_SET_OFSETL(cls, cl_list: list[str], line_index: int) -> list[str]:
+    #     result_list = list()
+    #     right_part = cl_list[line_index].split(sep=", ")[1].strip()
+    #     if "OFF" in right_part:
+    #         result_list.append("G00 G28 Z0.0 G49")
+    #     elif int(float(right_part)).is_integer():
+    #         # result_list.append(f"G{right_part}")
+    #         pass
+    #     return result_list
+    #
+    # @classmethod
+    # def create_G43_addition(cls, nc_seq_obj) -> str:
+    #     res_line = str()
+    #     res_line += f"G43 "
+    #     res_line += f"H{nc_seq_obj.tool_pot} "
+    #     return res_line
 
     @classmethod
     def parse_GOTO(cls, cl_list: list[str], line_index: int, nc_seq_obj) -> list[str]:
@@ -281,61 +281,61 @@ class NclParserMill4AxisB(NclParserMill3axis):
             logger.debug("While check of ijk if same - len of set is 0")
             return False
 
-    @classmethod
-    def parse_CYCLE(cls, cl_list: list[str], line_index: int, nc_seq_obj) -> list[str]:
-        result_list = list()
-        right_part_list = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=", ")
-
-        operation_data: dict = {
-            "OPERATION_CODE": None,
-            "DEPTH": None,
-            "STEP": None,
-            "ZFEED": None,
-            "FEED_TYPE": None,  # MMPM or MMPR
-            "FEED_RATE": None,
-            "CLEAR": None,
-            "RETURN": None,
-        }
-
-        if "OFF" in right_part_list:
-            result_list.append("G80", )
-        elif right_part_list[  # если имя операции из перечня ключей словаря с типами операций
-            0] in config.dict_of_axial_operations_G_codes.keys():
-            res_list = list()
-            res_list.append(f"G98 ")
-            res_list.append(config.dict_of_axial_operations_G_codes[right_part_list[0]] + " ")
-
-            if "MMPM" in right_part_list:
-                operation_data["FEED_TYPE"] = "G94"
-                feed_type_index = right_part_list.index("MMPM")
-                operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]),
-                                                    ndigits=config.NDIGITS_FEEDRATE_G94)
-                res_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
-            elif "MMPR" in right_part_list:
-                operation_data["FEED_TYPE"] = "G95"
-                feed_type_index = right_part_list.index("MMPR")
-                operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]),
-                                                    ndigits=config.NDIGITS_FEEDRATE_G95)
-                res_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
-
-            if "DEPTH" in right_part_list:
-                depth_index = right_part_list.index("DEPTH")
-                operation_data["DEPTH"] = round(float(right_part_list[depth_index + 1]), ndigits=config.NDIGITS_XYZ)
-                res_list.append(f"Z{operation_data["DEPTH"]} ")
-            if "STEP" in right_part_list:
-                step_index = right_part_list.index("STEP")
-                operation_data["STEP"] = round(float(right_part_list[step_index + 1]), ndigits=config.NDIGITS_XYZ)
-                res_list.append(f"Q{operation_data["STEP"]} ")
-            if "CLEAR" in right_part_list:
-                clear_index = right_part_list.index("CLEAR")
-                operation_data["CLEAR"] = round(float(right_part_list[clear_index + 1]), ndigits=config.NDIGITS_XYZ)
-                res_list.append(f"R{operation_data["CLEAR"]} ")
-            if "ZFEED" in right_part_list:
-                zfeed_index = right_part_list.index("ZFEED")
-                operation_data["ZFEED"] = round(float(right_part_list[zfeed_index + 1]),
-                                                ndigits=config.NDIGITS_FEEDRATE_G95)
-            result_list.append("".join(res_list))
-        return result_list
+    # @classmethod
+    # def parse_CYCLE(cls, cl_list: list[str], line_index: int, nc_seq_obj) -> list[str]:
+    #     result_list = list()
+    #     right_part_list = cl_list[line_index].split(sep=" / ")[1].strip().split(sep=", ")
+    #
+    #     operation_data: dict = {
+    #         "OPERATION_CODE": None,
+    #         "DEPTH": None,
+    #         "STEP": None,
+    #         "ZFEED": None,
+    #         "FEED_TYPE": None,  # MMPM or MMPR
+    #         "FEED_RATE": None,
+    #         "CLEAR": None,
+    #         "RETURN": None,
+    #     }
+    #
+    #     if "OFF" in right_part_list:
+    #         result_list.append("G80", )
+    #     elif right_part_list[  # если имя операции из перечня ключей словаря с типами операций
+    #         0] in config.dict_of_axial_operations_G_codes.keys():
+    #         res_list = list()
+    #         res_list.append(f"G98 ")
+    #         res_list.append(config.dict_of_axial_operations_G_codes[right_part_list[0]] + " ")
+    #
+    #         if "MMPM" in right_part_list:
+    #             operation_data["FEED_TYPE"] = "G94"
+    #             feed_type_index = right_part_list.index("MMPM")
+    #             operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]),
+    #                                                 ndigits=config.NDIGITS_FEEDRATE_G94)
+    #             res_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
+    #         elif "MMPR" in right_part_list:
+    #             operation_data["FEED_TYPE"] = "G95"
+    #             feed_type_index = right_part_list.index("MMPR")
+    #             operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]),
+    #                                                 ndigits=config.NDIGITS_FEEDRATE_G95)
+    #             res_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
+    #
+    #         if "DEPTH" in right_part_list:
+    #             depth_index = right_part_list.index("DEPTH")
+    #             operation_data["DEPTH"] = round(float(right_part_list[depth_index + 1]), ndigits=config.NDIGITS_XYZ)
+    #             res_list.append(f"Z{operation_data["DEPTH"]} ")
+    #         if "STEP" in right_part_list:
+    #             step_index = right_part_list.index("STEP")
+    #             operation_data["STEP"] = round(float(right_part_list[step_index + 1]), ndigits=config.NDIGITS_XYZ)
+    #             res_list.append(f"Q{operation_data["STEP"]} ")
+    #         if "CLEAR" in right_part_list:
+    #             clear_index = right_part_list.index("CLEAR")
+    #             operation_data["CLEAR"] = round(float(right_part_list[clear_index + 1]), ndigits=config.NDIGITS_XYZ)
+    #             res_list.append(f"R{operation_data["CLEAR"]} ")
+    #         if "ZFEED" in right_part_list:
+    #             zfeed_index = right_part_list.index("ZFEED")
+    #             operation_data["ZFEED"] = round(float(right_part_list[zfeed_index + 1]),
+    #                                             ndigits=config.NDIGITS_FEEDRATE_G95)
+    #         result_list.append("".join(res_list))
+    #     return result_list
 
     @classmethod
     def parse_GOHOME(cls, cl_list: list[str], line_index: int) -> list[str]:
@@ -347,23 +347,23 @@ class NclParserMill4AxisB(NclParserMill3axis):
         result_list.append("M00")
         return result_list
 
-    @classmethod
-    def insert_G43H_on_first_Z_move(cls, cl_list: list[str], nc_seq_obj):
-        result_list = list()
-        counter_lines_with_z = 0
-        for line_index in range(len(result_list)):
-            line = result_list[line_index]
-            if "G00" in line or "G01" in line:
-                counter_lines_with_z += 1
-                if counter_lines_with_z > 0:
-                    insertion = f"G43 H{nc_seq_obj.tool_pot} "
-                    result_list[line_index] = insertion + result_list[line_index]
-                    break
-                else:
-                    continue
-            else:
-                continue
-        return result_list
+    # @classmethod
+    # def insert_G43H_on_first_Z_move(cls, cl_list: list[str], nc_seq_obj):
+    #     result_list = list()
+    #     counter_lines_with_z = 0
+    #     for line_index in range(len(result_list)):
+    #         line = result_list[line_index]
+    #         if "G00" in line or "G01" in line:
+    #             counter_lines_with_z += 1
+    #             if counter_lines_with_z > 0:
+    #                 insertion = f"G43 H{nc_seq_obj.tool_pot} "
+    #                 result_list[line_index] = insertion + result_list[line_index]
+    #                 break
+    #             else:
+    #                 continue
+    #         else:
+    #             continue
+    #     return result_list
 
     @classmethod
     def parse_CIRCLE(cls, cl_list: list[str], line_index: int) -> list[str]:

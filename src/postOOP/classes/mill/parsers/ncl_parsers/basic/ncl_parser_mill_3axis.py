@@ -18,14 +18,6 @@ class NclParserMill3axis:
 
     is_G43_ON = False
 
-
-
-
-
-
-
-
-
     current_FEED = 0
     current_SPINDLE = 0
 
@@ -46,22 +38,6 @@ class NclParserMill3axis:
     is_G01_ON = False
     is_G02_ON = False
     is_G03_ON = False
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     @classmethod
     def parse_cl_list(cls, nc_seq_obj) -> list[str]:
@@ -250,29 +226,31 @@ class NclParserMill3axis:
             if "MMPM" in right_part_list:
                 operation_data["FEED_TYPE"] = "G94"
                 feed_type_index = right_part_list.index("MMPM")
-                operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]), ndigits=4)
+                operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]),
+                                                    ndigits=config.NDIGITS_FEEDRATE_G94)
                 res_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
-
             elif "MMPR" in right_part_list:
                 operation_data["FEED_TYPE"] = "G95"
                 feed_type_index = right_part_list.index("MMPR")
-                operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]), ndigits=4)
+                operation_data["FEED_RATE"] = round(float(right_part_list[feed_type_index + 1]),
+                                                    ndigits=config.NDIGITS_FEEDRATE_G95)
                 res_list.append(f"{operation_data["FEED_TYPE"]} F{operation_data["FEED_RATE"]} ")
             if "DEPTH" in right_part_list:
                 depth_index = right_part_list.index("DEPTH")
-                operation_data["DEPTH"] = round(float(right_part_list[depth_index + 1]), ndigits=5)
+                operation_data["DEPTH"] = round(float(right_part_list[depth_index + 1]), ndigits=config.NDIGITS_XYZ)
                 res_list.append(f"Z{operation_data["DEPTH"]} ")
             if "STEP" in right_part_list:
                 step_index = right_part_list.index("STEP")
-                operation_data["STEP"] = round(float(right_part_list[step_index + 1]), ndigits=5)
+                operation_data["STEP"] = round(float(right_part_list[step_index + 1]), ndigits=config.NDIGITS_XYZ)
                 res_list.append(f"Q{operation_data["STEP"]} ")
             if "CLEAR" in right_part_list:
                 clear_index = right_part_list.index("CLEAR")
-                operation_data["CLEAR"] = round(float(right_part_list[clear_index + 1]), ndigits=5)
+                operation_data["CLEAR"] = round(float(right_part_list[clear_index + 1]), ndigits=config.NDIGITS_XYZ)
                 res_list.append(f"R{operation_data["CLEAR"]} ")
             if "ZFEED" in right_part_list:
                 zfeed_index = right_part_list.index("ZFEED")
-                operation_data["ZFEED"] = round(float(right_part_list[zfeed_index + 1]), ndigits=4)
+                operation_data["ZFEED"] = round(float(right_part_list[zfeed_index + 1]),
+                                                ndigits=config.NDIGITS_FEEDRATE_G95)
             result_list.append("".join(res_list))
         return result_list
 
@@ -303,15 +281,7 @@ class NclParserMill3axis:
                 continue
         return result_list
 
-
-
-
-
-
-
-
-
-# from parent
+    # from parent
 
     @classmethod
     def parse_PPRINT(cls, cl_list: list[str], line_index: int) -> list[str]:
@@ -372,7 +342,6 @@ class NclParserMill3axis:
         result_list = list()
         result_list.append(f"G00 ")
         return result_list
-
 
     @classmethod
     def set_feedrate(cls, cl_line: str):
@@ -491,7 +460,6 @@ class NclParserMill3axis:
             result_list.append(f"M09")
         return result_list
 
-
     @classmethod
     def parse_OPSTOP(cls, cl_list: list[str], line_index: int) -> list[str]:
         result_list = list()
@@ -533,14 +501,3 @@ class NclParserMill3axis:
         # print(f"HAVENT PARSED cl record: {cl_list[line_index]}")
         logger.warning(f"Haven't parsed cl record: {cl_list[line_index]}")
         return result_list
-
-
-
-
-
-
-
-
-
-
-
