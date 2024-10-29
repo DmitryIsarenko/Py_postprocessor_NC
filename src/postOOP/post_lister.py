@@ -1,22 +1,21 @@
-from src.postOOP.classes.posts.mill_posts.tauras_fenix.post_mill_3axis_fanuc_TF import \
+from src.postOOP.classes.mill.nc_operation.rdy_to_use.mill_posts.tauras_fenix.post_mill_3axis_fanuc_TF import \
     NcOperationMill3AxisFanucTF
-from src.postOOP.classes.posts.mill_posts.tauras_fenix.post_mill_3axis_syntec_TF import \
-    NcOperationMill3AxisSyntecTF
-from src.postOOP.classes.posts.mill_posts.tauras_fenix.post_mill_4axis_A_fanuc_TF import \
+from src.postOOP.classes.mill.nc_operation.rdy_to_use.mill_posts.tauras_fenix.post_mill_3axis_syntec_TF import NcOperationMill3AxisSyntecTF
+from src.postOOP.classes.mill.nc_operation.rdy_to_use.mill_posts.tauras_fenix.post_mill_4axis_A_fanuc_TF import \
     NcOperationMill4AxisAFanucTF
-from src.postOOP.classes.posts.mill_posts.tauras_fenix.post_mill_4axis_A_syntec_TF import \
+from src.postOOP.classes.mill.nc_operation.rdy_to_use.mill_posts.tauras_fenix.post_mill_4axis_A_syntec_TF import \
     NcOperationMill4AxisASyntecTF
-from src.postOOP.classes.posts.mill_posts.tauras_fenix.post_mill_4axis_B_fanuc_TF import \
+from src.postOOP.classes.mill.nc_operation.rdy_to_use.mill_posts.tauras_fenix.post_mill_4axis_B_fanuc_TF import \
     NcOperationMill4AxisBFanucTF
-from src.postOOP.classes.posts.mill_posts.tauras_fenix.post_mill_4axis_B_syntec_TF import \
-    NcOperationMill4AxisBSyntecTF
+from src.postOOP.classes.mill.nc_operation.rdy_to_use.mill_posts.tauras_fenix.post_mill_4axis_B_syntec_TF import \
+NcOperationMill4AxisBSyntecTF
 
 
 class PostLister:
     post_dict = dict()
 
     def __init__(self):
-        self.set_default_post(NcOperationMill3AxisSyntecTF)
+        self.set_default_post(NcOperationMill4AxisBSyntecTF)
 
         # self.add_post_to_list("--- debug ---")
         # self.add_post_to_list(NcOperationBasic)

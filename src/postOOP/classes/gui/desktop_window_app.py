@@ -205,7 +205,7 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.textEdit_tab1_log_output.append(f"postprocessing started")
             self.pushButton_tab1_postprocess_start.setEnabled(False)
             self.pushButton_tab1_postprocess_start.setText("Postprocessing . . .")
-            is_executed = self.execute_postprocess(post_obj=config.POST_OBJ)
+            is_executed = self.execute_postprocess(operation_obj=config.POST_OBJ)
             if is_executed:
                 self.textEdit_tab1_log_output.append(f"postprocessing finished")
             else:
@@ -215,8 +215,8 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButton_tab1_postprocess_start.setText("Запустить постпроцессирование")
 
     @staticmethod
-    def execute_postprocess(post_obj) -> bool:
-        if post_obj is None:
+    def execute_postprocess(operation_obj) -> bool:
+        if operation_obj is None:
             logger.warning("Selected post is None")
             return False
         else:
@@ -224,10 +224,21 @@ class DesktopWindowApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
             filepath = config.abs_path_to_selected_file
             if filepath:
-                operations.append(post_obj())
+                operations.append(operation_obj())
                 for operation in operations:
                     operation.start_postprocessing()
+                logger.debug(f"{operations[0].postprocessor_name}")
+                logger.debug(f"{operations[0].nc_sequence_class.nc_sequence_class_name}")
+                logger.debug(f"{operations[0].pprint_parser_class.pprint_parser_class_name}")
+                logger.debug(f"{operations[0].ncl_parser_class.ncl_parser_class_name}")
+                logger.debug(f"{operations[0].file_operator_class.file_operator_class_name}")
+                try:
+                    logger.debug(f"{operations[0].ncl_parser_class.coords_parser_class.coords_parser_class_name}")
+                except:
+                    pass
                 return True
+
+
 
 
 def main_ui():

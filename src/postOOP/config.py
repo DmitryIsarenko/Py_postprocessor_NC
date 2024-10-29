@@ -9,7 +9,7 @@ PROGRAM_MAIN_DIGIT = "7"
 DEBUG = False
 # DEBUG = False
 DEBUG_CWD = r"c:\WORK_DIRECTORY\10_Programming\Projects\py_post"
-DELETE_TEMP_FILE = True
+DELETE_TEMP_FILE = False
 STARTS_FROM_EXE = False
 
 # tolerances
@@ -39,7 +39,20 @@ NC_END_KEYWORD = "$$-> END /"
 
 # options
 LINE_ENDING_EOB = ";"
-SAFETY_LINE_DEFAULT = "G17 G40 G49 G90 G94 M08"
+SAFETY_LINE_DEFAULT = "G17 G40 G49 G90 G94"
+LINE_G43_OFF_Z_HOME = "G00 G53 Z0.0 G49"
+GO_HOME_XYZ_LINES = [
+            "G0 G53 Z0.0",
+            "G00 X0.0",
+            "G00 G53 Y0.0",
+            # f"(MACHINING TIME: {self.nc_oper_obj.sum_machining_time})",
+            # "M30",
+        ]
+GO_HOME_XYZA_LINES = GO_HOME_XYZ_LINES + ["G00 A0.0"]
+GO_HOME_XYZB_LINES = GO_HOME_XYZ_LINES + ["G00 B0.0"]
+GO_HOME_XYZBC_LINES = GO_HOME_XYZ_LINES + ["G00 B0.0", "G00 C0.0"]
+
+
 NC_SEQUENCE_TAIL_LINES = ["M01", "M99", ""]
 G41_G42_SIDE_IS_REVERSED_SWITCH = True
 
