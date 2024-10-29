@@ -60,12 +60,12 @@ class MixinOperFillerSyntecTF(MixinRoot):
                 nc_lines.append(f"")
         return nc_lines
 
-    def generate_nc_oper_tail_lines(self) -> list:
-        nc_lines = [
-            "G0 G53 Z0.0",
-            "G00 X0.0",
-            "G00 Y0.0",
-            f"(MACHINING TIME: {self.nc_oper_obj.sum_machining_time})",
-            "M30",
-        ]
-        return nc_lines
+    # def generate_nc_oper_tail_lines(self) -> list:
+    #     nc_lines = [
+    #         "G0 G53 Z0.0",
+    #         "G00 X0.0",
+    #         "G00 Y0.0",
+    #         f"(MACHINING TIME: {self.nc_oper_obj.sum_machining_time})",
+    #         "M30",
+    #     ]
+    #     return nc_lines

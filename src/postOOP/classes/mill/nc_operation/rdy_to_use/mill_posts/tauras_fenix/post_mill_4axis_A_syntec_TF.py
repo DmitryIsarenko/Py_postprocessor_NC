@@ -43,8 +43,8 @@ class NcOperationMill4AxisASyntecTF(NcOperationMill3Axis,
     def generate_nc_oper_body_lines(self) -> list:
         return MixinOperFillerSyntecTF(self).generate_nc_oper_body_lines()
 
-    def generate_nc_oper_tail_lines(self) -> list:
-        return MixinOperFillerSyntecTF(self).generate_nc_oper_tail_lines()
+    # def generate_nc_oper_tail_lines(self) -> list:
+    #     return MixinOperFillerSyntecTF(self).generate_nc_oper_tail_lines()
 
     # MixinOper4Axis
     def set_nc_sequences_objects_in_list(self):

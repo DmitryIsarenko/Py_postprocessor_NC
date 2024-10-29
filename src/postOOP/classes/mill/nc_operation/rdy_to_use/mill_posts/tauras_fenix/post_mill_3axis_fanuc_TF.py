@@ -36,8 +36,8 @@ class NcOperationMill3AxisFanucTF(NcOperationMill3Axis,
     def generate_nc_oper_body_lines(self) -> list:
         return MixinOperFillerFanucTF(self).generate_nc_oper_body_lines()
 
-    def generate_nc_oper_tail_lines(self) -> list:
-        return MixinOperFillerFanucTF(self).generate_nc_oper_tail_lines()
+    # def generate_nc_oper_tail_lines(self) -> list:
+    #     return MixinOperFillerFanucTF(self).generate_nc_oper_tail_lines()
 
     # MixinOperArrays
     def start_postprocessing(self):

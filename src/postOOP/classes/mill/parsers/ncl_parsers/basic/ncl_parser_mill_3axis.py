@@ -120,7 +120,8 @@ class NclParserMill3axis:
         result_list = list()
         right_part = cl_list[line_index].split(sep=", ")[1].strip()
         if "OFF" in right_part:
-            result_list.append("G00 G28 Z0.0 G49")
+            # result_list.append("G00 G28 Z0.0 G49")
+            result_list.append(config.LINE_G43_OFF_Z_HOME)
         elif int(float(right_part)).is_integer():
             result_list.append(f"G{right_part}")
         return result_list

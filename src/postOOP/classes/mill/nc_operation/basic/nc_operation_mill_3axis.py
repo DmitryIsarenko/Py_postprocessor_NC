@@ -238,10 +238,10 @@ class NcOperationMill3Axis:
         return nc_lines
 
     def generate_nc_oper_tail_lines(self) -> list:
-        nc_lines = [
-            "G53",
-            "G00 Z0.0",
-            "G00 X0.0 Y0.0",
+        nc_lines = config.GO_HOME_XYZ_LINES + [
+            # "G53",
+            # "G00 Z0.0",
+            # "G00 X0.0 Y0.0",
             f"(MACHINING TIME: {self.sum_machining_time})",
             "M30",
         ]
