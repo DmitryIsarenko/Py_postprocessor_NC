@@ -87,8 +87,8 @@ class MixinOperArrays4Axis(MixinOperArrays3Axis, MixinRoot):
             if line_ind_with_rot_adr:
                 angle_str: str = self.get_angle_after_axis_adr(line=line_ind_with_rot_adr, adr=rot_adr)
                 return rot_adr, angle_str
-            else:
-                return "A", "0"
+        else:
+            return "A", "0"
 
     @staticmethod
     def get_line_with_axis_adr(list_nc_lines: list[str], adr: str) -> str | None:
