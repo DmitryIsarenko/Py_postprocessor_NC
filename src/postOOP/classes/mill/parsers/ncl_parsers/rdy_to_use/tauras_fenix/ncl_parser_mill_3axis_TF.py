@@ -224,3 +224,13 @@ class NclParserMill3axisTF(NclParserMill3axis):
             else:
                 continue
         return result_list
+
+    @classmethod
+    def parse_COOLNT(cls, cl_list: list[str], line_index: int) -> list[str]:
+        result_list = list()
+        # right_part = cl_list[line_index].split(sep=" / ")[1]
+        # if "ON" in right_part:
+        #     result_list.append(f"M08")
+        # elif "OFF" in right_part:
+        #     result_list.append(f"M09")
+        return result_list

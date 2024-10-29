@@ -275,9 +275,8 @@ class NclParserMill3axis:
     @classmethod
     def parse_GOHOME(cls, cl_list: list[str], line_index: int) -> list[str]:
         result_list = list()
-        result_list.append("G00 G28 Z0.0")
-        result_list.append("G00 G28 X0.0")
-        result_list.append("G00 G28 Y0.0")
+        for line in config.GO_HOME_XYZ_LINES:
+            result_list.append(line)
         result_list.append("M00")
         return result_list
 

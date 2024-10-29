@@ -55,15 +55,17 @@ class MixinSeqFillerFanucTF(MixinRoot):
             f"(T{self.s.tool_pot}_{self.s.tool_name})",
             f"G{self.s.work_offset}",
             f"{config.SAFETY_LINE_DEFAULT}",
+            # f"M08",
         ]
         return nc_lines
 
     def generate_nc_seq_body_lines(self) -> list:
-        nc_lines = self.s.ncl_parser_class.parse_cl_list(nc_seq_obj=self.s)
+        nc_lines: list = self.s.ncl_parser_class.parse_cl_list(nc_seq_obj=self.s)
+        nc_lines.insert(1, "M08")
         return nc_lines
 
     @staticmethod
     def generate_nc_seq_tail_lines() -> list:
-        nc_lines = list()
+        nc_lines = ["M09"]
         nc_lines.extend(config.NC_SEQUENCE_TAIL_LINES)
         return nc_lines
