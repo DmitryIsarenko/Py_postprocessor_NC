@@ -1,7 +1,20 @@
 .venv
+.idea
 src/logs
 build
 dist
+ustanovi
+*/__pycache__/
+*/*/__pycache__/
+*/*/*/__pycache__/
+*/*/*/*/__pycache__/
+*/*/*/*/*/__pycache__/
+*/*/*/*/*/*/__pycache__/
+*/*/*/*/*/*/*/__pycache__/
+*/*/*/*/*/*/*/*/__pycache__/
+*/*/*/*/*/*/*/*/*/__pycache__/
+*/*/*/*/*/*/*/*/*/*/__pycache__/
 
 *.spec
 *.log
+*.pyc
